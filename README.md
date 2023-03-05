@@ -1,2 +1,2 @@
-# findwork.github.io
+# work.github.io
 Projet de soutenance
