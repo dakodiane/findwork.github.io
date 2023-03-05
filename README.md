@@ -1,2 +1,2 @@
-# work.github.io
+# work
 Projet de soutenance
