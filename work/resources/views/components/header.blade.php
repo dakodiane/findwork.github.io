@@ -1,73 +1,54 @@
+<header style="height: 100px">
+    <body>
+    
+   <div class="entete">
 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-0 m-0">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"> WORK</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto ">
+              <li class="nav-item">
+                <a class="nav-link mx-2 active" aria-current="page" href="#">Accueil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="#">Trouver une offre</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="#">Trouver un freelancer</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  S'inscrire
+                </a>
+                
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="#">Postulant</a></li>
+                  <li><a class="dropdown-item" href="#">Recruteur</a></li>
+                  <li><a class="dropdown-item" href="#">Freelancer</a></li>
+                </ul>
+              </li>
+              
+              <li class="nav-item ">
+                <a class="nav-link mx-2" href="#">Se Connecter </a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link mx-2" href="#">A propos </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+   </div>
+     
 
+      
+    </body>
+		 
 
-    <header data-spy="scroll" data-target=".navbar-desktop">
-        <!--Navbar-->
-
-        <div class='preloader'><div class='loaded'>&nbsp;</div></div>
-
-        <nav class="navbar navbar-fixed-top navbar-light bg-faded">
-            <!--Collapse button-->
-            <div class="container">
-                <a href="#" data-activates="mobile-menu" class="button-collapse right"><i class="fa fa-bars black-text"></i></a>
-
-                <!--Content for large and medium screens-->
-                <div class="navbar-desktop">
-                    <!--Navbar Brand-->
-                    <a class="navbar-brand" href="#home"><img src="img/logo.png" alt="" /></a>
-                    <!--Links-->
-                    <ul class="nav navbar-nav pull-right hidden-md-down text-uppercase">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#service">Service</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#team">Team</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#portfolio">Portfolio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#newsletter">Faq</a>
-                        </li>
-                       
-                    </ul>
-                    
-                </div>
-
-                <!-- Content for mobile devices-->
-                <div class="navbar-mobile">
-
-                    <ul class="side-nav" id="mobile-menu">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#service">Service</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#portfolio">portfolio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#newsletter">Support</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#!">Faq</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#!"><i class="fa fa-search fa-lg"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!--/.Navbar-->
-    </header>
+	</header> 
+    

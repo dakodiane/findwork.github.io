@@ -1,74 +1,126 @@
-jQuery(document).ready(function () {
+(function ($) {
+    "use strict";
 
-//Preloader active
-    jQuery(window).load(function () {
-        jQuery(".loaded").fadeOut();
-        jQuery(".preloader").delay(1000).fadeOut("slow");
+    // Spinner
+    var spinner = function () {
+        setTimeout(function () {
+            if ($('#spinner').length > 0) {
+                $('#spinner').removeClass('show');
+            }
+        }, 1);
+    };
+    spinner();
+    
+    
+    // Initiate the wowjs
+    new WOW().init();
+
+
+    // Sticky Navbar
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 45) {
+            $('.navbar').addClass('sticky-top shadow-sm');
+        } else {
+            $('.navbar').removeClass('sticky-top shadow-sm');
+        }
+    });
+    
+    // Dropdown on mouse hover
+    const $dropdown = $(".dropdown");
+    const $dropdownToggle = $(".dropdown-toggle");
+    const $dropdownMenu = $(".dropdown-menu");
+    const showClass = "show";
+    
+    $(window).on("load resize", function() {
+        if (this.matchMedia("(min-width: 992px)").matches) {
+            $dropdown.hover(
+            function() {
+                const $this = $(this);
+                $this.addClass(showClass);
+                $this.find($dropdownToggle).attr("aria-expanded", "true");
+                $this.find($dropdownMenu).addClass(showClass);
+            },
+            function() {
+                const $this = $(this);
+                $this.removeClass(showClass);
+                $this.find($dropdownToggle).attr("aria-expanded", "false");
+                $this.find($dropdownMenu).removeClass(showClass);
+            }
+            );
+        } else {
+            $dropdown.off("mouseenter mouseleave");
+        }
     });
 
-// sidenav navbar nav
-    jQuery(".button-collapse").sideNav();
 
-
-// localScroll js
-    jQuery(".navbar-desktop").localScroll();
-
-// Counter 
-    jQuery('.statistic-counter').counterUp({
+    // Facts counter
+    $('[data-toggle="counter-up"]').counterUp({
         delay: 10,
         time: 2000
     });
-
-// Mixitube
-    jQuery('#mixcontent').mixItUp({
-        animation: {
-            animateResizeContainer: false,
-            effects: 'fade rotateX(-45deg) translateY(-10%)'
-        }
-    });
-
-// MagnificPopup
-    jQuery('.gallery-img').magnificPopup({
-        type: 'image',
-        gallery: {
-            enabled: true
-        },
-    });
-
-// Home slider
-    jQuery('.slider').slider({full_width: true});
-
-// client slider
-    jQuery('.carousel').carousel();
-
-// accordion
-
-    var acc = document.getElementsByClassName("accordion");
-    var i;
-
-    for (i = 0; i < acc.length; i++) {
-        acc[i].onclick = function () {
-            this.classList.toggle("active");
-            this.nextElementSibling.classList.toggle("show");
-        }
-    }
     
-// nav menu small menu
-    jQuery(document).on("scroll", function () {
-        if ($(document).scrollTop() > 120) {
-            $("nav").addClass("small");
+    
+    // Back to top button
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            $('.back-to-top').fadeIn('slow');
         } else {
-            $("nav").removeClass("small");
+            $('.back-to-top').fadeOut('slow');
+        }
+    });
+    $('.back-to-top').click(function () {
+        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        return false;
+    });
+
+
+    // Testimonials carousel
+    $(".testimonial-carousel").owlCarousel({
+        autoplay: true,
+        smartSpeed: 1500,
+        dots: true,
+        loop: true,
+        center: true,
+        responsive: {
+            0:{
+                items:1
+            },
+            576:{
+                items:1
+            },
+            768:{
+                items:2
+            },
+            992:{
+                items:3
+            }
         }
     });
 
 
-});
-
-
-
-
-
-
-
+    // Vendor carousel
+    $('.vendor-carousel').owlCarousel({
+        loop: true,
+        margin: 45,
+        dots: false,
+        loop: true,
+        autoplay: true,
+        smartSpeed: 1000,
+        responsive: {
+            0:{
+                items:2
+            },
+            576:{
+                items:4
+            },
+            768:{
+                items:6
+            },
+            992:{
+                items:8
+            }
+        }
+    });
+    
+})(jQuery);
 
