@@ -7,7 +7,7 @@
                         <div class="col-lg-3 col-md-2">
                             <!-- Logo -->
                             <div class="logoo">
-                                <a href="index.html" ><img src="{{asset('img/logo/logojob.png')}}" alt=""></a>
+                                <a href="index.html" ><img src="{{asset('assets/img/logo/logojob.png')}}" alt=""></a>
                             </div>  
                         </div>
                         <div class="col-lg-9 col-md-9">
@@ -17,8 +17,8 @@
                                     <nav class="d-none d-lg-block">
                                         <ul id="navigation">
                                             <li><a href="#">Accueil</a></li>
-                                            <li><a href="">Trouver une offre </a></li>
-                                            <li><a href="">Espace Freelancer</a></li>
+                                            <li><a href="{{route('offre')}}">Trouver une offre </a></li>
+                                            <li><a href="{{route('freelancer')}}">Espace Freelancer</a></li>
                                             <li><a href="">A propos</a></li>
                                            
                                             <li class="align-middle">                                    

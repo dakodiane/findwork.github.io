@@ -8,7 +8,7 @@
 <div class="slider-area ">
     <!-- Mobile Menu -->
     <div class="slider-active">
-        <div class="single-slider slider-height d-flex align-items-center" data-background="{{asset('img/team/work.jpeg')}}">
+        <div class="single-slider slider-height d-flex align-items-center" data-background="{{asset('assets/img/team/work.jpeg')}}">
             <div class="container">
                 
                 <!-- Search Box -->
@@ -66,7 +66,7 @@
                 <div class="single-job-items mb-30">
                     <div class="job-items">
                         <div class="company-img">
-                            <a href="job_details.html"><img src="{{asset('img/icon/job-list1.png')}}" alt=""></a>
+                            <a href="job_details.html"><img src="{{asset('assets/img/icon/job-list1.png')}}" alt=""></a>
                         </div>
                         <div class="job-tittle">
                             <a href="job_details.html"><h4>Developpeur Mobile</h4></a>
@@ -86,7 +86,7 @@
                 <div class="single-job-items mb-30">
                     <div class="job-items">
                         <div class="company-img">
-                            <a href="job_details.html"><img src="{{asset('img/icon/job-list2.png')}}" alt=""></a>
+                            <a href="job_details.html"><img src="{{asset('assets/img/icon/job-list2.png')}}" alt=""></a>
                         </div>
                         <div class="job-tittle">
                             <a href="job_details.html"><h4>Comptable principal</h4></a>
@@ -105,7 +105,7 @@
                 <div class="single-job-items mb-30">
                     <div class="job-items">
                         <div class="company-img">
-                            <a href="job_details.html"><img src="{{asset('img/icon/job-list3.png')}}" alt=""></a>
+                            <a href="job_details.html"><img src="{{asset('assets/img/icon/job-list3.png')}}" alt=""></a>
                         </div>
                         <div class="job-tittle">
                             <a href="job_details.html"><h4>Ouvrier en mécanique industrielle</h4></a>
@@ -124,7 +124,7 @@
                 <div class="single-job-items mb-30">
                     <div class="job-items">
                         <div class="company-img">
-                            <a href="job_details.html"><img src="{{asset('img/icon/job-list4.png')}}" alt=""></a>
+                            <a href="job_details.html"><img src="{{asset('assets/img/icon/job-list4.png')}}" alt=""></a>
                         </div>
                         <div class="job-tittle">
                             <a href="job_details.html"><h4>Secretaire </h4></a>
@@ -143,7 +143,7 @@
                  <div class="single-job-items mb-30">
                     <div class="job-items">
                         <div class="company-img">
-                            <a href="job_details.html"><img src="{{asset('img/icon/job-list1.png')}}" alt=""></a>
+                            <a href="job_details.html"><img src="{{asset('assets/img/icon/job-list1.png')}}" alt=""></a>
                         </div>
                         <div class="job-tittle">
                             <a href="job_details.html"><h4>Developpeur Mobile</h4></a>
@@ -162,7 +162,7 @@
                 <div class="single-job-items mb-30">
                     <div class="job-items">
                         <div class="company-img">
-                            <a href="job_details.html"><img src="{{asset('img/icon/job-list2.png')}}" alt=""></a>
+                            <a href="job_details.html"><img src="{{asset('assets/img/icon/job-list2.png')}}" alt=""></a>
                         </div>
                         <div class="job-tittle">
                             <a href="job_details.html"><h4>Comptable principal</h4></a>
@@ -212,7 +212,7 @@
             <div class="col-md-4">
                 <div class="team text-center">
                    
-                    <img src="{{asset('img/free/team3.png')}}" alt="Team Image" class="avatar">
+                    <img src="{{asset('assets/img/free/team3.jpg')}}" alt="Team Image" class="avatar">
                     <div class="title">
                         
                         <h4 >Developpeur Frontend</h4>
@@ -227,7 +227,7 @@
             <div class="col-md-4">
                 <div class="team text-center">
                     
-                    <img src="{{asset('img/free/team1.png')}}" alt="Team Image" class="avatar">
+                    <img src="{{asset('assets/img/free/team1.jpg')}}" alt="Team Image" class="avatar">
                     <div class="title">
                         
                         <h4 >Graphiste</h4>
@@ -239,7 +239,7 @@
             </div>
             <div class="col-md-4">
                 <div class="team text-center">
-                    <img src="{{asset('img/free/team2.png')}}" alt="Team Image" class="avatar">
+                    <img src="{{asset('assets/img/free/team2.jpg')}}" alt="Team Image" class="avatar">
                     <div class="title">
                       
                         <h4  class="muted regular" >Redacteur Web</h4>
@@ -254,7 +254,7 @@
             <div class="col-md-4">
                 <div class="team text-center">
                    
-                    <img src="{{asset('img/free/team3.png')}}" alt="Team Image" class="avatar">
+                    <img src="{{asset('assets/img/free/team3.jpg')}}" alt="Team Image" class="avatar">
                     <div class="title">
                         
                         <h4 >Developpeur Frontend</h4>
@@ -269,7 +269,7 @@
             <div class="col-md-4">
                 <div class="team text-center">
                     
-                    <img src="{{asset('img/free/team1.png')}}" alt="Team Image" class="avatar">
+                    <img src="{{asset('assets/img/free/team1.jpg')}}" alt="Team Image" class="avatar">
                     <div class="title">
                         
                         <h4 >Graphiste</h4>
@@ -281,7 +281,7 @@
             </div>
             <div class="col-md-4">
                 <div class="team text-center">
-                    <img src="{{asset('img/free/team2.png')}}" alt="Team Image" class="avatar">
+                    <img src="{{asset('assets/img/free/team2.jpg')}}" alt="Team Image" class="avatar">
                     <div class="title">
                       
                         <h4  class="muted regular" >Redacteur Web</h4>
@@ -300,7 +300,7 @@
 <div class="row">
         <div class="col-lg-12">
             <div class="browse-btn2 text-center mb-5">
-                <a href="freelancer.html" class="border-btn2">Voir +</a>
+                <a href="{{route('freelancer')}}" class="border-btn2">Voir +</a>
             </div>
         </div>
     </div>

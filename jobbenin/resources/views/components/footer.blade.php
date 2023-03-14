@@ -10,7 +10,7 @@
                             <!-- logo -->
                             <div class="footer-logo mb-20 logoo">
                             <a href="index.html">
-                                <img src="{{asset('img/logo/logojob.png')}}" alt="">
+                                <img src="{{asset('assets/img/logo/logojob.png')}}" alt="">
                             </a>
                             </div>
                         </div>
@@ -61,7 +61,7 @@
                                          onblur="this.placeholder = ' Email Address '">
                                          <div class="form-icon">
                                              <button type="submit" name="submit" id="newsletter-submit"
-                                             class="email_icon newsletter-submit button-contactForm"><img src="{{asset('img/icon/form.png')}}" alt=""></button>
+                                             class="email_icon newsletter-submit button-contactForm"><img src="{{asset('assets/img/icon/form.png')}}" alt=""></button>
                                          </div>
                                          <div class="mt-10 info"></div>
                                      </form>

@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Offre;
+use App\Models\Freelancer;
+use App\Models\DashboardRecruteur;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +20,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('offre', function () {
+    $offre=offre::all();
+    return view('offre')->with(["offre"=>$offre]);
+})->name("offre");
+
+Route::get('freelancer', function () {
+    $freelancer=freelancer::all();
+    return view('freelancer')->with(["freelancer"=>$freelancer]);
+})->name("freelancer");
+
+
