@@ -95,10 +95,10 @@
                 <div class="single-job-items mb-30">
                     <div class="job-items">
                         <div class="company-img">
-                            <a href="job_details.html"><img src="{{asset('assets/img/icon/job-list1.png')}}" alt=""></a>
+                            <a href="{{('detail_offre')}}"><img src="{{asset('assets/img/icon/job-list1.png')}}" alt=""></a>
                         </div>
                         <div class="job-tittle">
-                            <a href="job_details.html"><h4>Developpeur Mobile</h4></a>
+                            <a href="{{('detail_offre')}}"><h4>Developpeur Mobile</h4></a>
                             <ul>
                                 <li>Creative Agency</li>
                                 <li><i class="fas fa-map-marker-alt"></i>Porto-Novo</li>
@@ -107,7 +107,7 @@
                         </div>
                     </div>
                     <div class="items-link f-right">
-                        <a href="job_details.html">Voir l'offre</a>
+                        <a href="{{('detail_offre')}}">Voir l'offre</a>
                         <span>Il y'a 7heures</span>
                     </div>
                 </div>
@@ -115,10 +115,10 @@
                 <div class="single-job-items mb-30">
                     <div class="job-items">
                         <div class="company-img">
-                            <a href="job_details.html"><img src="{{asset('assets/img/icon/job-list2.png')}}" alt=""></a>
+                            <a href="{{('detail_offre')}}"><img src="{{asset('assets/img/icon/job-list2.png')}}" alt=""></a>
                         </div>
                         <div class="job-tittle">
-                            <a href="job_details.html"><h4>Comptable principal</h4></a>
+                            <a href="{{('detail_offre')}}"><h4>Comptable principal</h4></a>
                             <ul>
                                 <li>Creative Agency</li>
                                 <li><i class="fas fa-map-marker-alt"></i>Cotonou</li>
@@ -126,7 +126,7 @@
                         </div>
                     </div>
                     <div class="items-link f-right">
-                        <a href="job_details.html">Voir l'offre</a>
+                        <a href="{{('detail_offre')}}">Voir l'offre</a>
                         <span>Il y'a 1 jour</span>
                     </div>
                 </div>
@@ -134,10 +134,10 @@
                 <div class="single-job-items mb-30">
                     <div class="job-items">
                         <div class="company-img">
-                            <a href="job_details.html"><img src="{{asset('assets/img/icon/job-list3.png')}}" alt=""></a>
+                            <a href="{{('detail_offre')}}"><img src="{{asset('assets/img/icon/job-list3.png')}}" alt=""></a>
                         </div>
                         <div class="job-tittle">
-                            <a href="job_details.html"><h4>Ouvrier en mécanique industrielle</h4></a>
+                            <a href="{{('detail_offre')}}"><h4>Ouvrier en mécanique industrielle</h4></a>
                             <ul>
                                 <li>Creative Agency</li>
                                 <li><i class="fas fa-map-marker-alt"></i>Abomey-Calavi</li>
@@ -145,7 +145,7 @@
                         </div>
                     </div>
                     <div class="items-link f-right">
-                        <a href="job_details.html">Voir l'offfre</a>
+                        <a href="{{('detail_offre')}}">Voir l'offfre</a>
                         <span>23 Fev 2023</span>
                     </div>
                 </div>
@@ -153,10 +153,10 @@
                 <div class="single-job-items mb-30">
                     <div class="job-items">
                         <div class="company-img">
-                            <a href="job_details.html"><img src="{{asset('assets/img/icon/job-list4.png')}}" alt=""></a>
+                            <a href="{{('detail_offre')}}"><img src="{{asset('assets/img/icon/job-list4.png')}}" alt=""></a>
                         </div>
                         <div class="job-tittle">
-                            <a href="job_details.html"><h4>Secretaire </h4></a>
+                            <a href="{{('detail_offre')}}"><h4>Secretaire </h4></a>
                             <ul>
                                 <li>Creative Agency</li>
                                 <li><i class="fas fa-map-marker-alt"></i>Parakou</li>
@@ -164,7 +164,7 @@
                         </div>
                     </div>
                     <div class="items-link f-right">
-                        <a href="job_details.html">Voir l'offre</a>
+                        <a href="{{('detail_offre')}}">Voir l'offre</a>
                         <span>31 Jan 2023</span>
                     </div>
                 </div>
@@ -172,10 +172,10 @@
                  <div class="single-job-items mb-30">
                     <div class="job-items">
                         <div class="company-img">
-                            <a href="job_details.html"><img src="{{asset('assets/img/icon/job-list1.png')}}" alt=""></a>
+                            <a href="{{('detail_offre')}}"><img src="{{asset('assets/img/icon/job-list1.png')}}" alt=""></a>
                         </div>
                         <div class="job-tittle">
-                            <a href="job_details.html"><h4>Developpeur Mobile</h4></a>
+                            <a href="{{('detail_offre')}}"><h4>Developpeur Mobile</h4></a>
                             <ul>
                                 <li>Creative Agency</li>
                                 <li><i class="fas fa-map-marker-alt"></i>Porto-Novo</li>
@@ -184,17 +184,17 @@
                         </div>
                     </div>
                     <div class="items-link f-right">
-                        <a href="job_details.html">Voir l'offre</a>
+                        <a href="{{('detail_offre')}}">Voir l'offre</a>
                         <span> 23 Dec 2022</span>
                     </div>
                 </div>
                 <div class="single-job-items mb-30">
                     <div class="job-items">
                         <div class="company-img">
-                            <a href="job_details.html"><img src="{{asset('assets/img/icon/job-list2.png')}}" alt=""></a>
+                            <a href="{{('detail_offre')}}"><img src="{{asset('assets/img/icon/job-list2.png')}}" alt=""></a>
                         </div>
                         <div class="job-tittle">
-                            <a href="job_details.html"><h4>Comptable principal</h4></a>
+                            <a href="{{('detail_offre')}}"><h4>Comptable principal</h4></a>
                             <ul>
                                 <li>Creative Agency</li>
                                 <li><i class="fas fa-map-marker-alt"></i>Cotonou</li>
@@ -202,7 +202,7 @@
                         </div>
                     </div>
                     <div class="items-link f-right">
-                        <a href="job_details.html">Voir l'offre</a>
+                        <a href="{{('detail_offre')}}">Voir l'offre</a>
                         <span>15 Dec 2022</span>
                     </div>
                 </div>
@@ -210,10 +210,10 @@
                    <div class="single-job-items mb-30">
                     <div class="job-items">
                         <div class="company-img">
-                        <a href="job_details.html"><img src="{{asset('assets/img/icon/job-list1.png')}}" alt=""></a>
+                        <a href="{{('detail_offre')}}"><img src="{{asset('assets/img/icon/job-list1.png')}}" alt=""></a>
                         </div>
                         <div class="job-tittle">
-                            <a href="job_details.html"><h4>Developpeur Mobile</h4></a>
+                            <a href="{{('detail_offre')}}"><h4>Developpeur Mobile</h4></a>
                             <ul>
                                 <li>Creative Agency</li>
                                 <li><i class="fas fa-map-marker-alt"></i>Porto-Novo</li>
@@ -222,7 +222,7 @@
                         </div>
                     </div>
                     <div class="items-link f-right">
-                        <a href="job_details.html">Voir l'offre</a>
+                        <a href="{{('detail_offre')}}">Voir l'offre</a>
                         <span>Il y'a 7heures</span>
                     </div>
                 </div>
@@ -230,10 +230,10 @@
                 <div class="single-job-items mb-30">
                     <div class="job-items">
                         <div class="company-img">
-                            <a href="job_details.html"><img src="{{asset('assets/img/icon/job-list2.png')}}" alt=""></a>
+                            <a href="{{('detail_offre')}}"><img src="{{asset('assets/img/icon/job-list2.png')}}" alt=""></a>
                         </div>
                         <div class="job-tittle">
-                            <a href="job_details.html"><h4>Comptable principal</h4></a>
+                            <a href="{{('detail_offre')}}"><h4>Comptable principal</h4></a>
                             <ul>
                                 <li>Creative Agency</li>
                                 <li><i class="fas fa-map-marker-alt"></i>Cotonou</li>
@@ -241,7 +241,7 @@
                         </div>
                     </div>
                     <div class="items-link f-right">
-                        <a href="job_details.html">Voir l'offre</a>
+                        <a href="{{('detail_offre')}}">Voir l'offre</a>
                         <span>Il y'a 1 jour</span>
                     </div>
                 </div>
@@ -249,10 +249,10 @@
                 <div class="single-job-items mb-30">
                     <div class="job-items">
                         <div class="company-img">
-                            <a href="job_details.html"><img src="{{asset('assets/img/icon/job-list3.png')}}" alt=""></a>
+                            <a href="{{('detail_offre')}}"><img src="{{asset('assets/img/icon/job-list3.png')}}" alt=""></a>
                         </div>
                         <div class="job-tittle">
-                            <a href="job_details.html"><h4>Ouvrier en mécanique industrielle</h4></a>
+                            <a href="{{('detail_offre')}}"><h4>Ouvrier en mécanique industrielle</h4></a>
                             <ul>
                                 <li>Creative Agency</li>
                                 <li><i class="fas fa-map-marker-alt"></i>Abomey-Calavi</li>
@@ -260,7 +260,7 @@
                         </div>
                     </div>
                     <div class="items-link f-right">
-                        <a href="job_details.html">Voir l'offfre</a>
+                        <a href="{{('detail_offre')}}">Voir l'offfre</a>
                         <span>23 Fev 2023</span>
                     </div>
                 </div>
@@ -268,10 +268,10 @@
                 <div class="single-job-items mb-30">
                     <div class="job-items">
                         <div class="company-img">
-                            <a href="job_details.html"><img src="{{asset('assets/img/icon/job-list4.png')}}" alt=""></a>
+                            <a href="{{('detail_offre')}}"><img src="{{asset('assets/img/icon/job-list4.png')}}" alt=""></a>
                         </div>
                         <div class="job-tittle">
-                            <a href="job_details.html"><h4>Secretaire </h4></a>
+                            <a href="{{('detail_offre')}}"><h4>Secretaire </h4></a>
                             <ul>
                                 <li>Creative Agency</li>
                                 <li><i class="fas fa-map-marker-alt"></i>Parakou</li>
@@ -279,7 +279,7 @@
                         </div>
                     </div>
                     <div class="items-link f-right">
-                        <a href="job_details.html">Voir l'offre</a>
+                        <a href="{{('detail_offre')}}">Voir l'offre</a>
                         <span>31 Jan 2023</span>
                     </div>
                 </div>

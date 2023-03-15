@@ -66,10 +66,10 @@
                 <div class="single-job-items mb-30">
                     <div class="job-items">
                         <div class="company-img">
-                            <a href="job_details.html"><img src="{{asset('assets/img/icon/job-list1.png')}}" alt=""></a>
+                            <a href="{{('detail_offre')}}"><img src="{{asset('assets/img/icon/job-list1.png')}}" alt=""></a>
                         </div>
                         <div class="job-tittle">
-                            <a href="job_details.html"><h4>Developpeur Mobile</h4></a>
+                            <a href="{{('detail_offre')}}"><h4>Developpeur Mobile</h4></a>
                             <ul>
                                 <li>Creative Agency</li>
                                 <li><i class="fas fa-map-marker-alt"></i>Porto-Novo</li>
@@ -78,7 +78,7 @@
                         </div>
                     </div>
                     <div class="items-link f-right">
-                        <a href="job_details.html">Voir l'offre</a>
+                        <a href="{{('detail_offre')}}">Voir l'offre</a>
                         <span>Il y'a 7heures</span>
                     </div>
                 </div>
@@ -86,10 +86,10 @@
                 <div class="single-job-items mb-30">
                     <div class="job-items">
                         <div class="company-img">
-                            <a href="job_details.html"><img src="{{asset('assets/img/icon/job-list2.png')}}" alt=""></a>
+                            <a href="{{('detail_offre')}}"><img src="{{asset('assets/img/icon/job-list2.png')}}" alt=""></a>
                         </div>
                         <div class="job-tittle">
-                            <a href="job_details.html"><h4>Comptable principal</h4></a>
+                            <a href="{{('detail_offre')}}"><h4>Comptable principal</h4></a>
                             <ul>
                                 <li>Creative Agency</li>
                                 <li><i class="fas fa-map-marker-alt"></i>Cotonou</li>
@@ -97,7 +97,7 @@
                         </div>
                     </div>
                     <div class="items-link f-right">
-                        <a href="job_details.html">Voir l'offre</a>
+                        <a href="{{('detail_offre')}}">Voir l'offre</a>
                         <span>Il y'a 1 jour</span>
                     </div>
                 </div>
@@ -105,10 +105,10 @@
                 <div class="single-job-items mb-30">
                     <div class="job-items">
                         <div class="company-img">
-                            <a href="job_details.html"><img src="{{asset('assets/img/icon/job-list3.png')}}" alt=""></a>
+                            <a href="{{('detail_offre')}}"><img src="{{asset('assets/img/icon/job-list3.png')}}" alt=""></a>
                         </div>
                         <div class="job-tittle">
-                            <a href="job_details.html"><h4>Ouvrier en mécanique industrielle</h4></a>
+                            <a href="{{('detail_offre')}}"><h4>Ouvrier en mécanique industrielle</h4></a>
                             <ul>
                                 <li>Creative Agency</li>
                                 <li><i class="fas fa-map-marker-alt"></i>Abomey-Calavi</li>
@@ -116,7 +116,7 @@
                         </div>
                     </div>
                     <div class="items-link f-right">
-                        <a href="job_details.html">Voir l'offfre</a>
+                        <a href="{{('detail_offre')}}">Voir l'offfre</a>
                         <span>23 Fev 2023</span>
                     </div>
                 </div>
@@ -124,10 +124,10 @@
                 <div class="single-job-items mb-30">
                     <div class="job-items">
                         <div class="company-img">
-                            <a href="job_details.html"><img src="{{asset('assets/img/icon/job-list4.png')}}" alt=""></a>
+                            <a href="{{('detail_offre')}}"><img src="{{asset('assets/img/icon/job-list4.png')}}" alt=""></a>
                         </div>
                         <div class="job-tittle">
-                            <a href="job_details.html"><h4>Secretaire </h4></a>
+                            <a href="{{('detail_offre')}}"><h4>Secretaire </h4></a>
                             <ul>
                                 <li>Creative Agency</li>
                                 <li><i class="fas fa-map-marker-alt"></i>Parakou</li>
@@ -135,7 +135,7 @@
                         </div>
                     </div>
                     <div class="items-link f-right">
-                        <a href="job_details.html">Voir l'offre</a>
+                        <a href="{{('detail_offre')}}">Voir l'offre</a>
                         <span>31 Jan 2023</span>
                     </div>
                 </div>
@@ -143,10 +143,10 @@
                  <div class="single-job-items mb-30">
                     <div class="job-items">
                         <div class="company-img">
-                            <a href="job_details.html"><img src="{{asset('assets/img/icon/job-list1.png')}}" alt=""></a>
+                            <a href="{{('detail_offre')}}"><img src="{{asset('assets/img/icon/job-list1.png')}}" alt=""></a>
                         </div>
                         <div class="job-tittle">
-                            <a href="job_details.html"><h4>Developpeur Mobile</h4></a>
+                            <a href="{{('detail_offre')}}"><h4>Developpeur Mobile</h4></a>
                             <ul>
                                 <li>Creative Agency</li>
                                 <li><i class="fas fa-map-marker-alt"></i>Porto-Novo</li>
@@ -155,17 +155,17 @@
                         </div>
                     </div>
                     <div class="items-link f-right">
-                        <a href="job_details.html">Voir l'offre</a>
+                        <a href="{{('detail_offre')}}">Voir l'offre</a>
                         <span> 23 Dec 2022</span>
                     </div>
                 </div>
                 <div class="single-job-items mb-30">
                     <div class="job-items">
                         <div class="company-img">
-                            <a href="job_details.html"><img src="{{asset('assets/img/icon/job-list2.png')}}" alt=""></a>
+                            <a href="{{('detail_offre')}}"><img src="{{asset('assets/img/icon/job-list2.png')}}" alt=""></a>
                         </div>
                         <div class="job-tittle">
-                            <a href="job_details.html"><h4>Comptable principal</h4></a>
+                            <a href="{{('detail_offre')}}"><h4>Comptable principal</h4></a>
                             <ul>
                                 <li>Creative Agency</li>
                                 <li><i class="fas fa-map-marker-alt"></i>Cotonou</li>
@@ -173,7 +173,7 @@
                         </div>
                     </div>
                     <div class="items-link f-right">
-                        <a href="job_details.html">Voir l'offre</a>
+                        <a href="{{('detail_offre')}}">Voir l'offre</a>
                         <span>15 Dec 2022</span>
                     </div>
                 </div>
@@ -188,7 +188,7 @@
         <div class="row esp2">
             <div class="col-lg-12">
                 <div class=" text-center mb-5">
-                    <a href="offre.html" class="border-btn2">Voir +</a>
+                    <a href="{{('offre')}}" class="border-btn2">Voir +</a>
                 </div>
             </div>
         </div>
@@ -219,7 +219,7 @@
                         <h5 class="muted regular">Ben Adamson</h5>
                        
                     </div>
-                    <a href="detail_free.html">
+                    <a href="{{('detail_offre')}}">
                     <button data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill">Details</button>
                 </a>
                 </div>
@@ -234,7 +234,7 @@
                         <h5 class="muted regular" >Eva Williams</h5>
                        
                     </div>
-                    <a href="detail_free.html" data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill ripple">Details</a>
+                    <a href="{{('detail_offre')}}" data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill ripple">Details</a>
                 </div>
             </div>
             <div class="col-md-4">
@@ -246,7 +246,7 @@
                         <h5>John Phillips</h5>
                      
                     </div>
-                    <a href="detail_free.html" data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill ripple">Details</a>
+                    <a href="{{('detail_offre')}}" data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill ripple">Details</a>
                 </div>
             </div>
         </div>
@@ -261,7 +261,7 @@
                         <h5 class="muted regular">Ben Adamson</h5>
                       
                     </div>
-                    <a href="detail_free.html">
+                    <a href="{{('detail_offre')}}">
                     <button data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill">Details</button>
                 </a>
                </div>
@@ -276,7 +276,7 @@
                         <h5 class="muted regular" >Eva Williams</h5>
                       
                     </div>
-                    <a href="detail_free.html" data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill ripple">Details</a>
+                    <a href="{{('detail_offre')}}" data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill ripple">Details</a>
                 </div>
             </div>
             <div class="col-md-4">
@@ -288,7 +288,7 @@
                         <h5>John Phillips</h5>
                        
                     </div>
-                    <a href="detail_free.html" data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill ripple">Details</a>
+                    <a href="{{('detail_offre')}}" data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill ripple">Details</a>
                 </div>
             </div>
         </div>
