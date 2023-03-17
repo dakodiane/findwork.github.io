@@ -8,8 +8,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="manifest" href="site.webmanifest">
         <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/img/favicon.ico')}}">
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        <link rel="stylesheet" href="{{asset('')}}">
         <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/caro.css')}}">
@@ -127,5 +125,6 @@
   <script src="{{asset('assets/js/jquery.cookie.js')}}" type="text/javascript"></script>
   <script src="{{asset('assets/js/dashboard.js')}}"></script>
   <script src="{{asset('assets/js/Chart.roundedBarCharts.js')}}"></script>
+  
 </body>
 </html>

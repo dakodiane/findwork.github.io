@@ -2,13 +2,13 @@
 
 @section('document')
 
-<main>
 
+<main>
 <!-- slider Area Start-->
-<div class="slider-area ">
+<div class="slider-area " >
     <!-- Mobile Menu -->
-    <div class="slider-active">
-        <div class="single-slider slider-height d-flex align-items-center" data-background="{{asset('assets/img/team/work.jpeg')}}">
+    <div class="slider-active" data-background="{{asset('assets/img/team/work.jpeg')}}">
+        <div class="single-slider slider-height d-flex align-items-center"  >
             <div class="container">
                 
                 <!-- Search Box -->
@@ -207,7 +207,7 @@
                 </div>
             </div>
         </div>
-        <div class=" justify-content-center">
+   <div class=" justify-content-center">
         <div class="row">
             <div class="col-md-4">
                 <div class="team text-center">
@@ -293,7 +293,7 @@
             </div>
         </div>
     </div>
-    </div>
+ </div>
      <!-- Section Button -->
     
 </section>
@@ -303,7 +303,7 @@
                 <a href="{{route('freelancer')}}" class="border-btn2">Voir +</a>
             </div>
         </div>
-    </div>
+</div>
 
 
 
