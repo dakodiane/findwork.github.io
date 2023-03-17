@@ -1,6 +1,7 @@
 @extends('templates.app')
 
 @section('document')
+
 <main>
 
 <!-- Hero Area Start-->
@@ -236,5 +237,4 @@
 <!--Pagination End  -->
 
 </main>
-
 @endsection

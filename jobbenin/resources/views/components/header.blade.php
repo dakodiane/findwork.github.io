@@ -26,19 +26,20 @@
                                 <div class="main-menu">
                                     <nav class="d-none d-lg-block">
                                         <ul id="navigation">
-                                            <li><a href="#">Accueil</a></li>
-                                            <li><a href="{{route('offre')}}">Trouver une offre </a></li>
-                                            <li><a href="{{route('freelancer')}}">Espace Freelancer</a></li>
-                                            <li><a href="">A propos</a></li>
+                                            <li><a href="#" class="menu-link">Accueil</a></li>
+                                            <li><a href="{{route('offre')}}" class="menu-link">Trouver Une Offre </a></li>
+                                           
+                                            <li><a href="{{route('freelancer')}}" class="menu-link">Espace Freelancer</a></li>
+                   <li><a href=" {{route('apropos')}}"class="menu-link">A Propos</a></li>
                                            
                                             <li class="align-middle">                                    
-                                                <a href="" class="btn head-btn2 ">Se Connecter</a>
+                                                <a href="{{route('connexion')}}" class="btn head-btn2 ">Se Connecter</a>
                                             </li>
-                                            <li class="align-middle"><a href="#" class=" btn head-btn1">S'inscrire</a>
-                                                <ul class="submenu ">
-                                                    <li><a href="">Postulant</a></li>
-                                                    <li><a href="">Recruteur</a></li>
-                                                    <li><a href="">Freelancer</a></li>
+                                            <li class="align-middle"><a href="#" class=" btn head-btn1">S'Inscrire</a>
+                                                <ul class="submenu">
+                                                    <li><a href="{{route('inscriptionpost')}}" class="menu-link">Postulant</a></li>
+                                                    <li><a href="{{route('inscriptionrec')}}"class="menu-link">Recruteur</a></li>
+                                                    <li><a href="{{route('inscriptionfree')}}" class="menu-link">Freelancer</a></li>
                                               </ul>
                                             </li>
 
