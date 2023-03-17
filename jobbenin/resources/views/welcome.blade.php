@@ -7,8 +7,8 @@
 <!-- slider Area Start-->
 <div class="slider-area " >
     <!-- Mobile Menu -->
-    <div class="slider-active" data-background="{{asset('assets/img/team/work.jpeg')}}">
-        <div class="single-slider slider-height d-flex align-items-center"  >
+    <div class="slider-active" >
+        <div class="single-slider slider-height d-flex align-items-center" data-background="{{asset('assets/img/team/work.jpeg')}}" >
             <div class="container">
                 
                 <!-- Search Box -->

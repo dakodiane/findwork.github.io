@@ -1,4 +1,4 @@
-<body>
+<header>
 <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
             <div class="preloader-inner position-relative">
@@ -32,9 +32,9 @@
                                             <li><a href="">A propos</a></li>
                                            
                                             <li class="align-middle">                                    
-                                                <a href="" class="btn head-btn2 ">Se Connecter</a>
+                                                <a href="" class="boxed-btn1 head-btn2 ">Se Connecter</a>
                                             </li>
-                                            <li class="align-middle"><a href="#" class=" btn head-btn1">S'inscrire</a>
+                                            <li class="align-middle"><a href="#" class=" boxed-btn2 head-btn1">S'inscrire</a>
                                                 <ul class="submenu ">
                                                     <li><a href="">Postulant</a></li>
                                                     <li><a href="">Recruteur</a></li>
@@ -58,4 +58,4 @@
            </div>
        </div>
         <!-- Header End -->
-</body>
+</header>
