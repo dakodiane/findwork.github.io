@@ -26,7 +26,7 @@
                                 <div class="main-menu">
                                     <nav class="d-none d-lg-block">
                                         <ul id="navigation">
-                                            <li><a href="#">Accueil</a></li>
+                                            <li><a href="/">Accueil</a></li>
                                             <li><a href="{{route('offre')}}">Trouver une offre </a></li>
                                             <li><a href="{{route('freelancer')}}">Espace Freelancer</a></li>
                                             <li><a href="">A propos</a></li>

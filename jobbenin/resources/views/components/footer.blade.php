@@ -9,7 +9,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
                             <!-- logo -->
                             <div class="footer-logo mb-20 logoo">
-                            <a href="index.html">
+                            <a href="/">
                                 <img src="{{asset('assets/img/logo/logojob.png')}}" alt="">
                             </a>
                             </div>
@@ -36,9 +36,9 @@
                             <div class="footer-tittle">
                                 <h4>Liens importants</h4>
                                 <ul>
-                                    <li><a href="index.html">Accueil</a></li>
-                                    <li><a href="offre.html">Trouver une offre</a></li>
-                                    <li><a href="freelancer.html">Freelancers</a></li>
+                                    <li><a href="/" class="soulign">Accueil</a></li>
+                                    <li><a href="{{route('offre')}}" class="soulign">Trouver une offre</a></li>
+                                    <li><a href="{{route('freelancer')}}" class="soulign">Freelancers</a></li>
 
                                     
                                 </ul>
@@ -83,7 +83,7 @@
                          <div class="col-xl-10 col-lg-10 ">
                              <div class="footer-copy-right">
                                  <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved  <i class="fa fa-heart" aria-hidden="true"></i>  <a href="https://colorlib.com" target="_blank"></a>
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved  <i class="fa fa-heart" aria-hidden="true"></i>  
   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                              </div>
                          </div>
