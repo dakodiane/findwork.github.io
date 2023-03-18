@@ -84,7 +84,7 @@
                         <h5 class="muted regular">Ben Adamson</h5>
                        
                     </div>
-                    <a href="{{('detail_offre')}}">
+                    <a href="{{('detail_free')}}">
                     <button data-toggle="modal" data-target="#modal1" class=" btn-blue-fill">Details</button>
                 </a>
                 </div>
@@ -99,7 +99,7 @@
                         <h5 >Eva Williams</h5>
                        
                     </div>
-                    <a href="{{('detail_offre')}}">
+                    <a href="{{('detail_free')}}">
                     <button data-toggle="modal" data-target="#modal1" class=" btn-blue-fill">Details</button>
                 </a>
                 </div>
@@ -113,7 +113,7 @@
                         <h5>John Phillips</h5>
                      
                     </div>
-                    <a href="{{('detail_offre')}}">
+                    <a href="{{('detail_free')}}">
                     <button data-toggle="modal" data-target="#modal1" class=" btn-blue-fill">Details</button>
                 </a>                </div>
             </div>
@@ -129,7 +129,7 @@
                         <h5 class="muted regular">Ben Adamson</h5>
                       
                     </div>
-                    <a href="{{('detail_offre')}}">
+                    <a href="{{('detail_free')}}">
                     <button data-toggle="modal" data-target="#modal1" class=" btn-blue-fill">Details</button>
                 </a>
                </div>
@@ -144,7 +144,7 @@
                         <h5 class="muted regular" >Eva Williams</h5>
                       
                     </div>
-                    <a href="{{('detail_offre')}}">
+                    <a href="{{('detail_free')}}">
                     <button data-toggle="modal" data-target="#modal1" class=" btn-blue-fill">Details</button>
                 </a>                </div>
             </div>
@@ -157,7 +157,7 @@
                         <h5>John Phillips</h5>
                        
                     </div>
-                    <a href="{{('detail_offre')}}">
+                    <a href="{{('detail_free')}}">
                     <button data-toggle="modal" data-target="#modal1" class=" btn-blue-fill">Details</button>
                 </a>                </div>
             </div>

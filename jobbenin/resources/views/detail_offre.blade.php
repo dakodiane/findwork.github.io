@@ -31,7 +31,7 @@
                         </div>
                         <div class="job-tittle">
                             <a href="#">
-                                <h4>Developpeur Mobile</h4>
+                                <h4 style="text-decoration: none;">Developpeur Mobile</h4>
                             </a>
                             <ul>
                                 <li>Creative Agency</li>
@@ -93,7 +93,7 @@
                       <li>Date Limite : <span>12 Avril 2023</span></li>
                   </ul>
                  <div class="apply-btn2">
-                    <a href="postuler.html" class="btn">Postuler maintenant</a>
+                    <a href="{{('postuleroffre')}}" class="boxed-btn1" style="color: white;text-decoration:none;">Postuler maintenant</a>
                  </div>
                </div>
                 <div class="post-details4  mb-50">

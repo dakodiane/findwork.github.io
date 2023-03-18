@@ -62,9 +62,9 @@ Route::get('/entretien', function () {
 Route::get('/brouillon', function () {
     return view('brouillon');
 });
-Route::get('/detailoffre', function () {
+Route::get('/detail_offre', function () {
     return view('detail_offre');
 });
-Route::get('/detailfree', function () {
+Route::get('/detail_free', function () {
     return view('detail_free');
 });
