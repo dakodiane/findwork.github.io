@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job_Benin</title>
+    <title>Job_Bénin</title>
         <!--DAshboard  links -->
         <link rel="stylesheet" href="{{asset('assets/feather/feather.css')}}">
   <link rel="stylesheet" href="{{asset('assets/mdi/css/materialdes')}}ignicons.min.css">

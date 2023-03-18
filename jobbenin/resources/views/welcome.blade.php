@@ -66,7 +66,8 @@
                 <div class="single-job-items mb-30">
                     <div class="job-items">
                         <div class="company-img">
-                            <a href="{{('detail_offre')}}"><img src="{{asset('assets/img/icon/job-list1.png')}}" alt=""></a>
+                            <a href="{{('detail_offre')}}"><img 
+                            src="{{asset('assets/img/icon/job-list1.png')}}" alt=""></a>
                         </div>
                         <div class="job-tittle">
                             <a href="{{('detail_offre')}}"><h4>Developpeur Mobile</h4></a>
@@ -86,7 +87,8 @@
                 <div class="single-job-items mb-30">
                     <div class="job-items">
                         <div class="company-img">
-                            <a href="{{('detail_offre')}}"><img src="{{asset('assets/img/icon/job-list2.png')}}" alt=""></a>
+                            <a href="{{('detail_offre')}}">
+                                <img src="{{asset('assets/img/icon/job-list2.png')}}" alt=""></a>
                         </div>
                         <div class="job-tittle">
                             <a href="{{('detail_offre')}}"><h4>Comptable principal</h4></a>
