@@ -1,7 +1,10 @@
-@extends('templates.dashboard') @section('document')
+@extends('templates.dashboard')
+ @section('document')
 
 <main>
-	<div class="container-scroller">
+
+
+<div class="container-scroller">
 		<!-- partial:partials/_navbar.html -->
 		<nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
 			<div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
@@ -107,35 +110,91 @@
 				</ul>
 			</nav>
 			<!-- partial -->
-			<div class="main-panel">
-				<div class="container rounded bg-white mt-5 mb-5">
-					<div class="row">
-						<div class="col-md-12 border-right">
-							<div class="d-flex flex-column align-items-center" style="padding-top: 18px; ">
-								<h2 class="text-align"><u  style="color:#242b5e;text-align:center;padding-top:10px" >A Propos De Vous </u></h2>
-											
-							<img class="img-md rounded-circle"
-							 src="{{asset('assets/images/faces/face8.jpg')}}" alt="Profile image" />
+          
 								
-								<span class="font-weight-bold">AKP Djemi</span>
-								<span class="text-black-50">Djemidjemi@mail.com</span>
+						
+						
+								<form action="">
+                                <div class="container rounded bg-white mt-5 mb-5">
+			        <div>	<h2 style="color:#da2461;text-align:center;padding-top:10px"> Modifier Vos Informations</h2></div>
+            
+            
+
+						<div class="col-md-10 border-right">
+							<div class="row mt-6" style="">
+								
+								<div class="col-md-12">
+                                <input class="fname" type="text" name="name" placeholder="Nom" />
+                                <input class="fname" type="text" name="name" placeholder="Prénom" />
+                                 <input class="fname" type="text" name="name" placeholder="Email" /> <br>
+                                 <h4 class="text-align"><u>Compléter Vos Informations </u></h4> 
+									<label class="labels"> Sexe</label>
+									<select name="Sexe" id="" class="form-control">
+										<option value="F">Féminin</option>
+										<option value="M">Masculin</option>
+									</select>
+								</div>
+								<div class="col-md-12"><label class="labels">Date De Naissance</label><input type="text" class="form-control" placeholder="Entrer Votre Date de Naissance" value="" /></div>
+								<div class="col-md-12"><label class="labels">Téléphone</label><input type="text" class="form-control" placeholder="Entrer Votre Numéro" value="" /></div>
+								<div class="col-md-12"><label class="labels"> Ville</label><input type="text" class="form-control" placeholder="Entrer Votre Ville" value="" /></div>
+								<div class="col-md-12"><label class="labels">Adresse</label><input type="text" class="form-control" placeholder="enter adresse" value="" /></div>
+								<div class="col-md-12"><label class="labels">Diplomes</label><input type="text" class="form-control" placeholder="Entrer Vos Diplomes" value="" /></div>
+						
+							 </div>
+					
+                        
+                                 <h4 class="text-align"><u>Expériences </u></h4>
+									<input type="text" class="form-control" placeholder="Structure" /> <br />
+									<input type="text" class="form-control" placeholder=" Intitulé du Poste" /> <br />
+									<input type="text" class="form-control" placeholder=" Date Début" /> <br />
+									<input type="text" class="form-control" placeholder=" Date Fin" /> <br />
+									<textarea name="Description Des Taches " id="" cols="33" rows="10" placeholder="Description Des Taches"></textarea>
+								
+									<h4 class="text-align"><u>Compétences </u></h4>
+									<br />
+						
+								    <textarea name="Compétences " id="" cols="33" rows="10" placeholder="Compétences"></textarea>
+							
+						
+                                </form>
 							</div>
 
-
-											<div class="mt-5 text-center">
-               
-												<a href="{{('/modifierprofilpostulant')}}"> <button class="button1" data-modal="modal-mod">Modifier vos informations</button></a>	<p></p>
-
-												</div>
-									
-						</div>
+								
+            <button type="" href="">Enregistrer</button>
+          </form>
+        </div>
+      </div>
+    </div>
 
 
 
+    <script>
+      let modalBtns = [...document.querySelectorAll(".button1")];
+      modalBtns.forEach(function (btn) {
+        btn.onclick = function () {
+          let modal1 = btn.getAttribute("data-modal");
+          document.getElementById(modal1).style.display = "block";
+        };
+      });
+      let closeBtns = [...document.querySelectorAll(".close")];
+      closeBtns.forEach(function (btn) {
+        btn.onclick = function () {
+          let modal1 = btn.closest(".modal1");
+          modal1.style.display = "none";
+        };
+      });
+      window.onclick = function (event) {
+        if (event.target.className === "modal1") {
+          event.target.style.display = "none";
+        }
+      };
+    </script>
 
-
-			<!-- main-panel ends -->
-		</div>
+</div></div>
+					</div>
+				</div>
+			</div>
+            </div>
 	</div>
 
 	<!-- page-body-wrapper ends -->

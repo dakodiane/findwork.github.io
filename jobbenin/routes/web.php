@@ -38,13 +38,6 @@ Route::get('freelancer', function () {
     return view('freelancer')->with(["freelancer"=>$freelancer]);
 })->name("freelancer");
 
-Route::get('connexion',function(){
-   return view('connexion');
-})->name('connexion');
-
-
-
-
 Route::get('/annonce', function () {
     return view('annonce');
 });
@@ -112,3 +105,10 @@ Route::get('/profilpostulant', function () {
 Route::get('/profilfreelancer', function () {
   return view('profilfreelancer');
 });
+Route::get('/dashboardrecruteur',function (){
+  return view ('dashboardrecruteur');
+});
+Route::get('/modifierprofilpostulant',function (){
+  return view ('modifierprofilpostulant');
+});
+ 
