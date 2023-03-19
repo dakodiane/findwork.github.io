@@ -157,10 +157,10 @@
 
 							<div class="p-3 py-5">
 								<div class="d-flex justify-content-between align-items-center mb-3">
-									<h4 class="text-align"><u>Compétences </u></h4>
+									<h4 class="text-align"><u>Services Offerts </u></h4>
 									<br />
 								</div>
-								<textarea name="Compétences " id="" cols="33" rows="10" placeholder="Compétences"></textarea>
+								<textarea name="sercices " id="" cols="33" rows="10" placeholder="Services Offerts"></textarea>
 							</div>
 						</div>
 					</div>

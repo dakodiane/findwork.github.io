@@ -70,144 +70,103 @@
             <!-- Right content -->
             <div class="col-xl-9 col-lg-9 col-md-8">
                 <!-- Featured_job_start -->
-                <section class="featured-job-area">
-                    <div class="container">
-                      <!-- single-job-content -->
-                      <div class="row">
-                        <div class="col-md-4">
-                            <div class="team text-center">
-                            
-                                <img src="{{asset('assets/img/free/team3.jpg')}}" alt="Team Image" class="avatar">
-                                <div class="title">
-                                    
-                                    <h4 >Developpeur Frontend</h4>
-                                    <h5 class="muted regular">Ben Adamson</h5>
-                                   
-                                </div>
-                                <a href="detail_free.html">
-                                <button data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill">Details</button>
-                            </a>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="team text-center">
-                                
-                                <img src="{{asset('assets/img/free/team1.jpg')}}" alt="Team Image" class="avatar">
-                                <div class="title">
-                                    
-                                    <h4 >Graphiste</h4>
-                                    <h5 class="muted regular" >Eva Williams</h5>
-                                   
-                                </div>
-                                <a href="detail_free.html">
-                                <button data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill">Details</button>
-                            </a>                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="team text-center">
-                                <img src="{{asset('assets/img/free/team2.jpg')}}" alt="Team Image" class="avatar">
-                                <div class="title">
-                                  
-                                    <h4  class="muted regular" >Redacteur Web</h4>
-                                    <h5>John Phillips</h5>
-                                </div>
-                                <a href="detail_free.html">
-                                <button data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill">Details</button>
-                            </a>
-                                                    </div>
-                        </div>
+                <section  class="section gray-bg">
+    <div class="container">
+        
+   <div class=" justify-content-center">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="team text-center">
+                   
+                    <img src="{{asset('assets/img/free/team3.jpg')}}" alt="Team Image" class="avatar">
+                    <div class="title">
+                        
+                        <h2 >Developpeur Frontend</h2>
+                        <h5 class="muted regular">Ben Adamson</h5>
+                       
                     </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="team text-center">
-                               
-                                <img src="{{asset('assets/img/free/team3.jpg')}}" alt="Team Image" class="avatar">
-                                <div class="title">
-                                    
-                                    <h4 >Developpeur Frontend</h4>
-                                    <h5 class="muted regular">Ben Adamson</h5>
-                                   
-                                </div>
-                                <a href="detail_free.html">
-                                    <button data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill">Details</button>
-                                </a>
-                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="team text-center">
-                                
-                                <img src="{{asset('assets/img/free/team1.jpg')}}" alt="Team Image" class="avatar">
-                                <div class="title">
-                                    
-                                    <h4 >Graphiste</h4>
-                                    <h5 class="muted regular" >Eva Williams</h5>
-                                   
-                                </div>
-                                <a href="detail_free.html">
-                                <button data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill">Details</button>
-                            </a>                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="team text-center">
-                                <img src="{{asset('assets/img/free/team2.jpg')}}" alt="Team Image" class="avatar">
-                                <div class="title">
-                                  
-                                    <h4  class="muted regular" >Redacteur Web</h4>
-                                    <h5>John Phillips</h5>
-                                 
-                                </div>
-                                <a href="detail_free.html">
-                                <button data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill">Details</button>
-                            </a>                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="team text-center">
-                               
-                                <img src="{{asset('assets/img/free/team3.jpg')}}" alt="Team Image" class="avatar">
-                                <div class="title">
-                                    
-                                    <h4 >Developpeur Frontend</h4>
-                                    <h5 class="muted regular">Ben Adamson</h5>
-                                
-                                </div>
-                                <a href="detail_free.html">
-                                    <button data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill">Details</button>
-                                </a>
-                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="team text-center">
-                                
-                                <img src="{{asset('assets/img/free/team1.jpg')}}" alt="Team Image" class="avatar">
-                                <div class="title">
-                                    
-                                    <h4 >Graphiste</h4>
-                                    <h5 class="muted regular" >Eva Williams</h5>
-                                 
-                                </div>
-                                <a href="detail_free.html">
-                                <button data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill">Details</button>
-                            </a>                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="team text-center">
-                                <img src="{{asset('assets/img/free/team2.jpg')}}" alt="Team Image" class="avatar">
-                                <div class="title">
-                                  
-                                    <h4  class="muted regular" >Redacteur Web</h4>
-                                    <h5>John Phillips</h5>
-                                 
-                                </div>
-                                <a href="detail_free.html">
-                                <button data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill">Details</button>
-                            </a>                            </div>
-                        </div>
-                    </div>
-                
+                    <a href="{{('detail_free')}}">
+                    <button data-toggle="modal" data-target="#modal1" class=" btn-blue-fill">Details</button>
+                </a>
                 </div>
-                
+            </div>
+            <div class="col-md-4">
+                <div class="team text-center">
+                    
+                    <img src="{{asset('assets/img/free/team1.jpg')}}" alt="Team Image" class="avatar">
+                    <div class="title">
+                        
+                        <h2 class="muted regular" >Graphiste</h2>
+                        <h5 >Eva Williams</h5>
+                       
+                    </div>
+                    <a href="{{('detail_free')}}">
+                    <button data-toggle="modal" data-target="#modal1" class=" btn-blue-fill">Details</button>
+                </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="team text-center">
+                    <img src="{{asset('assets/img/free/team2.jpg')}}" alt="Team Image" class="avatar">
+                    <div class="title">
+                      
+                        <h2  class="muted regular" >Redacteur Web</h2>
+                        <h5>John Phillips</h5>
+                     
+                    </div>
+                    <a href="{{('detail_free')}}">
+                    <button data-toggle="modal" data-target="#modal1" class=" btn-blue-fill">Details</button>
+                </a>                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="team text-center">
+                   
+                    <img src="{{asset('assets/img/free/team3.jpg')}}" alt="Team Image" class="avatar">
+                    <div class="title">
+                        
+                        <h2 >Developpeur Frontend</h2>
+                        <h5 class="muted regular">Ben Adamson</h5>
+                      
+                    </div>
+                    <a href="{{('detail_free')}}">
+                    <button data-toggle="modal" data-target="#modal1" class=" btn-blue-fill">Details</button>
+                </a>
+               </div>
+            </div>
+            <div class="col-md-4">
+                <div class="team text-center">
+                    
+                    <img src="{{asset('assets/img/free/team1.jpg')}}" alt="Team Image" class="avatar">
+                    <div class="title">
+                        
+                        <h2 >Graphiste</h2>
+                        <h5 class="muted regular" >Eva Williams</h5>
+                      
+                    </div>
+                    <a href="{{('detail_free')}}">
+                    <button data-toggle="modal" data-target="#modal1" class=" btn-blue-fill">Details</button>
+                </a>                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="team text-center">
+                    <img src="{{asset('assets/img/free/team2.jpg')}}" alt="Team Image" class="avatar">
+                    <div class="title">
+                      
+                        <h2  class="muted regular" >Redacteur Web</h2>
+                        <h5>John Phillips</h5>
+                       
+                    </div>
+                    <a href="{{('detail_free')}}">
+                    <button data-toggle="modal" data-target="#modal1" class=" btn-blue-fill">Details</button>
+                </a>                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+     <!-- Section Button -->
+    
 </section>
                 <!-- Featured_job_end -->
             </div>

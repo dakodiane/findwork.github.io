@@ -47,6 +47,9 @@ Route::get('connexion',function(){
 Route::get('/dashboardpostulant', function () {
     return view('dashboardpostulant');
 });
+Route::get('/dashboardfreelancer', function () {
+  return view('dashboardfreelancer');
+});
 
 Route::get('/annonce', function () {
     return view('annonce');
@@ -63,55 +66,48 @@ Route::get('/entretien', function () {
 Route::get('/brouillon', function () {
     return view('brouillon');
 });
-Route::get('/detailoffre', function () {
+Route::get('/detail_offre', function () {
     return view('detail_offre');
 });
-Route::get('/detailfree', function () {
+Route::get('/detail_free', function () {
     return view('detail_free');
 });
-Route::get('inscriptionfree',function(){
-  return view('inscriptionfree');
-})->name('inscriptionfree');
 
-Route::get('inscriptionrec',function(){
-    return view('inscriptionrec');
-  })->name('inscriptionrec');
-
-  Route::get('inscriptionpost',function(){
-    return view('inscriptionpost');
-  })->name('inscriptionpost');
-
-  Route::get('apropos',function(){
-    return view('apropos');
-  })->name('apropos');
-  
-  Route::get('dashboardpostulant',function(){
-     return view('dashboardpostulant');
-    })->name('dashboardpostulant');
-
-  Route::get('dashboardrecruteur',function(){
-    return view('dashboardrecruteur');
-  })->name('dashboardrecruteur');
-    
-  Route::get('dashboardfreelancer',function(){
-    return view('dashboardfreelancer');
-  })->name('dashboardfreelancer');
-    
-  Route::get('recommandationpostulant',function(){
-     return view('recommandationpostulant');
-  })->name('recommandationpostulant');
-
-  Route::get('postuler',function(){
-   return view('postuler');
-  })->name('postuler');
-  
-  Route::get('puboffre',function(){
-   return view('puboffre');
-  })->name('puboffre');
-  
-  Route::get('profilpostulant',function(){
-    return view('profilpostulant');
-   })->name('profilpostulant');
-   
-   
-  
+//partiedjemi
+//  
+Route::get('/connexion', function () {
+  return view('connexion');
+});
+Route::get('/inscriptionpostulant ', function () {
+  return view('inscriptionpostulant');
+});
+Route::get('/inscriptionfreelancer ', function () {
+  return view('inscriptionfreelancer');
+});
+Route::get('/inscriptionrecruteur ', function () {
+  return view('inscriptionrecruteur');
+});
+Route::get('/publierannonce ', function () {
+  return view('publierannonce');
+});
+Route::get('/postuleroffre', function () {
+  return view('postuleroffre');
+});
+Route::get('/apropos', function () {
+  return view('apropos');
+});
+Route::get('/dashboardpostulant', function () {
+  return view('dashboardpostulant');
+});
+Route::get('/vosoffres', function () {
+  return view('vosoffres');
+});
+Route::get('/recommandation', function () {
+  return view('recommandation');
+});
+Route::get('/profilpostulant', function () {
+  return view('profilpostulant');
+});
+Route::get('/profilfreelancer', function () {
+  return view('profilfreelancer');
+});

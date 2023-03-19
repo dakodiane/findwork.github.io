@@ -2,8 +2,6 @@
 
 @section('document')
 
-
-
 <main>
 <section class="site-section">
         <div class="container">
@@ -125,34 +123,35 @@
 
                         </div>
 
+                        <div class="row align-items-center mb-5">
 
+<div class="col-lg-4 ml-auto">
+    <div class="row">
+          
+        <div class="col-6">
+            <a href="#" class="btn btn-block btn-primary btn-md" style="background-color: #242b5e ;">Brouillon</a>
+        </div>
+        <div class="col-6">
+            <a href="#" class="btn btn-block btn-primary btn-md">Publier</a>
+        </div>
+    </div>
+</div>
+</div>
                     </form>
                 </div>
 
 
+            
             </div>
-            <div class="row align-items-center mb-5">
-
-                <div class="col-lg-4 ml-auto">
-                    <div class="row">
-                          
-                        <div class="col-6">
-                            <a href="#" class="btn btn-block btn-primary btn-md" style="background-color: #242b5e ;">Brouillon</a>
-                        </div>
-                        <div class="col-6">
-                            <a href="#" class="btn btn-block btn-primary btn-md">Publier</a>
-                        </div>
-                    </div>
-                </div>
+            
+            </div>
+             
+            </div>
+            
+            </div>
             </div>
         </div>
     </section>
 
-
 </main>
-
-
-
-      
-
 @endsection

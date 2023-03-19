@@ -1,20 +1,20 @@
 @extends('templates.app')
 
 @section('document')
-<main>
-        
 
-        <section class="site-section">
+ <main>
+
+ <section class="site-section">
             <div class="container">
 
                 <div class="row justify-content-center align-items-center">
-                    <div class="card o-hidden border-0 shadow-lg my-5">
-                        <div class="card-body p-1" style="">
-                            <div class="" style="justify-content: center;">
+                    <div class="card o-hidden border-0 shadow-lg my-5" style="width:44em;">
+                        <div class="card-body p-1" style="width:45em;">
+                            <div class="" style="justify-content:center;">
                                 <p></p><p></p>
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">
-                                        <b> <u>Inscrivez-vous à JobBénin en tant que Freelancer!</u> </b>
+                                        <b> <u>Inscrivez-vous à JobBénin pour trouver le travail que vous aimez!</u> </b>
                                     </h1>
                                 </div>
 
@@ -70,7 +70,7 @@
                                             </div>
                                             <div class="text-center">
                                                 <p style="color:#242b5e">
-                                                    <hr>Vous avez déjà un compte JobBénin ?<a class="" href="connexion.html"
+                                                    <hr>Vous avez déjà un compte JobBénin ?<a class=""  href="{{('connexion')}}"
                                                         style="color:#242b5e"><b> <u>Connectez-vous!</u></b> </a>
                                                 </p>
                                             </div>
@@ -85,9 +85,7 @@
                 </div>
             </div>
             </div>
-        </section>
+      
+    </main>
 
-   </main>
-   
-
-@endsection
+ @endsection
