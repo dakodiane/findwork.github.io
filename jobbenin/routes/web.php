@@ -46,6 +46,9 @@ Route::get('/dashboardrecruteur', function () {
 Route::get('/dashboardpostulant', function () {
     return view('dashboardpostulant');
 });
+Route::get('/dashboardfreelancer', function () {
+  return view('dashboardfreelancer');
+});
 
 Route::get('/annonce', function () {
     return view('annonce');
@@ -67,4 +70,43 @@ Route::get('/detail_offre', function () {
 });
 Route::get('/detail_free', function () {
     return view('detail_free');
+});
+
+//partiedjemi
+//  
+Route::get('/connexion', function () {
+  return view('connexion');
+});
+Route::get('/inscriptionpostulant ', function () {
+  return view('inscriptionpostulant');
+});
+Route::get('/inscriptionfreelancer ', function () {
+  return view('inscriptionfreelancer');
+});
+Route::get('/inscriptionrecruteur ', function () {
+  return view('inscriptionrecruteur');
+});
+Route::get('/publierannonce ', function () {
+  return view('publierannonce');
+});
+Route::get('/postuleroffre', function () {
+  return view('postuleroffre');
+});
+Route::get('/apropos', function () {
+  return view('apropos');
+});
+Route::get('/dashboardpostulant', function () {
+  return view('dashboardpostulant');
+});
+Route::get('/vosoffres', function () {
+  return view('vosoffres');
+});
+Route::get('/recommandation', function () {
+  return view('recommandation');
+});
+Route::get('/profilpostulant', function () {
+  return view('profilpostulant');
+});
+Route::get('/profilfreelancer', function () {
+  return view('profilfreelancer');
 });
