@@ -6,7 +6,8 @@
 
 <!-- Hero Area Start-->
 <div class="slider-area ">
-    <div class="single-slider section-overly slider-height2 d-flex align-items-center" data-background="{{asset('assets/img/team/offre.jpeg')}}">
+    <div class="single-slider section-overly slider-height2 d-flex align-items-center" 
+    data-background="{{asset('assets/img/team/offre.jpeg')}}">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">

@@ -38,10 +38,11 @@ Route::get('freelancer', function () {
     return view('freelancer')->with(["freelancer"=>$freelancer]);
 })->name("freelancer");
 
+Route::get('connexion',function(){
+   return view('connexion');
+})->name('connexion');
 
-Route::get('/dashboardrecruteur', function () {
-    return view('dashboardrecruteur');
-});
+
 
 Route::get('/dashboardpostulant', function () {
     return view('dashboardpostulant');
