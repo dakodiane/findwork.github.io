@@ -30,10 +30,10 @@
                                             <li><a href="{{route('offre')}}" class="menu-link">Trouver Une Offre </a></li>
                                            
                                             <li><a href="{{route('freelancer')}}" class="menu-link">Espace Freelancer</a></li>
-                   <li><a href=" {{route('apropos')}}"class="menu-link">A Propos</a></li>
+                                            <li><a href=" {{('/apropos')}}"class="menu-link">A Propos</a></li>
                                            
                                             <li class="align-middle">                                    
-                                                <a href="{{route('connexion')}}" class="btn head-btn2 ">Se Connecter</a>
+                                                <a href="{{('/connexion')}}" class="btn head-btn2 ">Se Connecter</a>
                                             </li>
                                             <li class="align-middle"><a href="#" class=" btn head-btn1">S'Inscrire</a>
                                                 <ul class="submenu">

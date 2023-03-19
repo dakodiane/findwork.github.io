@@ -66,6 +66,9 @@ Route::get('/detail_offre', function () {
 Route::get('/detail_free', function () {
     return view('detail_free');
 });
+Route::get('/profilrecruteur', function () {
+    return view('profilrecruteur');
+  });
 
 //partiedjemi
 //  

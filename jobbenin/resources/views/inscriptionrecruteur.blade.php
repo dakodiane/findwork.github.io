@@ -20,7 +20,7 @@
 
                         <div class="col-lg-6">
 
-                            <form action="#" class="p-4 border rounded" id="forminsc">
+                            <form action="" class="p-4 border rounded" id="forminsc">
 
 
 
