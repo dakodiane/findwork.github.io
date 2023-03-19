@@ -37,9 +37,9 @@
                                             </li>
                                             <li class="align-middle"><a href="#" class=" btn head-btn1">S'Inscrire</a>
                                                 <ul class="submenu">
-                                                    <li><a href="{{route('inscriptionpost')}}" class="menu-link">Postulant</a></li>
-                                                    <li><a href="{{route('inscriptionrec')}}"class="menu-link">Recruteur</a></li>
-                                                    <li><a href="{{route('inscriptionfree')}}" class="menu-link">Freelancer</a></li>
+                                                    <li><a href="{{('inscriptionpostulant')}}" class="menu-link">Postulant</a></li>
+                                                    <li><a href="{{('inscriptionrecruteur')}}"class="menu-link">Recruteur</a></li>
+                                                    <li><a href="{{('inscriptionfreelancer')}}" class="menu-link">Freelancer</a></li>
                                               </ul>
                                             </li>
 
