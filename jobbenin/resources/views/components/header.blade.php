@@ -29,16 +29,16 @@
                                             <li><a href="/">Accueil</a></li>
                                             <li><a href="{{route('offre')}}">Trouver une offre </a></li>
                                             <li><a href="{{route('freelancer')}}">Espace Freelancer</a></li>
-                                            <li><a href="">A propos</a></li>
+                                            <li><a href="{{('/apropos')}}">A propos</a></li>
                                            
                                             <li class="align-middle">                                    
-                                                <a href="" class="boxed-btn1 head-btn2 ">Se Connecter</a>
+                                                <a href="{{('/connexion')}}" class="boxed-btn1 head-btn2 ">Se Connecter</a>
                                             </li>
                                             <li class="align-middle"><a href="#" class=" boxed-btn2 head-btn1">S'inscrire</a>
                                                 <ul class="submenu ">
-                                                    <li><a href="">Postulant</a></li>
-                                                    <li><a href="">Recruteur</a></li>
-                                                    <li><a href="">Freelancer</a></li>
+                                                    <li><a href="{{('/inscriptionpostulant')}}">Postulant</a></li>
+                                                    <li><a href="{{('/inscriptionrecruteur')}}">Recruteur</a></li>
+                                                    <li><a href="{{('/inscriptionfreelancer')}}">Freelancer</a></li>
                                               </ul>
                                             </li>
 

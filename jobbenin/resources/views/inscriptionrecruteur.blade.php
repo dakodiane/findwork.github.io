@@ -20,7 +20,7 @@
 
                         <div class="col-lg-6">
 
-                            <form action="#" class="p-4 border rounded" id="forminsc">
+                            <form action="" class="p-4 border rounded" id="forminsc">
 
 
 
@@ -65,8 +65,9 @@
 
                                 <div class="row form-group">
                                     <div class="col-md-12">
-                                        <input type="submit" value="S'inscrire"
-                                            class="btn px-4 btn-primary text-white">
+                                    <a href="{{('dashboardrecruteur')}}">
+                                                <button type=""  class="btn px-4 btn-primary text-white">S'inscrire</button>
+                                                </a>
 
                                     </div>
                                     <div class="text-center">

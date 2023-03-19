@@ -148,7 +148,7 @@
                                  <h4 class="card-title card-title-dash">Vos Annonces</h4>
                                </div>
                                <div>
-                                 <a href="puboffre.html">
+                                 <a href="{{('publierannonce')}}">
                                    <button class="btn btn-primary btn-lg text-white mb-0 me-0" type="button"><i class="mdi mdi-account-plus"></i>Publier une nouvelle annonce</button>
                                  </a>
                                </div>

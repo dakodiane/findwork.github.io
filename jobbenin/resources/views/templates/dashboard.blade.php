@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="{{asset('assets/js/select.dataTables.min.css')}}">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
+
   <link rel="stylesheet" href="{{asset('assets/css/vertical-layout-light/style.css')}}">
 </head>
 <body>

@@ -1,4 +1,5 @@
-@extends('templates.dashboard') @section('document')
+@extends('templates.dashboard')
+ @section('document')
 
 <main>
 	<div class="container-scroller">
