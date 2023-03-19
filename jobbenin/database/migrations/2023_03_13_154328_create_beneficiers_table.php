@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('ref');
             $table->foreign('ref')->references('id')->on('offres');
             
-            $table->primary(array('idpostulant', 'ref'));
+            $table->primary(array('idpostulant','ref'));
             $table->timestamps();
         });
     }

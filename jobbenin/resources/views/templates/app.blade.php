@@ -42,11 +42,14 @@
   <!-- Plugin css for this page -->
   <link rel="stylesheet" href="{{asset('assets/datatables.net-bs4/dataTables.bootstrap4.css')}}">
   <link rel="stylesheet" href="{{asset('assets/js/select.dataTables.min.css')}}">
+ 
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="{{asset('assets/css/vertical-layout-light/style.css')}}">
+  <link rel="stylesheet" href="{{asset('assets\css\styleinscription.css')}}">
+  
 
-		
+ 
 
 </head>
 <body>
