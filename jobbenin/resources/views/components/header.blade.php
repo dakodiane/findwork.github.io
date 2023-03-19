@@ -17,7 +17,7 @@
                         <div class="col-lg-3 col-md-2">
                             <!-- Logo -->
                             <div class="logoo">
-                                <a href="index.html" ><img src="{{asset('assets/img/logo/logojob.png')}}" alt=""></a>
+                                <a href="/" ><img src="{{asset('assets/img/logo/logojob.png')}}" alt=""></a>
                             </div>  
                         </div>
                         <div class="col-lg-9 col-md-9">
@@ -26,16 +26,16 @@
                                 <div class="main-menu">
                                     <nav class="d-none d-lg-block">
                                         <ul id="navigation">
-                                            <li><a href="#" class="menu-link">Accueil</a></li>
+                                            <li><a href="/" class="menu-link">Accueil</a></li>
                                             <li><a href="{{route('offre')}}" class="menu-link">Trouver Une Offre </a></li>
                                            
                                             <li><a href="{{route('freelancer')}}" class="menu-link">Espace Freelancer</a></li>
                                             <li><a href=" {{('/apropos')}}"class="menu-link">A Propos</a></li>
                                            
                                             <li class="align-middle">                                    
-                                                <a href="{{('/connexion')}}" class="btn head-btn2 ">Se Connecter</a>
+                                                <a href="{{('/connexion')}}" class="boxed-btn1 head-btn2 ">Se Connecter</a>
                                             </li>
-                                            <li class="align-middle"><a href="#" class=" btn head-btn1">S'Inscrire</a>
+                                            <li class="align-middle"><a href="#" class=" boxed-btn2 head-btn1">S'Inscrire</a>
                                                 <ul class="submenu">
                                                     <li><a href="{{('inscriptionpostulant')}}" class="menu-link">Postulant</a></li>
                                                     <li><a href="{{('inscriptionrecruteur')}}"class="menu-link">Recruteur</a></li>
