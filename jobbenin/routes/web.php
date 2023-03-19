@@ -43,12 +43,6 @@ Route::get('/dashboardrecruteur', function () {
     return view('dashboardrecruteur');
 });
 
-Route::get('/dashboardpostulant', function () {
-    return view('dashboardpostulant');
-});
-Route::get('/dashboardfreelancer', function () {
-  return view('dashboardfreelancer');
-});
 
 Route::get('/annonce', function () {
     return view('annonce');
@@ -95,8 +89,12 @@ Route::get('/postuleroffre', function () {
 Route::get('/apropos', function () {
   return view('apropos');
 });
+
 Route::get('/dashboardpostulant', function () {
   return view('dashboardpostulant');
+});
+Route::get('/dashboardfreelancer', function () {
+return view('dashboardfreelancer');
 });
 Route::get('/vosoffres', function () {
   return view('vosoffres');
