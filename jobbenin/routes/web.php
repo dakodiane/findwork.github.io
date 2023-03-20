@@ -111,3 +111,7 @@ Route::get('/dashboardrecruteur',function (){
 Route::get('/modifierprofilpostulant',function (){
   return view ('modifierprofilpostulant');
 });
+Route::get('/modifierprofilfreelancer',function (){
+ return view ('modifierprofilfreelancer');
+});
+
