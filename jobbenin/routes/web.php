@@ -1,17 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Models\Offre;
-use App\Models\Freelancer;
-use App\Models\DashboardRecruteur;
-use App\Models\DashboardPostulant;
-use App\Models\annonce;
-use App\Models\attentecv;
-use App\Models\selectioncv;
-
-
-
-
 
 /*
 |--------------------------------------------------------------------------
@@ -28,15 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('offre', function () {
-    $offre=offre::all();
-    return view('offre')->with(["offre"=>$offre]);
-})->name("offre");
-
-Route::get('freelancer', function () {
-    $freelancer=freelancer::all();
-    return view('freelancer')->with(["freelancer"=>$freelancer]);
-})->name("freelancer");
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/annonce', function () {
     return view('annonce');
@@ -115,3 +99,14 @@ Route::get('/modifierprofilfreelancer',function (){
  return view ('modifierprofilfreelancer');
 });
 
+Route::get('/offre', function () {
+    return view('offre');
+  });
+Route::get('/freelancer', function () {
+    return view('freelancer');
+  });
+  Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});

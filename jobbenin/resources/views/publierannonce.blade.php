@@ -39,6 +39,10 @@
                             <input type="text" class="form-control" id="job-title" placeholder=" Developpeur Mobile">
                         </div>
 
+                        <div class="form-group">
+                            <label for="job-title">Date Limite </label>
+                            <input type="text" class="form-control" id="job-title" placeholder="AAAA-MM-jj">
+                        </div>
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
