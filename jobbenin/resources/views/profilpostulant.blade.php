@@ -122,8 +122,7 @@
 								
 								<span class="font-weight-bold">AKP Djemi</span>
 								<span class="text-black-50">Djemidjemi@mail.com</span>
-							</div>
- 
+
 
 											<div class="mt-5 text-center">
                

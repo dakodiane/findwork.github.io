@@ -136,10 +136,8 @@
                                     <thead>
                                       <tr>
                                       <th>Entreprise</th>
-                                        <th>Poste</th>
-                                        <th>Date D'Annonce</th>
-                                        <th>Statut</th>
-                                          <th>Actions</th>
+                                      <th>Statut</th>
+                                      <th>Actions</th>
                                     
                                       </tr>
                                     </thead>
@@ -156,19 +154,8 @@
                                             </div>
                                           </div>
                                         </td>
-                                        <td>
-                                          <h6>Developeur Mobile</h6>
-                                          <p>Temps Partiel</p>
-                                        </td>
-                                        <td>
-                                          <div>
-                                            <div class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
-                                              <p class="text-success"> 12-02-2022</p>
-                                              
-                                            </div>
-                                           
-                                          </div>
-                                        </td>
+                                       
+                                      
                                         <td><div class="badge badge-opacity-warning">En Cours</div></td>
                                         <td>
                                           <div class="template-demo mt-4">
@@ -195,19 +182,7 @@
                                             </div>
                                           </div>
                                         </td>
-                                        <td>
-                                          <h6>Developeur Mobile</h6>
-                                          <p>Temps Partiel</p>
-                                        </td>
-                                        <td>
-                                          <div>
-                                            <div class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
-                                              <p class="text-success"> 12-02-2022</p>
-                                              
-                                            </div>
-                                           
-                                          </div>
-                                        </td>
+                                  
                                         <td><div class="badge badge-opacity-warning">En Cours</div></td>
                                         <td>
                                           <div class="template-demo mt-4">
@@ -234,19 +209,7 @@
                                             </div>
                                           </div>
                                         </td>
-                                        <td>
-                                          <h6>Developeur Mobile</h6>
-                                          <p>Temps Plein</p>
-                                        </td>
-                                        <td>
-                                          <div>
-                                            <div class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
-                                              <p class="text-success"> 12-02-2020</p>
-                                              
-                                            </div>
-                                           
-                                          </div>
-                                        </td>
+                                     
                                         <td><div class="badge badge-opacity-warning">Rejeté</div></td>
                                         <td>
                                           <div class="template-demo mt-4">
@@ -274,19 +237,7 @@
                                             </div>
                                           </div>
                                         </td>
-                                        <td>
-                                          <h6>Developeur Mobile</h6>
-                                          <p>Temps Partiel</p>
-                                        </td>
-                                        <td>
-                                          <div>
-                                            <div class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
-                                              <p class="text-success"> 12-02-2022</p>
-                                              
-                                            </div>
-                                           
-                                          </div>
-                                        </td>
+                                    
                                         <td><div class="badge badge-opacity-warning">En Cours</div></td>
                                         <td>
                                           <div class="template-demo mt-4">
@@ -301,11 +252,9 @@
                                         </td>
 
                                     </tr>
-                                     
-                                   
                                     
                                  </tbody>
-                             </table>
+                               </table>
                                 </div>
                               </div>
                             </div>
