@@ -37,8 +37,8 @@
                                 <h4>Liens importants</h4>
                                 <ul>
                                     <li><a href="/" class="soulign">Accueil</a></li>
-                                    <li><a href="{{route('offre')}}" class="soulign">Trouver une offre</a></li>
-                                    <li><a href="{{route('freelancer')}}" class="soulign">Freelancers</a></li>
+                                    <li><a href="{{('offre')}}" class="soulign">Trouver une offre</a></li>
+                                    <li><a href="{{('freelancer')}}" class="soulign">Freelancers</a></li>
 
                                     
                                 </ul>

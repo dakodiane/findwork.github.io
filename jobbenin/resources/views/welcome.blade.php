@@ -307,7 +307,7 @@
 <div class="row">
         <div class="col-lg-12">
             <div class="browse-btn2 text-center mb-5">
-                <a href="{{route('freelancer')}}" class="border-btn2 soulign">Voir +</a>
+                <a href="{{('freelancer')}}" class="border-btn2 soulign">Voir +</a>
             </div>
         </div>
 </div>
