@@ -11,7 +11,13 @@
         <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/caro.css')}}">
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 
+        <script src="{{ asset('js/jquery.min.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('js/custom.js') }}"></script>
+
+        
         <link rel="stylesheet" href="{{asset('assets/css/styleinscription.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.min.css')}}">

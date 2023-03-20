@@ -3,7 +3,7 @@
 @section('document')
 
 <main>
-<section class="site-section">
+
         <div class="container">
   
             <div class="row align-items-center mb-5">
@@ -36,12 +36,12 @@
                       
                         <div class="form-group">
                             <label for="job-type">Titre d'emploi </label>
-                            <input type="text" name ="titre"class="form-control" id="job-title" placeholder=" Developpeur Mobile">
+                            <input type="text" name ="titre"class="form-control"  placeholder=" Developpeur Mobile">
                         </div>
 
                         <div class="form-group">
                             <label for="job-title">Date Limite du recrutement</label>
-                            <input type="text" name="datelimite" class="form-control" id="job-title" placeholder="AAAA-MM-jj">
+                            <input type="date" name="datelimite" class="form-control" placeholder="AAAA-MM-jj">
                         </div>
                         <div class="row">
                             <div class="col-lg-6">
@@ -132,27 +132,28 @@
         <button type = "submit" class="btn btn-block btn-primary btn-md" style=" background-color:#da2461">Brouillon</button>
     </div>
         <div class="col-6">
-           <button type = "submit" class="btn btn-block btn-primary btn-md"> Publier</button>
+           <button type ="submit" class="btn btn-block btn-primary btn-md" data-toggle="modal"  data-target="#myModal"> Publier</button>
         </div>
-    </div>
-</div>
-</div>
+   
                    
 </form>
          
-</div>
-
-            
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">JobBénin</h4>
             </div>
-            
+            <div class="modal-body">
+                 <p> <b> L'Annonce a été effectuée avec succès!</b></p>
             </div>
-             
-            </div>
-            
-            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
             </div>
         </div>
-    </section>
+    </div>
+</div>
+   
 
 </main>
 @endsection
