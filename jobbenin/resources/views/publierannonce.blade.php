@@ -5,7 +5,7 @@
 <main>
 <section class="site-section">
         <div class="container">
-
+  
             <div class="row align-items-center mb-5">
                 <div class="col-lg-8 mb-4 mb-lg-0">
                     <div class="style=" text-align: center>
@@ -26,52 +26,48 @@
             </div>
             <div class="row mb-5">
                 <div class="col-lg-12">
-                    <form class="p-4 p-md-5 border rounded" method="post">
+                <form class="p-4 p-md-5 border rounded" method="">
                         <h3 class="text-black mb-5 border-bottom pb-2">Détails du Poste</h3>
                         <div class="form-group">
                             <label for=" secteur">Secteur D'Activité</label>
-                            <input type="text" class="form-control" id="email"
+                            <input type="text" name="secteur" class="form-control" id="email"
                                 placeholder=" Informatique">
                         </div>
                       
                         <div class="form-group">
-                            <label for="job-title">Titre d'emploi </label>
-                            <input type="text" class="form-control" id="job-title" placeholder=" Developpeur Mobile">
+                            <label for="job-type">Titre d'emploi </label>
+                            <input type="text" name ="titre"class="form-control" id="job-title" placeholder=" Developpeur Mobile">
                         </div>
 
                         <div class="form-group">
-                            <label for="job-title">Date Limite </label>
-                            <input type="text" class="form-control" id="job-title" placeholder="AAAA-MM-jj">
+                            <label for="job-title">Date Limite du recrutement</label>
+                            <input type="text" name="datelimite" class="form-control" id="job-title" placeholder="AAAA-MM-jj">
                         </div>
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="job-type">Type de L'Emploi</label> <br>
-                                    <select class="selectpicker border rounded" id="job-type" data-style="btn-black"
-                                        data-width="100%" data-live-search="true" title="Select Job Type"
+                                    <select class="selectpicker border rounded" name="type-job" data-style="btn-black"
+                                        data-width="100%" data-live-search="true" title="Select Type Job"
                                         style="width: 200em; ">
-                                        <option>A Temps Partiel</option>
-                                        <option>A Temps Plein</option>
+                                        <option value="1">A Temps Partiel</option>
+                                        <option value="2">A Temps Plein</option>
                                     </select>
                                 </div>
                             </div>
 
-
-
-
-
-                            <div class="col-lg-6">
+                               <div class="col-lg-6">
                                 <div class="form-group">
 
                                     <label for="job-Ville">Ville </label> <br>
-                                    <select class="selectpicker border rounded" id="job-Ville" data-style="btn-black"
+                                    <select class="selectpicker border rounded" name="job-Ville" data-style="btn-black"
                                         data-width="100%" data-live-search="true" title="Select Ville">
-                                        <option value="">Cotonou</option>
-                                        <option value="">Abomey-Calavi</option>
-                                        <option value="">Porto-Novo</option>
-                                        <option value="">Bohicon</option>
-                                        <option value="">Abomey</option>
-                                        <option value="">Parakou</option>
+                                        <option value="1">Cotonou</option>
+                                        <option value="2">Abomey-Calavi</option>
+                                        <option value="3">Porto-Novo</option>
+                                        <option value="4">Bohicon</option>
+                                        <option value="5">Abomey</option>
+                                        <option value="6">Parakou</option>
                                     </select>
                                 </div>
                             </div>
@@ -86,7 +82,7 @@
                                     <label for="edit-description-value">Description de L'Offre </label>
                                     <div class="form-textarea-wrapper resizable">
                                         <textarea required="required" class="wysiwyg form-textarea required"
-                                            id="edit-description-value" name="description[value]" cols="100" rows="10"
+                                            id="edit-description-value" name="description" cols="100" rows="10"
                                             placeholder="    -Résumé du poste...
             -Principales activités..."></textarea>
                                     </div>
@@ -99,26 +95,26 @@
                         <div class="form-group">
 
                             <label for="job-Diplomes">Diplomes Requis </label> <br>
-                            <select class="selectpicker border rounded" id="job-Diplomes" data-style="btn-black"
+                            <select class="selectpicker border rounded" name="diplomesrequis" data-style="btn-black"
                                 data-width="100%" data-live-search="true" title="Select Diplomes">
-                                <option value="">Bepc</option>
-                                <option value="">Bac</option>
-                                <option value="">DUT</option>
-                                <option value="">DTS</option>
-                                <option value="">Licence</option>
-                                <option value="">Master</option>
-                                <option value="">Doctorat</option>
+                                <option value="1">Bepc</option>
+                                <option value="2">Bac</option>
+                                <option value="3">DUT</option>
+                                <option value="4">DTS</option>
+                                <option value="5">Licence</option>
+                                <option value="6">Master</option>
+                                <option value="7">Doctorat</option>
                             </select>
                         </div>
  <br> <br>
                         <div class="form-group">
                             <div class="text-format-wrapper">
-                                <div class="form-item form-description wysiwyg-wrapper form-type-textarea form-item-description-value"
-                                    id="edit-description-value-wrapper">
-                                    <label for="edit-description-value">Compétences  requises</label>
+                                <div class="form-item form-competence wysiwyg-wrapper form-type-textarea form-item-description-value"
+                                    id="edit-competence-value-wrapper">
+                                    <label for="edit-competence-value">Compétences  requises</label>
                                     <div class="form-textarea-wrapper resizable">
                                         <textarea required="required" class="wysiwyg form-textarea required"
-                                            id="edit-description-value" name="description[value]" cols="100" rows="10"
+                                            id="edit-competences-value" name="competencesrequises" cols="100" rows="10"
                                             placeholder="Compétences requises pour l'offre "></textarea>
                                     </div>
                                 </div>
@@ -133,17 +129,18 @@
     <div class="row">
           
         <div class="col-6">
-            <a href="#" class="btn btn-block btn-primary btn-md" style="background-color: #242b5e ;">Brouillon</a>
-        </div>
+        <button type = "submit" class="btn btn-block btn-primary btn-md" style=" background-color:#da2461">Brouillon</button>
+    </div>
         <div class="col-6">
-            <a href="#" class="btn btn-block btn-primary btn-md">Publier</a>
+           <button type = "submit" class="btn btn-block btn-primary btn-md"> Publier</button>
         </div>
     </div>
 </div>
 </div>
-                    </form>
-                </div>
-
+                   
+</form>
+         
+</div>
 
             
             </div>

@@ -65,7 +65,7 @@
                                         <div class="row form-group">
                                             <div class="col-md-12">
                                             <a href="{{('dashboardpostulant')}}">
-                                                <button type=""  class="btn px-4 btn-primary text-white">S'inscrire</button>
+                                                <button type=" "  class="btn px-4 btn-primary text-white">S'inscrire</button>
                                                 </a>
 
                                             </div>

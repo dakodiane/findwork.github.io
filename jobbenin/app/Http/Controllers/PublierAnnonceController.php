@@ -4,7 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class publierController extends Controller
+class PublierAnnonceController extends Controller
 {
-    //
-}
+  
+    // //
+}  
+
+
+
+

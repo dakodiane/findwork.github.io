@@ -61,7 +61,7 @@ Route::get('/inscriptionfreelancer ', function () {
 Route::get('/inscriptionrecruteur ', function () {
   return view('inscriptionrecruteur');
 });
-Route::get('/publierannonce ', function () {
+Route::get('/publierannonce', function () {
   return view('publierannonce');
 });
 Route::get('/postuleroffre', function () {
