@@ -111,4 +111,3 @@ Route::get('/dashboardrecruteur',function (){
 Route::get('/modifierprofilpostulant',function (){
   return view ('modifierprofilpostulant');
 });
- 

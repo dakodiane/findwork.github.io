@@ -16,8 +16,8 @@
           </button>
         </div>
         <div>
-          <a class="navbar-brand brand-logo" href="index.html">
-            <img src="{{asset('assets/images/logo.svg')}}" alt="logo" />
+          <a class="navbar-brand brand-logo" href="/">
+            <img src="{{asset('assets/img/logo/logojob.png')}}" alt="logo" />
           </a>
           <a class="navbar-brand brand-logo-mini" href="index.html">
             <img src="{{asset('assets/images/logo-mini.svg')}}" alt="logo" />
@@ -90,7 +90,7 @@
           <li class="nav-item">
             <a class="nav-link" href="{{('dashboardrecruteur')}}">
               <i class="mdi mdi-grid-large menu-icon"></i>
-              <span class="menu-title">Dashboard</span>
+              <span class="menu-title">Tableau de bord</span>
             </a>
           </li>
           <li class="nav-item">
