@@ -1,7 +1,10 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OffreController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\FreelancerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +16,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/', [WelcomeController::class,'index']);
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -99,12 +100,11 @@ Route::get('/modifierprofilfreelancer',function (){
  return view ('modifierprofilfreelancer');
 });
 
-Route::get('/offre', function () {
-    return view('offre');
-  });
-Route::get('/freelancer', function () {
-    return view('freelancer');
-  });
+Route::get('/offre',[OffreController::class,'offre']);
+
+Route::get('/freelancer', [FreelancerController::class,'freelancer']);
+
+
   Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

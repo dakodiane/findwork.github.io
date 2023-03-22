@@ -119,28 +119,17 @@
                                 <input class="fname" type="text" name="name" placeholder="Prénom" />
                                  <input class="fname" type="text" name="name" placeholder="Email" /> <br>
                                  <h4 class="text-align"><u>Compléter Vos Informations </u></h4> 
-									<label class="labels"> Sexe</label>
-									<select name="Sexe" id="" class="form-control">
-										<option value="F">Féminin</option>
-										<option value="M">Masculin</option>
-									</select>
+								
 								</div>
-								<div class="col-md-12"><label class="labels">Date De Naissance</label><input type="text" class="form-control" placeholder="Entrer Votre Date de Naissance" value="" /></div>
-								<div class="col-md-12"><label class="labels">Téléphone</label><input type="text" class="form-control" placeholder="Entrer Votre Numéro" value="" /></div>
-								<div class="col-md-12"><label class="labels"> Ville</label><input type="text" class="form-control" placeholder="Entrer Votre Ville" value="" /></div>
-								<div class="col-md-12"><label class="labels">Adresse</label><input type="text" class="form-control" placeholder="enter adresse" value="" /></div>
-								<div class="col-md-12"><label class="labels">Diplomes</label><input type="text" class="form-control" placeholder="Entrer Vos Diplomes" value="" /></div>
-						
+							
+             
+                <div class="col-md-12"><label class="labels">Adresse</label> 
+                <input type="text" class="form-control" placeholder="Entrer Votre Adresse" value="" /></div>
+								
 							 </div>
 					
                         
-                   <h4 class="text-align"><u>Expériences </u></h4>
-									<input type="text" class="form-control" placeholder="Structure" /> <br />
-									<input type="text" class="form-control" placeholder=" Intitulé du Poste" /> <br />
-									<input type="text" class="form-control" placeholder=" Date Début" /> <br />
-									<input type="text" class="form-control" placeholder=" Date Fin" /> <br />
-									<textarea name="Description Des Taches " id="" cols="34" rows="10" placeholder="Description Des Taches"></textarea>
-								
+                 
 									<h4 class="text-align"><u>Compétences </u></h4>
 									<br />
 						     <textarea name="Compétences " id="" cols="33" rows="10" placeholder="Compétences"></textarea>

@@ -72,17 +72,19 @@
                 <!-- Featured_job_start -->
                 <section  class="section gray-bg">
     <div class="container">
-        
+      
    <div class=" justify-content-center">
+  
         <div class="row">
+        @foreach($freelancers as $freelancer)
             <div class="col-md-4">
                 <div class="team text-center">
                    
                     <img src="{{asset('assets/img/free/team3.jpg')}}" alt="Team Image" class="avatar">
                     <div class="title">
                         
-                        <h2 >Developpeur Frontend</h2>
-                        <h5 class="muted regular">Ben Adamson</h5>
+                        <h2 >{{$freelancer->service}}</h2>
+                        <h5 class="muted regular">{{$freelancer->nomF}} {{$freelancer->prenomF}}</h5>
                        
                     </div>
                     <a href="{{('detail_free')}}">
@@ -90,80 +92,7 @@
                 </a>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="team text-center">
-                    
-                    <img src="{{asset('assets/img/free/team1.jpg')}}" alt="Team Image" class="avatar">
-                    <div class="title">
-                        
-                        <h2 class="muted regular" >Graphiste</h2>
-                        <h5 >Eva Williams</h5>
-                       
-                    </div>
-                    <a href="{{('detail_free')}}">
-                    <button data-toggle="modal" data-target="#modal1" class=" btn-blue-fill">Details</button>
-                </a>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="team text-center">
-                    <img src="{{asset('assets/img/free/team2.jpg')}}" alt="Team Image" class="avatar">
-                    <div class="title">
-                      
-                        <h2  class="muted regular" >Redacteur Web</h2>
-                        <h5>John Phillips</h5>
-                     
-                    </div>
-                    <a href="{{('detail_free')}}">
-                    <button data-toggle="modal" data-target="#modal1" class=" btn-blue-fill">Details</button>
-                </a>                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="team text-center">
-                   
-                    <img src="{{asset('assets/img/free/team3.jpg')}}" alt="Team Image" class="avatar">
-                    <div class="title">
-                        
-                        <h2 >Developpeur Frontend</h2>
-                        <h5 class="muted regular">Ben Adamson</h5>
-                      
-                    </div>
-                    <a href="{{('detail_free')}}">
-                    <button data-toggle="modal" data-target="#modal1" class=" btn-blue-fill">Details</button>
-                </a>
-               </div>
-            </div>
-            <div class="col-md-4">
-                <div class="team text-center">
-                    
-                    <img src="{{asset('assets/img/free/team1.jpg')}}" alt="Team Image" class="avatar">
-                    <div class="title">
-                        
-                        <h2 >Graphiste</h2>
-                        <h5 class="muted regular" >Eva Williams</h5>
-                      
-                    </div>
-                    <a href="{{('detail_free')}}">
-                    <button data-toggle="modal" data-target="#modal1" class=" btn-blue-fill">Details</button>
-                </a>                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="team text-center">
-                    <img src="{{asset('assets/img/free/team2.jpg')}}" alt="Team Image" class="avatar">
-                    <div class="title">
-                      
-                        <h2  class="muted regular" >Redacteur Web</h2>
-                        <h5>John Phillips</h5>
-                       
-                    </div>
-                    <a href="{{('detail_free')}}">
-                    <button data-toggle="modal" data-target="#modal1" class=" btn-blue-fill">Details</button>
-                </a>                </div>
-            </div>
-        </div>
-    </div>
+ @endforeach
  </div>
      <!-- Section Button -->
     

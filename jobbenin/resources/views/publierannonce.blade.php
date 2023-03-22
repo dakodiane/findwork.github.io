@@ -35,16 +35,13 @@
                         </div>
                       
                         <div class="form-group">
-                            <label for="job-type">Titre d'emploi </label>
+                            <label for="job-type">Titre de L'emploi </label>
                             <input type="text" name ="titre"class="form-control"  placeholder=" Developpeur Mobile">
                         </div>
 
-                        <div class="form-group">
-                            <label for="job-title">Date Limite du recrutement</label>
-                            <input type="date" name="datelimite" class="form-control" placeholder="AAAA-MM-jj">
-                        </div>
+                        
                         <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-lg-4">
                                 <div class="form-group">
                                     <label for="job-type">Type de L'Emploi</label> <br>
                                     <select class="selectpicker border rounded" name="type-job" data-style="btn-black"
@@ -55,8 +52,7 @@
                                     </select>
                                 </div>
                             </div>
-
-                               <div class="col-lg-6">
+                            <div class="col-lg-4">
                                 <div class="form-group">
 
                                     <label for="job-Ville">Ville </label> <br>
@@ -70,16 +66,31 @@
                                         <option value="6">Parakou</option>
                                     </select>
                                 </div>
+                                </div>
+                                <br> <br>
+                                <div class="col-lg-4">
+                                <div class="form-group">
+ 
+                                <label for="job-Diplomes">Diplomes Requis </label> <br>
+                                <select class="selectpicker border rounded" name="diplomesrequis" data-style="btn-black"
+                                    data-width="100%" data-live-search="true" title="Select Diplomes">
+                                    <option value="1">BEPC</option>
+                                    <option value="2">BAC</option>
+                                    <option value="3">DUT</option>
+                                    <option value="4">DTS</option>
+                                    <option value="5">LICENCE</option>
+                                    <option value="6">MASTER</option>
+                                    <option value="7">DOCTORAT</option>
+                                </select>
+                                </div>
                             </div>
-
-                        </div>
-                        <br>
-
-                        <div class="form-group">
+                            </div>
+                            <br>
+                            <div class="form-group">
                             <div class="text-format-wrapper">
                                 <div class="form-item form-description wysiwyg-wrapper form-type-textarea form-item-description-value"
                                     id="edit-description-value-wrapper">
-                                    <label for="edit-description-value">Description de L'Offre </label>
+                                    <label for="edit-description-value">Description de L'Emploi </label>
                                     <div class="form-textarea-wrapper resizable">
                                         <textarea required="required" class="wysiwyg form-textarea required"
                                             id="edit-description-value" name="description" cols="100" rows="10"
@@ -90,23 +101,7 @@
 
                             </div>
 
-                        </div>
-
-                        <div class="form-group">
-
-                            <label for="job-Diplomes">Diplomes Requis </label> <br>
-                            <select class="selectpicker border rounded" name="diplomesrequis" data-style="btn-black"
-                                data-width="100%" data-live-search="true" title="Select Diplomes">
-                                <option value="1">Bepc</option>
-                                <option value="2">Bac</option>
-                                <option value="3">DUT</option>
-                                <option value="4">DTS</option>
-                                <option value="5">Licence</option>
-                                <option value="6">Master</option>
-                                <option value="7">Doctorat</option>
-                            </select>
-                        </div>
- <br> <br>
+                        
                         <div class="form-group">
                             <div class="text-format-wrapper">
                                 <div class="form-item form-competence wysiwyg-wrapper form-type-textarea form-item-description-value"
@@ -122,7 +117,20 @@
                             </div>
 
                         </div>
+                        <div class="form-group">
+                            <label for="job-salaire">Salaire de L'Emploi</label>
+                            <input type="text" name="salaire" class="form-control" placeholder="500000FCFA">
+                        </div>
+                     
+                            <div class="form-group">
+                            <label for="job-title">Date Limite du recrutement</label>
+                            <input type="date" name="datelimite" class="form-control" placeholder="AAAA-MM-jj">
+                        </div>
+                        </div>
+                        <br>
 
+
+                        
                         <div class="row align-items-center mb-5">
 
 <div class="col-lg-4 ml-auto">
@@ -134,7 +142,7 @@
         <div class="col-6">
            <button type ="submit" class="btn btn-block btn-primary btn-md" data-toggle="modal"  data-target="#myModal"> Publier</button>
         </div>
-   
+        </div>
                    
 </form>
          

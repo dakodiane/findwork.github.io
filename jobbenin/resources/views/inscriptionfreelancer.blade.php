@@ -53,12 +53,19 @@
                                             </div>
                                             </div>
 
-
+                                            <div class="row form-group">
+                                            <div class="col-md-12 mb-3 mb-md-0">
+                                            <label class="text-black">Téléphone</label>
+								            <input type="text" id="fname" class="form-control"
+                                                    placeholder="Numéro de Téléphone">
+                                            </div>
+                                        </div>
+                                           
                                         <div class="row form-group">
                                             <div class="col-md-12 mb-3 mb-md-0">
-                                                <label class="text-black" for="fname">Email</label>
+                                                <label class="text-black" for=" ">Email</label>
                                                 <input type="text" id="fname" class="form-control"
-                                                    placeholder="Addresse Email">
+                                                    placeholder="Adresse Email">
                                             </div>
                                         </div>
                                         <div class="row form-group">

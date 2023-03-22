@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Freelancer;
 use Illuminate\Http\Request;
+use App\Http\Controllers\FreelancerController;
+
 
 class FreelancerController extends Controller
 {
@@ -14,6 +16,13 @@ class FreelancerController extends Controller
         //
     }
 
+////////////////DJEMI/////////////////////////////////////////////////
+
+        public function freelancer (){
+             $freelancers=Freelancer::select('nomF', 'prenomF', 'service')->get();
+            return view('freelancer',compact('freelancers'));
+        }
+    
     /**
      * Show the form for creating a new resource.
      */

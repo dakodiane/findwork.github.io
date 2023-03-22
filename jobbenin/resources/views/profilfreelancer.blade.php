@@ -117,7 +117,6 @@
 								<span class="text-black-50">Djemidjemi@mail.com</span>
 							</div>
 
-
 											<div class="mt-5 text-center">
                
 												<a href="{{('/modifierprofilfreelancer')}}"> <button class="button1" data-modal="modal-mod">Modifier vos informations</button></a>	<p></p>

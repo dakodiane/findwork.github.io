@@ -33,7 +33,7 @@
                                             <li><a href=" {{('/apropos')}}"class="menu-link">A Propos</a></li>
                                            
                                             <li class="align-middle">                                    
-                                                <a href="{{('/connexion')}}" class="boxed-btn1 head-btn2 ">Se Connecter</a>
+                                                <a href="{{('/connexion')}}" class="boxed-btn1 head-btn2 "> Se  Connecter</a>
                                             </li>
                                             <li class="align-middle"><a href="#" class=" boxed-btn2 head-btn1">S'Inscrire</a>
                                                 <ul class="submenu">

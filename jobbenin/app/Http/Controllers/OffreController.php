@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Offre;
 class OffreController extends Controller
 {
     /**
@@ -13,6 +13,12 @@ class OffreController extends Controller
     {
         //
     }
+
+    ///////////////// DJEMI ///////////////////////////////////////////////////////////////////////////////////////////
+    public function offre() {
+        $offres = Offre::with('recruteur')->get();
+        return view('offre',compact('offres'));
+       }
 
     /**
      * Show the form for creating a new resource.
