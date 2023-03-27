@@ -35,14 +35,10 @@
                                             <li class="align-middle">                                    
                                                 <a href="{{('connexion')}}" class="boxed-btn1 head-btn2 ">Se Connecter</a>
                                             </li>
-                                            <li class="align-middle"><a href="#" class=" boxed-btn2 head-btn1">S'Inscrire</a>
-                                                <ul class="submenu">
-                                                    <li><a href="{{('/inscriptionpostulant')}}" class="menu-link">Postulant</a></li>
-                                                    <li><a href="{{('/inscriptionrecruteur')}}"class="menu-link">Recruteur</a></li>
-                                                    <li><a href="{{('/inscriptionfreelancer')}}" class="menu-link">Freelancer</a></li>
-                                              </ul>
+                                            <li class="align-middle">                                    
+                                                <a href="{{('inscription')}}" class="boxed-btn2 head-btn1 ">S'inscrire</a>
                                             </li>
-
+                                            
 
                                         </ul>
                                     </nav>

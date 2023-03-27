@@ -45,7 +45,13 @@ Route::get('/annonce', function () {
   //partiedjemi
   //  
 
-  Route::get('/connexion ', 'App\Http\Controllers\ConnexionController@index');
+  Route::get('connexion ', 'App\Http\Controllers\ConnexionController@index');
+
+  Route::post('connexion.post ', 'App\Http\Controllers\ConnexionController@connexion');
+
+  Route::get('/inscription ', 'App\Http\Controllers\InscriptionController@index');
+  
+  Route::post('/inscription ', 'App\Http\Controllers\InscriptionController@inscription');
 
   Route::get('/inscriptionrecruteur ', 'App\Http\Controllers\InscriptionRecruteurController@index');
   

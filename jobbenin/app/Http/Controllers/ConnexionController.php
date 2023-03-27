@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class ConnexionController extends Controller
 {
     //
-     /**
+    /**
      * Display a listing of the resource.
      */
     public function index()
@@ -16,6 +19,43 @@ class ConnexionController extends Controller
         return view('connexion');
     }
 
+    public function connexion(Request $request)
+    {
+
+        $email = $request->email;
+        $password = $request->password;     
+        
+
+      if (Auth::attempt (['email' => $email, 'password' => $password])) {
+
+        $user=User:: where ('email' ,"=", $email)->first();
+
+                if ($user->role=='recruteur') {
+                    $request->session()->regenerate();
+
+                  return redirect()->intended('dashboardrecruteur');   
+
+                }
+                            
+            elseif ($user->role=='postulant') {
+
+                $request->session()->regenerate();
+
+                return redirect()->intended('dashboardpostulant');   
+                              }  
+            elseif($user->role=='freelancer') {
+                $request->session()->regenerate();
+
+                return redirect()->intended('dashboardfreelancer');   
+                              }  
+            else 
+
+            return redirect()->intended('');   
+
+        }
+            }
+          
+    
     /**
      * Show the form for creating a new resource.
      */
