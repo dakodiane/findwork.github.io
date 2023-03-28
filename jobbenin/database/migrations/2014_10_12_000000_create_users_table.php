@@ -17,17 +17,6 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('role');
-            $table->string('description_recruteur')->nullable();
-            $table->string('logo_entreprise')->nullable();
-            $table->string('photo_freelancer')->nullable();
-            $table->string('competence_freelancer')->nullable();
-            $table->string('service_freelancer')->nullable();
-            $table->integer('contact_freelancer')->nullable();
-
-
-
-
             $table->rememberToken();
             $table->timestamps();
         });
