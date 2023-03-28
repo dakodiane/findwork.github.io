@@ -23,7 +23,7 @@ class WelcomeController extends Controller
         $photos = [];
         foreach ($freelancers as $freelancer) {
             $photoPath = $freelancer->photo;
-            $photos[] = $photoPath ? asset('public/images'. $photoPath) : null;
+            $photos[] = $photoPath ? asset('public/images/'. $photoPath) : null;
         }
     
         // Affichage de la vue avec les données
