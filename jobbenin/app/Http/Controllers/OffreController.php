@@ -18,7 +18,7 @@ class OffreController extends Controller
 
     ///////////////// DJEMI ///////////////////////////////////////////////////////////////////////////////////////////
     public function offre() {
-        $offres = Offre::with('users')->get();
+        $offres = Offre::with('user')->get();
         return view('offre',compact('offres'));
        }
 

@@ -43,14 +43,7 @@
     </div>
 </div>
 
-
-        <!-- Section Tittle -->
-            <!-- slider Area End-->
-<!-- Our Services Start -->
-<div class="our-services  ">
-    <div class="container">
-      <!-- Featured_job_start -->
-      <section class="featured-job-area feature-padding">
+<section class="featured-job-area feature-padding">
                         <div class="container ">
                             <div class="row">
                                 <div class="col-lg-12 mb-40">
@@ -72,13 +65,17 @@
                                             <div class="company-img">
                                                 <a href="{{('detail_offre')}}"><img 
                                                 src="{{asset('assets/img/icon/job-list1.png')}}" alt=""></a>
+                                          
                                             </div>
                                             <div class="job-tittle">
-                                                <a href="{{('detail_offre')}}" class="soulign"><h4 >{{($offre->poste)}}</h4></a>
+                                                <a href="{{('detail_offre')}}" class="soulign">
+                                                    <h4 >{{($offre->poste)}}</h4></a>
                                                 <ul>
                                                 
                                                     <li>{{optional($offre->user)->name}}</li>
-                                                    <li><i class="fas fa-map-marker-alt"></i>{{optional($offre->user)->villeR}}</li>
+                                                    <li><i class="fas fa-map-marker-alt">
+                                                        
+                                                    </i>{{optional($offre->user)->villeR}}</li>
                                                     
                                                 </ul>
                                             </div>
@@ -96,6 +93,11 @@
 
                         
 </section>
+        
+<div class="our-services  ">
+    <div class="container">
+      <!-- Featured_job_start -->
+   
 <!-- Featured_job_end -->
   
         <!-- More Btn -->
@@ -121,22 +123,27 @@
                 </div>
             </div>
         </div>
+       
         <div class="row justify-content-center">
-            @foreach ($freelancers as $freelancer)
+        @foreach ($freelancers as $key=>$freelancer)
                 <div class="col-md-4">
+              
                     <div class="team text-center">
-                        <img src="{{asset('assets/img/free/team3.jpg')}}" alt="Team Image" class="avatar">
+                   
+                        <img src="{{ $photos[$key] }}" alt="{{$freelancer->name}}" class="avatar">
                         <div class="title">
-                            <h2>{{optional($freelancer->user)->service_freelancer}}</h2>
-                            <h5 class="muted regular">{{optional($freelancer->user)->name}}</h5>
+                            <h2>{{$freelancer->service_freelancer}}</h2>
+                            <h5 class="muted regular">{{$freelancer->name}}</h5>
                         </div>
                         <a href="{{('detail_free')}}">
                             <button data-toggle="modal" data-target="#modal1" class="btn-blue-fill">Details</button>
                         </a>
+                   
                     </div>
                 </div>
-            @endforeach
+                @endforeach
         </div>
+      
     </div>
 </section>
 <div class="row">

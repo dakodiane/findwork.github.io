@@ -1,7 +1,8 @@
 <?php
 
-use index;
+
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OffreController;
 use App\Http\Controllers\WelcomeController;
 
 /*
@@ -104,9 +105,9 @@ Route::get('/annonce', function () {
     return view('modifierprofilfreelancer');
   });
   
-  Route::get('/offre', function () {
-    return view('offre');
-  });
+  Route::get('/offre', [OffreController::class,'offre']);
+
+
   Route::get('/freelancer', function () {
     return view('freelancer');
   });
