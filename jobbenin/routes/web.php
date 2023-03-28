@@ -101,9 +101,11 @@ Route::get('/annonce', function () {
   Route::get('/modifierprofilpostulant', function () {
     return view('modifierprofilpostulant');
   });
-  Route::get('/modifierprofilfreelancer', function () {
-    return view('modifierprofilfreelancer');
-  });
+
+
+ 
+
+  
   
   Route::get('/offre', [OffreController::class,'offre']);
 
@@ -111,3 +113,8 @@ Route::get('/annonce', function () {
   Route::get('/freelancer', function () {
     return view('freelancer');
   });
+  Route::get('/modifierprofilfreelancer', function () {
+    return view('modifierprofilfreelancer');
+  });
+  Route::post('/modifierprofilfreelancer', 'App\Http\Controllers\ModifierProfilFreelancerController@update') ;
+ 
