@@ -3606,10 +3606,3 @@ input[type="radio"]{
 #option-3:checked:checked ~ .option-3 span{
   color: #fff;
 }
-.menu-link {
-	text-decoration: none;
-}
-#navigation {
-display: flex;
-align-items: center;
-}

@@ -1,9 +1,11 @@
 <?php
 
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OffreController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\FreelancerController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +17,8 @@ use App\Http\Controllers\WelcomeController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+
 
 Route::get('/', [WelcomeController::class,'index']);
 
@@ -37,6 +41,7 @@ Route::get('/annonce', function () {
   Route::get('/detail_offre', function () {
     return view('detail_offre');
   });
+
   Route::get('/detail_free', function () {
     return view('detail_free');
   });
@@ -50,6 +55,7 @@ Route::get('/annonce', function () {
   Route::get('connexion ', 'App\Http\Controllers\ConnexionController@index');
 
   Route::post('connexion.post ', 'App\Http\Controllers\ConnexionController@connexion');
+
 
   Route::get('/inscription ', 'App\Http\Controllers\InscriptionController@index');
   
@@ -67,7 +73,7 @@ Route::get('/annonce', function () {
   Route::post('/inscriptionpostulant ', 'App\Http\Controllers\InscriptionPostulantController@inscriptionpostulant');
 
   
-  Route::get('/publierannonce', function () {
+  Route::get('/publierannonce', function (){
     return view('publierannonce');
   });
   Route::get('/postuleroffre', function () {
@@ -107,7 +113,15 @@ Route::get('/annonce', function () {
 
   
   
-  Route::get('/offre', [OffreController::class,'offre']);
+  Route::get('/offre', function () {
+    return view('offre');
+  });
+  Route::get('/freelancer ', 'App\Http\Controllers\FreelancerController@index');
+
+  Route::get('/freelancer/{id}', 'App\Http\Controllers\FreelancerController@show')->name('detail_free');
+
+Route::get('/offre',[OffreController::class,'offre']);
+
 
 
   Route::get('/freelancer', function () {
