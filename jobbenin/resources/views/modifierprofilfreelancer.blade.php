@@ -105,8 +105,8 @@
 			<!-- partial -->
 				
 						
-      <form action="">
-                                <div class="container rounded bg-white mt-5 mb-5">
+      <form action="{{('welcome')}}" metod="POST"enctype="multipart/form-data">
+                <div class="container rounded bg-white mt-5 mb-5">
 			        <div>	<h2 style="color:#da2461;text-align:center;padding-top:10px"> Modifier Vos Informations</h2></div>
             
             
@@ -119,6 +119,15 @@
                                 <input class="fname" type="text" name="name" placeholder="Prénom" />
                                  <input class="fname" type="text" name="name" placeholder="Email" /> <br>
                                  <h4 class="text-align"><u>Compléter Vos Informations </u></h4> 
+                                 <div class="row form-group mb-4">
+                                            <div class="col-md-12 mb-3 mb-md-0">
+                  <label class="text-black" for="photoF"> Photo Professionnelle</label>
+                                                    <div class="description">Les fichiers doivent peser moins de
+                                                        <strong>4 Mo</strong>.<br />
+                                                        Extensions autorisées :<strong>doc docx pdf</strong>.</div><div class="file-widget form-managed-file clearfix">
+                        <input type="file" id="photoF"name="photoF" size="50" class="form-file" /><input type="hidden" name="photoF" value="0" />  <input type="hidden" name="photoF" value="1" /></div>
+
+
 									<label class="labels"> Sexe</label>
 									<select name="Sexe" id="" class="form-control">
 										<option value="F">Féminin</option>
@@ -142,7 +151,7 @@
 									<textarea name="Description Des Taches " id="" cols="34" rows="10" placeholder="Description Des Taches"></textarea>
 								
 									<h4 class="text-align"><u>Compétences </u></h4>
-									<br />
+									<br/>
 						     <textarea name="Compétences " id="" cols="33" rows="10" placeholder="Compétences"></textarea>
 							    <button type="" href="">Enregistrer</button>
           </form>

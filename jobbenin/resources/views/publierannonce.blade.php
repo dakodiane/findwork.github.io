@@ -10,7 +10,7 @@
                 <div class="col-lg-8 mb-4 mb-lg-0">
                     <div class="style=" text-align: center>
                         <div>
-                            <h2 style=""> <u> Publier Une Annonce</u></h2>
+                            <h2 style=""><u> Publier Une Annonce</u></h2>
 
                         </div>
                     </div>

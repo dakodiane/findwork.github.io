@@ -6,6 +6,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\FreelancerController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +17,9 @@ use App\Http\Controllers\FreelancerController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+
+
 Route::get('/', [WelcomeController::class,'index']);
 
 
@@ -37,8 +41,10 @@ Route::get('/annonce', function () {
   Route::get('/detail_offre', function () {
     return view('detail_offre');
   });
- 
 
+  Route::get('/detail_free', function () {
+    return view('detail_free');
+  });
   Route::get('/profilrecruteur', function () {
     return view('profilrecruteur');
   });
@@ -67,7 +73,7 @@ Route::get('/annonce', function () {
   Route::post('/inscriptionpostulant ', 'App\Http\Controllers\InscriptionPostulantController@inscriptionpostulant');
 
   
-  Route::get('/publierannonce', function () {
+  Route::get('/publierannonce', function (){
     return view('publierannonce');
   });
   Route::get('/postuleroffre', function () {
