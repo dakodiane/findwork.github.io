@@ -105,9 +105,9 @@
 			<!-- partial -->
 				
 						
-      <form action="">
+      <form action="" method="POST">
                                 <div class="container rounded bg-white mt-5 mb-5">
-			        <div>	<h2 style="color:#da2461;text-align:center;padding-top:10px"> Modifier Vos Informations</h2></div>
+			        <div>	<h2 style="color:#da2461;text-align:center;padding-top:10px;left:50px"> Modifier Vos Informations</h2></div>
             
             
 
@@ -115,36 +115,31 @@
 							<div class="row mt-6" style="">
 								
 								<div class="col-md-12">
-                                <input class="fname" type="text" name="name" placeholder="Nom" />
-                                <input class="fname" type="text" name="name" placeholder="Prénom" />
-                                 <input class="fname" type="text" name="name" placeholder="Email" /> <br>
-                                 <h4 class="text-align"><u>Compléter Vos Informations </u></h4> 
-									<label class="labels"> Sexe</label>
-									<select name="Sexe" id="" class="form-control">
+                                <input class="fname" type="text" name="name" placeholder="Nom Complet" />
+                                 <input class="fname" type="text" name="email" placeholder="Email" /> <br>
+                        
+                                 <div>	<h2 style="color:#da2461;text-align:center;padding-top:10px"> Completer votre profil</h2></div>
+                  <div class="col-md-12">
+                    	<select name="sexe" id="" class="fname">
+                  <option selected>Sexe</option>
 										<option value="F">Féminin</option>
 										<option value="M">Masculin</option>
 									</select>
+                  <br> <br>
+                  </div>
+								
 								</div>
-								<div class="col-md-12"><label class="labels">Date De Naissance</label><input type="text" class="form-control" placeholder="Entrer Votre Date de Naissance" value="" /></div>
-								<div class="col-md-12"><label class="labels">Téléphone</label><input type="text" class="form-control" placeholder="Entrer Votre Numéro" value="" /></div>
-								<div class="col-md-12"><label class="labels"> Ville</label><input type="text" class="form-control" placeholder="Entrer Votre Ville" value="" /></div>
-								<div class="col-md-12"><label class="labels">Adresse</label><input type="text" class="form-control" placeholder="enter adresse" value="" /></div>
-								<div class="col-md-12"><label class="labels">Diplomes</label><input type="text" class="form-control" placeholder="Entrer Vos Diplomes" value="" /></div>
+                <div class="col-md-12"><input type="text" name="service_freelancer" placeholder="Entrez Vos Services" value="" /></div>
+								<div class="col-md-12"><input type="text" name="contact_freelancer" placeholder="Entrez Votre Numéro de Telephone" value="" /></div>
 						
 							 </div>
 					
                         
-                   <h4 class="text-align"><u>Expériences </u></h4>
-									<input type="text" class="form-control" placeholder="Structure" /> <br />
-									<input type="text" class="form-control" placeholder=" Intitulé du Poste" /> <br />
-									<input type="text" class="form-control" placeholder=" Date Début" /> <br />
-									<input type="text" class="form-control" placeholder=" Date Fin" /> <br />
-									<textarea name="Description Des Taches " id="" cols="34" rows="10" placeholder="Description Des Taches"></textarea>
+									<textarea name="description_recruteur" id="" cols="34" rows="10" placeholder="Décrivez-vous en quelques lignes"></textarea>
 								
-									<h4 class="text-align"><u>Compétences </u></h4>
 									<br />
-						     <textarea name="Compétences " id="" cols="33" rows="10" placeholder="Compétences"></textarea>
-							    <button type="" href="">Enregistrer</button>
+						     <textarea name="competence_freelancer" id="" cols="33" rows="10" placeholder="Compétences"></textarea>
+							    <button type="" href="">Sauvegarder</button>
           </form>
 		</div>
 	</div>

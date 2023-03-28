@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class FreelancerController extends Controller
@@ -9,9 +10,13 @@ class FreelancerController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         //
+
+        $users = User::where('role', '=', 'freelancer')
+            ->get();
+        return view('freelancer', compact('users'));
     }
 
     /**
@@ -33,9 +38,15 @@ class FreelancerController extends Controller
     /**
      * Display the specified resource.
      */
+
     public function show(string $id)
     {
         //
+        $user = User::find($id);
+        return view('detail_free', compact('user'));
+        
+      
+
     }
 
     /**

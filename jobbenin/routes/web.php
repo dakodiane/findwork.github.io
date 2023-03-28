@@ -35,9 +35,8 @@ Route::get('/annonce', function () {
   Route::get('/detail_offre', function () {
     return view('detail_offre');
   });
-  Route::get('/detail_free', function () {
-    return view('detail_free');
-  });
+ 
+
   Route::get('/profilrecruteur', function () {
     return view('profilrecruteur');
   });
@@ -106,6 +105,7 @@ Route::get('/annonce', function () {
   Route::get('/offre', function () {
     return view('offre');
   });
-  Route::get('/freelancer', function () {
-    return view('freelancer');
-  });
+  Route::get('/freelancer ', 'App\Http\Controllers\FreelancerController@index');
+
+  Route::get('/freelancer/{id}', 'App\Http\Controllers\FreelancerController@show')->name('detail_free');
+
