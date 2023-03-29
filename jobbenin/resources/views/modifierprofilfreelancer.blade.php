@@ -102,33 +102,16 @@
       
         </ul>
       </nav>
-			<!-- partial -->
-				
-						
-      <form action="{{('')}}" method="POST" enctype="multipart/form-data">
-        @csrf
+      <form action="{{ route('modifierprofilfreelancer.upload') }}" method="POST" enctype="multipart/form-data">
 
-                <div class="container rounded bg-white mt-5 mb-5">
-			        <div>	<h2 style="color:#da2461;text-align:center;padding-top:10px"> Modifier Vos Informations</h2></div>
-            
-            
+      @csrf
+    <div class="form-group">
+        <label for="image">Sélectionnez une image :</label>
+        <input type="file" class="form-control-file" id="image" name="image">
+    </div>
+    <button type="submit" class="btn btn-primary">Télécharger</button>
+</form>
 
-						<div class="col-md-10 border-right">
-							<div class="row mt-6" style="">
-								
-								<div class="col-md-12">
-                              
-                                 <div class="row form-group mb-4">
-                                            <div class="col-md-12 mb-3 mb-md-0">
-                  <label class="text-black" for="photoF"> Photo Professionnelle</label>
-                <div class="description">Les fichiers doivent peser moins de <strong>4 Mo</strong>
-                .<br/> Extensions autorisées :<strong>doc docx pdf</strong>.</div>
-                <input type="file" name="photoF" id="">
-                </div>
-	</div>
-
-         <button type="submit" href="">Enregistrer</button>
-          </form>
 		</div>
 	</div>
 

@@ -1,6 +1,7 @@
 <?php
-
+namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\OffreController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WelcomeController;
@@ -38,13 +39,7 @@ Route::get('/annonce', function () {
   Route::get('/brouillon', function () {
     return view('brouillon');
   });
-  Route::get('/detail_offre', function () {
-    return view('detail_offre');
-  });
-
-  Route::get('/detail_free', function () {
-    return view('detail_free');
-  });
+ 
   Route::get('/profilrecruteur', function () {
     return view('profilrecruteur');
   });
@@ -109,13 +104,6 @@ Route::get('/annonce', function () {
   });
 
 
- 
-
-  
-  
-  Route::get('/offre', function () {
-    return view('offre');
-  });
   Route::get('/freelancer ', 'App\Http\Controllers\FreelancerController@index');
 
   Route::get('/freelancer/{id}', 'App\Http\Controllers\FreelancerController@show')->name('detail_free');
@@ -123,12 +111,8 @@ Route::get('/annonce', function () {
 Route::get('/offre',[OffreController::class,'offre']);
 
 
+Route::get('/modifierprofilfreelancer', function  (){
+  return view('modifierprofilfreelancer');
+});
 
-  Route::get('/freelancer', function () {
-    return view('freelancer');
-  });
-  Route::get('/modifierprofilfreelancer', function () {
-    return view('modifierprofilfreelancer');
-  });
-  Route::post('/modifierprofilfreelancer', 'App\Http\Controllers\ModifierProfilFreelancerController@update') ;
- 
+Route::post('/modifierprofilfreelancer/{id}', [ModifierProfilFreelancerController::class, 'uploadImage'])->name('modifierprofilfreelancer.upload')->middleware('auth');

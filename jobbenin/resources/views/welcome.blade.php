@@ -125,12 +125,11 @@
         </div>
        
         <div class="row justify-content-center">
-        @foreach ($freelancers as $key=>$freelancer)
+        @foreach ($freelancers as $freelancer)
                 <div class="col-md-4">
               
                     <div class="team text-center">
-                   
-                        <img src="{{ $photos[$key] }}" alt="{{$freelancer->name}}" class="avatar">
+                    <img src="{{ asset($freelancer->photo_freelancer) }}" class="card-img-top" alt="{{ $freelancer->name }}">
                         <div class="title">
                             <h2>{{$freelancer->service_freelancer}}</h2>
                             <h5 class="muted regular">{{$freelancer->name}}</h5>
