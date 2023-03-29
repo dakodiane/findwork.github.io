@@ -25,28 +25,7 @@
 
 
 
-                                        <div class="row form-group">
-                                            <div class="col-md-12 mb-3 mb-md-0">
-                                                <label class="text-black" for="fname">Nom</label>
-                                                <input type="text" id="fname" class="form-control"
-                                                    placeholder="Entrer votre Nom ">
-                                            </div>
-                                        </div>
-                                        <div class="row form-group">
-                                            <div class="col-md-12 mb-3 mb-md-0">
-                                                <label class="text-black" for="fname">Prénom</label>
-                                                <input type="text" id="fname" class="form-control"
-                                                    placeholder="Entrer vos Prénoms">
-                                            </div>
-                                        </div>
-
-                                        <div class="row form-group">
-                                            <div class="col-md-12 mb-3 mb-md-0">
-                                                <label class="text-black" for="fname">Email</label>
-                                                <input type="text" id="fname" class="form-control"
-                                                    placeholder="Addresse Email">
-                                            </div>
-                                        </div>
+                                    
                                         <div class="row form-group">
                                             <div class="col-md-12 mb-3 mb-md-0">
                                                 <label class="text-black" for="fname">Lettre de Motivation</label>
