@@ -6,7 +6,7 @@
 
 <!-- Hero Area Start-->
 <div class="slider-area ">
-<div class="single-slider section-overly slider-height2 d-flex align-items-center" data-background="assets/img//team/offre.jpeg">
+<div class="single-slider section-overly slider-height2 d-flex align-items-center" data-background="{{asset('assets/img/team/offre.jpeg')}}">
     <div class="container">
         <div class="row">
             <div class="col-xl-12">
@@ -27,15 +27,15 @@
                 <div class="single-job-items mb-50">
                     <div class="job-items">
                         <div class="company-img company-img-details">
-                            <a href="#"><img src="assets/img/icon/job-list1.png" alt=""></a>
+                            <a href="#"><img src="{{asset('assets/img/icon/job-list1.png')}}" alt=""></a>
                         </div>
                         <div class="job-tittle">
                             <a href="#">
-                                <h4 style="text-decoration: none;">Developpeur Mobile</h4>
+                                <h4 style="text-decoration: none;">{{ $offre->poste }}</h4>
                             </a>
                             <ul>
-                                <li>Creative Agency</li>
-                                <li><i class="fas fa-map-marker-alt"></i>Porto-Novo</li>
+                                <li>{{$offre->user->name}}</li>
+                                <li><i class="fas fa-map-marker-alt"></i>{{$offre->user->villeR}}</li>
                             </ul>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                         <div class="small-section-tittle">
                             <h4>Description de l'offre</h4>
                         </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, corrupti eligendi accusamus a consequatur similique vitae perspiciatis officiis, voluptates aliquam numquam adipisci, est in et maiores doloremque quae qui sapiente?</p>
+                        <p>{{ $offre->detail }}</p>
                     </div>
                     <div class="post-details2  mb-50">
                          <!-- Small Section Tittle -->
@@ -56,24 +56,21 @@
                             <h4>Compétences Requises</h4>
                         </div>
                        <ul>
-                           <li>System Mobile Development</li>
-                           <li>Mobile Application in iOS/Android/Tizen or other platform</li>
-                           <li>Research and code , libraries, APIs and frameworks</li>
-                           <li>Strong knowledge on software development life cycle</li>
-                           <li>Strong problem solving and debugging skills</li>
+                           <li>{{ $offre->competence_offre1 }}</li>
+                           <li>{{ $offre->competence_offre2 }}</li>
+                           <li>{{ $offre->competence_offre3 }}</li>
+                           <li>{{ $offre->competence_offre4 }}</li>
+                           <li>{{ $offre->competence_offre5 }}</li>
+
                        </ul>
                     </div>
                     <div class="post-details2  mb-50">
                          <!-- Small Section Tittle -->
                         <div class="small-section-tittle">
-                            <h4>Diplomes + Experience</h4>
+                            <h4>Diplome Requis </h4>
                         </div>
                        <ul>
-                           <li>3 or more years of professional design experience</li>
-                           <li>Direct response email experience</li>
-                           <li>Ecommerce website design experience</li>
-                           <li>Familiarity with mobile and web apps preferred</li>
-                           <li>Experience using Invision a plus</li>
+                           <li>{{$offre->diplome}}</li>                        
                        </ul>
                     </div>
                 </div>
@@ -87,13 +84,12 @@
                        <h4>Aperçu de l'offre</h4>
                    </div>
                   <ul>
-                      <li>Posté le : <span>08 Mars 2023</span></li>
-                      <li>Ville : <span>Porto-Novo</span></li>   
-                      <li>Salaire mensuel: <span> 400000 F CFA</span></li>
-                      <li>Date Limite : <span>12 Avril 2023</span></li>
+                      <li>Ville : <span>{{$offre->user->villeR}}</span></li>   
+                      <li>Salaire mensuel: <span>{{ $offre->salaireO }} </span></li>
+                      <li>Date Limite : <span>{{ $offre->datfin }}</span></li>
                   </ul>
                  <div class="apply-btn2">
-                    <a href="{{('postuleroffre')}}" class="boxed-btn1" style="color: white;text-decoration:none;">Postuler maintenant</a>
+                    <a href="{{('/offre/{id}/postuleroffre')}}" class="boxed-btn1" style="color: white;text-decoration:none;">Postuler maintenant</a>
                  </div>
                </div>
                 <div class="post-details4  mb-50">
@@ -101,8 +97,8 @@
                    <div class="small-section-tittle">
                        <h4>Description de l'entreprise</h4>
                    </div>
-                      <span>Creative Agency</span>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, eligendi tenetur deleniti corrupti facere repudiandae, veritatis, sunt provident neque placeat ipsum voluptatum similique vitae officiis rerum. Ex soluta quisquam labore!</p>
+                      <span>{{$offre->user->name}}</span>
+                      <p>{{$offre->user->description_recruteur}}</p>
                   
                </div>
             </div>

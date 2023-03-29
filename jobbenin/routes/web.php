@@ -38,13 +38,7 @@ Route::get('/annonce', function () {
   Route::get('/brouillon', function () {
     return view('brouillon');
   });
-  Route::get('/detail_offre', function () {
-    return view('detail_offre');
-  });
-
-  Route::get('/detail_free', function () {
-    return view('detail_free');
-  });
+ 
   Route::get('/profilrecruteur', function () {
     return view('profilrecruteur');
   });
@@ -76,7 +70,7 @@ Route::get('/annonce', function () {
   Route::get('/publierannonce', function (){
     return view('publierannonce');
   });
-  Route::get('/postuleroffre', function () {
+  Route::get('/offre/{id}/postuleroffre', function () {
     return view('postuleroffre');
   });
   Route::get('/apropos', function () {
@@ -120,5 +114,9 @@ Route::get('/annonce', function () {
 
 Route::get('/offre',[OffreController::class,'offre']);
 
+
+Route::post('/freelancer/{id}/contact', 'App\Http\Controllers\FreelancerController@contact');
+
+Route::get('/offre/{id}', 'App\Http\Controllers\OffreController@show')->name('detail_offre');
 
 

@@ -104,7 +104,7 @@
                        
                         </div>
                         <div class="job-tittle">
-                            <a href="{{('detail_offre')}}" class="soulign"><h4 >{{($offre->poste)}}</h4></a>
+                            <a href="{{ route('detail_offre', $offre->id) }}" class="soulign"><h4 >{{($offre->poste)}}</h4></a>
                             <ul>
                                 <li>{{optional($offre->user)->name}}</li>
                                 <li><i class="fas fa-map-marker-alt"></i>{{optional($offre->user)->villeR}}</li>
@@ -113,7 +113,7 @@
                         </div>
                     </div>
                     <div class="items-link f-right">
-                        <a href="{{('detail_offre')}}" class="soulign">Voir l'offre</a>
+                        <a href="{{ route('detail_offre', $offre->id) }}" class="soulign">Voir l'offre</a>
                       
                     </div>
                 </div>

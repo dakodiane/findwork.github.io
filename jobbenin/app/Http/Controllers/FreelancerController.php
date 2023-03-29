@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\User;
 
 use App\Models\Freelancer;
+use Faker\Provider\UserAgent;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 
 
@@ -23,8 +25,8 @@ class FreelancerController extends Controller
         return view('freelancer', compact('users'));
     }
 
-       
-    
+
+
     /**
      * Show the form for creating a new resource.
      */
@@ -48,11 +50,8 @@ class FreelancerController extends Controller
     public function show(string $id)
     {
         //
-        $user = User::find($id);
-        return view('detail_free', compact('user'));
-        
-      
-
+        $users = User::find($id);
+        return view('detail_free', compact('users'));
     }
 
     /**
@@ -78,4 +77,18 @@ class FreelancerController extends Controller
     {
         //
     }
+
+    public function contact(Request $request,string $id)
+{
+    $user = User::find($id);
+
+    // Récupère le numéro de téléphone du freelancer
+    $contact_freelancer = $user->contact_freelancer;
+    $lien_whatsapp = "https://wa.me/{$contact_freelancer}";
+
+    return view('detail_free', ['user' => $user, 'lien_whatsapp' => $lien_whatsapp]);
+
+}
+
+    
 }

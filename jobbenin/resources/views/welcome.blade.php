@@ -130,7 +130,6 @@
               
                     <div class="team text-center">
                    
-                        <img src="{{ $photos[$key] }}" alt="{{$freelancer->name}}" class="avatar">
                         <div class="title">
                             <h2>{{$freelancer->service_freelancer}}</h2>
                             <h5 class="muted regular">{{$freelancer->name}}</h5>

@@ -18,19 +18,11 @@ class WelcomeController extends Controller
     $offres = Offre::with('user')->get();
     // Récupération des freelancers
         $freelancers = User::where('role', 'freelancer')->get();
-    
-        // Récupération des chemins de fichiers des photos des freelancers
-        $photos = [];
-        foreach ($freelancers as $freelancer) {
-            $photoPath = $freelancer->photo;
-            $photos[] = $photoPath ? asset('public/images/'. $photoPath) : null;
-        }
-    
+
         // Affichage de la vue avec les données
         return view('welcome', [
             'freelancers' => $freelancers,
             'offres'=>$offres,
-            'photos' => $photos,
         ]);
 }
    

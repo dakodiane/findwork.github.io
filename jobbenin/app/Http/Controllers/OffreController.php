@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Offre;
 use Illuminate\Http\Request;
 
@@ -44,6 +45,9 @@ class OffreController extends Controller
     public function show(string $id)
     {
         //
+        $offre = Offre::with('user')->find($id);
+        return view('detail_offre', ['offre' => $offre]);
+      
     }
 
     /**
