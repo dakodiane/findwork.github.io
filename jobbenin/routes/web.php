@@ -124,7 +124,7 @@ Route::get('/brouillon','App\Http\Controllers\DashboardRecruteurController@broui
 Route::get('/selectioncv','App\Http\Controllers\DashboardRecruteurController@selectioncv' )->name('selectioncv');
 Route::get('/entretien','App\Http\Controllers\DashboardRecruteurController@entretien' )->name('entretien');
 
-Route::post('/logout', 'ConnexionController@logout')->name('logout');
+Route::post('/logout', 'App\Http\Controllers\ConnexionController@logout')->name('logout');
 
 
 
