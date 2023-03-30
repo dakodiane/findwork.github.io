@@ -24,23 +24,6 @@ use App\Http\Controllers\DashboardPostulantController;
 
 
 Route::get('/', [WelcomeController::class,'index']);
-
-
-Route::get('/annonce', function () {
-    return view('annonce');
-  });
-  Route::get('/attentecv', function () {
-    return view('attentecv');
-  });
-  Route::get('/selectioncv', function () {
-    return view('selectioncv');
-  });
-  Route::get('/entretien', function () {
-    return view('entretien');
-  });
-  Route::get('/brouillon', function () {
-    return view('brouillon');
-  });
  
   Route::get('/profilrecruteur', function () {
     return view('profilrecruteur');
@@ -51,7 +34,7 @@ Route::get('/annonce', function () {
 
   Route::get('connexion ', 'App\Http\Controllers\ConnexionController@index');
 
-  Route::post('connexion.post ', 'App\Http\Controllers\ConnexionController@connexion');
+  Route::post('/connexion ', 'App\Http\Controllers\ConnexionController@connexion');
 
 
   Route::get('/inscription ', 'App\Http\Controllers\InscriptionController@index');
@@ -98,9 +81,7 @@ Route::get('/annonce', function () {
   Route::get('/profilfreelancer', function () {
     return view('profilfreelancer');
   });
-  Route::get('/dashboardrecruteur', function () {
-    return view('dashboardrecruteur');
-  });
+ 
   Route::get('/modifierprofilpostulant', function () {
     return view('modifierprofilpostulant');
   });
@@ -132,3 +113,14 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
 });
 
 Route::get('/dashboardpostulant', 'App\Http\Controllers\DashboardPostulantController@index')->name('dashboardpostulant');
+Route::get('/dashboardrecruteur','App\Http\Controllers\DashboardRecruteurController@index' )->name('dashboardrecruteur');
+Route::get('/annonce','App\Http\Controllers\DashboardRecruteurController@annonce' )->name('annonce');
+Route::get('/attentecv','App\Http\Controllers\DashboardRecruteurController@attentecv' )->name('attentecv');
+Route::get('/brouillon','App\Http\Controllers\DashboardRecruteurController@brouillon' )->name('brouillon');
+Route::get('/selectioncv','App\Http\Controllers\DashboardRecruteurController@selectioncv' )->name('selectioncv');
+Route::get('/entretien','App\Http\Controllers\DashboardRecruteurController@entretien' )->name('entretien');
+
+
+
+
+

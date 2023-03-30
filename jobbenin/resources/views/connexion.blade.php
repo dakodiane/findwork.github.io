@@ -17,7 +17,7 @@
                                 <b> <u> Connectez-vous à JobBénin!</u></b>
                             </h1>
                         </div>
-                        <form class="user" method="POST" action="connexion.post">
+                        <form class="user" method="POST" action="{{'connexion'}}">
                             @csrf
                             <div class="form-group">
                                 @error('email')

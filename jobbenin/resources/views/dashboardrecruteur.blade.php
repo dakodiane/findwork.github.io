@@ -4,9 +4,9 @@
 
 <main>
 
-<div class="container-scroller">
+  <div class="container-scroller">
 
- 
+
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
@@ -24,14 +24,14 @@
           </a>
         </div>
       </div>
-      <div class="navbar-menu-wrapper d-flex align-items-top"> 
+      <div class="navbar-menu-wrapper d-flex align-items-top">
         <ul class="navbar-nav">
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-            <h1 class="welcome-text">Salut, <span class="text-black fw-bold">John Doe</span></h1>
+            <h1 class="welcome-text">Salut, <span class="text-black fw-bold">{{ $user->name }}</span></h1>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
-        
+
           <li class="nav-item d-none d-lg-block">
             <div id="datepicker-popup" class="input-group date datepicker navbar-date-picker">
               <span class="input-group-addon input-group-prepend border-right">
@@ -40,16 +40,16 @@
               <input type="text" class="form-control">
             </div>
           </li>
-          
-      
+
+
           <li class="nav-item dropdown d-none d-lg-block user-dropdown">
             <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
               <img class="img-xs rounded-circle" src="{{asset('assets/images/faces/face8.jpg')}}" alt="Profile image"> </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
               <div class="dropdown-header text-center">
                 <img class="img-md rounded-circle" src="{{asset('assets/images/faces/face8.jpg')}}" alt="Profile image">
-                <p class="mb-1 mt-3 font-weight-semibold">Allen Moreno</p>
-                <p class="fw-light text-muted mb-0">allenmoreno@gmail.com</p>
+                <p class="mb-1 mt-3 font-weight-semibold">{{ $user->name }}</p>
+                <p class="fw-light text-muted mb-0">{{ $user->email }}</p>
               </div>
               <a class="dropdown-item" href=" {{('profilrecruteur')}}"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile <span class="badge badge-pill badge-danger">1</span></a>
               <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign Out</a>
@@ -69,8 +69,12 @@
         <div id="theme-settings" class="settings-panel">
           <i class="settings-close ti-close"></i>
           <p class="settings-heading">SIDEBAR SKINS</p>
-          <div class="sidebar-bg-options selected" id="sidebar-light-theme"><div class="img-ss rounded-circle bg-light border me-3"></div>Light</div>
-          <div class="sidebar-bg-options" id="sidebar-dark-theme"><div class="img-ss rounded-circle bg-dark border me-3"></div>Dark</div>
+          <div class="sidebar-bg-options selected" id="sidebar-light-theme">
+            <div class="img-ss rounded-circle bg-light border me-3"></div>Light
+          </div>
+          <div class="sidebar-bg-options" id="sidebar-dark-theme">
+            <div class="img-ss rounded-circle bg-dark border me-3"></div>Dark
+          </div>
           <p class="settings-heading mt-2">HEADER SKINS</p>
           <div class="color-tiles mx-0 px-4">
             <div class="tiles success"></div>
@@ -82,7 +86,7 @@
           </div>
         </div>
       </div>
-    
+
       <!-- partial -->
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
@@ -123,7 +127,7 @@
               <span class="menu-title">Brouillons</span>
             </a>
           </li>
-      
+
         </ul>
       </nav>
       <!-- partial -->
@@ -132,13 +136,13 @@
           <div class="row">
             <div class="col-sm-12">
               <div class="home-tab">
-             
+
                 <div class="tab-content tab-content-basic">
-                  <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview"> 
+                  <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview">
 
                     <div class="row">
-                      <div class="col-lg-8 d-flex flex-column">
-                       
+                      <div class="col-lg-6 d-flex flex-column">
+
                         <div class="row flex-grow">
                           <div class="col-12 grid-margin stretch-card">
                             <div class="card card-rounded">
@@ -157,34 +161,31 @@
                                   <table class="table select-table">
                                     <thead>
                                       <tr>
-                                        
+
                                         <th>Aperçu</th>
-                                        <th>Date</th>
                                         <th>Actions</th>
-                                    
+
                                       </tr>
                                     </thead>
                                     <tbody>
+                                      @foreach ($offres as $offre)
                                       <tr>
-                                        
+
                                         <td>
                                           <div class="d-flex ">
                                             <div>
-                                            
-                                             <h6>Developpeur Mobile</h6>
+
+                                              <h6>{{ $offre->poste }}</h6>
                                             </div>
                                           </div>
                                         </td>
-                                        <td>
-                                          <h6>23 Jan 2023</h6>
-                                         
-                                        </td>
+                                        
                                         <td>
                                           <div>
-                                           
+
                                             <div class="template-demo mt-4">
                                               <a href="puboffre.html">
-                                                <button type="button"  class="btn btn-success" style="color:white;background-color: green;">Modifier</button>
+                                                <button type="button" class="btn btn-success" style="color:white;background-color: green;">Modifier</button>
                                               </a>
                                               <a href="puboffre.html">
                                                 <button type="button" class="btn btn-success " style="color:white;background-color: red;">Supprimer</button>
@@ -193,117 +194,10 @@
                                             </div>
                                           </div>
                                         </td>
-                                      
-                                      </tr>
-                                      <tr>
-                                        
-                                        <td>
-                                          <div class="d-flex">
-                                            <div>
-                                              <h6>Developpeur Mobile</h6>
-                                             
-                                            </div>
-                                          </div>
-                                        </td>
-                                        <td>
-                                          <h6>23 Jan 2023</h6>
-                                         
-                                        </td>
-                                        <td>
-                                          <div class="template-demo mt-4">
-                                            <a href="puboffre.html">
-                                              <button type="button"  class="btn btn-success" style="color:white;background-color: green;">Modifier</button>
-                                            </a>
-                                            <a href="puboffre.html">
-                                              <button type="button" class="btn btn-success " style="color:white;background-color: red;">Supprimer</button>
-                                            </a>
 
-                                          </div>
-                                        </td>
-                                      
                                       </tr>
-                                      <tr>
-                                        
-                                        <td>
-                                          <div class="d-flex">
-                                            <div>
-                                              <h6>Developpeur Mobile</h6>
-                                            
-                                            </div>
-                                          </div>
-                                        </td>
-                                        <td>
-                                          <h6>23 Jan 2023</h6>
-                                         
-                                        </td>
-                                        <td>
-                                      
-                                            <div class="template-demo mt-4">
-                                              <a href="puboffre.html">
-                                                <button type="button"  class="btn btn-success" style="color:white;background-color: green;">Modifier</button>
-                                              </a>
-                                              <a href="puboffre.html">
-                                                <button type="button" class="btn btn-success " style="color:white;background-color: red;">Supprimer</button>
-                                              </a>
+                                      @endforeach
 
-                                            </div>
-                                        
-                                        </td>
-                                      
-                                      </tr>
-                                      <tr>
-                                        
-                                        <td>
-                                          <div class="d-flex">
-                                            <div>
-                                              <h6>Developpeur Mobile</h6>
-                                             
-                                            </div>
-                                          </div>
-                                        </td>
-                                        <td>
-                                          <h6>23 Jan 2023</h6>
-                                         
-                                        </td>
-                                        <td>
-                                          <div>
-                                            <div class="template-demo mt-4">
-                                              <a href="puboffre.html">
-                                                <button type="button"  class="btn btn-success" style="color:white;background-color: green;">Modifier</button>
-                                              </a>
-                                              <a href="puboffre.html">
-                                                <button type="button" class="btn btn-success " style="color:white;background-color: red;">Supprimer</button>
-                                              </a>
-
-                                            </div>
-                                        </td>
-                                      </tr>
-                                      <tr>
-                                        
-                                        <td>
-                                          <div class="d-flex">
-                                            <div>
-                                              <h6>Developpeur Mobile</h6>
-                                            
-                                            </div>
-                                          </div>
-                                        </td>
-                                        <td>
-                                          <h6>23 Jan 2023</h6>
-                                         
-                                        </td>
-                                        <td>
-                                          <div class="template-demo mt-4">
-                                            <a href="puboffre.html">
-                                              <button type="button"  class="btn btn-success" style="color:white;background-color: green;">Modifier</button>
-                                            </a>
-                                            <a href="puboffre.html">
-                                              <button type="button" class="btn btn-success " style="color:white;background-color: red;">Supprimer</button>
-                                            </a>
-
-                                          </div>
-                                        </td>
-                                      </tr>
                                     </tbody>
                                   </table>
                                 </div>
@@ -311,10 +205,10 @@
                             </div>
                           </div>
                         </div>
-                      
+
                       </div>
-                      <div class="col-lg-4 d-flex flex-column">
-               
+                      <div class="col-lg-6 d-flex flex-column">
+
                         <div class="row flex-grow">
                           <div class="col-12 grid-margin stretch-card">
                             <div class="card card-rounded">
@@ -334,7 +228,7 @@
                                             <p class="ms-1 mb-1 fw-bold">Brandon Washington</p>
                                           </div>
                                         </div>
-                                        
+
                                       </div>
                                       <div class="wrapper d-flex align-items-center justify-content-between py-2 border-bottom">
                                         <div class="d-flex">
@@ -343,7 +237,7 @@
                                             <p class="ms-1 mb-1 fw-bold">Wayne Murphy</p>
                                           </div>
                                         </div>
-                                        
+
                                       </div>
                                       <div class="wrapper d-flex align-items-center justify-content-between py-2 border-bottom">
                                         <div class="d-flex">
@@ -352,10 +246,10 @@
                                             <p class="ms-1 mb-1 fw-bold">Katherine Butler</p>
                                           </div>
                                         </div>
-                                        
+
                                       </div>
-                                    
-                                   
+
+
                                     </div>
                                   </div>
                                 </div>
