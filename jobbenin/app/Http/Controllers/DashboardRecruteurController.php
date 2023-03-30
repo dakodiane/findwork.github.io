@@ -18,7 +18,7 @@ class DashboardRecruteurController extends Controller
         $user = Auth::user();
 
         if (!$user) {
-            return redirect()->route('login');
+            return redirect()->intended('connexion');
         }
         // Récupérez les informations du recruteur connecté à partir de la table users
         $recruteur = DB::table('users')->where('id', Auth::id())->first();
@@ -37,7 +37,7 @@ class DashboardRecruteurController extends Controller
         $user = Auth::user();
 
         if (!$user) {
-            return redirect()->route('login');
+            return redirect()->intended('connexion');
         }
         // Récupérez les informations du recruteur connecté à partir de la table users
         $recruteur = DB::table('users')->where('id', Auth::id())->first();
@@ -57,7 +57,7 @@ class DashboardRecruteurController extends Controller
         $user = Auth::user();
 
         if (!$user) {
-            return redirect()->route('login');
+            return redirect()->intended('connexion');
         }
         // Récupérez les informations du recruteur connecté à partir de la table users
         $recruteur = DB::table('users')->where('id', Auth::id())->first();
@@ -76,7 +76,7 @@ class DashboardRecruteurController extends Controller
         $user = Auth::user();
 
         if (!$user) {
-            return redirect()->route('login');
+            return redirect()->intended('connexion');
         }
         // Récupérez les informations du recruteur connecté à partir de la table users
         $recruteur = DB::table('users')->where('id', Auth::id())->first();
@@ -95,7 +95,7 @@ class DashboardRecruteurController extends Controller
         $user = Auth::user();
 
         if (!$user) {
-            return redirect()->route('login');
+            return redirect()->intended('connexion');
         }
         // Récupérez les informations du recruteur connecté à partir de la table users
         $recruteur = DB::table('users')->where('id', Auth::id())->first();
@@ -114,7 +114,7 @@ class DashboardRecruteurController extends Controller
         $user = Auth::user();
 
         if (!$user) {
-            return redirect()->route('login');
+            return redirect()->intended('connexion');
         }
         // Récupérez les informations du recruteur connecté à partir de la table users
         $recruteur = DB::table('users')->where('id', Auth::id())->first();

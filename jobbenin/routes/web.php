@@ -115,12 +115,16 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
 
 
 Route::get('/dashboardpostulant', 'App\Http\Controllers\DashboardPostulantController@index')->name('dashboardpostulant');
+
 Route::get('/dashboardrecruteur','App\Http\Controllers\DashboardRecruteurController@index' )->name('dashboardrecruteur');
 Route::get('/annonce','App\Http\Controllers\DashboardRecruteurController@annonce' )->name('annonce');
 Route::get('/attentecv','App\Http\Controllers\DashboardRecruteurController@attentecv' )->name('attentecv');
 Route::get('/brouillon','App\Http\Controllers\DashboardRecruteurController@brouillon' )->name('brouillon');
 Route::get('/selectioncv','App\Http\Controllers\DashboardRecruteurController@selectioncv' )->name('selectioncv');
 Route::get('/entretien','App\Http\Controllers\DashboardRecruteurController@entretien' )->name('entretien');
+
+Route::post('/logout', 'App\Http\Controllers\ConnexionController@logout')->name('logout');
+
 
 
 Route::get('/vosoffres','App\Http\Controllers\DashboardPostulantController@vosoffres' )->name('vosoffres');
