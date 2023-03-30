@@ -2,28 +2,25 @@
 
 namespace Database\Factories;
 
-use App\Models\User;
-use App\Models\Offre;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Beneficier>
- */
+use App\Models\Beneficier;
+use App\Models\User;
+use App\Models\Offre;
+
 class BeneficierFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
-    public function definition(): array
+    protected $model = Beneficier::class;
+
+    public function definition()
     {
+        $recruteur = User::where('role', 'recruteur')->inRandomOrder()->first();
+        $offre = Offre::inRandomOrder()->first();
+
         return [
-            //
-            'id_user' => User::all()->random()->id,
-            'id_offre' => Offre::all()->random()->id,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'id_user' => $recruteur->id,
+            'id_offre' => $offre->id,
         ];
     }
 }
+
