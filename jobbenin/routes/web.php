@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OffreController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\ConnexionController;
 use App\Http\Controllers\FreelancerController;
 use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\DashboardPostulantController;
@@ -123,7 +124,7 @@ Route::get('/brouillon','App\Http\Controllers\DashboardRecruteurController@broui
 Route::get('/selectioncv','App\Http\Controllers\DashboardRecruteurController@selectioncv' )->name('selectioncv');
 Route::get('/entretien','App\Http\Controllers\DashboardRecruteurController@entretien' )->name('entretien');
 
-Route::post('/logout', 'App\Http\Controllers\ConnexionController@logout')->name('logout');
+Route::post('/logout', 'ConnexionController@logout')->name('logout');
 
 
 
