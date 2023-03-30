@@ -18,12 +18,36 @@ class DashboardPostulantController extends Controller
         //
         $user = Auth::user();
         if (!$user) {
-          return redirect()->route('connexion');
+          return redirect()->intended('connexion');
            
         } $postulant =DB::table('users')->where('id',Auth::id())->first();
+        $offres=DB::table ('offres')->where('id_user',Auth::id())->get();
         return view('dashboardpostulant')->with(['user'=>$user]);
     }
+    public function vosoffres()
+    {
+        //
+        $user = Auth::user();
+        if (!$user) {
+          return redirect()->route('vosoffres');
+           
+        } $postulant =DB::table('users')->where('id',Auth::id())->first();
+        $offres=DB::table ('offres')->where('id_user',Auth::id())->get();
+
+        return view('vosoffres')->with(['user'=>$user]);
+    }
+    public function recommandation()
+    {
+        //
+        $user = Auth::user();
+        if (!$user) {
+          return redirect()->route('recommandation');
+           
+        } $postulant =DB::table('users')->where('id',Auth::id())->first();
+        return view('recommandation')->with(['user'=>$user]);
+    }
        
+
 
     
 

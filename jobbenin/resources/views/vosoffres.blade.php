@@ -27,7 +27,9 @@
       <div class="navbar-menu-wrapper d-flex align-items-top"> 
         <ul class="navbar-nav">
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-            <h1 class="welcome-text">Salut, <span class="text-black fw-bold">John Doe</span></h1>
+    
+       
+            <h1 class="welcome-text">  Bienvenue, <span class="text-black fw-bold">{{ $user->name }}.</span> </h1>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
@@ -51,8 +53,8 @@
                 <p class="mb-1 mt-3 font-weight-semibold">John Doe</p>
                 <p class="fw-light text-muted mb-0">DoeJohn@gmail.com</p>
               </div>
-              <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> Mon Profile<span class="badge badge-pill badge-danger">1</span></a>
-              <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Se Déconnecter</a>
+              <a class="dropdown-item" href=" {{('profilpostulant')}}"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> Mon Profile<span class="badge badge-pill badge-danger">1</span></a>
+              <a class="dropdown-item"href=" {{('connexion')}}"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Se Déconnecter</a>
             </div>
           </li>
         </ul>
@@ -87,12 +89,7 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link" href="{{('dashboardpostulant')}}">
-              <i class="mdi mdi-grid-large menu-icon"></i>
-              <span class="menu-title">Tableau De Bord</span>
-            </a>
-          </li>
+         
           <li class="nav-item">
             <a class="nav-link" href="{{('vosoffres')}}">
             <i class="mdi mdi-alarm menu-icon"></i>

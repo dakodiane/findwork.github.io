@@ -112,6 +112,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::post('/modifierprofilfreelancer', 'ModifierProfilFreelancerController@upload')->name('modifier-profil-freelancer.post');
 });
 
+
+
 Route::get('/dashboardpostulant', 'App\Http\Controllers\DashboardPostulantController@index')->name('dashboardpostulant');
 Route::get('/dashboardrecruteur','App\Http\Controllers\DashboardRecruteurController@index' )->name('dashboardrecruteur');
 Route::get('/annonce','App\Http\Controllers\DashboardRecruteurController@annonce' )->name('annonce');
@@ -119,6 +121,10 @@ Route::get('/attentecv','App\Http\Controllers\DashboardRecruteurController@atten
 Route::get('/brouillon','App\Http\Controllers\DashboardRecruteurController@brouillon' )->name('brouillon');
 Route::get('/selectioncv','App\Http\Controllers\DashboardRecruteurController@selectioncv' )->name('selectioncv');
 Route::get('/entretien','App\Http\Controllers\DashboardRecruteurController@entretien' )->name('entretien');
+
+
+Route::get('/vosoffres','App\Http\Controllers\DashboardPostulantController@vosoffres' )->name('vosoffres');
+Route::get('/recommandation','App\Http\Controllers\DashboardPostulantController@recommandation' )->name('recommandation');
 
 
 
