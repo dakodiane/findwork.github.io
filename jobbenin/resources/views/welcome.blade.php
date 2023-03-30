@@ -126,21 +126,20 @@
        
         <div class="row justify-content-center">
         @foreach ($freelancers as $freelancer)
-                <div class="col-md-4">
-              
-                    <div class="team text-center">
-                    <img src="{{ asset($freelancer->photo_freelancer) }}" class="card-img-top" alt="{{ $freelancer->name }}">
-                        <div class="title">
-                            <h2>{{$freelancer->service_freelancer}}</h2>
-                            <h5 class="muted regular">{{$freelancer->name}}</h5>
-                        </div>
-                        <a href="{{('detail_free')}}">
-                            <button data-toggle="modal" data-target="#modal1" class="btn-blue-fill">Details</button>
-                        </a>
-                   
-                    </div>
-                </div>
-                @endforeach
+  <div class="col-md-4">
+    <div class="team text-center">
+      <img src="images/{{Session::get("$freelancer->photo_freelancer")}}" alt="{{ $freelancer->name }}">
+      <div class="title">
+        <h2>{{ $freelancer->service_freelancer }}</h2>
+        <h5 class="muted regular">{{ $freelancer->name }}</h5>
+      </div>
+      <a href="{{ url('detail_free') }}">
+        <button data-toggle="modal" data-target="#modal1" class="btn-blue-fill">Details</button>
+      </a>
+    </div>
+  </div>
+@endforeach
+
         </div>
       
     </div>

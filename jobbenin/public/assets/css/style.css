@@ -3606,3 +3606,20 @@ input[type="radio"]{
 #option-3:checked:checked ~ .option-3 span{
   color: #fff;
 }
+
+#navigation li {
+    margin-right: 10px; /* ajout d'un espace égal entre chaque élément */
+}
+
+#navigation li:last-child {
+    margin-right: 0; /* supprime l'espace à droite pour le dernier élément */
+}
+
+.head-btn1 {
+    margin-left: 1px; /* ajoute un espace entre les deux boutons */
+}
+#navigation > li.align-middle {
+	margin-top:15px;
+ }
+ 
+ 

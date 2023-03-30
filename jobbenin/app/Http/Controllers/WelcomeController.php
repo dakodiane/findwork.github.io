@@ -9,27 +9,26 @@ use Illuminate\Http\Request;
 
 class WelcomeController extends Controller
 {
-   
     public function index()
-{
-  
-
-    // Récupération des offres
-    $offres = Offre::with('user')->get();
-
-
-       // Récupération des freelancers avec leur photo
-$freelancers = User::where('role', 'freelancer')->select('id', 'name','service_freelancer', 'photo_freelancer')->get();
-
-      
+    {
+        // Récupération des offres
+        $offres = Offre::with('user')->get();
     
-        // Affichage de la vue avec les données
+        // Récupération des freelancers avec leur photo
+        $freelancers = User::where('role', 'freelancer')
+                            ->select('id', 'name','service_freelancer', 'photo_freelancer')
+                            ->get();
+    
+        //dd($freelancers);
+                
+        // Affichage de la vue avec les données récupérées
         return view('welcome', [
             'freelancers' => $freelancers,
             'offres'=>$offres,
-           
         ]);
-}
+    }
+    
+    
    
    
 }

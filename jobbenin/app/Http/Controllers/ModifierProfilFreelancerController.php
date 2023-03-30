@@ -2,31 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use auth;
 use Illuminate\Http\Request;
-use App\Models\ModifierProfilFreelancer;
 
 class ModifierProfilFreelancerController extends Controller
-{
-   
-
-
-    public function uploadImage(Request $request)
+{public function index() 
     {
-        $request->validate([
-            'image' => 'required|image|max:2048'
-        ]);
-        
-        $imagePath = $request->file('image')->store('images', 'public');
-
-        $id = Auth::id();
-        $profil = ModifierProfilFreelancer::findOrFail($id);
-        $profil->photo_freelancer = $imagePath;
-        $profil->save();
-
-        return back()
-            ->with('success', 'L\'image a été téléchargée avec succès.');
+        return view('modifier-profil-freelancer.index');
     }
 
+    public function upload(ImageUploadRequest $request) 
+    {
+        $filename = time() . '.' . $request->image->extension();
 
+        $request->image->move(public_path('images'), $filename);
+
+        // save uploaded image filename here to your database
+
+        return back()
+            ->with('success','Image uploaded successfully.')
+            ->with('image', $filename); 
+    }  //
+    //
 }

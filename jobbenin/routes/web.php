@@ -6,6 +6,8 @@ use App\Http\Controllers\OffreController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\FreelancerController;
+use App\Http\Controllers\ImageUploadController;
+use App\Http\Controllers\DashboardPostulantController;
 
 
 /*
@@ -116,4 +118,17 @@ Route::post('/freelancer/{id}/contact', 'App\Http\Controllers\FreelancerControll
 Route::get('/offre/{id}', 'App\Http\Controllers\OffreController@show')->name('detail_offre');
 
 
-Route::post('/modifierprofilfreelancer/{id}', [ModifierProfilFreelancerController::class, 'uploadImage'])->name('modifierprofilfreelancer.upload')->middleware('auth');
+
+
+///TEST DJEMI 
+ 
+
+Route::group(['namespace' => 'App\Http\Controllers'], function()
+{   
+    Route::get('/modifierprofilfreelancer', 'ModifierProfilFreelancerController@index')->
+    name('modifier-profil-freelancer.index');
+
+    Route::post('/modifierprofilfreelancer', 'ModifierProfilFreelancerController@upload')->name('modifier-profil-freelancer.post');
+});
+
+Route::get('/dashboardpostulant', 'App\Http\Controllers\DashboardPostulantController@index')->name('dashboardpostulant');

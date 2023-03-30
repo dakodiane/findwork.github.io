@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\DashboardPostulantController;
+
 
 class DashboardPostulantController extends Controller
 {
@@ -12,9 +16,16 @@ class DashboardPostulantController extends Controller
     public function index()
     {
         //
-        return view('dashboardpostulant');
-
+        $user = Auth::user();
+        if (!$user) {
+          return redirect()->route('connexion');
+           
+        } $postulant =DB::table('users')->where('id',Auth::id())->first();
+        return view('dashboardpostulant')->with(['user'=>$user]);
     }
+       
+
+    
 
     /**
      * Show the form for creating a new resource.
@@ -63,4 +74,7 @@ class DashboardPostulantController extends Controller
     {
         //
     }
+
+
+ 
 }
