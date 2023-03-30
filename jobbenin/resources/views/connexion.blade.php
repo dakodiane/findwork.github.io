@@ -17,22 +17,28 @@
                                 <b> <u> Connectez-vous à JobBénin!</u></b>
                             </h1>
                         </div>
-                        <form class="user" method="POST" action="/connexion.post">
+                        <form class="user" method="POST" action="connexion.post">
                             @csrf
                             <div class="form-group">
+                                @error('email')
+                                <span role="alert" class="alert alert-danger">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                                @error('password')
+                                <span role="alert" class="alert alert-danger">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                                 <input type="email" name="email" class="form-control form-control-user" id="email" aria-describedby="emailHelp" placeholder="Entrer Votre  Addresse Email...">
+
                             </div>
                             <div class="form-group">
                                 <input type="password" name="password" class="form-control form-control-user" id="password" placeholder=" Entrer Votre Mot de Passe">
+
                             </div>
-                            <div class="form-group">
-                                <div class="custom-control custom-checkbox small">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck">
-                                    <label class="custom-control-label" for="customCheck">
-                                        Se Souvenir de Moi</label>
-                                </div>
-                            </div>
-                            <a href="" >
+
+                            <a href="">
                                 <button type="submit" class="btn btn-primary btn-user btn-block"> Connexion
                                 </button>
                             </a>

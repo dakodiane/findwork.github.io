@@ -23,39 +23,46 @@ class ConnexionController extends Controller
     {
 
         $email = $request->email;
-        $password = $request->password;     
-        
+        $password = $request->password;
 
-      if (Auth::attempt (['email' => $email, 'password' => $password])) {
 
-        $user=User:: where ('email' ,"=", $email)->first();
+            $user = User::where('email', "=", $email)->first();
 
-                if ($user->role=='recruteur') {
+        if (Auth::attempt(['email' => $email, 'password' => $password])) {
+
+
+            if ($user) {
+
+                if ($user->role == 'recruteur') {
                     $request->session()->regenerate();
 
-                  return redirect()->intended('dashboardrecruteur');   
+                    return redirect()->intended('dashboardrecruteur');
+                } elseif ($user->role == 'postulant') {
 
-                }
-                            
-            elseif ($user->role=='postulant') {
+                    $request->session()->regenerate();
 
-                $request->session()->regenerate();
+                    return redirect()->intended('dashboardpostulant');
+                } elseif ($user->role == 'freelancer') {
+                    $request->session()->regenerate();
 
-                return redirect()->intended('dashboardpostulant');   
-                              }  
-            elseif($user->role=='freelancer') {
-                $request->session()->regenerate();
-
-                return redirect()->intended('dashboardfreelancer');   
-                              }  
-            else 
-
-            return redirect()->intended('');   
-
-        }
+                    return redirect()->intended('dashboardfreelancer');
+                } 
             }
           
-    
+        }
+        elseif (!$user) {
+            // L'utilisateur n'existe pas dans la base de données
+            return redirect()->back()->withErrors(['email' => 'Adresse Email ou Mot de passe incorrect'])->withInput();
+        }
+
+        // Vérifier si le mot de passe est correct
+        if (!Hash::check($password, $user->password)) {
+            // Le mot de passe est incorrect
+            return redirect()->back()->withErrors(['password' => 'Adresse Email ou Mot de passe incorrect'])->withInput();
+        }
+    }
+
+
     /**
      * Show the form for creating a new resource.
      */
