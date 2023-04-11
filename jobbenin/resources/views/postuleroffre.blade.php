@@ -22,11 +22,7 @@
                                 <div class="col-lg-6">
 
                                     <form action="#" class="p-4 border rounded"id="forminsc">
-
-
-
-                                    
-                                        <div class="row form-group">
+                                                  <div class="row form-group">
                                             <div class="col-md-12 mb-3 mb-md-0">
                                                 <label class="text-black" for="fname">Lettre de Motivation</label>
                                                 <div class="col-md-12 mb-3 mb-md-0">

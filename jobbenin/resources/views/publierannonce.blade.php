@@ -116,7 +116,8 @@
                                         <textarea required="required" class="wysiwyg form-textarea required"
                                             id="edit-competences-value" name="competencesrequises" cols="100" rows="10"
                                             placeholder="Compétences requises pour l'offre "></textarea>
-                                    </div>
+                                   
+                                        </div>
                                 </div>
 
                             </div>
@@ -134,8 +135,8 @@
         <div class="col-6">
            <button type ="submit" class="btn btn-block btn-primary btn-md" data-toggle="modal"  data-target="#myModal"> Publier</button>
         </div>
-   
-                   
+        </div>
+        </div>                
 </form>
          
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -149,6 +150,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+           
             </div>
         </div>
     </div>

@@ -29,7 +29,7 @@
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
     
        
-            <h1 class="welcome-text">  Bienvenue, <span class="text-black fw-bold">{{ $user->name }}.</span> </h1>
+            <h1 class="welcome-text">  Salut, <span class="text-black fw-bold">{{ $user->name }}.</span> </h1>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
@@ -50,11 +50,19 @@
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
               <div class="dropdown-header text-center">
                 <img class="img-md rounded-circle" src="{{asset('assets/images/faces/face8.jpg')}}" alt="Profile image">
-                <p class="mb-1 mt-3 font-weight-semibold">John Doe</p>
-                <p class="fw-light text-muted mb-0">DoeJohn@gmail.com</p>
+                <p class="mb-1 mt-3 font-weight-semibold">{{ $user->name }}</p>
+                <p class="fw-light text-muted mb-0">{{ $user->email }}</p>
               </div>
-              <a class="dropdown-item" href=" {{('profilpostulant')}}"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> Mon Profile<span class="badge badge-pill badge-danger">1</span></a>
-              <a class="dropdown-item"href=" {{('connexion')}}"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Se Déconnecter</a>
+              <a class="dropdown-item" href=" {{('profilpostulant')}}"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> Mon Profile </a>
+
+              <a href="{{ route('logout') }}" class="dropdown-item"  class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                Déconnexion
+              </a>
+
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+              </form>
+
             </div>
           </li>
         </ul>
@@ -105,93 +113,55 @@
       
         </ul>
       </nav>
-      <!-- partial -->
-      <div class="main-panel">
-        <div class="content-wrapper">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="home-tab">
-             
-                <div class="tab-content tab-content-basic">
-                  <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview"> 
+			<!-- partial -->
+		
+      <section class="featured-job-area feature">
+    <div class="container">
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-lg-12 mb-40">
+            <div class="section-tittle section-tittle2 text-center esp"style="">
+            <h3><u><b style=>Recommandations</b></u> </h3>
+                      <p> Trouvez l'emploi de vos rêves</p>
+                  </div>
+           
+                <div class="section-tittle section-tittle2 text-center esp"style="margin-left:64em">
+                  
+                </div>
+            </div>
+        </div>
 
-                    <div class="row">
-                      <div class="col-lg-12 d-flex flex-column">
-                       
-                        <div class="row flex-grow">
-                          <div class="col-12 grid-margin stretch-card">
-                            <div class="card card-rounded">
-                              <div class="card-body">
-                                <div class="d-sm-flex justify-content-between align-items-start">
-                                 
-
-                                <section class="featured-job-area feature-padding">
-                        <div class="container ">
-                            <div class="row">
-                                <div class="col-lg-12 mb-40">
-                                    <div class="section-tittle section-tittle2 text-center esp">
-                                        <h2>Quelques offres</h2>
-                                        <span >Trouvez l'emploi de vos rêves</span>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="row justify-content-center ">
-
-                                <div class="col-xl-10 mt-120">
-                                    <!-- single-job-content -->
-                                    @foreach($offres as $offre)
-                                    
-                                    <div class="single-job-items mb-30">
-                                        <div class="job-items">
-                                            <div class="company-img">
-                                                <a href="{{('detail_offre')}}"><img 
-                                                src="{{asset('assets/img/icon/job-list1.png')}}" alt=""></a>
-                                          
-                                            </div>
-                                            <div class="job-tittle">
-                                                <a href="{{('detail_offre')}}" class="soulign">
-                                                    <h4 >{{($offre->poste)}}</h4></a>
-                                                <ul>
-                                                
-                                                    <li>{{optional($offre->user)->name}}</li>
-                                                    <li><i class="fas fa-map-marker-alt">
-                                                        
-                                                    </i>{{optional($offre->user)->villeR}}</li>
-                                                    
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="items-link f-right">
-                                            <a href="{{('detail_offre')}}" class="soulign">Voir l'offre</a>
-                                         
-                                        </div>
-                                    </div>
-                                    <!-- single-job-content -->
-                                    @endforeach    
+        <div class="row justify-content-center" style="padding-top: 20px;">
+            <div class="col-xl-10">
+                <!-- single-job-content -->
+                @foreach($offres as $offre)
+                <div class="single-job-items mb-30" style="padding: 20px;">
+                    <div class="job-items">
+                        <div class="company-img">
+                            <a href="{{('detail_offre')}}"><img src="{{asset('assets/img/icon/job-list1.png')}}" alt=""></a>
                         </div>
-                      
-
-
-                        
-</section>
-   
-
-                                      </div>
-                                      </div>  </div>  </div>
-                                    </div>
-                
-                                </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                        <div class="job-tittle">
+                            <a href="{{('detail_offre')}}" class="soulign">
+                                <h4>{{($offre->poste)}}</h4>
+                            </a>
+                            <ul>
+                                <li>{{optional($offre->user)->name}}</li>
+                                <li><i class="fas fa-map-marker-alt"></i>{{optional($offre->user)->villeR}}</li>
+                            </ul>
                         </div>
-                      
-					                      </div>
-                    
                     </div>
-							                  </div>
+                    <div class="items-link f-right">
+                    <a href="{{ route('detail_offre', $offre->id) }}" class="soulign">Voir l'offre</a>
+                      
+                    </div>
+                </div>
+                <!-- single-job-content -->
+                @endforeach    
+            </div>
+        </div>
+    </div>
+</section>
+
+                             
                 </div>
               </div>
 		          

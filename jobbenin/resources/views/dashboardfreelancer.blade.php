@@ -26,9 +26,11 @@
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-top"> 
         <ul class="navbar-nav">
-          <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-            <h1 class="welcome-text">Salut, <span class="text-black fw-bold">John Doe</span></h1>
-          </li>
+        <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
+    
+       
+    <h1 class="welcome-text">  Bienvenue, <span class="text-black fw-bold">{{ $user->name }}.</span> </h1>
+  </li>
         </ul>
         <ul class="navbar-nav ms-auto">
         
@@ -47,11 +49,14 @@
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
               <div class="dropdown-header text-center">
                 <img class="img-md rounded-circle" src="{{asset('assets/images/faces/face8.jpg')}}" alt="Profile image">
-                <p class="mb-1 mt-3 font-weight-semibold">AKP DJEM</p>
-                <p class="fw-light text-muted mb-0">DjemiDjemi@gmail.com</p>
+                <p class="mb-1 mt-3 font-weight-semibold">{{$user->name}}</p>
+                <p class="fw-light text-muted mb-0">{{$user->email}}</p>
               </div>
-              <a class="dropdown-item" href=" {{('profilfreelancer')}}"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> Mon Profile<span class="badge badge-pill badge-danger">1</span></a>
-              <a class="dropdown-item"href=" {{('connexion')}}"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Se Déconnecter</a>
+              <a class="dropdown-item" href=" {{('profilfreelancer')}}"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> Mon Profile</a>
+
+              <a href="{{ route('logout') }}" class="dropdown-item"  class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                Déconnexion
+              </a>
             </div>
           </li>
         </ul>
@@ -86,12 +91,7 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link" href="{{('dashboardfreelancer')}}">
-              <i class="mdi mdi-grid-large menu-icon"></i>
-              <span class="menu-title">Tableau De Bord</span>
-            </a>
-          </li>
+        
          
           <li class="nav-item">
             <a class="nav-link" href="{{('dashboardfreelancer')}}">
@@ -99,109 +99,150 @@
               <span class="menu-title"> Publicité</span>
             </a>
           </li>
-      
-        </ul>
+       </ul>
       </nav>
-      <!-- partial -->
-      <div class="main-panel">
-        <div class="content-wrapper">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="home-tab">
-             
-                <div class="tab-content tab-content-basic">
-                  <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview"> 
-
+            <div class="main-panel">
+                <div class="content-wrapper" >
                     <div class="row">
-                      <div class="col-lg-12 d-flex flex-column">
-                       
-                        <div class="row flex-grow">
-                          <div class="col-12 grid-margin stretch-card">
-                            <div class="card card-rounded">
-                              <div class="card-body">
-                                <div class="d-sm-flex justify-content-between align-items-start">
-                                  <div>
-                                    <h4 class="card-title card-title-dash">Publicité</h4>
-                                  </div>
-                                  <div>
-                                    <a href="puboffre.html">
-                                      <button class="btn btn-primary btn-lg text-white mb-0 me-0" type="button"><i class="mdi mdi-account-plus"></i>Souscrire pour Booster Votre Profil</button>
-                                    </a>
-                                  </div>
-                                 </div>
-                                <div class="table-responsive  mt-1">
-                                  <table class="table select-table">
-                                    <thead>
-                                      <tr>
-                                      <th>Apercu</th>
-                                       <th>Date De Lancement</th>
-                                       <th>Expire le </th>
-                                        <th>Nombre de Personnes touchées</th>
-                                       
-                                    
-                                    
-                                      </tr>
-                                    </thead>
-                                <tbody>
-                                    <tr>
-                                          <td>
-                                          <div class="d-flex ">
-                                            <img src="images/faces/face1.jpg" alt="">
-                                            <div>
-                                              <a class="monlien" href=""style="text-decoration:none">
-                                                <h6>John Doe  </h6></a>
-                                              <a class="monlien" href=""style="text-decoration:none"> 
-                                                <p>Developpeur Frontend</p> </a>
-                                            </div>
-                                          </div>
-                                        </td>
-                                        <td>
-                                     
-                                          <p>17-02-2023</p>
-                                        </td>
-                                        <td>
-                                          <div>
-                                            <div class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
-                                              <p class="text-success"> 12-02-2023</p>
-                                              
-                                            </div>
-                                           
-                                          </div>
-                                        </td>
-                                        <td><div class="badge badge-opacity-warning">150 Personnes</div></td>
-                                     
-                                    </tr>
+                        <div class="col-sm-12">
+                            <div class="home-tab">
 
-                                    
-                                 </tbody>
-                             </table>
+                                <div class="tab-content tab-content-basic">
+                                    <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview">
+
+                                        <div class="row">
+
+                                            <div class="col-lg-12 d-flex flex-column">
+
+                                                <div class="row flex-grow">
+                                                    <div class="col-12 grid-margin stretch-card">
+                                                        <div class="card card-rounded">
+                                                            <div class="card-body">
+                                                                <div class="row">
+                                                                    <div class="col-lg-12">
+                                                                        <!-- Button trigger modal -->
+
+
+                                                                        <!-- Payment Modal -->
+                                                                        <div class="modal fade" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentModalLabel" aria-hidden="true">
+                                                                            <div class="modal-dialog" role="document">
+                                                                                <div class="modal-content">
+                                                                                    <div class="modal-header">
+                                                                                        <h5 class="modal-title" id="paymentModalLabel">Paiement pour la publicité</h5>
+                                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                            <span aria-hidden="true">&times;</span>
+                                                                                        </button>
+                                                                                    </div>
+                                                                                    <div class="modal-body">
+                                                                                        <!-- Payment Form Here -->
+                                                                                        <form>
+                                                                                            <div class="form-group">
+                                                                                                <label for="cardNumber">Mode de paiement</label>
+                                                                                                <select name="" id="">
+                                                                                                    <option value="" style="background-color: yellow;">MTN MOMO</option>
+                                                                                                    <option value="" style="background-color: green;">MOOV MONEY</option>
+                                                                                                </select>
+                                                                                            </div>
+                                                                                            <div class="form-group">
+                                                                                                <label for="expiryDate">Numero de paiement</label>
+                                                                                                <input type="text" class="form-control" id="" placeholder="XXXXXXXX">
+                                                                                            </div>
+                                                                                           
+                                                                                        </form>
+                                                                                    </div>
+                                                                                    <div class="modal-footer">
+                                                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                                                                                        <button type="button" class="btn btn-primary">Payer</button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <!-- Pricing Plan Start -->
+                                                                        <div class=" py-5 wow fadeInUp" data-wow-delay="0.1s">
+                                                                            <div class="py-5">
+                                                                                <div class="section-titlep text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+                                                                                    <h3 class="mb-0">Souscrivez notre abonnement pour offrir plus de visibilité à votre entreprise!!</h3>
+                                                                                </div>
+                                                                                <div class="row g-0">
+                                                                                    <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
+                                                                                        <div class="bg-light rounded">
+                                                                                            <div class="border-bottom py-4 px-5 mb-4">
+                                                                                                <h4 class="text-primary mb-1">Standard</h4>
+                                                                                            </div>
+                                                                                            <div class="p-5 pt-0">
+                                                                                                <h1 class="display-5 mb-3">
+                                                                                                    <small class="align-top" style="font-size: 22px; line-height: 45px;">6.000</small>F CFA
+                                                                                                </h1>
+                                                                                                <div class="d-flex justify-content-between mb-3"><span>30 jours de validité</span><i class="fa fa-check text-primary pt-1"></i></div>
+                                                                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#paymentModal">
+                                                                                                    Payer
+                                                                                                </button>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
+                                                                                        <div class="bg-white rounded shadow position-relative" style="z-index: 1;">
+                                                                                            <div class="border-bottom py-4 px-5 mb-4">
+                                                                                                <h4 class="text-primary mb-1">Premium</h4>
+                                                                                            </div>
+                                                                                            <div class="p-5 pt-0">
+                                                                                                <h1 class="display-5 mb-3">
+                                                                                                    <small class="align-top" style="font-size: 22px; line-height: 45px;">15.000</small>F CFA
+                                                                                                </h1>
+                                                                                                <div class="d-flex justify-content-between mb-3"><span>3 mois de validité</span><i class="fa fa-check text-primary pt-1"></i></div>
+
+                                                                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#paymentModal">
+                                                                                                    Payer
+                                                                                                </button>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
+                                                                                        <div class="bg-light rounded">
+                                                                                            <div class="border-bottom py-4 px-5 mb-4">
+                                                                                                <h4 class="text-primary mb-1">Premium+</h4>
+                                                                                            </div>
+                                                                                            <div class="p-5 pt-0">
+                                                                                                <h1 class="display-5 mb-3">
+                                                                                                    <small class="align-top" style="font-size: 22px; line-height: 45px;">50.000</small>F CFA
+                                                                                                </h1>
+                                                                                                <div class="d-flex justify-content-between mb-3"><span>1an de validité</span><i class="fa fa-check text-primary pt-1"></i></div>
+                                                                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#paymentModal">
+                                                                                                    Payer
+                                                                                                </button>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- Pricing Plan End -->
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                              </div>
                             </div>
-                          </div>
                         </div>
-                      
-                      </div>
-                    
                     </div>
-                  </div>
                 </div>
-              </div>
+                <!-- content-wrapper ends -->
+                <!-- partial:partials/_footer.html -->
+                <footer class="footer">
+                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2023. All rights reserved.</span>
+                    </div>
+                </footer>
+                <!-- partial -->
             </div>
-          </div>
+            <!-- main-panel ends -->
         </div>
-        <!-- content-wrapper ends -->
-        <!-- partial:partials/_footer.html -->
-        <footer class="footer">
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2023. All rights reserved.</span>
-          </div>
-        </footer>
-        <!-- partial -->
-      </div>
-      <!-- main-panel ends -->
-    </div>
-    <!-- page-body-wrapper ends -->
-  </div>
 </main>
 @endsection

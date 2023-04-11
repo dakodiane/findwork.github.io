@@ -3621,3 +3621,64 @@ input[type="radio"]{
 #navigation > li.align-middle {
 	margin-top:15px;
  }
+
+
+  /* StylePourProfilePostulant  */
+ .profile-card {
+	width: 1350px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .profile-card img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+
+  }
+
+  .profile-card h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #242b5e;
+   
+    text-align: center;
+    text-decoration: underline;
+  }
+
+
+
+  .profile-card label {
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+  
+  }
+
+  .profile-card span {
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+  
+  }
+
+  .profile-card button {
+    background-color: #da2461;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 2em;
+    width: 200px;
+    border-radius: 5px;
+  }
+
+  .profile-card button:hover {
+    background-color: #ff406e;
+    cursor: pointer;
+  }

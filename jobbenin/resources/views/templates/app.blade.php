@@ -52,7 +52,7 @@
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="{{asset('assets/css/vertical-layout-light/style.css')}}">
-  <link rel="stylesheet" href="{{asset('assets\css\styleinscription.css')}}">
+  
   
 
  
@@ -106,7 +106,7 @@
         <script src="{{asset('assets/js/jquery.validate.min.js')}}"></script>
         <script src="{{asset('assets/js/mail-script.js')}}"></script>
         <script src="{{asset('assets/js/jquery.ajaxchimp.min.js')}}"></script>
-
+        <script src="{{ asset('js/custom.js') }}"></script>
         
 		<!-- Jquery Plugins, main Jquery -->	
         <script src="{{asset('assets/js/plugins.js')}}"></script>

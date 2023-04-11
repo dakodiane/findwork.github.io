@@ -53,7 +53,7 @@
                 <p class="mb-1 mt-3 font-weight-semibold">{{ $user->name }}</p>
                 <p class="fw-light text-muted mb-0">{{ $user->email }}</p>
               </div>
-              <a class="dropdown-item" href=" {{('profilpostulant')}}"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile <span class="badge badge-pill badge-danger">1</span></a>
+              <a class="dropdown-item" href=" {{('profilpostulant')}}"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> Mon Profile</a>
 
               <a href="{{ route('logout') }}" class="dropdown-item"  class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 Déconnexion
@@ -137,7 +137,7 @@
                                  
                                 </div>
                                 <div class="table-responsive  mt-1">
-                                <table class="table select-table">
+<table class="table select-table">
   <thead>
     <tr>
       <th>Entreprise</th>
@@ -146,35 +146,43 @@
     </tr>
   </thead>
   <tbody>
-    @foreach ($offres->get() as $offre)
-      <tr>
-        <td>
-          <div class="d-flex ">
-            <img src="images/faces/face1.jpg" alt="">
-            <div>
-              <a class="monlien" href=""style="text-decoration:none">
-                <h6>{{ optional($offre->user)->name }}</h6>
-              </a>
-              <a class="monlien" href=""style="text-decoration:none"> 
-                <p>{{ optional($offre->user)->villeR }} </p>
-              </a>
-            </div>
-          </div>
-        </td>
-        <td><div class="badge badge-opacity-warning">En Cours</div></td>
-        <td>
-          <div class="template-demo mt-4">
-            <a href="">
-              <button type="button" class="btn btn-success" style="color:white;background-color: green;">Voir+</button>
-            </a>
-            <a href="">
-              <button type="button" class="btn btn-success " style="color:white;background-color: red;">Supprimer</button>
-            </a>
-          </div>
-        </td>
-      </tr>
+    @foreach ($offres as $offre)
+        <tr>
+            <td>
+                <div class="d-flex">
+                    <img src="" alt="">
+                    <div>
+                        <a class="monlien" href="" style="text-decoration:none">
+                            </a>
+                            <a class="monlien" href="" style="text-decoration:none">
+                                <h6>{{ $offre['user']['name'] }}</h6>
+                            </a>
+                            <a class="monlien" href="" style="text-decoration:none"> 
+                                <p>{{ $offre['user']['villeR'] }}</p>
+                            </a>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="badge badge-opacity-warning"> <b>{{ $offre['statut'] }}</b></div>
+                </td>
+                <td>
+                    <div class="template-demo mt-4">
+                    <a href="{{ route('detail_offre', $offre['id']) }}"><button type="button" class="btn btn-success" style="color:white;background-color: green;">Voir+</button></a>
+                 
+                  <a href="{{ route('supprimer_offre', $offre['id']) }}">
+  
+            <button type="button" class="btn btn-success"
+             style="color:white;background-color: red;">Supprimer</button>
+          </a>         
+
+
+                    </div>
+                </td>
+            </tr>
     @endforeach
-  </tbody>
+ </tbody>
+
 </table>
 
                                 </div>

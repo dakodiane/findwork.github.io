@@ -3,64 +3,56 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\DashboardFreelancerController;
 
-class DashboardFreelancerControler extends Controller
+class DashboardFreelancerController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
-        return view('dashboardfreelancer');
-
+        $user = Auth::user();
+        if (!$user) {
+            return redirect()->intended('connexion');
+        }
+    
+        
+       
+     
+        return view('dashboardfreelancer')->with(['user' => $user]);
+       
     }
+    
+ //Page ProfilFree
+ public function profilfree()
+ {
+     $user = Auth::user();
+     if (!$user) {
+         return redirect()->intended('connexion');
+     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
+     return view('profilfreelancer')->with(['user' => $user]);
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+ 
+ }
+//M A J Des donnés de la Db
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
+public function update(Request $request, $id)
+{ 
+     $user = auth()->user();
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
+    $user->name = $request->input('name');
+    $user->email = $request->input('email');
+     // Pour enregistrer les informations complèter par l'utilisateur
+     $user->photo_freelancer= $request->input('photo_freelancer');
+    $user->service_freelancer= $request->input('service_freelancer');
+    $user->competence_freelancer= $request->input('competence_freelancer');
+    $user->description_free= $request->input('description_free');
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
+        $user->save();
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
+    return redirect()->route('profilfreelancer')->with('success', 'Informations mises à jour avec succès');
+
+}
+
+
 }
