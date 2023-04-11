@@ -26,7 +26,7 @@
                                             <div class="col-md-12 mb-3 mb-md-0">
                                                 <label class="text-black" for="fname">Lettre de Motivation</label>
                                                 <div class="col-md-12 mb-3 mb-md-0">
-                                                    <textarea name="" id="" cols="60" rows="10" placeholder="Rédigez Votre lettre de Motivation"></textarea>
+                                                    <textarea name="motivation" id="" cols="60" rows="10" placeholder="Rédigez Votre lettre de Motivation"></textarea>
                                                     
                                                 </div>
                                   
@@ -35,26 +35,17 @@
                                         <div class="row form-group mb-4">
                                             <div class="col-md-12 mb-3 mb-md-0">
                                                 <label class="text-black" for="fname"> Curriculum Vitae (Cv)</label>
-                                                    <div class="description">Les fichiers doivent peser moins de
-                                                        <strong>2 Mo</strong>.<br />
-                                                        Extensions autorisées :<strong>doc docx pdf</strong>.</div>
+                                                  
                                                       <div class="file-widget form-managed-file clearfix">
-                                                       <input type="file" id="edit-field-candidature-cv-und-0-upload"
-                                                        name="files[field_candidature_cv_und_0]" size="50" class="form-file" />
-                                                        <input type="hidden" name="field_candidature_cv[und][0][fid]" value="0" />
-                               
-                               
-                                                     <input type="hidden" name="field_candidature_cv[und][0][display]" value="1" />
-
+                                                       <input type="file"  name="cv" size="50" class="form-file" />
                                                      </div>
 
                                             </div>
                                             </div>
                                             <div class="row form-group"  style="margin-left:400px">
                                             
-                                            <div class="col-md-6">
-                                                <input type="submit" value="Postuler"
-                                                    class="btn px-4 btn-primary text-white">
+                                            <div class="col-md-10">
+                                                    <button type="submit" class="btn px-4 btn-primary text-white">Postuler</button>
 
                                             </div>
                                            

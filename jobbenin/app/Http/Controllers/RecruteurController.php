@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+
 
 class RecruteurController extends Controller
 {
@@ -33,27 +38,29 @@ class RecruteurController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        $user = Auth::user(); // récupère le recruteur associé à l'utilisateur authentifié
+    return view('profilrecruteur', compact('user'));
     }
+    
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+       
     }
-
+    
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        
     }
-
+    
     /**
      * Remove the specified resource from storage.
      */
@@ -61,4 +68,5 @@ class RecruteurController extends Controller
     {
         //
     }
+  
 }

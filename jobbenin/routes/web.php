@@ -53,13 +53,13 @@ Route::get('/', [WelcomeController::class,'index']);
   Route::get('/inscriptionpostulant ', 'App\Http\Controllers\InscriptionPostulantController@index');
   Route::post('/inscriptionpostulant ', 'App\Http\Controllers\InscriptionPostulantController@inscriptionpostulant');
 
-  
   Route::get('/publierannonce', function (){
     return view('publierannonce');
   });
-  Route::get('/offre/{id}/postuleroffre', function () {
+  Route::get('/offre/{id}/postuleroffre', function (){
     return view('postuleroffre');
   });
+  
   Route::get('/apropos', function () {
     return view('apropos');
   });
@@ -100,14 +100,22 @@ Route::get('/attentecv','App\Http\Controllers\DashboardRecruteurController@atten
 Route::get('/brouillon','App\Http\Controllers\DashboardRecruteurController@brouillon' )->name('brouillon');
 Route::get('/selectioncv','App\Http\Controllers\DashboardRecruteurController@selectioncv' )->name('selectioncv');
 Route::get('/entretien','App\Http\Controllers\DashboardRecruteurController@entretien' )->name('entretien');
+Route::get('/publicite','App\Http\Controllers\DashboardRecruteurController@publicite' )->name('publicite');
+
 
 Route::post('/logout', 'App\Http\Controllers\ConnexionController@logout')->name('logout');
 
+Route::post('/attentecv/selection/{id}', 'App\Http\Controllers\CvController@selection')->name('attentecv.selection');
+
+Route::get('/attentecv/{id}', 'App\Http\Controllers\CvController@delete')->name('attentecv.supprimer');
+
+Route::get('/recruteur/{id}', 'App\Http\Controllers\RecruteurController@show')->name('profilrecruteur');
+Route::post('/recruteur/{id}', 'App\Http\Controllers\RecruteurController@show')->name('profilrecruteur');
 
 
- 
+Route::post( '/recruteur/profil/{id}', 'App\Http\Controllers\RecruteurController@update')->name('profilrecruteur.update');
 
-
+Route::post('/annonce', 'App\Http\Controllers\PublierAnnonceController@publierannonce')->name('annoncepublier');
 
 
 

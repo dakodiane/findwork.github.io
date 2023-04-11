@@ -32,4 +32,9 @@ class Offre extends Model
         return $this->belongsToMany(User::class, 'postulers', 'id_offre', 'id_user')
             ->withPivot('statut');
     }
+    public function postulers()
+{
+    return $this->hasMany(Postuler::class,'id_offre');
+}
+
 }

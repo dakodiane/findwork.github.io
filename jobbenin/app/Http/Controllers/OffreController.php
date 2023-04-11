@@ -47,7 +47,6 @@ class OffreController extends Controller
         //
         $offre = Offre::with('user')->find($id);
         return view('detail_offre', ['offre' => $offre]);
-      
     }
 
     /**

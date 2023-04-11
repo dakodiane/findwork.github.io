@@ -43,7 +43,7 @@
 
 
           <li class="nav-item dropdown d-none d-lg-block user-dropdown">
-            <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link" id="UserDropdown"  data-bs-toggle="dropdown" aria-expanded="false">
               <img class="img-xs rounded-circle" src="{{asset('assets/images/faces/face8.jpg')}}" alt="Profile image"> </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
               <div class="dropdown-header text-center">
@@ -135,6 +135,13 @@
               <span class="menu-title">Brouillons</span>
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{('publicite')}}">
+              <i class="mdi mdi-archive menu-icon"></i>
+              <span class="menu-title">Publicité</span>
+            </a>
+          </li>
+
 
         </ul>
       </nav>
@@ -228,35 +235,21 @@
                                         <h4 class="card-title card-title-dash">CV Sélectionnés</h4>
                                       </div>
                                     </div>
+
                                     <div class="mt-3">
                                       <div class="wrapper d-flex align-items-center justify-content-between py-2 border-bottom">
                                         <div class="d-flex">
                                           <img class="img-sm rounded-10" src="{{asset('assets/images/undraw_profile.svg')}}" alt="profile">
                                           <div class="wrapper ms-3">
-                                            <p class="ms-1 mb-1 fw-bold">Brandon Washington</p>
+                                            <p class="ms-1 mb-1 fw-bold">nom</p>
                                           </div>
                                         </div>
 
                                       </div>
-                                      <div class="wrapper d-flex align-items-center justify-content-between py-2 border-bottom">
-                                        <div class="d-flex">
-                                          <img class="img-sm rounded-10" src="{{asset('assets/images/undraw_profile.svg')}}" alt="profile">
-                                          <div class="wrapper ms-3">
-                                            <p class="ms-1 mb-1 fw-bold">Wayne Murphy</p>
-                                          </div>
-                                        </div>
+                                    
 
                                       </div>
-                                      <div class="wrapper d-flex align-items-center justify-content-between py-2 border-bottom">
-                                        <div class="d-flex">
-                                          <img class="img-sm rounded-10" src="{{asset('assets/images/undraw_profile.svg')}}" alt="profile">
-                                          <div class="wrapper ms-3">
-                                            <p class="ms-1 mb-1 fw-bold">Katherine Butler</p>
-                                          </div>
-                                        </div>
-
-                                      </div>
-
+                                     
 
                                     </div>
                                   </div>
@@ -275,16 +268,17 @@
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
-        <footer class="footer">
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2023. All rights reserved.</span>
-          </div>
-        </footer>
+      
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
     </div>
     <!-- page-body-wrapper ends -->
+    <footer class="footer">
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2023. All rights reserved.</span>
+          </div>
+        </footer>
   </div>
 </main>
 @endsection
