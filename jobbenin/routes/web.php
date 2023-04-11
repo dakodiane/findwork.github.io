@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OffreController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\ConnexionController;
 use App\Http\Controllers\FreelancerController;
 use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\DashboardPostulantController;
@@ -89,30 +90,9 @@ Route::get('/', [WelcomeController::class,'index']);
 
   Route::get('/freelancer ', 'App\Http\Controllers\FreelancerController@index');
 
+  Route::post('/freelancer/{id}/contact', 'App\Http\Controllers\FreelancerController@contact');
   Route::get('/freelancer/{id}', 'App\Http\Controllers\FreelancerController@show')->name('detail_free');
 
-Route::get('/offre',[OffreController::class,'offre']);
-
-
-Route::post('/freelancer/{id}/contact', 'App\Http\Controllers\FreelancerController@contact');
-
-Route::get('/offre/{id}', 'App\Http\Controllers\OffreController@show')->name('detail_offre');
-
-
-
-
-///TEST DJEMI 
- 
-
-Route::group(['namespace' => 'App\Http\Controllers'], function()
-{   
-    Route::get('/modifierprofilfreelancer', 'ModifierProfilFreelancerController@index')->
-    name('modifier-profil-freelancer.index');
-
-    Route::post('/modifierprofilfreelancer', 'ModifierProfilFreelancerController@upload')->name('modifier-profil-freelancer.post');
-});
-
-Route::get('/dashboardpostulant', 'App\Http\Controllers\DashboardPostulantController@index')->name('dashboardpostulant');
 
 Route::get('/dashboardrecruteur','App\Http\Controllers\DashboardRecruteurController@index' )->name('dashboardrecruteur');
 Route::get('/annonce','App\Http\Controllers\DashboardRecruteurController@annonce' )->name('annonce');
@@ -137,3 +117,20 @@ Route::post( '/recruteur/profil/{id}', 'App\Http\Controllers\RecruteurController
 
 Route::post('/annonce', 'App\Http\Controllers\PublierAnnonceController@publierannonce')->name('annoncepublier');
 
+
+
+///TEST DJEMI 
+Route::get('/offre',[OffreController::class,'offre']);
+
+Route::get('/offre/{id}', 'App\Http\Controllers\OffreController@show')->name('detail_offre');
+
+Route::get('/dashboardpostulant', 'App\Http\Controllers\DashboardPostulantController@index')->name('dashboardpostulant');
+
+Route::get('/vosoffres','App\Http\Controllers\DashboardPostulantController@vosoffres' )->name('vosoffres');
+Route::get('/recommandation','App\Http\Controllers\DashboardPostulantController@recommandations' )->name('recommandation');
+Route::get('/profilpostulant','App\Http\Controllers\DashboardPostulantController@profilpostulant' )->name('profilpostulant');
+Route::put('/users/{id}', 'App\Http\Controllers\DashboardPostulantController@update')->name('user.update');
+Route::get('/supprimer_offre/{id}', 'App\Http\Controllers\DashboardPostulantController@supprimerOffre')->name('supprimer_offre');
+Route::get('/dashboardfreelancer', 'App\Http\Controllers\DashboardFreelancerController@index')->name('dashboardfreelancer');
+Route::get('/profilfreelancer','App\Http\Controllers\DashboardFreelancerController@profilfree' )->name('profilfreelancer');
+Route::put('/users/{id}', 'App\Http\Controllers\DashboardFreelancerController@update')->name('user.update');

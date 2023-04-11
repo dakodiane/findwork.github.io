@@ -23,8 +23,14 @@
   <link rel="stylesheet" href="{{asset('assets/js/select.dataTables.min.css')}}">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-
   <link rel="stylesheet" href="{{asset('assets/css/vertical-layout-light/style.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+  <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/img/favicon.ico')}}">
+  <link rel="stylesheet" href="{{asset('assets/css/themify-icons.css')}}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+  
 </head>
 <body>
 @yield('document')
@@ -32,12 +38,15 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
   <!-- DASHBOARD SCRIPT -->
+  
   <script src="{{asset('assets/js/vendor.bundle.base.js')}}"></script>
   <!-- endinject -->
   <!-- Plugin js for this page -->
   <script src="{{asset('assets/chart.js/Chart.min.js')}}"></script>
   <script src="{{asset('assets/bootstrap-datepicker/bootstrap-datepicker.min.js')}}"></script>
   <script src="{{asset('assets/progressbar.js/progressbar.min.js')}}"></script>
+  <script src="{{ asset('js/custom.js') }}"></script>
+  
   <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
 
   <!-- End plugin js for this page -->
@@ -51,8 +60,12 @@
 
   <!-- endinject -->
   <!-- Custom js for this page-->
+  <script src="{{asset('assets/js/contact.js')}}"></script>
   <script src="{{asset('assets/js/jquery.cookie.js')}}" type="text/javascript"></script>
   <script src="{{asset('assets/js/dashboard.js')}}"></script>
   <script src="{{asset('assets/js/Chart.roundedBarCharts.js')}}"></script>
+
+
+
 </body>
 </html>

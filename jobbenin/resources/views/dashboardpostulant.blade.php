@@ -50,11 +50,19 @@
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
               <div class="dropdown-header text-center">
                 <img class="img-md rounded-circle" src="{{asset('assets/images/faces/face8.jpg')}}" alt="Profile image">
-                <p class="mb-1 mt-3 font-weight-semibold">John Doe</p>
-                <p class="fw-light text-muted mb-0">DoeJohn@gmail.com</p>
+                <p class="mb-1 mt-3 font-weight-semibold">{{ $user->name }}</p>
+                <p class="fw-light text-muted mb-0">{{ $user->email }}</p>
               </div>
-              <a class="dropdown-item" href=" {{('profilpostulant')}}"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> Mon Profile<span class="badge badge-pill badge-danger">1</span></a>
-              <a class="dropdown-item"href=" {{('connexion')}}"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Se Déconnecter</a>
+              <a class="dropdown-item" href=" {{('profilpostulant')}}"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> Mon Profile</a>
+
+              <a href="{{ route('logout') }}" class="dropdown-item"  class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                Déconnexion
+              </a>
+
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+              </form>
+
             </div>
           </li>
         </ul>
@@ -89,12 +97,7 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link" href="{{('dashboardpostulant')}}">
-              <i class="mdi mdi-grid-large menu-icon"></i>
-              <span class="menu-title">Tableau De Bord</span>
-            </a>
-          </li>
+         
           <li class="nav-item">
             <a class="nav-link" href="{{('vosoffres')}}">
             <i class="mdi mdi-alarm menu-icon"></i>
@@ -134,129 +137,54 @@
                                  
                                 </div>
                                 <div class="table-responsive  mt-1">
-                                  <table class="table select-table">
-                                    <thead>
-                                      <tr>
-                                      <th>Entreprise</th>
-                                      <th>Statut</th>
-                                      <th>Actions</th>
-                                    
-                                      </tr>
-                                    </thead>
-                                <tbody>
-                                    <tr>
-                                          <td>
-                                          <div class="d-flex ">
-                                            <img src="images/faces/face1.jpg" alt="">
-                                            <div>
-                                              <a class="monlien" href=""style="text-decoration:none">
-                                                <h6>Creative Agency  </h6></a>
-                                              <a class="monlien" href=""style="text-decoration:none"> 
-                                                <p>Porto Novo</p> </a>
-                                            </div>
-                                          </div>
-                                        </td>
-                                       
-                                      
-                                        <td><div class="badge badge-opacity-warning">En Cours</div></td>
-                                        <td>
-                                          <div class="template-demo mt-4">
-                                            <a href="">
-                                              <button type="button" class="btn btn-success" style="color:white;background-color: green;">Voir+</button>
-                                            </a>
-                                            <a href="">
-                                              <button type="button" class="btn btn-success " style="color:white;background-color: red;">Supprimer</button>
-                                            </a>
+<table class="table select-table">
+  <thead>
+    <tr>
+      <th>Entreprise</th>
+      <th>Statut</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach ($offres as $offre)
+        <tr>
+            <td>
+                <div class="d-flex">
+                    <img src="" alt="">
+                    <div>
+                        <a class="monlien" href="" style="text-decoration:none">
+                            </a>
+                            <a class="monlien" href="" style="text-decoration:none">
+                                <h6>{{ $offre['user']['name'] }}</h6>
+                            </a>
+                            <a class="monlien" href="" style="text-decoration:none"> 
+                                <p>{{ $offre['user']['villeR'] }}</p>
+                            </a>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="badge badge-opacity-warning"> <b>{{ $offre['statut'] }}</b></div>
+                </td>
+                <td>
+                    <div class="template-demo mt-4">
+                    <a href="{{ route('detail_offre', $offre['id']) }}"><button type="button" class="btn btn-success" style="color:white;background-color: green;">Voir+</button></a>
+                 
+                  <a href="{{ route('supprimer_offre', $offre['id']) }}">
+  
+            <button type="button" class="btn btn-success"
+             style="color:white;background-color: red;">Supprimer</button>
+          </a>         
 
-                                          </div>
-                                        </td>
 
-                                    </tr>
-                                    <tr>
-                                          <td>
-                                          <div class="d-flex ">
-                                            <img src="images/faces/face1.jpg" alt="">
-                                            <div>
-                                              <a class="monlien" href=""style="text-decoration:none">
-                                                <h6>Creative Agency  </h6></a>
-                                              <a class="monlien" href=""style="text-decoration:none"> 
-                                                <p>Porto Novo</p> </a>
-                                            </div>
-                                          </div>
-                                        </td>
-                                  
-                                        <td><div class="badge badge-opacity-warning">En Cours</div></td>
-                                        <td>
-                                          <div class="template-demo mt-4">
-                                            <a href="">
-                                              <button type="button" class="btn btn-success" style="color:white;background-color: green;">Voir+</button>
-                                            </a>
-                                            <a href="">
-                                              <button type="button" class="btn btn-success " style="color:white;background-color: red;">Supprimer</button>
-                                            </a>
+                    </div>
+                </td>
+            </tr>
+    @endforeach
+ </tbody>
 
-                                          </div>
-                                        </td>
+</table>
 
-                                    </tr>
-                                    <tr>
-                                          <td>
-                                          <div class="d-flex ">
-                                            <img src="images/faces/face1.jpg" alt="">
-                                            <div>
-                                              <a class="monlien" href=""style="text-decoration:none">
-                                                <h6>Creative Agency  </h6></a>
-                                              <a class="monlien" href=""style="text-decoration:none"> 
-                                                <p>Cotonou</p> </a>
-                                            </div>
-                                          </div>
-                                        </td>
-                                     
-                                        <td><div class="badge badge-opacity-warning">Rejeté</div></td>
-                                        <td>
-                                          <div class="template-demo mt-4">
-                                            <a href="">
-                                              <button type="button" class="btn btn-success" style="color:white;background-color: green;">Voir+</button>
-                                            </a>
-                                            <a href="">
-                                              <button type="button" class="btn btn-success " style="color:white;background-color: red;">Supprimer</button>
-                                            </a>
-
-                                          </div>
-                                        </td>
-
-                                    </tr>
-                                     
-                                    <tr>
-                                          <td>
-                                          <div class="d-flex ">
-                                            <img src="images/faces/face1.jpg" alt="">
-                                            <div>
-                                              <a class="monlien" href=""style="text-decoration:none">
-                                                <h6>Creative Agency  </h6></a>
-                                              <a class="monlien" href=""style="text-decoration:none"> 
-                                                <p>Porto Novo</p> </a>
-                                            </div>
-                                          </div>
-                                        </td>
-                                    
-                                        <td><div class="badge badge-opacity-warning">En Cours</div></td>
-                                        <td>
-                                          <div class="template-demo mt-4">
-                                            <a href="">
-                                              <button type="button" class="btn btn-success" style="color:white;background-color: green;">Voir+</button>
-                                            </a>
-                                            <a href="">
-                                              <button type="button" class="btn btn-success " style="color:white;background-color: red;">Supprimer</button>
-                                            </a>
-
-                                          </div>
-                                        </td>
-
-                                    </tr>
-                                    
-                                 </tbody>
-                               </table>
                                 </div>
                               </div>
                             </div>

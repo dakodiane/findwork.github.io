@@ -81,8 +81,8 @@
                                             </div>
                                         </div>
                                         <div class="items-link f-right">
-                                            <a href="{{('detail_offre')}}" class="soulign">Voir l'offre</a>
-                                         
+                                        <a href="{{ route('detail_offre', $offre->id) }}" class="soulign">Voir l'offre</a>
+                      
                                         </div>
                                     </div>
                                     <!-- single-job-content -->
@@ -133,9 +133,9 @@
         <h2>{{ $freelancer->service_freelancer }}</h2>
         <h5 class="muted regular">{{ $freelancer->name }}</h5>
       </div>
-      <a href="{{ url('detail_free') }}">
-        <button data-toggle="modal" data-target="#modal1" class="btn-blue-fill">Details</button>
-      </a>
+      <a href="{{ route('detail_free', $freelancer->id) }}">
+      <button data-toggle="modal" data-target="#modal1" class=" btn-blue-fill">Details</button>
+          </a>
     </div>
   </div>
 @endforeach
