@@ -46,6 +46,16 @@ class User extends Authenticatable
 {
     return $this->hasMany(Offre::class, 'id_user')->where('role','recruteur');
 }
+
+
+
+public function postulers()
+{
+    return $this->hasMany(Postuler::class,'id_user');
+}
+public function offre()
+{
+    return $this->hasMany(Offre::class, 'id_user');
 }
 
-
+}

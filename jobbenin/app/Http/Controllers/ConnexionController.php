@@ -36,7 +36,7 @@ class ConnexionController extends Controller
                 if ($user->role == 'recruteur') {
                     $request->session()->regenerate();
 
-                    return redirect()->intended('dashboardrecruteur');
+                    return redirect()->intended('annonce');
                 } elseif ($user->role == 'postulant') {
 
                     $request->session()->regenerate();

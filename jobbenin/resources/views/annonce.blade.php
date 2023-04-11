@@ -5,8 +5,7 @@
 <main>
   <div class="container-scroller">
 
-    <!-- partial:partials/_navbar.html -->
-    <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
+  <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
         <div class="me-3">
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-bs-toggle="minimize">
@@ -49,14 +48,17 @@
                 <p class="mb-1 mt-3 font-weight-semibold">{{ $user->name }}</p>
                 <p class="fw-light text-muted mb-0">{{ $user->email }}</p>
               </div>
-              <a class="dropdown-item" href=" {{('profilrecruteur')}}"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile <span class="badge badge-pill badge-danger">1</span></a>
+              <a class="dropdown-item" href="{{ route('profilrecruteur', ['id' => $user->id]) }}"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile <span class="badge badge-pill badge-danger">1</span></a>
+
               <a href="{{ route('logout') }}" class="dropdown-item"  class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 Déconnexion
               </a>
 
               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
-              </form>            </div>
+              </form>
+
+            </div>
           </li>
         </ul>
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-bs-toggle="offcanvas">
@@ -94,12 +96,7 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link" href="{{('dashboardrecruteur')}}">
-              <i class="mdi mdi-grid-large menu-icon"></i>
-              <span class="menu-title">Tableau de bord</span>
-            </a>
-          </li>
+          
           <li class="nav-item">
             <a class="nav-link" href="{{('annonce')}}">
               <i class="mdi mdi-rename-box menu-icon"></i>
@@ -124,12 +121,14 @@
               <span class="menu-title">Entretiens passés</span>
             </a>
           </li>
+         
           <li class="nav-item">
-            <a class="nav-link" href="{{('brouillon')}}">
+            <a class="nav-link" href="{{('publicite')}}">
               <i class="mdi mdi-archive menu-icon"></i>
-              <span class="menu-title">Brouillons</span>
+              <span class="menu-title">Publicité</span>
             </a>
           </li>
+
 
         </ul>
       </nav>

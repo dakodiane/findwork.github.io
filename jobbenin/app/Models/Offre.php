@@ -16,7 +16,11 @@ class Offre extends Model
         return $this->belongsTo(User::class, 'id_user');
     }
 
-    
+    public function postulers()
+{
+    return $this->hasMany(Postuler::class,'id_offre');
+}
+
 }
 
 

@@ -4,10 +4,9 @@
 
 <main>
 
-<div class="container-scroller">
+  <div class="container-scroller">
 
- 
-    <!-- partial:partials/_navbar.html -->
+
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
         <div class="me-3">
@@ -20,18 +19,18 @@
             <img src="{{asset('assets/img/logo/logojob.png')}}" alt="logo" />
           </a>
           <a class="navbar-brand brand-logo-mini" href="/">
-            <img src="{{asset('assets/images/logo-mini.svg')}}" alt="logo" />
+            <img src="{{asset('assets/img/logo/logojob.png')}}" alt="logo" />
           </a>
         </div>
       </div>
-      <div class="navbar-menu-wrapper d-flex align-items-top"> 
+      <div class="navbar-menu-wrapper d-flex align-items-top">
         <ul class="navbar-nav">
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-            <h1 class="welcome-text">Salut, <span class="text-black fw-bold">John Doe</span></h1>
+            <h1 class="welcome-text">Salut, <span class="text-black fw-bold">{{ $user->name }}</span></h1>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
-        
+
           <li class="nav-item d-none d-lg-block">
             <div id="datepicker-popup" class="input-group date datepicker navbar-date-picker">
               <span class="input-group-addon input-group-prepend border-right">
@@ -40,25 +39,28 @@
               <input type="text" class="form-control">
             </div>
           </li>
-          
-      
+
+
           <li class="nav-item dropdown d-none d-lg-block user-dropdown">
             <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
               <img class="img-xs rounded-circle" src="{{asset('assets/images/faces/face8.jpg')}}" alt="Profile image"> </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
               <div class="dropdown-header text-center">
                 <img class="img-md rounded-circle" src="{{asset('assets/images/faces/face8.jpg')}}" alt="Profile image">
-                <p class="mb-1 mt-3 font-weight-semibold">Allen Moreno</p>
-                <p class="fw-light text-muted mb-0">allenmoreno@gmail.com</p>
+                <p class="mb-1 mt-3 font-weight-semibold">{{ $user->name }}</p>
+                <p class="fw-light text-muted mb-0"></p>
               </div>
-              <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile <span class="badge badge-pill badge-danger">1</span></a>
-              <a href="{{ route('logout') }}" class="dropdown-item"  class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+              <a class="dropdown-item" href="{{ route('profilrecruteur', ['id' => $user->id]) }}"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile <span class="badge badge-pill badge-danger">1</span></a>
+
+              <a href="{{ route('logout') }}" class="dropdown-item" class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 Déconnexion
               </a>
 
               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
-              </form>            </div>
+              </form>
+
+            </div>
           </li>
         </ul>
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-bs-toggle="offcanvas">
@@ -74,8 +76,12 @@
         <div id="theme-settings" class="settings-panel">
           <i class="settings-close ti-close"></i>
           <p class="settings-heading">SIDEBAR SKINS</p>
-          <div class="sidebar-bg-options selected" id="sidebar-light-theme"><div class="img-ss rounded-circle bg-light border me-3"></div>Light</div>
-          <div class="sidebar-bg-options" id="sidebar-dark-theme"><div class="img-ss rounded-circle bg-dark border me-3"></div>Dark</div>
+          <div class="sidebar-bg-options selected" id="sidebar-light-theme">
+            <div class="img-ss rounded-circle bg-light border me-3"></div>Light
+          </div>
+          <div class="sidebar-bg-options" id="sidebar-dark-theme">
+            <div class="img-ss rounded-circle bg-dark border me-3"></div>Dark
+          </div>
           <p class="settings-heading mt-2">HEADER SKINS</p>
           <div class="color-tiles mx-0 px-4">
             <div class="tiles success"></div>
@@ -87,17 +93,12 @@
           </div>
         </div>
       </div>
-    
+
       <!-- partial -->
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link" href="{{('dashboardrecruteur')}}">
-              <i class="mdi mdi-grid-large menu-icon"></i>
-              <span class="menu-title">Dashboard</span>
-            </a>
-          </li>
+          
           <li class="nav-item">
             <a class="nav-link" href="{{('annonce')}}">
               <i class="mdi mdi-rename-box menu-icon"></i>
@@ -122,13 +123,15 @@
               <span class="menu-title">Entretiens passés</span>
             </a>
           </li>
+        
           <li class="nav-item">
-            <a class="nav-link" href="{{('brouillon')}}">
+            <a class="nav-link" href="{{('publicite')}}">
               <i class="mdi mdi-archive menu-icon"></i>
-              <span class="menu-title">Brouillons</span>
+              <span class="menu-title">Publicité</span>
             </a>
           </li>
-      
+
+
         </ul>
       </nav>
       <div class="main-panel">
@@ -136,14 +139,13 @@
           <div class="row">
             <div class="col-sm-12">
               <div class="home-tab">
-             
+
                 <div class="tab-content tab-content-basic">
-                  <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview"> 
+                  <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview">
 
                     <div class="row">
-                     
+
                       <div class="col-lg-12 d-flex flex-column">
-               
                         <div class="row flex-grow">
                           <div class="col-12 grid-margin stretch-card">
                             <div class="card card-rounded">
@@ -156,55 +158,86 @@
                                       </div>
                                     </div>
                                     <div class="mt-3">
-                                      <div class="wrapper d-flex align-items-center justify-content-between py-2 border-bottom">
-                                        <div class="d-flex col-8">
-                                          <img class="img-sm rounded-10" src="{{asset('assets/images/undraw_profile.svg')}}" alt="profile">
-                                          <div class="wrapper ms-3">
-                                            <p class="ms-1 mb-1 fw-bold">Brandon Washington</p>
+
+
+
+                                      <div class="col-lg-12 grid-margin stretch-card">
+                                        <div class="card">
+                                          <div class="card-body">
+                                            <div class="table-responsive">
+                                              <table class="table table-striped">
+                                                <thead>
+                                                  <tr>
+                                                    <th>
+                                                      Nom Complet
+
+                                                    </th>
+                                                    <th>
+                                                      Poste
+                                                    </th>
+                                                    <th>
+
+                                                    </th>
+                                                    <th>
+                                                      Curriculum Vitae
+                                                    </th>
+                                                    <th>
+                                                      Actions
+                                                    </th>
+                                                  </tr>
+                                                </thead>
+                                                @if (session()->has('selection') && count(session('selection')) > 0)
+
+                                                @foreach(session('selection') as $postulant)
+                                                <tbody>
+
+                                                  <tr>
+                                                    <td class="py-1">
+                                                      {{ $postulant['nom_postulant'] }}
+
+                                                    </td>
+                                                    <td>
+                                                      {{ $postulant['poste'] }}
+
+                                                    </td>
+                                                    <td>
+
+                                                    </td>
+                                                    <td>
+                                                      <a href="{{ asset(Storage::url($postulant['cv'])) }}" target="_blank">Consulter le CV</a>
+                                                    </td>
+                                                    <td>
+                                                      <form method="POST" action="">
+                                                        @csrf
+                                                        <a href="#">
+                                                          <button type="button" class="btn btn-primary btn-lg btn-block" style="background-color: green;color:white;">
+                                                            <i class="mdi mdi-calendar"></i>
+                                                            Programmer un entretien
+                                                          </button>
+                                                        </a>
+                                                      </form>
+                                                      
+                                                        <button type="submit" name="supprimer" class="btn btn-primary btn-lg btn-block" style="background-color: red;color:white;">Supprimer</button>
+
+                           
+
+                                                    </td>
+                                                  </tr>
+
+                                                </tbody>
+                                                @endforeach
+                                                @else
+                                                <p>Aucun postulant sélectionné</p>
+                                                @endif
+                                              </table>
+                                            </div>
                                           </div>
-                                         
                                         </div>
-                                        <a href="#">
-                                          <button type="button" class="btn btn-primary btn-lg btn-block" style="background-color: green;color:white;">
-                                            <i class="mdi mdi-calendar"></i>                      
-                                            Programmer un entretien
-                                          </button>
-                                        </a>
-                                       
-                                        
                                       </div>
-                                      <div class="wrapper d-flex align-items-center justify-content-between py-2 border-bottom">
-                                        <div class="d-flex">
-                                          <img class="img-sm rounded-10" src="{{asset('assets/images/undraw_profile.svg')}}" alt="profile">
-                                          <div class="wrapper ms-3">
-                                            <p class="ms-1 mb-1 fw-bold">Wayne Murphy</p>
-                                          </div>
-                                        </div>
-                                        <a href="#">
-                                          <button type="button" class="btn btn-primary btn-lg btn-block" style="background-color: green;color:white;">
-                                            <i class="mdi mdi-calendar"></i>                      
-                                            Programmer un entretien
-                                          </button>
-                                        </a>
-                                        
-                                      </div>
-                                      <div class="wrapper d-flex align-items-center justify-content-between py-2 border-bottom">
-                                        <div class="d-flex">
-                                          <img class="img-sm rounded-10" src="{{asset('assets/images/undraw_profile.svg')}}" alt="profile">
-                                          <div class="wrapper ms-3">
-                                            <p class="ms-1 mb-1 fw-bold">Katherine Butler</p>
-                                          </div>
-                                        </div>
-                                        
-                                        <a href="#">
-                                          <button type="button" class="btn btn-primary btn-lg btn-block" style="background-color: green;color:white;">
-                                            <i class="mdi mdi-calendar"></i>                      
-                                            Programmer un entretien
-                                          </button>
-                                        </a>
-                                      </div>
-                                    
-                                   
+
+
+
+
                                     </div>
                                   </div>
                                 </div>
@@ -212,6 +245,7 @@
                             </div>
                           </div>
                         </div>
+
                       </div>
                     </div>
                   </div>
