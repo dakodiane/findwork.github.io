@@ -16,10 +16,10 @@
           </button>
         </div>
         <div>
-          <a class="navbar-brand brand-logo" href="{{('vosoffres')}}">
+          <a class="navbar-brand brand-logo" href="/">
           <img src="{{asset('assets/img/logo/logojob.png')}}" alt="">
           </a>
-          <a class="navbar-brand brand-logo-mini"href="{{('vosoffres')}}">>
+          <a class="navbar-brand brand-logo-mini" href="/">
             <img src="" alt="">
           </a>
         </div>
@@ -160,7 +160,8 @@
   <div class="modal1-content" style="background-color: #fff; padding: 2em; text-align: justify;">
     <div class="contact-form">
       <a class="close" style="color: red;">X</a>
-      <form method="POST" action="{{ route('user.update', $user->id) }}" style="max-width: 400px; margin: 0 auto;">
+      <form method="POST" action="{{ route('user.update', $user->id) }}" 
+      style="max-width: 400px; margin: 0 auto;">
         <h2 style="text-align: center; color: #242b5e; text-decoration: underline;">Modifier les Informations</h2>
       
         @csrf
@@ -218,7 +219,9 @@
         </div>
         <div class="form-group">
            <div style="text-align: center;">
-          <button type="submit" class="btn btn-primary" style="background-color: #242b5e; border-color: #242b5e; padding: 0.5em 1em; border-radius: 3px; color: #fff;width: 120px">Enregistrer</button>
+          <button type="submit" class="btn btn-primary"
+           style="background-color: #242b5e; border-color: #242b5e;
+            padding: 0.5em 1em; border-radius: 3px; color: #fff;width: 120px">Enregistrer</button>
         </div>
       </form>
     </div>

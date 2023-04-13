@@ -33,29 +33,24 @@ Route::get('/', [WelcomeController::class,'index']);
   //partiedjemi
   //  
 
-  Route::get('connexion ', 'App\Http\Controllers\ConnexionController@index');
+  Route::get('connexion ', 'App\Http\Controllers\ConnexionController@index')->name('connexion');
 
   Route::post('/connexion ', 'App\Http\Controllers\ConnexionController@connexion');
+
+  Route::get('offre/connexion ', 'App\Http\Controllers\ConnexionController@index')->name('connexion');
+
+  Route::post('/offre/connexion ', 'App\Http\Controllers\ConnexionController@connexion');
 
 
   Route::get('/inscription ', 'App\Http\Controllers\InscriptionController@index');
   
   Route::post('/inscription ', 'App\Http\Controllers\InscriptionController@inscription');
 
-  Route::get('/inscriptionrecruteur ', 'App\Http\Controllers\InscriptionRecruteurController@index');
   
-  Route::post('/inscriptionrecruteur ', 'App\Http\Controllers\InscriptionRecruteurController@inscriptionrecruteur');
-  
-  Route::get('/inscriptionfreelancer ', 'App\Http\Controllers\InscriptionFreelancerController@index');
-  Route::post('/inscriptionfreelancer ', 'App\Http\Controllers\InscriptionFreelancerController@inscriptionfreelancer');
-  
-  
-  Route::get('/inscriptionpostulant ', 'App\Http\Controllers\InscriptionPostulantController@index');
-  Route::post('/inscriptionpostulant ', 'App\Http\Controllers\InscriptionPostulantController@inscriptionpostulant');
-
   Route::get('/publierannonce', function (){
     return view('publierannonce');
   });
+
   Route::get('/offre/{id}/postuleroffre', function (){
     return view('postuleroffre');
   });
@@ -115,7 +110,8 @@ Route::post('/recruteur/{id}', 'App\Http\Controllers\RecruteurController@show')-
 
 Route::post( '/recruteur/profil/{id}', 'App\Http\Controllers\RecruteurController@update')->name('profilrecruteur.update');
 
-Route::post('/annonce', 'App\Http\Controllers\PublierAnnonceController@publierannonce')->name('annoncepublier');
+Route::post('/offre/{id}/postuleroffre','App\Http\Controllers\PostulerOffreController@postulerOffre')
+->name('postulerOffre');
 
 
 
@@ -131,6 +127,13 @@ Route::get('/recommandation','App\Http\Controllers\DashboardPostulantController@
 Route::get('/profilpostulant','App\Http\Controllers\DashboardPostulantController@profilpostulant' )->name('profilpostulant');
 Route::put('/users/{id}', 'App\Http\Controllers\DashboardPostulantController@update')->name('user.update');
 Route::get('/supprimer_offre/{id}', 'App\Http\Controllers\DashboardPostulantController@supprimerOffre')->name('supprimer_offre');
-Route::get('/dashboardfreelancer', 'App\Http\Controllers\DashboardFreelancerController@index')->name('dashboardfreelancer');
-Route::get('/profilfreelancer','App\Http\Controllers\DashboardFreelancerController@profilfree' )->name('profilfreelancer');
-Route::put('/users/{id}', 'App\Http\Controllers\DashboardFreelancerController@update')->name('user.update');
+
+
+Route::post('/annonce', 'App\Http\Controllers\PublierAnnonceController@publierannonce')->name('annoncepublier');
+
+Route::get('/dashboardfreelancer', 'App\Http\Controllers\DashboardFreelancerController@index')->
+name('dashboardfreelancer');
+Route::get('/profilfreelancer','App\Http\Controllers\DashboardFreelancerController@profilfree' )
+->name('profilfreelancer');
+Route::put('/users/{id}', 'App\Http\Controllers\DashboardFreelancerController@update')->
+name('user.update');

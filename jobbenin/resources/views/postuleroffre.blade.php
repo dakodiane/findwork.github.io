@@ -14,46 +14,64 @@
                                 <p></p><p></p>
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">
-                                        <b> <u>Vos Informations!</u> </b>
+                                        <b> <u>Déposer Votre Candidature</u> </b>
                                     </h1>
                                 </div>
 
+                                <div class="col-sm-11 mx-auto">
+                    <div class="container">
+        <div class="col-sm-10 mx-auto" 
+        style="background-color:#1f3bb3;float:left">
+            
+            <div class="alert -primary alert-dismissible fade show"
+              style="background-color:#1f3bb3"role="alert">
+                        <strong class="text" style="background-color:#1f3bb3">  {{ $offre->user->name ?? '' }}</strong>
 
-                                <div class="col-lg-6">
+                <p class="text-light my-0">
+                    Besoin d'un CV Professionnel pour votre Candidature ?
+                </p>
+                <p class="mt-3 mb-0"> <a href="https://wa.me/0022990733200"target="_blank" >
+            <button  style="background-color:white;border:none; color:#1f3bb3;border-radius:40px"  >
+            Commander Maintenant</button>    
+  </a> </p>
+        
+                </div>
+             
+        </div>
+  <p></p>
 
-                                    <form action="#" class="p-4 border rounded"id="forminsc">
-                                                  <div class="row form-group">
-                                            <div class="col-md-12 mb-3 mb-md-0">
-                                                <label class="text-black" for="fname">Lettre de Motivation</label>
-                                                <div class="col-md-12 mb-3 mb-md-0">
-                                                    <textarea name="motivation" id="" cols="60" rows="10" placeholder="Rédigez Votre lettre de Motivation"></textarea>
-                                                    
-                                                </div>
-                                  
-                                            </div>
-                                        </div>
-                                        <div class="row form-group mb-4">
-                                            <div class="col-md-12 mb-3 mb-md-0">
-                                                <label class="text-black" for="fname"> Curriculum Vitae (Cv)</label>
-                                                  
-                                                      <div class="file-widget form-managed-file clearfix">
-                                                       <input type="file"  name="cv" size="50" class="form-file" />
-                                                     </div>
+                     <form  method="POST" action="{{ route('postulerOffre','$offre=id_offre') }}" >
+                    @csrf
+                       
+                    <div class="form-group">
+                        <div class="text-format-wrapper" >
+                            <div class="form-item form-lettre_motivation wysiwyg-wrapper form-type-textarea form-item-lettre_motivation-value" id="edit-lettre_motivation-value-wrapper">
+                                <label for="edit-lettre_motivation" style="padding-top:2em">Lettre  de Motivation </label>
+                                <div class="form-textarea-wrapper resizable">
+                                    <textarea required="required"
+                                     class="wysiwyg form-textarea required" 
+                                     name="lettre_motivation" cols="16" rows="10" placeholder=""></textarea>
+                                </div>
+                            </div> </div>  
 
-                                            </div>
-                                            </div>
-                                            <div class="row form-group"  style="margin-left:400px">
+                    <div class="form-group">
+                        <label for=" secteur">Curriculum Vitae (CV) </label>
+                        <input type="file" name="cv" class="form-control"
+                         id="cv" placeholder="" require ="required"   style="width:34em" >
+                    </div>
+
+                    <div class="row form-group"  style="margin-left:400px">
                                             
-                                            <div class="col-md-10">
-                                                    <button type="submit" class="btn px-4 btn-primary text-white">Postuler</button>
+                        <div class="col-md-10">
+                            <button type="submit" 
+                                  class="btn px-4 btn-primary text-white">
+                                    Postuler</button>
 
                                             </div>
                                            
                                         </div>
+                            </form>
 
-                                      
-                                      
-                                    </form>
                                 </div>
 
                             </div>

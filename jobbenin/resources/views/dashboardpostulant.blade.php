@@ -16,10 +16,10 @@
           </button>
         </div>
         <div>
-          <a class="navbar-brand brand-logo" href="{{('vosoffres')}}">
+          <a class="navbar-brand brand-logo" href="/">
           <img src="{{asset('assets/img/logo/logojob.png')}}" alt="">
           </a>
-          <a class="navbar-brand brand-logo-mini"href="{{('vosoffres')}}">>
+          <a class="navbar-brand brand-logo-mini"href="/">
             <img src="" alt="">
           </a>
         </div>
@@ -114,101 +114,7 @@
         </ul>
       </nav>
       <!-- partial -->
-      <div class="main-panel">
-        <div class="content-wrapper">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="home-tab">
-             
-                <div class="tab-content tab-content-basic">
-                  <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview"> 
-
-                    <div class="row">
-                      <div class="col-lg-12 d-flex flex-column">
-                       
-                        <div class="row flex-grow">
-                          <div class="col-12 grid-margin stretch-card">
-                            <div class="card card-rounded">
-                              <div class="card-body">
-                                <div class="d-sm-flex justify-content-between align-items-start">
-                                  <div>
-                                    <h4 class="card-title card-title-dash">Vos Offres</h4>
-                                  </div>
-                                 
-                                </div>
-                                <div class="table-responsive  mt-1">
-<table class="table select-table">
-  <thead>
-    <tr>
-      <th>Entreprise</th>
-      <th>Statut</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    @foreach ($offres as $offre)
-        <tr>
-            <td>
-                <div class="d-flex">
-                    <img src="" alt="">
-                    <div>
-                        <a class="monlien" href="" style="text-decoration:none">
-                            </a>
-                            <a class="monlien" href="" style="text-decoration:none">
-                                <h6>{{ $offre['user']['name'] }}</h6>
-                            </a>
-                            <a class="monlien" href="" style="text-decoration:none"> 
-                                <p>{{ $offre['user']['villeR'] }}</p>
-                            </a>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="badge badge-opacity-warning"> <b>{{ $offre['statut'] }}</b></div>
-                </td>
-                <td>
-                    <div class="template-demo mt-4">
-                    <a href="{{ route('detail_offre', $offre['id']) }}"><button type="button" class="btn btn-success" style="color:white;background-color: green;">Voir+</button></a>
-                 
-                  <a href="{{ route('supprimer_offre', $offre['id']) }}">
-  
-            <button type="button" class="btn btn-success"
-             style="color:white;background-color: red;">Supprimer</button>
-          </a>         
-
-
-                    </div>
-                </td>
-            </tr>
-    @endforeach
- </tbody>
-
-</table>
-
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      
-                      </div>
-                    
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- content-wrapper ends -->
-        <!-- partial:partials/_footer.html -->
-        <footer class="footer">
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2023. All rights reserved.</span>
-          </div>
-        </footer>
-        <!-- partial -->
-      </div>
+   
       <!-- main-panel ends -->
     </div>
     <!-- page-body-wrapper ends -->

@@ -27,15 +27,18 @@
                                 <nav class="d-none d-lg-block">
                                     <ul id="navigation" class="menu-container" style="display: flex; justify-content: space-between;">
                                         <li><a href="/" class="menu-link">Accueil</a></li>
-                                        <li><a href="{{('offre')}}" class="menu-link">Trouver Une Offre </a></li>
-                                        <li><a href="{{('freelancer')}}" class="menu-link">Espace Freelancer</a></li>
-                                        <li><a href="{{('/apropos')}}" class="menu-link">A Propos</a></li>
+                                        <li><a href="{{('offre')}}" class="menu-link">Trouver&nbsp;Une&nbsp;Offre </a></li>
+                                        <li><a href="{{('freelancer')}}" class="menu-link">Espace&nbsp;Freelancer</a></li>
+                                        <li><a href="{{('/apropos')}}" class="menu-link">A&nbsp;Propos</a></li>
                                         <li class="align-middle">
                                         <a href="{{('connexion')}}" class="boxed-btn1 head-btn2">Se&nbsp;Connecter</a>
 
                                         </li>
                                         <li class="align-middle">
                                             <a href="{{('inscription')}}" class="boxed-btn2 head-btn1 ">S'inscrire</a>
+                                        </li>
+                                        <li class="align-middle">
+                                            <a href="{{('')}}" class=" boxed-btn2 head-btn1 " style="background-color:#242b5e;color:white"> Mon&nbsp;Espace</a>
                                         </li>
                                     </ul>
                                 </nav>

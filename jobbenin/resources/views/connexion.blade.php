@@ -38,7 +38,7 @@
 
                             </div>
 
-                            <a href="">
+                            <a href="{{('postuleroffre')}}">
                                 <button type="submit" class="btn btn-primary btn-user btn-block"> Connexion
                                 </button>
                             </a>
