@@ -16,34 +16,8 @@ class DashboardPostulantController extends Controller
         if (!$user) {
             return redirect()->intended('connexion');
         }
-    
-        $postulant = User::with(['postulers' => function ($query) {
-            $query->where('visible', true);
-        }, 'postulers.offre'])
-            ->where('id', Auth::id())
-            ->firstOrFail();
-        
-        $offres = $postulant->postulers->map(function ($postuler) {
-            $offre = $postuler->offre;
-            $statut = $postuler->statut;
-        
-            if (!$offre) {
-                return null;
-            }
-        
-            if ($offre->datfin < now()) {
-                $statut = 'expirée';
-            }
-        
-            return [
-                'user' => $offre->user ?? null,
-                'statut' => $statut,
-                'id' => $offre->id ?? null,
-            ];
-        })->filter();
-        
      
-        return view('dashboardpostulant')->with(['user' => $user, 'offres' => $offres]);
+        return view('dashboardpostulant')->with(['user' => $user, ]);
        
     }
     
@@ -82,21 +56,11 @@ class DashboardPostulantController extends Controller
         })->filter();
         
      
-        return view('dashboardpostulant')->with(['user' => $user, 'offres' => $offres]);
+        return view('vosoffres')->with(['user' => $user, 'offres' => $offres]);
        
     }
     
-
-
-   
-    
-
-
-
-
-
-
- //Page ProfilPost
+    //Page ProfilPost
     public function profilpostulant()
     {
         $user = Auth::user();
@@ -108,9 +72,6 @@ class DashboardPostulantController extends Controller
 
     
     }
-
-
-
 
     //M A J Des donnés de la Db
 
@@ -132,12 +93,18 @@ class DashboardPostulantController extends Controller
    
     }
 
+
+    public function supprimerOffre($id) {
+        $offre = Offre::find($id);
     
-    
-  
- 
- 
-    public function recommandations()
+        DB::table('postulers')
+            ->where('id_offre', $offre->id)
+            ->update(['visible' => 0]);
+
+        return redirect()->back()->with('success', 'Offre rendue non visible avec succès.');
+    }
+
+     public function recommandations()
     {
         $user = Auth::user();
         if (!$user) {
@@ -159,18 +126,9 @@ class DashboardPostulantController extends Controller
         return view('recommandation')->with(['user' => $user, 'offres' => $offres]);
 }
 
-public function supprimerOffre($id) {
-    $offre = Offre::find($id);
-    $offre->visible = 0;
-    $offre->save();
 
-    DB::table('postulers')
-        ->where('id_offre', $offre->id)
-        ->update(['visible' => 0]);
 
-    return redirect()->back()->with('success', 'Offre rendue non visible avec succès.');
-}
-
+       
 }
     
     

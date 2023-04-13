@@ -16,10 +16,10 @@
           </button>
         </div>
         <div>
-          <a class="navbar-brand brand-logo" href="{{('vosoffres')}}">
+          <a class="navbar-brand brand-logo" href="/">
           <img src="{{asset('assets/img/logo/logojob.png')}}" alt="">
           </a>
-          <a class="navbar-brand brand-logo-mini"href="{{('vosoffres')}}">>
+          <a class="navbar-brand brand-logo-mini"href="/">
             <img src="" alt="">
           </a>
         </div>
@@ -29,7 +29,7 @@
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
     
        
-            <h1 class="welcome-text">  Salut, <span class="text-black fw-bold">{{ $user->name }}.</span> </h1>
+            <h1 class="welcome-text">  Bienvenue, <span class="text-black fw-bold">{{ $user->name }}.</span> </h1>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
@@ -53,7 +53,7 @@
                 <p class="mb-1 mt-3 font-weight-semibold">{{ $user->name }}</p>
                 <p class="fw-light text-muted mb-0">{{ $user->email }}</p>
               </div>
-              <a class="dropdown-item" href=" {{('profilfreelancer')}}"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> Mon Profile </a>
+              <a class="dropdown-item" href=" {{('profilpostulant')}}"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> Mon Profile</a>
 
               <a href="{{ route('logout') }}" class="dropdown-item"  class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 Déconnexion
@@ -190,13 +190,16 @@
         </div>
        <div class="form-group">
           <label for="email" style="color: #242b5e; display: block; margin-bottom: 0.5em;"> Compétences</label>
-          <textarea  class="wysiwyg form-textarea "  required="required" name="competence_freelancer" cols="14" rows="6"
+          <textarea  class="wysiwyg form-textarea "  
+          required="required" name="competence_freelancer" cols="14" rows="6"
              value="{{ $user->competence_freelancer }}"></textarea>
                                    
         </div>
         <div class="form-group">
            <div style="text-align: center;">
-          <button type="submit" class="btn btn-primary" style="background-color: #242b5e; border-color: #242b5e; padding: 0.5em 1em; border-radius: 3px; color: #fff;width: 120px">Enregistrer</button>
+          <button type="submit" class="btn btn-primary" 
+          style="background-color: #242b5e; border-color: #242b5e; padding: 0.5em 1em; 
+          border-radius: 3px; color: #fff;width: 120px">Enregistrer</button>
        
         </div>
    

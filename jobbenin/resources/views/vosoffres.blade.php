@@ -16,10 +16,10 @@
           </button>
         </div>
         <div>
-          <a class="navbar-brand brand-logo" href="{{('vosoffres')}}">
+          <a class="navbar-brand brand-logo" href="/">
           <img src="{{asset('assets/img/logo/logojob.png')}}" alt="">
           </a>
-          <a class="navbar-brand brand-logo-mini"href="{{('vosoffres')}}">>
+          <a class="navbar-brand brand-logo-mini" href="/">>
             <img src="" alt="">
           </a>
         </div>
@@ -168,8 +168,10 @@
                 </td>
                 <td>
                     <div class="template-demo mt-4">
-                    <a href="{{ route('detail_offre', $offre['id']) }}"><button type="button" class="btn btn-success" style="color:white;background-color: green;">Voir+</button></a>
-                        <a href="">
+                    <a href="{{ route('detail_offre', $offre['id']) }}">
+                      <button type="button" class="btn btn-success" style="color:white;background-color: green;">Voir+</button></a>
+                               
+                  <a href="{{ route('supprimer_offre', $offre['id']) }}">
                             <button type="button" class="btn btn-success" style="color:white;background-color: red;">Supprimer</button>
                         </a>
                     </div>

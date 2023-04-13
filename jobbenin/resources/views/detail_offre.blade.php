@@ -31,11 +31,15 @@
                         </div>
                         <div class="job-tittle">
                             <a href="#">
-                                <h4 style="text-decoration: none;">{{ $offre->poste }}</h4>
+                            @if(isset($offre))
+    <h4 style="text-decoration: none;">{{ $offre->poste }} </h4>
+@endif
                             </a>
                             <ul>
-                                <li>{{$offre->user->name}}</li>
-                                <li><i class="fas fa-map-marker-alt"></i>{{$offre->user->villeR}}</li>
+                            @if(isset($offre) && isset($offre->user))
+    <li>{{$offre->user->name}}</li>
+@endif
+                                <li><i class="fas fa-map-marker-alt"></i>{{$offre->user->villeR ?? ''}}</li>
                             </ul>
                         </div>
                     </div>
@@ -48,7 +52,7 @@
                         <div class="small-section-tittle">
                             <h4>Description de l'offre</h4>
                         </div>
-                        <p>{{ $offre->description_offre }}</p>
+                        <p>{{ $offre->detail ?? '' }}</p>
                     </div>
                     <div class="post-details2  mb-50">
                          <!-- Small Section Tittle -->
@@ -56,11 +60,11 @@
                             <h4>Compétences Requises</h4>
                         </div>
                        <ul>
-                           <li>{{ $offre->competence_offre1 }}</li>
-                           <li>{{ $offre->competence_offre2 }}</li>
-                           <li>{{ $offre->competence_offre3 }}</li>
-                           <li>{{ $offre->competence_offre4 }}</li>
-                           <li>{{ $offre->competence_offre5 }}</li>
+                           <li>{{ $offre->competence_offre1 ?? '' }}</li>
+                           <li>{{ $offre->competence_offre2  ?? ''}}</li>
+                           <li>{{ $offre->competence_offre3 ?? '' }}</li>
+                           <li>{{ $offre->competence_offre4  ?? ''}}</li>
+                           <li>{{ $offre->competence_offre5 ?? ''}}</li>
 
                        </ul>
                     </div>
@@ -70,7 +74,7 @@
                             <h4>Diplome Requis </h4>
                         </div>
                        <ul>
-                           <li>{{$offre->diplome}}</li>                        
+                           <li>{{$offre->diplome ?? ''}}</li>                        
                        </ul>
                     </div>
                 </div>
@@ -83,29 +87,45 @@
                    <div class="small-section-tittle">
                        <h4>Aperçu de l'offre</h4>
                    </div>
-                  <ul>
-                      <li>Ville : <span>{{$offre->user->villeR}}</span></li>   
-                      <li>Salaire mensuel: <span>{{ $offre->salaireO }} </span></li>
-                      <li>Date Limite : <span>{{ $offre->datfin }}</span></li>
-                  </ul>
-                 <div class="apply-btn2">
-                    <a href="{{('/offre/{id}/postuleroffre')}}" class="boxed-btn1" style="color: white;text-decoration:none;">Postuler maintenant</a>
-                 </div>
-               </div>
-                <div class="post-details4  mb-50">
-                    <!-- Small Section Tittle -->
-                   <div class="small-section-tittle">
-                       <h4>Description de l'entreprise</h4>
-                   </div>
-                      <span>{{$offre->user->name}}</span>
-                      <p>{{$offre->user->description_recruteur}}</p>
+                   <ul>
+                                    <li>{{ $offre->user->type_contrat ?? '' }}</li>
+                                    <li>{{ $offre->user->duree_contrat  ?? '' }}</li>
+                                    <li>Ville : <span>{{ $offre->user->villeR ?? '' }}</span></li>
+                                    <li>Salaire mensuel : <span>{{ $offre->salaireO  ?? ''}}</span></li>
+                                    <li>Date limite : <span>{{ $offre->datfin ?? ''}}</span></li>
+                                </ul>
+                                @auth
+                    <div class="apply-btn2">
+                        <a href="{{ ('/offre/{id}/postuleroffre' )}}" class="boxed-btn1" 
+                        style="color: white;text-decoration:none;">Postuler maintenant</a>
+                    </div>
+                    </div>
+                    @else
+                    <div class="apply-btn2">
+                    <a href="{{ ('connexion') }}" class="boxed-btn1" 
+                    style="color: white;text-decoration:none;">Connectez-vous pour postuler</a>
+
+                    </div>
+                    </div>
+                    @endauth
+                        
+                        
+                 
+                    <!-- job single End -->
+
                   
-               </div>
+                    <div class="post-details4 mb-50">
+                        <!-- Small Section Tittle -->
+                        <div class="small-section-tittle">
+                            <h4>Description de l'entreprise</h4>
+                        </div>
+                        <span>{{ $offre->user->name ?? '' }}</span>
+                        <p>{{ $offre->user->description_recruteur ?? '' }}</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!-- job post company End -->
-
+    <!-- offre d'emploi End -->
 </main>
 @endsection

@@ -16,10 +16,10 @@
           </button>
         </div>
         <div>
-          <a class="navbar-brand brand-logo" href="{{('vosoffres')}}">
+          <a class="navbar-brand brand-logo" href="/">
           <img src="{{asset('assets/img/logo/logojob.png')}}" alt="">
           </a>
-          <a class="navbar-brand brand-logo-mini"href="{{('vosoffres')}}">>
+          <a class="navbar-brand brand-logo-mini" href="/">
             <img src="" alt="">
           </a>
         </div>
