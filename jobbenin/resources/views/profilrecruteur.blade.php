@@ -153,19 +153,20 @@
           <div class="modal1-content">
             <div class="contact-form">
               <a class="close">x</a>
-              <form action="route('profilrecruteur.update',['id' => $user->id]) }}" method="POST" class="form1">
-                @csrf
-                <input type="hidden" name="_method" value="POST">
+              <form action="{{ route('recruteur.update',['id' => $user->id]) }}" method="POST" class="form1">
+              <h2>Modifier les informations</h2>
 
-                <h2>Modifier les informations</h2>
+                @csrf 
+                @method('PUT')
+
                 <div>
-                  <input class="fname" type="text" name="name" value="{{ $user->name }}"/>
-                  <input class="fname" type="text" name="name"  value="{{ $user->villeR }}" />
-                  <input class="fname" type="text" name="name" value="{{ $user->email }}" />
-                </div>
+                  <input class="fname" type="text" name="name" value="{{ $user->name }}"/> <br><br>
+                  <input class="fname" type="text" name="villeR"  value="{{ $user->villeR }}" /> <br><br>
+                  <input class="fname" type="text" name="email" value="{{ $user->email }}" /> <br><br>
+                </div> 
                 <span>Description</span>
                 <div>
-                  <textarea class="fname" rows="4" >{{ $user->description_recruteur }}</textarea>
+                  <textarea class="fname" name="description_recruteur" rows="4" >{{ $user->description_recruteur }}</textarea>
                 </div>
                 <button type="submit" href="">Envoyer</button>
               </form>

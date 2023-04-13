@@ -113,7 +113,6 @@ Route::get('/recruteur/{id}', 'App\Http\Controllers\RecruteurController@show')->
 Route::post('/recruteur/{id}', 'App\Http\Controllers\RecruteurController@show')->name('profilrecruteur');
 
 
-Route::post( '/recruteur/profil/{id}', 'App\Http\Controllers\RecruteurController@update')->name('profilrecruteur.update');
 
 Route::post('/annonce', 'App\Http\Controllers\PublierAnnonceController@publierannonce')->name('annoncepublier');
 
@@ -134,3 +133,9 @@ Route::get('/supprimer_offre/{id}', 'App\Http\Controllers\DashboardPostulantCont
 Route::get('/dashboardfreelancer', 'App\Http\Controllers\DashboardFreelancerController@index')->name('dashboardfreelancer');
 Route::get('/profilfreelancer','App\Http\Controllers\DashboardFreelancerController@profilfree' )->name('profilfreelancer');
 Route::put('/users/{id}', 'App\Http\Controllers\DashboardFreelancerController@update')->name('user.update');
+
+Route::get('/supprimer_postulant/{id}', 'App\Http\Controllers\DashboardRecruteurController@supprimerpostulant')->name('supprimer_postulant');
+Route::put('/users/{id}', 'App\Http\Controllers\DashboardRecruteurController@update')->name('recruteur.update');
+
+Route::get('/offremodif/{id}', 'App\Http\Controllers\OffreController@modifieroffre')->name('modifieroffre');
+Route::put('/offre/{id}', 'App\Http\Controllers\OffreController@update')->name('offre.update');

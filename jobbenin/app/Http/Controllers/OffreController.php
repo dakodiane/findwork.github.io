@@ -37,6 +37,7 @@ class OffreController extends Controller
     public function store(Request $request)
     {
         //
+
     }
 
     /**
@@ -47,6 +48,7 @@ class OffreController extends Controller
         //
         $offre = Offre::with('user')->find($id);
         return view('detail_offre', ['offre' => $offre]);
+
     }
 
     /**
@@ -63,6 +65,27 @@ class OffreController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $offre = Offre::with('user')->find($id);
+
+        $offre->poste = $request->input('poste');
+        $offre->description_offre = $request->input('description_offre');  
+          // Pour enregistrer les informations complèter par l'utilisateur
+        $offre->secteurO = $request->input('secteurO');
+        $offre->salaireO= $request->input('salaireO'); 
+        $offre->datfin= $request->input('datfin');
+        $offre->typeO= $request->input('typeO');
+        $offre->villeO= $request->input('villeO');
+        $offre->description_offre = $request->input('description_offre');
+        $offre->diplome= $request->input('diplome'); 
+        $offre->competence_offre1= $request->input('competence_offre1');
+        $offre->competence_offre2= $request->input('competence_offre2');
+        $offre->competence_offre3= $request->input('competence_offre3');
+        $offre->competence_offre4= $request->input('competence_offre4');
+        $offre->competence_offre5= $request->input('competence_offre5');
+
+       $offre->save();
+       return view('detail_offre', ['offre' => $offre]);
+
     }
 
     /**
@@ -72,4 +95,12 @@ class OffreController extends Controller
     {
         //
     }
+
+    public function modifieroffre(string $id)
+    {
+        //
+        $offre = Offre::with('user')->find($id);
+        return view('modifieroffre', ['offre' => $offre]);
+    }
+  
 }

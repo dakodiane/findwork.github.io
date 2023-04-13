@@ -48,7 +48,7 @@
                         <div class="small-section-tittle">
                             <h4>Description de l'offre</h4>
                         </div>
-                        <p>{{ $offre->detail }}</p>
+                        <p>{{ $offre->description_offre }}</p>
                     </div>
                     <div class="post-details2  mb-50">
                          <!-- Small Section Tittle -->
