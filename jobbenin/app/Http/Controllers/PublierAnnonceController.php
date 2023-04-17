@@ -19,7 +19,7 @@ class PublierAnnonceController extends Controller
     $salaireO = $request->input('salaireO');
     $typeO = $request->input('typeO');
     $villeO = $request->input('villeO');
-    $detail = $request->input('detail');
+    $description_offre = $request->input('description_offre');
     $diplome = $request->input('diplome');
     $competence_offre1 = $request->input('competence_offre1');
     $competence_offre2 = $request->input('competence_offre2');
@@ -40,7 +40,7 @@ class PublierAnnonceController extends Controller
     $offre->salaireO = $salaireO;
     $offre->typeO = $typeO;
     $offre->villeO = $villeO;
-    $offre->detail = $detail;
+    $offre->description_offre = $description_offre;
     $offre->diplome = $diplome;
     $offre->competence_offre1 = $competence_offre1;
     $offre->competence_offre2 = $competence_offre2;
@@ -51,9 +51,9 @@ class PublierAnnonceController extends Controller
 
     // Enregistrer l'offre dans la base de données
     $offre->save();
+    return redirect()->route('detail_offre', ['id' => $offre->id])->with('success', 'Informations mises à jour avec succès');
 
-    // Rediriger l'utilisateur vers la page d'accueil ou la page de l'annonce créée
-    return view('annonce');
+    // Rediriger l'utilisateur vers la page de l'annonce créée
 }
 
 }  

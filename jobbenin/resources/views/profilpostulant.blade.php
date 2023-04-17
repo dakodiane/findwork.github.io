@@ -176,7 +176,7 @@
           <label for="email" style="color: #242b5e; display: block; margin-bottom: 0.5em;">Adresse e-mail</label>
           <input type="email" class="form-control" id="email" name="email" value="{{ $user->email }}" style="width: 100%; padding: 0.5em; border-radius: 3px; border: 1px solid #ccc; box-sizing: border-box;">
         </div>
-        <h2 style="text-align: center; color: #242b5e; text-decoration: underline;">Compléter Le Profile</h2>
+        <h2 style="text-align: center; color: #242b5e; text-decoration: underline;">Compléter Le Profil</h2>
       
         <div class="form-group">
           <label for="" style="color: #242b5e; display: block; margin-bottom: 0.5em;"> Ville</label>

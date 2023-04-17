@@ -185,7 +185,7 @@
                                                 </tr>
                                               </thead>
                                               @foreach ($data as $postulant)
-
+                                        @if($postuler->suppression=1)
                                               <tbody>
 
                                                 <tr>
@@ -208,7 +208,7 @@
                                                       @csrf
                                                       <button type="submit" name="selectionner" class="btn btn-primary btn-lg btn-block" style="background-color: green;color:white;">Sélectionner</button>
                                                     </form>
-                                                    <a href="{{ route('attentecv.supprimer', $postulant['id_user']) }}">
+                                                    <a href="{{ route('supprimer_postulant', $user['id']) }}">
                                                       <button type="submit" name="supprimer" class="btn btn-primary btn-lg btn-block" style="background-color: red;color:white;">Désintéresser</button>
                                                     </a>
 
@@ -219,6 +219,9 @@
                                                 </tr>
 
                                               </tbody>
+                                              @else 
+
+                                              @endif
                                               @endforeach
 
                                             </table>
