@@ -30,7 +30,7 @@ class DashboardFreelancerController extends Controller
          return redirect()->intended('connexion');
      }
 
-     return view('profilfreelancer')->with(['user' => $user]);
+     return view('/profilfreelancer')->with(['user' => $user]);
 
  
  }
