@@ -153,7 +153,7 @@
           <div class="modal1-content">
             <div class="contact-form">
               <a class="close">x</a>
-              <form action="{{ route('recruteur.update',['id' => $user->id]) }}" method="POST" class="form1">
+              <form action=" {{route('recruteur.update',['id' => $user->id])}}" method="POST" class="form1">
               <h2>Modifier les informations</h2>
 
                 @csrf 

@@ -27,7 +27,6 @@ use App\Http\Controllers\ConnexionPourPostulerController;
 
 Route::get('/', [WelcomeController::class,'index']);
  
- 
   
   //partiedjemi
   //  
@@ -133,7 +132,7 @@ Route::get('/profilfreelancer','App\Http\Controllers\DashboardFreelancerControll
 Route::put('/users/{id}', 'App\Http\Controllers\DashboardFreelancerController@update')->name('user.update');
 
 Route::get('/supprimer_postulant/{id}', 'App\Http\Controllers\DashboardRecruteurController@supprimerpostulant')->name('supprimer_postulant');
-Route::put('/users/{id}', 'App\Http\Controllers\DashboardRecruteurController@update')->name('recruteur.update');
+Route::put('/recruteurs/{id}', 'App\Http\Controllers\DashboardRecruteurController@update')->name('recruteur.update');
 
 Route::get('/offremodif/{id}', 'App\Http\Controllers\OffreController@modifieroffre')->name('modifieroffre');
 Route::put('/offre/{id}', 'App\Http\Controllers\OffreController@update')->name('offre.update');
@@ -147,3 +146,5 @@ Route::get('/profilfreelancer','App\Http\Controllers\DashboardFreelancerControll
 ->name('profilfreelancer');
 Route::put('/users/{id}', 'App\Http\Controllers\DashboardFreelancerController@update')->
 name('user.update');
+
+Route::get('/espace ', 'App\Http\Controllers\EspaceController@index');

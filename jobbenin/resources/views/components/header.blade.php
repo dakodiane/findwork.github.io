@@ -14,18 +14,18 @@
         <div class="headder-top header-sticky">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-3 col-md-2">
+                    <div class="col-lg-2 col-md-1">
                         <!-- Logo -->
                         <div class="logoo">
                             <a href="/"><img src="{{asset('assets/img/logo/logojob.png')}}" alt=""></a>
                         </div>
                     </div>
-                    <div class="col-lg-9 col-md-9">
-                        <div class="menu-wrapper">
+                <div class="col-lg-10 col-md-11">
+                    <div class="menu-wrapper">
                             <!-- Main-menu -->
                             <div class="main-menu">
                                 <nav class="d-none d-lg-block">
-                                    <ul id="navigation" class="menu-container" style="display: block; justify-content: space-between;">
+                                    <ul id="navigation" class="menu-container" style="display: flex; justify-content: space-between;">
                                         <li><a href="/" class="menu-link">Accueil</a></li>
                                         <li><a href="{{('offre')}}" class="menu-link">Trouver&nbsp;Une&nbsp;Offre </a></li>
                                         <li><a href="{{('freelancer')}}" class="menu-link">Espace&nbsp;Freelancer</a></li>
@@ -38,13 +38,13 @@
                                             <a href="{{('inscription')}}" class="boxed-btn2 head-btn1 ">S'inscrire</a>
                                         </li>
                                         <li class="align-middle">
-                                            <a href="{{('')}}" class=" boxed-btn2 head-btn1 " style="background-color:#242b5e;color:white"> Mon&nbsp;Espace</a>
+                                            <a href="{{('espace')}}" class=" boxed-btn2 head-btn1 " style="background-color:#242b5e;color:white"> Mon&nbsp;Espace</a>
                                         </li>
                                     </ul>
                                 </nav>
                             </div>
-                        </div>
                     </div>
+                 </div>
                     <!-- Mobile Menu -->
                     <div class="col-12">
                         <div class="mobile_menu d-block d-lg-none"></div>

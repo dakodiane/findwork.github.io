@@ -43,7 +43,7 @@ class RecruteurController extends Controller
         $user = Auth::user(); // récupère le recruteur associé à l'utilisateur authentifié
     return view('profilrecruteur', compact('user'));
     }
-    
+   
 
     /**
      * Show the form for editing the specified resource.
