@@ -185,7 +185,7 @@
                                                 </tr>
                                               </thead>
                                               @foreach ($data as $postulant)
-                                        @if($postuler->suppression=1)
+                                   
                                               <tbody>
 
                                                 <tr>
@@ -219,9 +219,7 @@
                                                 </tr>
 
                                               </tbody>
-                                              @else 
 
-                                              @endif
                                               @endforeach
 
                                             </table>

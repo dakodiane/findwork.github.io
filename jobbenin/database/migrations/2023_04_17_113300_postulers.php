@@ -22,6 +22,11 @@ return new class extends Migration
                 ->on('offres');
 
             $table->primary(['id_user', 'id_offre']);
+            $table->string('statut')->default('en cours');
+            $table->string('cv');
+            $table->string('motivation');
+            $table->string('suppression')->default('1');
+            $table->string('visible')->default('1');
             $table->timestamps();
         });
     }
