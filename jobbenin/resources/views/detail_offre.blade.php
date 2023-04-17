@@ -93,7 +93,12 @@
                                     <li>Ville : <span>{{ $offre->user->villeR ?? '' }}</span></li>
                                     <li>Salaire mensuel : <span>{{ $offre->salaireO  ?? ''}}</span></li>
                                     <li>Date limite : <span>{{ $offre->datfin ?? ''}}</span></li>
+                                    <li>Nombre de Visiteurs:  <span class=""><i class="fa fa-eye" aria-hidden="true"></i> 150 </span></li>    
+                                    
                                 </ul>
+                            
+
+
                                 @auth
                     <div class="apply-btn2">
                         <a href="{{ ('/offre/{id}/postuleroffre' )}}" class="boxed-btn1" 
@@ -102,7 +107,7 @@
                     </div>
                     @else
                     <div class="apply-btn2">
-                    <a href="{{ ('connexion') }}" class="boxed-btn1" 
+                    <a href="{{ ('/connexionpourpostuler') }}" class="boxed-btn1" 
                     style="color: white;text-decoration:none;">Connectez-vous pour postuler</a>
 
                     </div>

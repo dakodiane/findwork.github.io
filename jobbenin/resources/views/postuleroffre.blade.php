@@ -20,8 +20,8 @@
 
                                 <div class="col-sm-11 mx-auto">
                     <div class="container">
-        <div class="col-sm-10 mx-auto" 
-        style="background-color:#1f3bb3;float:left">
+ <div class="col-md-12" 
+        style="background-color:#1f3bb3;float:left; width: 477px;">
             
             <div class="alert -primary alert-dismissible fade show"
               style="background-color:#1f3bb3"role="alert">

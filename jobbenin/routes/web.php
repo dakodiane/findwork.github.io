@@ -9,6 +9,7 @@ use App\Http\Controllers\ConnexionController;
 use App\Http\Controllers\FreelancerController;
 use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\DashboardPostulantController;
+use App\Http\Controllers\ConnexionPourPostulerController;
 
 
 /*
@@ -26,18 +27,20 @@ use App\Http\Controllers\DashboardPostulantController;
 
 Route::get('/', [WelcomeController::class,'index']);
  
-
   
   //partiedjemi
   //  
 
   Route::get('connexion ', 'App\Http\Controllers\ConnexionController@index')->name('connexion');
-
   Route::post('/connexion ', 'App\Http\Controllers\ConnexionController@connexion');
 
-  Route::get('offre/connexion ', 'App\Http\Controllers\ConnexionController@index')->name('connexion');
+  Route::get('connexionpourpostuler ', 'App\Http\Controllers\ConnexionPourPostuler@index')->name('connexionpourpostuler');
+  Route::post('/connexionpourpostuler ', 'App\Http\Controllers\ConnexionPourPostuler@connexionpourpostuler');
 
-  Route::post('/offre/connexion ', 'App\Http\Controllers\ConnexionController@connexion');
+
+
+  Route::get('offre/connexion ', 'App\Http\Controllers\ConnexionController@index')->name('connexion');
+   Route::post('/offre/connexion ', 'App\Http\Controllers\ConnexionController@connexion');
 
 
   Route::get('/inscription ', 'App\Http\Controllers\InscriptionController@index');
@@ -122,7 +125,7 @@ Route::get('/dashboardpostulant', 'App\Http\Controllers\DashboardPostulantContro
 Route::get('/vosoffres','App\Http\Controllers\DashboardPostulantController@vosoffres' )->name('vosoffres');
 Route::get('/recommandation','App\Http\Controllers\DashboardPostulantController@recommandations' )->name('recommandation');
 Route::get('/profilpostulant','App\Http\Controllers\DashboardPostulantController@profilpostulant' )->name('profilpostulant');
-Route::put('/users/{id}', 'App\Http\Controllers\DashboardPostulantController@update')->name('user.update');
+Route::put('/postulant/{id}', 'App\Http\Controllers\DashboardPostulantController@update')->name('postulant.update');
 Route::get('/supprimer_offre/{id}', 'App\Http\Controllers\DashboardPostulantController@supprimerOffre')->name('supprimer_offre');
 Route::get('/dashboardfreelancer', 'App\Http\Controllers\DashboardFreelancerController@index')->name('dashboardfreelancer');
 Route::get('/profilfreelancer','App\Http\Controllers\DashboardFreelancerController@profilfree' )->name('profilfreelancer');

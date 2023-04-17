@@ -160,7 +160,7 @@
   <div class="modal1-content" style="background-color: #fff; padding: 2em; text-align: justify;">
     <div class="contact-form">
       <a class="close" style="color: red;">X</a>
-      <form method="POST" action="{{ route('user.update', $user->id) }}" 
+      <form method="POST" action="{{ route('postulant.update', $user->id) }}" 
       style="max-width: 400px; margin: 0 auto;">
         <h2 style="text-align: center; color: #242b5e; text-decoration: underline;">Modifier les Informations</h2>
       
@@ -210,13 +210,7 @@
                             </select>
         </div>
 
-        <div class="form-group">
-          <label for="email" style="color: #242b5e; display: block; margin-bottom: 0.5em;"> Compétences</label>
-          <textarea  class="wysiwyg form-textarea "
-                 id="edit-competences-value" name="competencesP" cols="14" rows="6"
-                 placeholder=" Vos Compétences" value="{{ $user->competenceP }}"></textarea>
-                                   
-        </div>
+   
         <div class="form-group">
            <div style="text-align: center;">
           <button type="submit" class="btn btn-primary"

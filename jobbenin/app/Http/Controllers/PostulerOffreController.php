@@ -36,7 +36,7 @@ class PostulerOffreController extends Controller
         $name = $user->name;
     
         // Retourner la vue avec les données mises à jour
-        return redirect()->route('dashboardpostulant')->with(['success' => 'Informations mises à jour avec succès', 'user' => $user]);
+        return redirect()->route('')->with(['success' => 'Informations mises à jour avec succès', 'user' => $user]);
 
     }
     
