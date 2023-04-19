@@ -27,21 +27,21 @@
                                 <nav class="d-none d-lg-block">
                                     <ul id="navigation" class="menu-container" style="display: flex; justify-content: space-between;">
                                         <li><a href="/" class="menu-link">Accueil</a></li>
-                                        <li><a href="{{('offre')}}" class="menu-link">Trouver&nbsp;Une&nbsp;Offre </a></li>
-                                        <li><a href="{{('freelancer')}}" class="menu-link">Espace&nbsp;Freelancer</a></li>
+                                        <li><a href="{{('/offre')}}" class="menu-link">Trouver&nbsp;Une&nbsp;Offre </a></li>
+                                        <li><a href="{{('/freelancer')}}" class="menu-link">Espace&nbsp;Freelancer</a></li>
                                         <li><a href="{{('/apropos')}}" class="menu-link">A&nbsp;Propos</a></li>
                                         @auth
                                         <li class="align-middle">
-                                            <a href="{{('espace')}}" class=" boxed-btn2 head-btn1 " style="background-color:#242b5e;color:white"> Mon&nbsp;Espace</a>
+                                            <a href="{{('/espace')}}" class=" boxed-btn2 head-btn1 " style="background-color:#242b5e;color:white"> Mon&nbsp;Espace</a>
                                         </li>
 
                                         @else
                                         <li class="align-middle">
-                                            <a href="{{('connexion')}}" class="boxed-btn1 head-btn2">Se&nbsp;Connecter</a>
+                                            <a href="{{('/connexion')}}" class="boxed-btn1 head-btn2">Se&nbsp;Connecter</a>
                                         </li>
                                         @endauth
                                         <li class="align-middle">
-                                            <a href="{{('inscription')}}" class="boxed-btn2 head-btn1 ">S'inscrire</a>
+                                            <a href="{{('/inscription')}}" class="boxed-btn2 head-btn1 ">S'inscrire</a>
                                         </li>
 
                                     </ul>

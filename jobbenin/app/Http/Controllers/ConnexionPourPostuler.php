@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Offre;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\ConnexionPourPostuler;
 
 class ConnexionPourPostuler extends Controller
@@ -24,7 +25,7 @@ class ConnexionPourPostuler extends Controller
 
 
             $user = User::where('email', "=", $email)->first();
-            $offre = Offre::find($id_offre);
+           
   
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
 
@@ -32,7 +33,7 @@ class ConnexionPourPostuler extends Controller
             if ($user) {
 
                 if ($user->role == 'postulant') {
-                     return redirect()->intended ('postuleroffre', ['id_offre' => $offre->id])   ;
+                     return redirect()->intended ('/postuleroffre/{id_offre}')   ;
                 } 
             }
           

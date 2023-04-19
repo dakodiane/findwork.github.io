@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Offre;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OffreController extends Controller
 {
@@ -46,8 +47,10 @@ class OffreController extends Controller
     public function show(string $id)
     {
         //
+        $user = Auth::user();
+
         $offre = Offre::with('user')->find($id);
-        return view('detail_offre', ['offre' => $offre]);
+        return view('detail_offre', ['offre' => $offre], ['user' => $user]);
 
     }
 
