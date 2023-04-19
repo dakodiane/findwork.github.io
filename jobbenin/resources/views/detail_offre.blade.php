@@ -100,15 +100,17 @@
 
 
                                 @auth
-                    <div class="apply-btn2">
-                        <a href="{{ ('/offre/{id}/postuleroffre' )}}" class="boxed-btn1" 
-                        style="color: white;text-decoration:none;">Postuler maintenant</a>
+                    <div class="apply-btn2"> 
+                    <a href="{{ route('postuleroffre', ['id_offre' => $offre->id]) }}"  class="boxed-btn1" 
+                    style="color: white;text-decoration:none;">Postuler&nbsp;maintenant</a>
+
                     </div>
                     </div>
                     @else
                     <div class="apply-btn2">
+
                     <a href="{{ ('/connexionpourpostuler') }}" class="boxed-btn1" 
-                    style="color: white;text-decoration:none;">Connectez-vous pour postuler</a>
+                    style="color: white;text-decoration:none;">Connectez&nbsp;vous&nbsp;pour&nbsp;postuler</a>
 
                     </div>
                     </div>
