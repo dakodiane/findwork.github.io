@@ -18,6 +18,10 @@ class Postuler extends Model
         'id_user',
         'id_offre',
         'statut',
+         'cv',
+         'lettre_motivation',
+            
+        
     ];
 
     public function offre()

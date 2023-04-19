@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Offre;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ConnexionPourPostuler;
@@ -23,16 +24,15 @@ class ConnexionPourPostuler extends Controller
 
 
             $user = User::where('email', "=", $email)->first();
-
+            $offre = Offre::find($id_offre);
+  
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
 
 
             if ($user) {
 
                 if ($user->role == 'postulant') {
-                    $request->session()->regenerate();
-
-                    return redirect()->intended ('/offre/{id}/postuleroffre');
+                     return redirect()->intended ('postuleroffre', ['id_offre' => $offre->id])   ;
                 } 
             }
           

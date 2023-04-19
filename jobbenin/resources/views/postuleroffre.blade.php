@@ -25,7 +25,8 @@
             
             <div class="alert -primary alert-dismissible fade show"
               style="background-color:#1f3bb3"role="alert">
-                        <strong class="text" style="background-color:#1f3bb3">  {{ $offre->user->name ?? '' }}</strong>
+                        <strong class="text" style="background-color:#1f3bb3;color:white"> 
+                     Hello !   {{ $offre->user->name ?? '' }}</strong>
 
                 <p class="text-light my-0">
                     Besoin d'un CV Professionnel pour votre Candidature ?
@@ -39,8 +40,8 @@
              
         </div>
   <p></p>
-
-                     <form  method="POST" action="{{ route('postulerOffre','$offre=id_offre') }}" >
+  
+                     <form  method="POST" action="{{ route('postuleroffre','$offre=id_offre') }}" >
                     @csrf
                        
                     <div class="form-group">
@@ -63,16 +64,33 @@
                     <div class="row form-group"  style="margin-left:400px">
                                             
                         <div class="col-md-10">
-                            <button type="submit" 
-                                  class="btn px-4 btn-primary text-white">
+                        <button type ="submit" class="btn btn-block btn-primary btn-md" data-toggle="modal"  data-target="#myModal">
                                     Postuler</button>
 
                                             </div>
                                            
                                         </div>
                             </form>
+                     
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">JobBénin</h4>
+            </div>
+            <div class="modal-body">
+                 <p> <b> Succès!</b></p>
+            </div>
+            <div class="modal-footer">
+   
 
-                                </div>
+           
+            </div>
+        </div>
+    </div>
+</div>
+                      </div>
+    
 
                             </div>
                         </div>

@@ -8,6 +8,7 @@ use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\ConnexionController;
 use App\Http\Controllers\FreelancerController;
 use App\Http\Controllers\ImageUploadController;
+use App\Http\Controllers\PostulerOffreController;
 use App\Http\Controllers\DashboardPostulantController;
 use App\Http\Controllers\ConnexionPourPostulerController;
 
@@ -51,10 +52,8 @@ Route::get('/', [WelcomeController::class,'index']);
   Route::get('/publierannonce', function (){
     return view('publierannonce');
   });
+  Route::get('/postuleroffre/{id_offre}','App\Http\Controllers\PostulerOffreController@show')->name('postuleroffre');
 
-  Route::get('/offre/{id}/postuleroffre', function (){
-    return view('postuleroffre');
-  });
   
   Route::get('/apropos', function () {
     return view('apropos');
@@ -110,8 +109,8 @@ Route::post('/recruteur/{id}', 'App\Http\Controllers\RecruteurController@show')-
 
 
 
-Route::post('/offre/{id}/postuleroffre','App\Http\Controllers\PostulerOffreController@postulerOffre')
-->name('postulerOffre');
+Route::post('/postuleroffre/{id_offre}','App\Http\Controllers\PostulerOffreController@postulerOffre')
+->name('postuleroffre');
 
 
 

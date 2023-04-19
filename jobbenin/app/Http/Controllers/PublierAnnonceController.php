@@ -53,7 +53,6 @@ class PublierAnnonceController extends Controller
     $offre->save();
     return redirect()->route('detail_offre', ['id' => $offre->id])->with('success', 'Informations mises à jour avec succès');
 
-    // Rediriger l'utilisateur vers la page de l'annonce créée
 }
 
 }  
