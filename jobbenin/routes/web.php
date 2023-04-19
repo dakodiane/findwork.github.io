@@ -100,9 +100,9 @@ Route::get('/publicite','App\Http\Controllers\DashboardRecruteurController@publi
 
 Route::post('/logout', 'App\Http\Controllers\ConnexionController@logout')->name('logout');
 
-Route::post('/attentecv/selection/{id}', 'App\Http\Controllers\CvController@selection')->name('attentecv.selection');
+Route::get('/attentecv/selection/{id_user}/{id_offre}', 'App\Http\Controllers\DashboardRecruteurController@selectionner')->name('attentecv.selection');
 
-Route::get('/attentecv/{id}', 'App\Http\Controllers\CvController@delete')->name('attentecv.supprimer');
+Route::get('/attentecv/{id_user}/{id_offre}', 'App\Http\Controllers\DashboardRecruteurController@supprimerpostulant')->name('attentecv.supprimer');
 
 Route::get('/recruteur/{id}', 'App\Http\Controllers\RecruteurController@show')->name('profilrecruteur');
 Route::post('/recruteur/{id}', 'App\Http\Controllers\RecruteurController@show')->name('profilrecruteur');

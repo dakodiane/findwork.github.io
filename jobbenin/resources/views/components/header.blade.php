@@ -39,10 +39,11 @@
                                         <li class="align-middle">
                                             <a href="{{('/connexion')}}" class="boxed-btn1 head-btn2">Se&nbsp;Connecter</a>
                                         </li>
-                                        @endauth
                                         <li class="align-middle">
                                             <a href="{{('/inscription')}}" class="boxed-btn2 head-btn1 ">S'inscrire</a>
                                         </li>
+                                        @endauth
+                                     
 
                                     </ul>
                                 </nav>

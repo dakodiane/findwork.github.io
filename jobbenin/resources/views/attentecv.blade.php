@@ -205,11 +205,11 @@
                                                     <a href="{{ asset(Storage::url($postulant['cv'])) }}" target="_blank">Consulter le CV</a>
                                                   </td>
                                                   <td>
-                                                    <form method="POST" action="{{ route('attentecv.selection', $user->id) }}">
-                                                      @csrf
+ 
+                                                    <a href="{{ route('attentecv.selection', ['id_user' =>$id_user,'id_offre' => $id_offre]) }}">
                                                       <button type="submit" name="selectionner" class="btn btn-primary btn-lg btn-block" style="background-color: green;color:white;">Sélectionner</button>
-                                                    </form>
-                                                    <a href="{{ route('supprimer_postulant', $user['id']) }}">
+</a>
+                                                    <a href="{{ route('attentecv.supprimer',['id_user' =>$id_user,'id_offre' => $id_offre]) }}">
                                                       <button type="submit" name="supprimer" class="btn btn-primary btn-lg btn-block" style="background-color: red;color:white;">Désintéresser</button>
                                                     </a>
 

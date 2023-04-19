@@ -161,39 +161,46 @@
         <!-- partial -->
 
 
-
         <!-- partial -->
         <div class="main-panel">
-        <div class="container justify-content-center">
+          <div class="container justify-content-center">
+            <div class="row" class="d-sm-flex justify-content-between align-items-start">
+              <div class="col-12">
+              <a href="{{('publierannonce')}}">
+                <button class="btn btn-primary btn-lg text-white mb-0 me-0" type="button"><i class="mdi mdi-account-plus"></i>Publier une nouvelle annonce</button>
+              </a>
+              </div>
+             
+            </div>
 
-                    <div class="row ">
-                    @foreach($offres as $offre)
+            <div class="row ">
+              @foreach($offres as $offre)
 
-                      <div class="col-md-4 title">
+              <div class="col-md-4 title">
 
-                      <div>
-                        <h4>Poste recherché: {{ $offre->poste }}</h4>
-                      </div>  
-                        <p>{{ $offre->description_offre }}</p>
-                        <div>
-                        <p class="muted regular "> <b>Posté le:</b> {{ $offre->created_at }}</p>
+                <div>
+                  <h4>Poste recherché: {{ $offre->poste }}</h4>
+                </div>
+                <p>{{ $offre->description_offre }}</p>
+                <div>
+                  <p class="muted regular "> <b>Posté le:</b> {{ $offre->created_at }}</p>
 
-                        <a href="{{route('modifieroffre',$offre->id)}}">
-                          <button type="submit" class="btn btn-success" style="color:white;background-color: green;border:none">Modifier l'offre</button>
-                        </a>
-                        <a href="">
-                          <button type="submit" class="btn btn-success" style="color:white;background-color: red;border:none;left:40px">Supprimer</button>
-                        </a>
-                        </div>
-                       
-
-                      </div>
-                      @endforeach
+                  <a href="{{route('modifieroffre',$offre->id)}}">
+                    <button type="submit" class="btn btn-success" style="color:white;background-color: green;border:none">Modifier l'offre</button>
+                  </a>
+                  <a href="">
+                    <button type="submit" class="btn btn-success" style="color:white;background-color: red;border:none;left:40px">Supprimer</button>
+                  </a>
+                </div>
 
 
-                    </div>
-                    </div> 
-                    <br><br>
+              </div>
+              @endforeach
+
+
+            </div>
+          </div>
+          <br><br>
           <div class="pagination-area pb-115 text-center">
             <div class="container">
               <div class="row">
@@ -223,7 +230,7 @@
           </footer>
           <!-- partial -->
 
-          
+
         </div>
         <!-- main-panel ends -->
       </div>

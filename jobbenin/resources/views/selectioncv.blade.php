@@ -3,10 +3,7 @@
 @section('document')
 
 <main>
-
   <div class="container-scroller">
-
-
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
         <div class="me-3">
@@ -23,6 +20,7 @@
           </a>
         </div>
       </div>
+
       <div class="navbar-menu-wrapper d-flex align-items-top">
         <ul class="navbar-nav">
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
@@ -47,8 +45,8 @@
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
               <div class="dropdown-header text-center">
                 <img class="img-md rounded-circle" src="{{asset('assets/images/faces/face8.jpg')}}" alt="Profile image">
-                <p class="mb-1 mt-3 font-weight-semibold">{{ $user->name }}</p>
-                <p class="fw-light text-muted mb-0"></p>
+                <p class="mb-1 mt-3 font-weight-semibold">{{$user->name }}</p>
+                <p class="fw-light text-muted mb-0">{{ $user->email }}</p>
               </div>
               <a class="dropdown-item" href="{{ route('profilrecruteur', ['id' => $user->id]) }}"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile <span class="badge badge-pill badge-danger">1</span></a>
 
@@ -98,7 +96,7 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
-          
+
           <li class="nav-item">
             <a class="nav-link" href="{{('annonce')}}">
               <i class="mdi mdi-rename-box menu-icon"></i>
@@ -123,7 +121,7 @@
               <span class="menu-title">Entretiens passés</span>
             </a>
           </li>
-        
+
           <li class="nav-item">
             <a class="nav-link" href="{{('publicite')}}">
               <i class="mdi mdi-archive menu-icon"></i>
@@ -146,6 +144,7 @@
                     <div class="row">
 
                       <div class="col-lg-12 d-flex flex-column">
+
                         <div class="row flex-grow">
                           <div class="col-12 grid-margin stretch-card">
                             <div class="card card-rounded">
@@ -154,98 +153,94 @@
                                   <div class="col-lg-12">
                                     <div class="d-flex justify-content-between align-items-center mb-3">
                                       <div>
-                                        <h4 class="card-title card-title-dash">CV Sélectionnés</h4>
+                                        <h4 class="card-title card-title-dash">CV En Attente</h4>
                                       </div>
                                     </div>
-                                    <div class="mt-3">
 
 
 
-                                      <div class="col-lg-12 grid-margin stretch-card">
-                                        <div class="card">
-                                          <div class="card-body">
-                                            <div class="table-responsive">
-                                              <table class="table table-striped">
-                                                <thead>
-                                                  <tr>
-                                                    <th>
-                                                      Nom Complet
+                                    <div class="col-lg-12 grid-margin stretch-card">
+                                      <div class="card">
+                                        <div class="card-body">
+                                          <div class="table-responsive">
+                                            <table class="table table-striped">
+                                              <thead>
+                                                <tr>
+                                                  <th>
+                                                    Nom Complet
 
-                                                    </th>
-                                                    <th>
-                                                      Poste
-                                                    </th>
-                                                    <th>
+                                                  </th>
+                                                  <th>
+                                                    Poste
+                                                  </th>
+                                                  <th>
 
-                                                    </th>
-                                                    <th>
-                                                      Curriculum Vitae
-                                                    </th>
-                                                    <th>
-                                                      Actions
-                                                    </th>
-                                                  </tr>
-                                                </thead>
-                                                @if (session()->has('selection') && count(session('selection')) > 0)
+                                                  </th>
+                                                  <th>
+                                                    Curriculum Vitae
+                                                  </th>
+                                                  <th>
+                                                    Actions
+                                                  </th>
+                                                </tr>
+                                              </thead>
+                                              @if (count($data) > 0)
+                                              @foreach ($data as $postulant)
 
-                                                @foreach(session('selection') as $postulant)
-                                                <tbody>
+                                              <tbody>
 
-                                                  <tr>
-                                                    <td class="py-1">
-                                                      {{ $postulant['nom_postulant'] }}
+                                                <tr>
+                                                  <td class="py-1">
+                                                    {{ $postulant['nom_postulant'] }}
 
-                                                    </td>
-                                                    <td>
-                                                      {{ $postulant['poste'] }}
+                                                  </td>
+                                                  <td>
+                                                    {{ $postulant['poste'] }}
 
-                                                    </td>
-                                                    <td>
+                                                  </td>
+                                                  <td>
 
-                                                    </td>
-                                                    <td>
-                                                      <a href="{{ asset(Storage::url($postulant['cv'])) }}" target="_blank">Consulter le CV</a>
-                                                    </td>
-                                                    <td>
-                                                      <form method="POST" action="">
-                                                        @csrf
-                                                        <a href="#">
-                                                          <button type="button" class="btn btn-primary btn-lg btn-block" style="background-color: green;color:white;">
-                                                            <i class="mdi mdi-calendar"></i>
-                                                            Programmer un entretien
-                                                          </button>
-                                                        </a>
-                                                      </form>
-                                                      
-                                                        <button type="submit" name="supprimer" class="btn btn-primary btn-lg btn-block" style="background-color: red;color:white;">Supprimer</button>
+                                                  </td>
+                                                  <td>
+                                                    <a href="{{ asset(Storage::url($postulant['cv'])) }}" target="_blank">Consulter le CV</a>
+                                                  </td>
+                                                  <td>
+                                                    <form method="POST" action="">
+                                                      @csrf
+                                                      <button type="submit" name="selectionner" class="btn btn-primary btn-lg btn-block" style="background-color: green;color:white;">Programmer un entretien</button>
+                                                    </form>
+                                                    <a href="">
+                                                      <button type="submit" name="supprimer" class="btn btn-primary btn-lg btn-block" style="background-color: red;color:white;">Désintéresser</button>
+                                                    </a>
 
-                           
 
-                                                    </td>
-                                                  </tr>
 
-                                                </tbody>
-                                                @endforeach
-                                                @else
-                                                <p>Aucun postulant sélectionné</p>
-                                                @endif
-                                              </table>
-                                            </div>
+
+                                                  </td>
+                                                </tr>
+
+                                              </tbody>
+
+                                              @endforeach
+                                              @else
+                                              <p>Aucun Postulant</p>
+                                              @endif
+                                            </table>
+
                                           </div>
                                         </div>
                                       </div>
-
-
-
-
                                     </div>
+
+
+
+
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
-
                       </div>
                     </div>
                   </div>
@@ -254,6 +249,7 @@
             </div>
           </div>
         </div>
+
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
         <footer class="footer">
@@ -263,7 +259,8 @@
         </footer>
         <!-- partial -->
       </div>
-      <!-- main-panel ends -->
     </div>
+  </div>
 </main>
+
 @endsection
