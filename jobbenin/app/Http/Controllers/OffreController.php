@@ -69,6 +69,7 @@ class OffreController extends Controller
     {
         //
         $offre = Offre::with('user')->find($id);
+        $user = Auth::user();
 
         $offre->poste = $request->input('poste');
         $offre->description_offre = $request->input('description_offre');  
@@ -87,7 +88,7 @@ class OffreController extends Controller
         $offre->competence_offre5= $request->input('competence_offre5');
 
        $offre->save();
-       return view('detail_offre', ['offre' => $offre]);
+       return view('detail_offre', ['offre' => $offre], ['user' => $user]);
 
     }
 
