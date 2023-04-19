@@ -20,8 +20,8 @@
                             <a href="/"><img src="{{asset('assets/img/logo/logojob.png')}}" alt=""></a>
                         </div>
                     </div>
-                <div class="col-lg-10 col-md-11">
-                    <div class="menu-wrapper">
+                    <div class="col-lg-10 col-md-11">
+                        <div class="menu-wrapper">
                             <!-- Main-menu -->
                             <div class="main-menu">
                                 <nav class="d-none d-lg-block">
@@ -30,24 +30,28 @@
                                         <li><a href="{{('offre')}}" class="menu-link">Trouver&nbsp;Une&nbsp;Offre </a></li>
                                         <li><a href="{{('freelancer')}}" class="menu-link">Espace&nbsp;Freelancer</a></li>
                                         <li><a href="{{('/apropos')}}" class="menu-link">A&nbsp;Propos</a></li>
-                                        <li class="align-middle">
-                                        <a href="{{('connexion')}}" class="boxed-btn1 head-btn2">Se&nbsp;Connecter</a>
-
-                                        </li>
-                                        <li class="align-middle">
-                                            <a href="{{('inscription')}}" class="boxed-btn2 head-btn1 ">S'inscrire</a>
-                                        </li>
+                                        @auth
                                         <li class="align-middle">
                                             <a href="{{('espace')}}" class=" boxed-btn2 head-btn1 " style="background-color:#242b5e;color:white"> Mon&nbsp;Espace</a>
                                         </li>
+
+                                        @else
+                                        <li class="align-middle">
+                                            <a href="{{('connexion')}}" class="boxed-btn1 head-btn2">Se&nbsp;Connecter</a>
+                                        </li>
+                                        @endauth
+                                        <li class="align-middle">
+                                            <a href="{{('inscription')}}" class="boxed-btn2 head-btn1 ">S'inscrire</a>
+                                        </li>
+
                                     </ul>
                                 </nav>
                             </div>
+                        </div>
                     </div>
-                 </div>
                     <!-- Mobile Menu -->
                     <div class="col-12">
-                        <div class="mobile_menu d-block d-lg-none"></div>
+                            <div class="mobile_menu d-block d-lg-none"></div>
                     </div>
                 </div>
             </div>

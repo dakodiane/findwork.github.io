@@ -52,42 +52,38 @@ class DashboardRecruteurController extends Controller
         return view('brouillon')->with(['user' => $user, 'offres' => $offres]);
     }
 
-public function attentecv()
-{
-       $user = auth()->user();
-   if ($user->role == 'recruteur') {
-        $offres = $user->offre;
-
-        if ($offres->count() > 0) {
-            
+    public function attentecv()
+    {
+        $user = auth()->user();
+        if ($user->role == 'recruteur') {
+            $offres = $user->offre;
             $data = [];
 
             foreach ($offres as $offre) {
                 foreach ($offre->postulers as $postulant) {
-                        $data[] = [
-                            'nom_recruteur' => $user->name,
-                            'nom_postulant' => $postulant->user->name,
-                            'cv' => $postulant->cv,
-                            'poste' => $offre->poste,
-                        ];                
+                    $data[] = [
+                        'nom_recruteur' => $user->name,
+                        'nom_postulant' => $postulant->user->name,
+                        'cv' => $postulant->cv,
+                        'poste' => $offre->poste,
+                    ];
                 }
             }
             $success = session()->get('success');
-            return view('attentecv', ['data' => $data,'user'=>$user, 'success' => $success]);
+            return view('attentecv', ['data' => $data, 'user' => $user, 'success' => $success]);
         }
     }
-    // Si l'utilisateur n'est pas authentifié ou s'il n'a pas d'offres, renvoyer une vue avec un message d'erreur
-    return view('attentecv', ['error' => 'Vous n\'avez pas encore créé d\'offres.']);
-}
 
-public function supprimerpostulant($id) {
-    $postuler= Postuler::where('id', $id)->get();
-    $postuler->suppression=0;
-    $postuler->save();
-    return redirect()->back()->with('success', 'user rendue non visible avec succès.');
-}
 
-    
+    public function supprimerpostulant($id)
+    {
+        $postuler = Postuler::where('id', $id)->get();
+        $postuler->suppression = 0;
+        $postuler->save();
+        return redirect()->back()->with('success', 'user rendue non visible avec succès.');
+    }
+
+
 
 
     public function selectioncv()
@@ -205,20 +201,19 @@ public function supprimerpostulant($id) {
      * Update the specified resource in storage.
      */
     public function update(Request $request, $id)
-    { 
-         $user = auth()->user();
-   
+    {
+        $user = auth()->user();
+
         $user->name = $request->input('name');
-        $user->email = $request->input('email') ?? null;  
-          // Pour enregistrer les informations complèter par l'utilisateur
+        $user->email = $request->input('email') ?? null;
+        // Pour enregistrer les informations complèter par l'utilisateur
         $user->villeR = $request->input('villeR');
-        $user->description_recruteur= $request->input('description_recruteur');
-        
-   
+        $user->description_recruteur = $request->input('description_recruteur');
+
+
         $user->save();
-    
+
         return redirect()->route('profilrecruteur', ['id' => $user->id])->with('success', 'Informations mises à jour avec succès');
-   
     }
 
     /**
@@ -228,6 +223,4 @@ public function supprimerpostulant($id) {
     {
         //
     }
-
-  
 }

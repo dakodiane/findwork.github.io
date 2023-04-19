@@ -121,7 +121,7 @@
               <span class="menu-title">Entretiens passés</span>
             </a>
           </li>
-        
+
           <li class="nav-item">
             <a class="nav-link" href="{{('publicite')}}">
               <i class="mdi mdi-archive menu-icon"></i>
@@ -184,8 +184,9 @@
                                                   </th>
                                                 </tr>
                                               </thead>
+                                              @if (count($data) > 0)
                                               @foreach ($data as $postulant)
-                                   
+
                                               <tbody>
 
                                                 <tr>
@@ -221,8 +222,11 @@
                                               </tbody>
 
                                               @endforeach
-
+                                              @else
+                                              <p>Aucun Postulant</p>
+                                              @endif
                                             </table>
+
                                           </div>
                                         </div>
                                       </div>
