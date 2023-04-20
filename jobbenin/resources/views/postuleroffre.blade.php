@@ -26,7 +26,7 @@
             <div class="alert -primary alert-dismissible fade show"
               style="background-color:#1f3bb3"role="alert">
                         <strong class="text" style="background-color:#1f3bb3;color:white"> 
-                     Hello !   {{ $offre->user->name ?? '' }}</strong>
+                     Hello !   {{ $user->name }}</strong>
 
                 <p class="text-light my-0">
                     Besoin d'un CV Professionnel pour votre Candidature ?
@@ -40,39 +40,32 @@
              
         </div>
   <p></p>
-  
-                     <form  method="POST" action="{{ route('postuleroffre','$offre=id_offre') }}" >
-                    @csrf
-                       
-                    <div class="form-group">
-                        <div class="text-format-wrapper" >
-                            <div class="form-item form-lettre_motivation wysiwyg-wrapper form-type-textarea form-item-lettre_motivation-value" id="edit-lettre_motivation-value-wrapper">
-                                <label for="edit-lettre_motivation" style="padding-top:2em">Lettre  de Motivation </label>
-                                <div class="form-textarea-wrapper resizable">
-                                    <textarea required="required"
-                                     class="wysiwyg form-textarea required" 
-                                     name="lettre_motivation" cols="16" rows="10" placeholder=""></textarea>
-                                </div>
-                            </div> </div>  
+  <form id="my-form" method="POST" action="{{route('postuleroffre', ['id_offre' => $offre->id])}}" >
+  @csrf
+  <div class="form-group">
+    <div class="text-format-wrapper">
+      <div class="form-item form-lettre_motivation wysiwyg-wrapper form-type-textarea form-item-lettre_motivation-value" id="edit-lettre_motivation-value-wrapper">
+        <label for="edit-lettre_motivation" style="padding-top:2em">Lettre  de Motivation </label>
+        <div class="form-textarea-wrapper resizable">
+          <textarea class="" name="lettre_motivation" id="lettre_motivation" cols="16" rows="10" required="required" placeholder=""></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="secteur">Curriculum Vitae (CV) </label>
+    <input type="file" id="cv" name="cv" required="required" class="form-control" placeholder="" style="width:34em">
+  </div>
+  <div class="row form-group" style="margin-left:400px">
+    <div class="col-md-10">
+      <button type ="submit" class="btn btn-block btn-primary btn-md" id="submit-btn"> Postuler</button>
+    </div>
+  </div>
+</form>
 
-                    <div class="form-group">
-                        <label for=" secteur">Curriculum Vitae (CV) </label>
-                        <input type="file" name="cv" class="form-control"
-                         id="cv" placeholder="" require ="required"   style="width:34em" >
-                    </div>
-
-                    <div class="row form-group"  style="margin-left:400px">
-                                            
-                        <div class="col-md-10">
-                        <button type ="submit" class="btn btn-block btn-primary btn-md" data-toggle="modal"  data-target="#myModal">
-                                    Postuler</button>
-
-                                            </div>
-                                           
-                                        </div>
-                            </form>
-                     
-                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" 
+aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -82,16 +75,47 @@
                  <p> <b> Succès!</b></p>
             </div>
             <div class="modal-footer">
-   
-
-           
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
             </div>
         </div>
     </div>
 </div>
-                      </div>
-    
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('#my-form').on('submit', function(e) {
+      var isFormValid = true;
+      var form = $(this);
 
+      // Check if all required fields are filled
+      form.find('[required]').each(function() {
+        if (!$(this).val()) {
+          isFormValid = false;
+          $(this).addClass('is-invalid');
+        }
+      });
+
+    
+      if (!isFormValid) {
+        e.preventDefault();
+        return false;
+      }
+
+
+      form.unbind('submit').submit();
+
+      $('#myModal').modal('show');
+
+    
+      e.preventDefault();
+      return false;
+    });
+  });
+</script>
+
+    </div>
+</div>
+   
                             </div>
                         </div>
                     </div>

@@ -35,14 +35,10 @@ Route::get('/', [WelcomeController::class,'index']);
   Route::get('connexion ', 'App\Http\Controllers\ConnexionController@index')->name('connexion');
   Route::post('/connexion ', 'App\Http\Controllers\ConnexionController@connexion');
 
-  Route::get('connexionpourpostuler ', 'App\Http\Controllers\ConnexionPourPostuler@index')->name('connexionpourpostuler');
-  Route::post('/connexionpourpostuler ', 'App\Http\Controllers\ConnexionPourPostuler@connexionpourpostuler');
+  Route::get('/connexionpourpostuler/{id_offre}', 'App\Http\Controllers\ConnexionPourPostuler@index')->name('connexionpourpostuler');
 
-
-
-  Route::get('offre/connexion ', 'App\Http\Controllers\ConnexionController@index')->name('connexion');
-   Route::post('/offre/connexion ', 'App\Http\Controllers\ConnexionController@connexion');
-
+  Route::post('/connexionpourpostuler/{id_offre}', 'App\Http\Controllers\ConnexionPourPostuler@connexionpourpostuler')->name('connexionpourpostuler');
+  
 
   Route::get('/inscription ', 'App\Http\Controllers\InscriptionController@index');
   
@@ -54,6 +50,10 @@ Route::get('/', [WelcomeController::class,'index']);
   });
   Route::get('/postuleroffre/{id_offre}','App\Http\Controllers\PostulerOffreController@show')->name('postuleroffre');
 
+  Route::post('/postuleroffre/{id_offre}','App\Http\Controllers\PostulerOffreController@postulerOffre')
+  ->name('postuleroffre');
+  
+  
   
   Route::get('/apropos', function () {
     return view('apropos');
@@ -107,10 +107,6 @@ Route::get('/attentecv/{id}', 'App\Http\Controllers\CvController@delete')->name(
 Route::get('/recruteur/{id}', 'App\Http\Controllers\RecruteurController@show')->name('profilrecruteur');
 Route::post('/recruteur/{id}', 'App\Http\Controllers\RecruteurController@show')->name('profilrecruteur');
 
-
-
-Route::post('/postuleroffre/{id_offre}','App\Http\Controllers\PostulerOffreController@postulerOffre')
-->name('postuleroffre');
 
 
 
