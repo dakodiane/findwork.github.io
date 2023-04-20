@@ -97,42 +97,47 @@
 
                         </ul>
 
-
-
                         @auth 
-                        @if ($user ->role=='postulant')
-                    
-                        <div class="apply-btn2">
-                            <a href="{{ route('postuleroffre', ['id_offre' => $offre->id]) }}" class="boxed-btn1" style="color: white;text-decoration:none;">Postuler&nbsp;maintenant</a>
-
-                        </div>
-                    </div>
-                 
-                    @elseif($user ->role=='recruteur')
-                    <div class="apply-btn2">
-
-                        <a href="{{'/inscription' }}" class="boxed-btn1" style="color: white;text-decoration:none;">Créez&nbsp;un&nbsp;compte&nbsp;pour postulant</a>
-
-                    </div>
-                    @elseif($user ->role=='freelancer')
-                    <div class="apply-btn2">
-
-                        <a href="{{'/inscription'}}" class="boxed-btn1" style="color: white;text-decoration:none;">Créez&nbsp;un&nbsp;compte&nbsp;pour postulant</a>
-
-                    </div>
-                </div>
-                @endif
-                @else
-                    <div class="apply-btn2">
-
-                        <a href="{{ ('/connexionpourpostuler') }}" class="boxed-btn1" style="color: white;text-decoration:none;">Connectez&nbsp;vous&nbsp;pour&nbsp;postuler</a>
-
-                    </div>
-                @endauth
-
-
-
-                <!-- job single End -->
+    @if ($user->role == 'postulant')
+        @if ($aDejaPostule)
+        <div class="apply-btn2" style="">
+                <a href="{{ '/offre' }}" class="boxed-btn1" style="color: white;text-decoration:none;">
+                Vous avez déjà postulé!
+                </a>
+            </div>
+            </div>
+           
+        @else
+            <div class="apply-btn2">
+                <a href="{{ route('postuleroffre', ['id_offre' => $offre->id]) }}" class="boxed-btn1" style="color: white;text-decoration:none;">
+                    Postuler maintenant
+                </a>
+            </div>
+            </div>
+        @endif
+    @elseif($user->role == 'recruteur')
+        <div class="apply-btn2">
+            <a href="{{'/inscription' }}" class="boxed-btn1" style="color: white;text-decoration:none;">
+                Créez un compte postulant
+            </a>
+        </div>
+        </div>   
+    @elseif($user->role == 'freelancer')
+        <div class="apply-btn2">
+            <a href="{{'/inscription'}}" class="boxed-btn1" style="color: white;text-decoration:none;">
+                Créez un compte postulant
+            </a>
+        </div>
+        </div>
+    @endif
+@else
+    <div class="apply-btn2">
+        <a href="{{ route ('connexionpourpostuler', ['id_offre' => $offre->id]) }}" class="boxed-btn1" style="color: white;text-decoration:none;">
+        Postuler maintenant
+                </a>
+    </div>
+    </div>
+@endauth
 
 
                 <div class="post-details4 mb-50">
@@ -145,8 +150,7 @@
                 </div>
             </div>
         </div>
-    </div>
-    </div>
+  
     <!-- offre d'emploi End -->
 </main>
 @endsection

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Offre;
+use App\Models\Postuler;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -50,7 +51,17 @@ class OffreController extends Controller
         $user = Auth::user();
 
         $offre = Offre::with('user')->find($id);
-        return view('detail_offre', ['offre' => $offre], ['user' => $user]);
+        $aDejaPostule = false;
+        if ($user) {
+            $postuler = Postuler::where('id_user', $user->id)
+                ->where('id_offre', $id)
+                ->first();
+    
+            if ($postuler) {
+                $aDejaPostule = true;
+            }
+        }
+        return view('detail_offre', ['offre' => $offre, 'user' => $user, 'aDejaPostule' => $aDejaPostule]);
 
     }
 

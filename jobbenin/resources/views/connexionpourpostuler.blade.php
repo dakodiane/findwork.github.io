@@ -17,7 +17,7 @@
                                 <b> <u> Connectez-vous à JobBénin!</u></b>
                             </h1>
                         </div>
-                        <form class="user" method="POST" action="{{ ('connexionpourpostuler')}}">
+                        <form class="user" method="POST" action="{{ route('connexionpourpostuler', ['id_offre' => $offre->id]) }}">
                             @csrf
                             <div class="form-group">
                                 @error('email')
