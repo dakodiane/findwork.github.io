@@ -26,32 +26,32 @@
         </div>
         <div class="row mb-5">
             <div class="col-lg-12">
-                <form class="p-4 p-md-5 border rounded" method="POST" action="{{ route('annoncepublier') }}">
+                <form class="p-4 p-md-5 border rounded" method="POST" action="{{ route('annoncepublier') }}" id="my-form">
                     {{ csrf_field() }}
                     <h3 class="text-black mb-5 border-bottom pb-2">Détails du Poste</h3>
                     <div class="form-group">
                         <label for=" secteur">Secteur D'Activité</label>
-                        <input type="text" name="secteurO" class="form-control" id="email" placeholder="">
+                        <input type="text" required="required" name="secteurO" class="form-control" id="secteur" placeholder="">
                     </div>
 
                     <div class="form-group">
                         <label for="job-type">Poste</label>
-                        <input type="text" name="poste" class="form-control" placeholder="">
+                        <input type="text" name="poste" required="required" class="form-control" placeholder="">
                     </div>
 
                     <div class="form-group">
                         <label for="job-title">Date Limite du recrutement</label>
-                        <input type="date" name="datfin" class="form-control" placeholder="AAAA-MM-jj">
+                        <input type="date" name="datfin" required="required" class="form-control" placeholder="AAAA-MM-jj">
                     </div>
                     <div class="form-group">
                         <label for="job-title">Salaire</label>
-                        <input type="text" name="salaireO" class="form-control">
+                        <input type="text" name="salaireO" required="required" class="form-control">
                     </div>
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="job-type">Type de L'Emploi</label> <br>
-                                <select class="selectpicker border rounded" name="typeO" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Type Job" style="width: 200em; ">
+                                <select class="selectpicker border rounded" name="typeO" required="required" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Type Job" style="width: 200em; ">
                                     <option value="partiel">A Temps Partiel</option>
                                     <option value="plein">A Temps Plein</option>
                                 </select>
@@ -62,7 +62,7 @@
                             <div class="form-group">
 
                                 <label for="job-Ville">Ville </label> <br>
-                                <select class="selectpicker border rounded" name="villeO" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Ville">
+                                <select class="selectpicker border rounded" name="villeO" required="required" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Ville">
                                     <option value="cotonou">Cotonou</option>
                                     <option value="abomey-calavi">Abomey-Calavi</option>
                                     <option value="porto-novo">Porto-Novo</option>
@@ -92,7 +92,7 @@
                     <div class="form-group">
 
                         <label for="job-Diplomes">Diplomes Requis </label> <br>
-                        <select class="selectpicker border rounded" name="diplome" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Diplomes">
+                        <select class="selectpicker border rounded" name="diplome" required="required" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Diplomes">
                             <option value="bepc">Bepc</option>
                             <option value="bac">Bac</option>
                             <option value="DUT">DUT</option>
@@ -108,7 +108,7 @@
                             <div class="form-item form-competence wysiwyg-wrapper form-type-textarea form-item-description-value">
                                 <label for="edit-competence-value">Compétences requises</label>
 
-                                <input type="text" name="competence_offre1" class="form-control" placeholder="competence1">
+                                <input type="text" required="required" name="competence_offre1" class="form-control" placeholder="competence1">
                                 <input type="text" name="competence_offre2" class="form-control" placeholder="competence2">
                                 <input type="text" name="competence_offre3" class="form-control" placeholder="competence3">
                                 <input type="text" name="competence_offre4" class="form-control" placeholder="competence4">
@@ -119,25 +119,67 @@
                         </div>
 
                     </div>
+                    <div class="col-lg-4 ml-auto">
+                        <div class="row">
 
-                    <div class="row align-items-center mb-5">
 
-                        <div class="col-lg-4 ml-auto">
-                            <div class="row">
-
-                                <div class="col-6">
-                                </div>
-                                <div class="col-6">
-                                    <button type="submit" class="btn btn-block btn-primary btn-md"> Publier</button>
-                                </div>
+                            <div class="col-6">
+                                <button type="submit" class="btn btn-block btn-primary btn-md" id="submit-btn" data-toggle="modal" data-target="#myModal"> Publier</button>
                             </div>
                         </div>
                     </div>
+
                 </form>
+
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                <script>
+                    $(document).ready(function() {
+                        $('#my-form').on('submit', function(e) {
+                            var isFormValid = true;
+                            var form = $(this);
+
+                            // Check if all required fields are filled
+                            form.find('[required]').each(function() {
+                                if (!$(this).val()) {
+                                    isFormValid = false;
+                                    $(this).addClass('is-invalid');
+                                }
+                            });
+
+
+                            if (!isFormValid) {
+                                e.preventDefault();
+                                return false;
+                            }
+
+
+                            form.unbind('submit').submit();
+
+                            $('#myModal').modal('show');
+
+
+                            e.preventDefault();
+                            return false;
+                        });
+                    });
+                </script>
+
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="myModalLabel">JobBénin</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p> <b> L'Annonce a été effectuée avec succès!</b></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
 
- </div>
+    </div>
 </main>
 @endsection

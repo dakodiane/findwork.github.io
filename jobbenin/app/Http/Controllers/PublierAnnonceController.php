@@ -9,6 +9,14 @@ use Illuminate\Support\Facades\Auth;
 class PublierAnnonceController extends Controller
 {
   
+    public function index(Request $request)
+    {
+   
+        // Créer une nouvelle instance de modèle Annonce
+        return view('publierannonce');
+
+
+    }
     // //
     public function publierAnnonce(Request $request)
 {
@@ -51,7 +59,9 @@ class PublierAnnonceController extends Controller
 
     // Enregistrer l'offre dans la base de données
     $offre->save();
-    return redirect()->route('detail_offre', ['id' => $offre->id])->with('success', 'Informations mises à jour avec succès');
+    $succes=$offre->save();
+
+    return redirect()->route('detail_offre', ['id' => $offre->id]);
 
 }
 

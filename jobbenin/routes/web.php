@@ -49,9 +49,7 @@ Route::get('/', [WelcomeController::class,'index']);
   Route::post('/inscription ', 'App\Http\Controllers\InscriptionController@inscription');
 
   
-  Route::get('/publierannonce', function (){
-    return view('publierannonce');
-  });
+
   Route::get('/postuleroffre/{id_offre}','App\Http\Controllers\PostulerOffreController@show')->name('postuleroffre');
 
   
@@ -136,7 +134,7 @@ Route::put('/recruteurs/{id}', 'App\Http\Controllers\DashboardRecruteurControlle
 Route::get('/offremodif/{id}', 'App\Http\Controllers\OffreController@modifieroffre')->name('modifieroffre');
 Route::put('/offre/{id}', 'App\Http\Controllers\OffreController@update')->name('offre.update');
 
-
+Route::get('/publierannonce', 'App\Http\Controllers\PublierAnnonceController@index');
 Route::post('/annonce', 'App\Http\Controllers\PublierAnnonceController@publierannonce')->name('annoncepublier');
 
 Route::get('/dashboardfreelancer', 'App\Http\Controllers\DashboardFreelancerController@index')->
