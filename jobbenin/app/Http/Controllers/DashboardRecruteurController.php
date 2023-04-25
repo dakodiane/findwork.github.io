@@ -119,16 +119,18 @@ class DashboardRecruteurController extends Controller
     public function selectionner(Request $request, $id_user, $id_offre)
     {
         $postuler = Postuler::where('id_user', $id_user)->where('id_offre', $id_offre)->first();
-
-        DB::table('postulers')
-            ->where([
-                'id_user' => $postuler->id_user,
-                'id_offre' => $postuler->id_offre,
-            ])
-            ->update(['suppression' => 0, 'selection' => 1]);
-
-        return redirect()->route('attentecv')->with('success', 'Postulant sélectionné avec succès!');
+        if ($postuler) {
+            DB::table('postulers')
+                ->where('id_user', $postuler->id_user)
+                ->where('id_offre', $postuler->id_offre)
+                ->update(['suppression' => 0, 'selection' => 1]);
+            return redirect()->route('attentecv')->with('success', 'Postulant sélectionné avec succès!');
+        } else {
+            return redirect()->back()->with('error', 'Postulant introuvable!');
+        }
     }
+    
+    
 
     
     public function supprimerpostulant($id_user, $id_offre)

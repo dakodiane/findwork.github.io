@@ -141,3 +141,10 @@ Route::put('/users/{id}', 'App\Http\Controllers\DashboardFreelancerController@up
 name('user.update');
 
 Route::get('/espace ', 'App\Http\Controllers\EspaceController@index');
+
+
+//ADMIN
+
+Route::get('admin/', function () {
+  return view('Admin/tableaudebord');
+});

@@ -209,9 +209,7 @@
                                                       @csrf
                                                       <button type="submit" name="selectionner" class="btn btn-primary btn-lg btn-block" style="background-color: green;color:white;">Programmer un entretien</button>
                                                     </form>
-                                                    <a href="">
-                                                      <button type="submit" name="supprimer" class="btn btn-primary btn-lg btn-block" style="background-color: red;color:white;">Désintéresser</button>
-                                                    </a>
+                                                
 
 
 

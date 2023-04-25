@@ -206,9 +206,8 @@
                                                   </td>
                                                   <td>
  
-                                                    <a href="{{ route('attentecv.selection', ['id_user' =>$id_user,'id_offre' => $id_offre]) }}">
-                                                      <button type="submit" name="selectionner" class="btn btn-primary btn-lg btn-block" style="background-color: green;color:white;">Sélectionner</button>
-</a>
+                                                    <a href="{{ route('attentecv.selection', ['id_user' =>$id_user,'id_offre' => $id_offre]) }}" class="btn btn-primary btn-lg btn-block" style="background-color: green;color:white;">Sélectionner</a>
+
                                                     <a href="{{ route('attentecv.supprimer',['id_user' =>$id_user,'id_offre' => $id_offre]) }}">
                                                       <button type="submit" name="supprimer" class="btn btn-primary btn-lg btn-block" style="background-color: red;color:white;">Désintéresser</button>
                                                     </a>
