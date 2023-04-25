@@ -131,51 +131,7 @@
 
                 </form>
 
-                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-                <script>
-                    $(document).ready(function() {
-                        $('#my-form').on('submit', function(e) {
-                            var isFormValid = true;
-                            var form = $(this);
-
-                            // Check if all required fields are filled
-                            form.find('[required]').each(function() {
-                                if (!$(this).val()) {
-                                    isFormValid = false;
-                                    $(this).addClass('is-invalid');
-                                }
-                            });
-
-
-                            if (!isFormValid) {
-                                e.preventDefault();
-                                return false;
-                            }
-
-
-                            form.unbind('submit').submit();
-
-                            $('#myModal').modal('show');
-
-
-                            e.preventDefault();
-                            return false;
-                        });
-                    });
-                </script>
-
-                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title" id="myModalLabel">JobBénin</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p> <b> L'Annonce a été effectuée avec succès!</b></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              
 
             </div>
         </div>

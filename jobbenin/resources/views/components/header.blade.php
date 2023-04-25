@@ -32,7 +32,7 @@
                                         <li><a href="{{('/apropos')}}" class="menu-link">A&nbsp;Propos</a></li>
                                         @auth
                                         <li class="align-middle">
-                                            <a href="{{('/espace')}}" class=" boxed-btn2 head-btn1 " style="background-color:#242b5e;color:white"> Mon&nbsp;Espace</a>
+                                            <a href="{{('/espace')}}" class=" boxed-btn2 head-btn2 "> Mon&nbsp;Espace</a>
                                         </li>
 
                                         @else

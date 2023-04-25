@@ -94,10 +94,10 @@
                             <li>Salaire mensuel : <span>{{ $offre->salaireO  ?? ''}}</span></li>
                             <li>Date limite : <span>{{ $offre->datfin ?? ''}}</span></li>
                             <li>Nombre de Visiteurs: <span class=""><i class="fa fa-eye" aria-hidden="true"></i> 150 </span></li>
-
-                        </ul>
-
-                        @auth 
+                      
+                  </ul>
+             
+              @auth 
     @if ($user->role == 'postulant')
         @if ($aDejaPostule)
         <div class="apply-btn2" style="">
@@ -135,10 +135,13 @@
         <a href="{{ route ('connexionpourpostuler', ['id_offre' => $offre->id]) }}" class="boxed-btn1" style="color: white;text-decoration:none;">
         Postuler maintenant
                 </a>
+
     </div>
+   
+            
     </div>
 @endauth
-
+ 
 
                 <div class="post-details4 mb-50">
                     <!-- Small Section Tittle -->

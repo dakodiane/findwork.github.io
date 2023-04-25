@@ -96,11 +96,7 @@
         
 <div class="our-services  ">
     <div class="container">
-      <!-- Featured_job_start -->
-   
-<!-- Featured_job_end -->
-  
-        <!-- More Btn -->
+     
         <!-- Section Button -->
         <div class="row esp2">
             <div class="col-lg-12">
