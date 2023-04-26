@@ -145,6 +145,11 @@ Route::get('/espace ', 'App\Http\Controllers\EspaceController@index');
 
 //ADMIN
 
-Route::get('admin/', function () {
-  return view('Admin/tableaudebord');
-});
+Route::get('admin ', 'App\Http\Controllers\Admin1Controller@index')->name('admin');
+Route::get('recruteur ', 'App\Http\Controllers\Admin1Controller@recruteur')->name('recruteur');
+Route::get('postulant ', 'App\Http\Controllers\Admin1Controller@postulant')->name('postulant');
+Route::get('freelancer ', 'App\Http\Controllers\Admin1Controller@freelancer')->name('freelancer');
+Route::get('recruteur/{id}/', 'App\Http\Controllers\Admin1Controller@desactiverutilisateur')->name('desactiver.utilisateur');
+
+
+
