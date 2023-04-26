@@ -37,11 +37,12 @@
                     <img src="{{ asset('storage/' . $offre->user->logo_entreprise) }}" alt="Logo entreprise">
                 </td>
                 <td>{{ $offre->user->name }}</td>
+
                 <td>{{ $offre->user->villeR }}</td>
                 <td>{{ $offre->poste }}</td>
              
                 <td>
-                    <a href="{{ route('admin.detailoffre', $offre->id) }}">Voir+</a>
+                <a href="{{ route('admin.detailnouvelpub', $offre->id) }}" class="soulign">Voir l'offre</a>
                 </td>
             </tr>
             @endforeach

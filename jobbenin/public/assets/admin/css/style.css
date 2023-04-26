@@ -22825,3 +22825,11 @@ dl li {
 }
 
 /*# sourceMappingURL=maps/style.css.map */
+
+.job-preview {
+  border: 1px solid #ccc;
+  background-color: #f8f8f8;
+  padding: 20px;
+  margin-bottom: 30px;
+  width: 150%;
+}

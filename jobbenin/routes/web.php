@@ -150,6 +150,7 @@ Route::get('admin/', function () {
 });
 Route::get('/nouvelpub', 'App\Http\Controllers\Admin2Controller@offresNonPubliees')->name('admin.nouvelpub');
 
+Route::get('/detailnouvelpub/{id}', 'App\Http\Controllers\Admin2Controller@show')->name('admin.detailnouvelpub');
 
 Route::get('/offremodif', function () {
   return view('Admin/offremodif');
