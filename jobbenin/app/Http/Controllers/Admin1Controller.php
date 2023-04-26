@@ -6,31 +6,34 @@ use App\Models\User;
 use App\Models\Admin;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class Admin1Controller extends Controller
 {
-   /**
+    /**
      * Display a listing of the resource.
      */
     public function index()
     {
         //
+
         $recruteurs = DB::table('users')->where('role', 'recruteur')->count();
         $postulants = DB::table('users')->where('role', 'postulant')->count();
         $freelancers = DB::table('users')->where('role', 'freelancer')->count();
         $offres = DB::table('offres')->count();
-
-
+        $adminId = Auth::id();
+        $admin = Admin::find($adminId);
 
         return view('Admin.tableaudebord', [
             'recruteurs' => $recruteurs,
             'postulants' => $postulants,
             'freelancers' => $freelancers,
-            'offres' => $offres
-        ]);
+            'offres' => $offres,
+            'admin' => $admin,
 
+        ]);
     }
 
     /**
@@ -55,11 +58,11 @@ class Admin1Controller extends Controller
         $freelancers = User::where('role', 'freelancer')->get();
         return view('Admin.freelancer', ['freelancers' => $freelancers]);
     }
-    
+
     public function desactiverrecruteur($id)
     {
         $recruteurs = User::findOrFail($id);
-       
+
         DB::table('users')
             ->where([
                 'id' => $recruteurs->id,
@@ -72,7 +75,7 @@ class Admin1Controller extends Controller
     public function activerrecruteur($id)
     {
         $recruteurs = User::findOrFail($id);
-       
+
         DB::table('users')
             ->where([
                 'id' => $recruteurs->id,
@@ -85,7 +88,7 @@ class Admin1Controller extends Controller
     public function desactiverpostulant($id)
     {
         $postulants = User::findOrFail($id);
-       
+
         DB::table('users')
             ->where([
                 'id' => $postulants->id,
@@ -97,7 +100,7 @@ class Admin1Controller extends Controller
     public function activerpostulant($id)
     {
         $postulants = User::findOrFail($id);
-       
+
         DB::table('users')
             ->where([
                 'id' => $postulants->id,
@@ -109,7 +112,7 @@ class Admin1Controller extends Controller
     public function desactiverfreelancer($id)
     {
         $freelancers = User::findOrFail($id);
-       
+
         DB::table('users')
             ->where([
                 'id' => $freelancers->id,
@@ -121,7 +124,7 @@ class Admin1Controller extends Controller
     public function activerfreelancer($id)
     {
         $freelancers = User::findOrFail($id);
-       
+
         DB::table('users')
             ->where([
                 'id' => $freelancers->id,
@@ -130,80 +133,57 @@ class Admin1Controller extends Controller
 
         return redirect()->back()->with('success', 'Postulant sélectionné avec succès!');
     }
+
+
     public function inscriptionadmin(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8|confirmed',
-            'role' => 'required|in:recruteur,postulant,freelancer',
-        ], [
-            'name.required' => 'Veuillez saisir votre nom.',
-            'email.required' => 'Veuillez saisir votre adresse e-mail.',
-            'email.email' => 'Veuillez saisir une adresse e-mail valide.',
-            'email.unique' => 'Cette adresse e-mail est déjà utilisée.',
-            'password.required' => 'Veuillez saisir votre mot de passe.',
-            'password.min' => 'Le mot de passe doit contenir au moins :min caractères.',
-            'password.confirmed' => 'Les mots de passe ne correspondent pas.',
-          
-        ]);
-    
+
+
         $admin = new Admin();
         $admin->name = $request->name;
         $admin->email = $request->email;
         $admin->password = Hash::make($request->password);
         $admin->ville = $request->ville;
-
         $admin->save();
-    
+
         return redirect()->intended('connexionadmin');
     }
+    public function connexionadmin(Request $request)
+    {
+
+        $email = $request->email;
+        $password = $request->password;
+
+        $admin = Admin::where('email', '=', $email)->first();
+        if ($admin && Hash::check($password, $admin->password)) {
+            // Mot de passe correct
+            return redirect('tableaudebord');
+        } else {
+            // Mot de passe incorrect
+            return redirect()->back()->withErrors(['email' => 'Adresse Email ou Mot de passe incorrect'])->withInput();
+        }
+    }
+
+    public function adminj()
+    {
+        //
+        $admins= Admin::all();
+        return view('Admin.adminj', ['admins' => $admins]);
+    }
+
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function addadmin(Request $request)
     {
+        return view('Admin.addadmin');
+
         //
     }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function getAdminName()
     {
-        //
+        $adminId = Auth::id();
+        $admin = Admin::find($adminId);
+        return $admin;
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
-
-   
-    
-
-
-
-
 }
-
-

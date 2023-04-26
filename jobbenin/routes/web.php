@@ -160,12 +160,8 @@ Route::get('/offresignal', function () {
 Route::get('/transaction', function () {
   return view('Admin/transaction');
 });
-Route::get('/addadmin', function () {
-  return view('Admin/addadmin');
-});
-Route::get('/adminj', function () {
-  return view('Admin/adminj');
-});
+
+
 Route::get('tableaudebord ', 'App\Http\Controllers\Admin1Controller@index');
 Route::get('recruteur ', 'App\Http\Controllers\Admin1Controller@recruteur')->name('recruteur');
 Route::get('postulant ', 'App\Http\Controllers\Admin1Controller@postulant')->name('postulant');
@@ -176,3 +172,13 @@ Route::get('postulant/{id}/desactiver', 'App\Http\Controllers\Admin1Controller@d
 Route::get('postulant/{id}/activer', 'App\Http\Controllers\Admin1Controller@activerpostulant')->name('activer.postulant');
 Route::get('freelancer/{id}/desactiver', 'App\Http\Controllers\Admin1Controller@desactiverfreelancer')->name('desactiver.freelancer');
 Route::get('freelancer/{id}/activer', 'App\Http\Controllers\Admin1Controller@activerfreelancer')->name('activer.freelancer');
+
+Route::get('/addadmin', 'App\Http\Controllers\Admin1Controller@addadmin');
+Route::post('/addadmin', 'App\Http\Controllers\Admin1Controller@inscriptionadmin');
+
+
+Route::get('connexionadmin', function () {
+  return view('Admin/connexionadmin');
+});
+Route::post('connexionadmin ', 'App\Http\Controllers\Admin1Controller@connexionadmin');
+Route::get('adminj ', 'App\Http\Controllers\Admin1Controller@adminj')->name('adminj');
