@@ -152,12 +152,16 @@ Route::get('/nouvelpub', 'App\Http\Controllers\Admin2Controller@offresNonPubliee
 
 Route::get('/detailnouvelpub/{id}', 'App\Http\Controllers\Admin2Controller@show')->name('admin.detailnouvelpub');
 
-Route::get('/offremodif', function () {
-  return view('Admin/offremodif');
-});
-Route::get('/offresignal', function () {
-  return view('Admin/offresignal');
-});
+
+Route::get('/detailnouvelpub/{id}/valider', 'App\Http\Controllers\Admin2Controller@validerpub')->name('admin.valider');
+    
+Route::get('/offremodif', 'App\Http\Controllers\Admin2Controller@offremodif')->name('admin.offremodif');
+
+    Route::get('/detailoffremodif/{id}', 'App\Http\Controllers\Admin2Controller@show2')->name('admin.detailoffremodif');
+    Route::get('/detailoffremodif/{id}/valideroffremodif', 'App\Http\Controllers\Admin2Controller@valideroffremodif')->name('admin.valideroffremodif');
+  
+    Route::get('/offresignal', 'App\Http\Controllers\Admin2Controller@offremodif')->name('admin.offremodif');
+
 Route::get('/transaction', function () {
   return view('Admin/transaction');
 });
@@ -173,6 +177,7 @@ Route::get('postulant ', 'App\Http\Controllers\Admin1Controller@postulant')->nam
 Route::get('freelancer ', 'App\Http\Controllers\Admin1Controller@freelancer')->name('freelancer');
 Route::get('recruteur/{id}/desactiver', 'App\Http\Controllers\Admin1Controller@desactiverrecruteur')->name('desactiver.recruteur');
 Route::get('recruteur/{id}/activer', 'App\Http\Controllers\Admin1Controller@activerrecruteur')->name('activer.recruteur');
+
 Route::get('postulant/{id}/desactiver', 'App\Http\Controllers\Admin1Controller@desactiverpostulant')->name('desactiver.postulant');
 Route::get('postulant/{id}/activer', 'App\Http\Controllers\Admin1Controller@activerpostulant')->name('activer.postulant');
 Route::get('freelancer/{id}/desactiver', 'App\Http\Controllers\Admin1Controller@desactiverfreelancer')->name('desactiver.freelancer');

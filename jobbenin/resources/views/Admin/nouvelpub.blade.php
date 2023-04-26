@@ -17,7 +17,7 @@
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
               <div class="card-body">
-                <h4 class="card-title">Publication en Attente</h4>
+                <h4 class="card-title">Nouvelle Publication en Attente</h4>
                
                 <div class="table-responsive">
     <table class="table table-striped">
@@ -34,9 +34,9 @@
             @foreach($offres as $offre)
             <tr>
                 <td class="py-1">
-                    <img src="{{ asset('storage/' . $offre->user->logo_entreprise) }}" alt="Logo entreprise">
+                    <img src="" alt="Logo entreprise">
                 </td>
-                <td>{{ $offre->user->name }}</td>
+                <td>{{ $offre->user ? $offre->user->name : '' }}</td>
 
                 <td>{{ $offre->user->villeR }}</td>
                 <td>{{ $offre->poste }}</td>

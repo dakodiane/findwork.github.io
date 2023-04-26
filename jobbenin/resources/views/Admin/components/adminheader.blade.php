@@ -48,7 +48,7 @@
       
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="{{('tableaudebord')}}">
+            <a class="nav-link" href="{{('/tableaudebord')}}">
               <i class="icon-box menu-icon"></i>
               <span class="menu-title">Tableau de bord</span>
             </a>
@@ -61,9 +61,9 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column ">
-                <li class="nav-item"> <a class="nav-link" href="{{('recruteur')}}">Recruteurs</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{('postulant')}}">Postulants</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{('freelancer')}}">Freelancers</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{('/recruteur')}}">Recruteurs</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{('/postulant')}}">Postulants</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{('/freelancer')}}">Freelancers</a></li>
 
               </ul>
             </div>
@@ -76,9 +76,9 @@
             </a>
             <div class="collapse" id="basic">
               <ul class="nav flex-column ">
-                <li class="nav-item"> <a class="nav-link" href="{{('nouvelpub')}}">Demandes de publications</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{('offremodif')}}">Offres modifiées</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{('offresignal')}}">Offres signalées</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{('/nouvelpub')}}">Demandes de publications</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{('/offremodif')}}">Offres modifiées</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{('/offresignal')}}">Offres signalées</a></li>
 
               </ul>
             </div>
@@ -98,8 +98,8 @@
             </a>
             <div class="collapse" id="a">
               <ul class="nav flex-column ">
-                <li class="nav-item"> <a class="nav-link" href="{{('admin')}}"> Liste Administrateur </a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{('addadmin')}}"> Ajouter un Administrateur</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{('/adminj')}}"> Liste Administrateur </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{('/addadmin')}}"> Ajouter un Administrateur</a></li>
               </ul>
             </div>
           </li>

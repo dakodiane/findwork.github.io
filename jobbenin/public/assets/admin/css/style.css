@@ -22831,5 +22831,15 @@ dl li {
   background-color: #f8f8f8;
   padding: 20px;
   margin-bottom: 30px;
-  width: 150%;
+
 }
+
+
+ul, ol {
+  list-style-type: none;
+}
+.no-underline {
+  text-decoration: none;
+}
+
+
