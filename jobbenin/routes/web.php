@@ -167,11 +167,13 @@ Route::get('/addadmin', function () {
 Route::get('/adminj', function () {
   return view('Admin/adminj');
 });
-Route::get('admin ', 'App\Http\Controllers\Admin1Controller@index')->name('admin');
+Route::get('tableaudebord ', 'App\Http\Controllers\Admin1Controller@index');
 Route::get('recruteur ', 'App\Http\Controllers\Admin1Controller@recruteur')->name('recruteur');
 Route::get('postulant ', 'App\Http\Controllers\Admin1Controller@postulant')->name('postulant');
 Route::get('freelancer ', 'App\Http\Controllers\Admin1Controller@freelancer')->name('freelancer');
-Route::get('recruteur/{id}/', 'App\Http\Controllers\Admin1Controller@desactiverutilisateur')->name('desactiver.utilisateur');
-
-
-
+Route::get('recruteur/{id}/desactiver', 'App\Http\Controllers\Admin1Controller@desactiverrecruteur')->name('desactiver.recruteur');
+Route::get('recruteur/{id}/activer', 'App\Http\Controllers\Admin1Controller@activerrecruteur')->name('activer.recruteur');
+Route::get('postulant/{id}/desactiver', 'App\Http\Controllers\Admin1Controller@desactiverpostulant')->name('desactiver.postulant');
+Route::get('postulant/{id}/activer', 'App\Http\Controllers\Admin1Controller@activerpostulant')->name('activer.postulant');
+Route::get('freelancer/{id}/desactiver', 'App\Http\Controllers\Admin1Controller@desactiverfreelancer')->name('desactiver.freelancer');
+Route::get('freelancer/{id}/activer', 'App\Http\Controllers\Admin1Controller@activerfreelancer')->name('activer.freelancer');

@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="{{asset('assets/admin/vendors/jquery-bar-rating/fontawesome-stars.css')}}">
   <link rel="stylesheet" href="{{asset('assets/admin/css/style.css')}}">
 
+
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <!-- endinject -->

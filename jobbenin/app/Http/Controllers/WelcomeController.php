@@ -12,11 +12,16 @@ class WelcomeController extends Controller
     public function index()
     {
         // Récupération des offres
-        $offres = Offre::with('user')->get();
-    
+        $offres = Offre::with('user')
+        ->whereHas('user', function ($query) {
+            $query->where('active', '=', 1);
+        })
+        ->get();
+
         // Récupération des freelancers avec leur photo
         $freelancers = User::where('role', 'freelancer')
                             ->select('id', 'name','service_freelancer', 'photo_freelancer')
+                            ->where('active',1)
                             ->get();
     
         //dd($freelancers);
