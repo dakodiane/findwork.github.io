@@ -148,3 +148,21 @@ Route::get('/espace ', 'App\Http\Controllers\EspaceController@index');
 Route::get('admin/', function () {
   return view('Admin/tableaudebord');
 });
+Route::get('/nouvelpub', 'App\Http\Controllers\Admin2Controller@offresNonPubliees')->name('admin.nouvelpub');
+
+
+Route::get('/offremodif', function () {
+  return view('Admin/offremodif');
+});
+Route::get('/offresignal', function () {
+  return view('Admin/offresignal');
+});
+Route::get('/transaction', function () {
+  return view('Admin/transaction');
+});
+Route::get('/addadmin', function () {
+  return view('Admin/addadmin');
+});
+Route::get('/adminj', function () {
+  return view('Admin/adminj');
+});

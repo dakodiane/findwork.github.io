@@ -96,10 +96,10 @@
               <span class="menu-title">Administrateur</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="a">
+            <div class="collapse" id="basic">
               <ul class="nav flex-column ">
-                <li class="nav-item"> <a class="" href="{{('admin')}}"> Liste Administrateur </a></li>
-                <li class="nav-item"> <a class="" href="{{('addadmin')}}"> Ajouter un Administrateur</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{('admin')}}"> Liste Administrateur </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{('addadmin')}}"> Ajouter un Administrateur</a></li>
               </ul>
             </div>
           </li>
