@@ -8,7 +8,6 @@ use App\Models\Offre;
 use App\Models\Postuler;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\PostulerOffreController;
 
 
 class PostulerOffreController extends Controller

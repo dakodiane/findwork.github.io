@@ -32,51 +32,34 @@
                                 </th>
                           </tr>
                         </thead>
+                        @foreach ($admins as $admin)
+
                         <tbody>
+                     
                           <tr>
                            
                             <td>
-                          DAKO Diane
+                            {{ $admin->name }}
                             </td>
                             <td>
-                              <div class="text-success"><i class=""></i>admin1@gmail.com</div>
+                              <div class="text-success"><i class=""></i>{{ $admin->email }}</div>
                             </td>
                             <td>
                               <div class="row">
                                 <div class="col-sm-10">
                               
-                                    Cotonou
-                                </div>
-                               
-                              </div>
-                            </td>
-                            <td>
-                                <div class="text-danger"><i class=""></i>Supprimer</div>
-                              </td>
-                          </tr>
-                          <tr>
-                           
-                            <td>
-                        AKPONNE Djèmilath
-                            </td>
-                            <td>
-                              <div class="text-success"><i class=""></i>admin18@gmail.com</div>
-                            </td>
-                            <td>
-                              <div class="row">
-                                <div class="col-sm-10">
-                              
-                                    Cotonou
+                                {{ $admin->ville }}
                                 </div>
                                
                               </div>
 
                             </td>
                              <td>
-                              <div class="text-danger"><i class=""></i>Supprimer</div>
+                             <button type="button" class="btn btn-danger btn-rounded btn-fw">Supprimer</button>
                             </td>
                           </tr>
                         </tbody>
+                        @endforeach
                       </table>
                     </div>
                 </div>
