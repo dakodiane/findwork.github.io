@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Admin;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
@@ -22,7 +24,7 @@ class Admin1Controller extends Controller
 
 
 
-        return view('Admin/tableaudebord', [
+        return view('Admin.tableaudebord', [
             'recruteurs' => $recruteurs,
             'postulants' => $postulants,
             'freelancers' => $freelancers,
@@ -54,7 +56,7 @@ class Admin1Controller extends Controller
         return view('Admin.freelancer', ['freelancers' => $freelancers]);
     }
     
-    public function desactiverutilisateur($id)
+    public function desactiverrecruteur($id)
     {
         $recruteurs = User::findOrFail($id);
        
@@ -64,7 +66,97 @@ class Admin1Controller extends Controller
             ])
             ->update(['active' => 0]);
 
+
         return redirect()->back()->with('success', 'Postulant sélectionné avec succès!');
+    }
+    public function activerrecruteur($id)
+    {
+        $recruteurs = User::findOrFail($id);
+       
+        DB::table('users')
+            ->where([
+                'id' => $recruteurs->id,
+            ])
+            ->update(['active' => 1]);
+
+        return redirect()->back()->with('success', 'Postulant sélectionné avec succès!');
+    }
+
+    public function desactiverpostulant($id)
+    {
+        $postulants = User::findOrFail($id);
+       
+        DB::table('users')
+            ->where([
+                'id' => $postulants->id,
+            ])
+            ->update(['active' => 0]);
+
+        return redirect()->back()->with('success', 'Postulant sélectionné avec succès!');
+    }
+    public function activerpostulant($id)
+    {
+        $postulants = User::findOrFail($id);
+       
+        DB::table('users')
+            ->where([
+                'id' => $postulants->id,
+            ])
+            ->update(['active' => 1]);
+
+        return redirect()->back()->with('success', 'Postulant sélectionné avec succès!');
+    }
+    public function desactiverfreelancer($id)
+    {
+        $freelancers = User::findOrFail($id);
+       
+        DB::table('users')
+            ->where([
+                'id' => $freelancers->id,
+            ])
+            ->update(['active' => 0]);
+
+        return redirect()->back()->with('success', 'Postulant sélectionné avec succès!');
+    }
+    public function activerfreelancer($id)
+    {
+        $freelancers = User::findOrFail($id);
+       
+        DB::table('users')
+            ->where([
+                'id' => $freelancers->id,
+            ])
+            ->update(['active' => 1]);
+
+        return redirect()->back()->with('success', 'Postulant sélectionné avec succès!');
+    }
+    public function inscriptionadmin(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8|confirmed',
+            'role' => 'required|in:recruteur,postulant,freelancer',
+        ], [
+            'name.required' => 'Veuillez saisir votre nom.',
+            'email.required' => 'Veuillez saisir votre adresse e-mail.',
+            'email.email' => 'Veuillez saisir une adresse e-mail valide.',
+            'email.unique' => 'Cette adresse e-mail est déjà utilisée.',
+            'password.required' => 'Veuillez saisir votre mot de passe.',
+            'password.min' => 'Le mot de passe doit contenir au moins :min caractères.',
+            'password.confirmed' => 'Les mots de passe ne correspondent pas.',
+          
+        ]);
+    
+        $admin = new Admin();
+        $admin->name = $request->name;
+        $admin->email = $request->email;
+        $admin->password = Hash::make($request->password);
+        $admin->ville = $request->ville;
+
+        $admin->save();
+    
+        return redirect()->intended('connexionadmin');
     }
     /**
      * Store a newly created resource in storage.

@@ -55,8 +55,19 @@
 
                             </td>
                             <td>
-                                <button type="button" class="btn btn-danger btn-rounded btn-fw">Désactiver</button>
+                            @if($postulant->active)
+                                             <a href="{{ route('desactiver.postulant', $postulant->id) }}">
+                                                <button type="button"
+                                                    class="btn btn-danger btn-rounded btn-fw">Désactiver</button>
+                                                    </a>
+                                            @else
+                                            <a href="{{ route('activer.postulant', $postulant->id) }}">
+                                            <button type="button" class="btn btn-success btn-rounded btn-fw">Activer</button>
 
+                                                    </a>
+                                               
+                                             
+                                            @endif
                             </td>
 
                           </tr>

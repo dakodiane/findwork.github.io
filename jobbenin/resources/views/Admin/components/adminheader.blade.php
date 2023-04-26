@@ -2,8 +2,8 @@
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row" style="background-color: #242d5e;">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center" style="background-color: #242d5e;">
-        <a class="navbar-brand brand-logo" href="{{('admin')}}"><img src="{{asset('assets/img/logo/jobbenin.png')}}" style="height:50%;" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="{{('admin')}}"><img src="images/logo-mini.svg" alt="logo"/></a>
+        <a class="navbar-brand brand-logo" href="{{('tableaudebord')}}"><img src="{{asset('assets/img/logo/jobbenin.png')}}" style="height:50%;" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="{{('tableaudebord')}}"><img src="images/logo-mini.svg" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -48,7 +48,7 @@
       
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="{{('admin')}}">
+            <a class="nav-link" href="{{('tableaudebord')}}">
               <i class="icon-box menu-icon"></i>
               <span class="menu-title">Tableau de bord</span>
             </a>
@@ -96,7 +96,7 @@
               <span class="menu-title">Administrateur</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="basic">
+            <div class="collapse" id="a">
               <ul class="nav flex-column ">
                 <li class="nav-item"> <a class="nav-link" href="{{('admin')}}"> Liste Administrateur </a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{('addadmin')}}"> Ajouter un Administrateur</a></li>

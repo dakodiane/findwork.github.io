@@ -56,14 +56,14 @@
                                         </td>
                                         <td>
                                         @if($recruteur->active)
-                                             <a href="{{ route('desactiver.utilisateur', $recruteur->id) }}">
+                                             <a href="{{ route('desactiver.recruteur', $recruteur->id) }}">
                                                 <button type="button"
                                                     class="btn btn-danger btn-rounded btn-fw">Désactiver</button>
                                                     </a>
                                             @else
-                                            <a href="{{ route('desactiver.utilisateur', $recruteur->id) }}">
-                                                <button type="button"
-                                                    class="btn btn-danger btn-rounded btn-fw" style="background-color:green;">Activer</button>
+                                            <a href="{{ route('activer.recruteur', $recruteur->id) }}">
+                                            <button type="button" class="btn btn-success btn-rounded btn-fw">Activer</button>
+
                                                     </a>
                                                
                                              
