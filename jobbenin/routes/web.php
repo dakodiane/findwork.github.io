@@ -166,3 +166,11 @@ Route::get('/addadmin', function () {
 Route::get('/adminj', function () {
   return view('Admin/adminj');
 });
+Route::get('admin ', 'App\Http\Controllers\Admin1Controller@index')->name('admin');
+Route::get('recruteur ', 'App\Http\Controllers\Admin1Controller@recruteur')->name('recruteur');
+Route::get('postulant ', 'App\Http\Controllers\Admin1Controller@postulant')->name('postulant');
+Route::get('freelancer ', 'App\Http\Controllers\Admin1Controller@freelancer')->name('freelancer');
+Route::get('recruteur/{id}/', 'App\Http\Controllers\Admin1Controller@desactiverutilisateur')->name('desactiver.utilisateur');
+
+
+

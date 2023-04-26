@@ -16,8 +16,8 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Recruteurs</h4>
-                                <p>23% increase in conversion</p>
-                                <h4 class="text-dark font-weight-bold mb-2">43,981</h4>
+                                <p></p>
+                                <h4 class="text-dark font-weight-bold mb-2">{{ $recruteurs }}</h4>
                             </div>
                         </div>
                     </div>
@@ -25,8 +25,8 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Postulants</h4>
-                                <p>6% decrease in earnings</p>
-                                <h4 class="text-dark font-weight-bold mb-2">55,543</h4>
+                                <p></p>
+                                <h4 class="text-dark font-weight-bold mb-2">{{ $postulants }}</h4>
                             </div>
                         </div>
                     </div>
@@ -34,8 +34,8 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Freelancers</h4>
-                                <p>6% decrease in earnings</p>
-                                <h4 class="text-dark font-weight-bold mb-2">55,543</h4>
+                                <p></p>
+                                <h4 class="text-dark font-weight-bold mb-2">{{ $freelancers }}</h4>
                             </div>
                         </div>
                     </div>
@@ -43,8 +43,8 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Offres</h4>
-                                <p>6% decrease in earnings</p>
-                                <h4 class="text-dark font-weight-bold mb-2">55,543</h4>
+                                <p></p>
+                                <h4 class="text-dark font-weight-bold mb-2">{{ $offres }}</h4>
                             </div>
                         </div>
                     </div>
