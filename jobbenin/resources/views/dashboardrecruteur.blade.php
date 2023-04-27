@@ -52,7 +52,6 @@
                 <p class="fw-light text-muted mb-0">{{ $user->email }}</p>
               </div>
               <a class="dropdown-item" href=" {{('/profilrecruteur')}}">
-                <i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile <span class="badge badge-pill badge-danger">1</span></a>
 
               <a href="{{ route('logout') }}" class="dropdown-item"  class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 Déconnexion

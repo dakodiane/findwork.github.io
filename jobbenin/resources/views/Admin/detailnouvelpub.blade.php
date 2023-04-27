@@ -1,141 +1,121 @@
 @extends('Admin/templates.admin')
 
 @section('document')
-
-
-
-
-
-<div class="job-post-company pt-120 pb-120" style="margin-top:50px;margin-left:30px">
-        <div class="container">
-        <div class="row justify-content-between">
-    <!-- Left Content -->
-    <div class="col-xl-4 col-lg-4">
-        <div class="single-job-items mb-50">
-            <div class="job-items d-flex align-items-center">
-                <div class="company-img company-img-details">
-                    <a href="#"><img src="{{asset('assets/img/icon/job-list1.png')}}" alt=""></a>
-                </div>
-                <div class="job-tittle d-flex align-items-center">
-                    <a href="#" style="text-decoration: none;" style="margin-left:420px">
-                        @if(isset($offre))
-                        <div class="row"><h4 style="margin-left:40px">{{ $offre->poste }}</h4></div> <br> <br> <br> <br>
-                        @endif
-                    </a>
-                    <ul class="job-meta d-flex align-items-center" style="margin-left:-120px">
-  
-                    @if(isset($offre) && isset($offre->user))
-                        <li class="mr-3"><i class="fas fa-user"></i> {{$offre->user->name}}</li>
-                        @endif
-                        <li><i class="fas fa-map-marker-alt"></i> {{$offre->user->villeR ?? ''}}</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div style="width:200px"></div>
-    <!-- Right Content -->
-    <div class="col-xl-7 col-lg-7">
-        <div style="height:60px"></div>
-        <div class="post-details4 mb-50" style="margin-top:-60px">
-            <div class="small-section-tittle">
-                <h4>Description de l'entreprise</h4>
-            </div>
-            <div class="job-details">
-                <div class="job-details-info">
-                    <span>{{ $offre->user->name ?? '' }}</span>
-                    <p>{{ $offre->user->description_recruteur ?? '' }}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-    <div style="height:30px"></div>
-    <div class="row justify-content-between">
-
-    <div class="col-xl-12 col-lg-12">
-    <div class="job-preview">
-        <div class="post-details3 mb-50">
-            <div class="small-section-tittle">
-           <u>   <b><h2 style="font-weight:200px ;text-align:center">Aperçu de l'offre</h2></b>  </u>  
-          
-            </div>
-            <div style="height:30px"></div>
-
-            <div class="job-post-details">
-                        <div class="post-details1 mb-50">
-                            <!-- Small Section Tittle -->
-                            <div class="small-section-tittle">
-                          
-                            <strong>
-                          Description de l'offre :</strong>
-                           
-                            </div>
-                            <p>{{ $offre->description_offre ?? '' }}</p>
+<div class="main-panel">
+    <div class="content-wrapper" style="font-size: 5px;color:black">
+        <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title" style="font-size: 30px; text-align:center"><u>Détails de l'offre</u> </h4>
+                    <br><br>
+                    <div class="row">
+                        <div class="col-md-5">
+                        <div style="height:70px"></div>
+                        <address>
+                                <p class="font-weight-bold" style="font-size: large;"> Description de l'Entreprise</p>
+                                <br><br>
+                                <p style="font-size: large;">
+                                    {{ $offre->user->description_recruteur }}
+                                </p>
+                                <br><br><br>
+                                <address>
+                            @if(isset($offre) && isset($offre->user))
+                                <p class="font-weight-bold" style="font-size: large;"> {{ $offre->user->name }}</p>
+                                @endif
+                                <br><br>
+                                <p style="font-size: large;">
+                                    {{ $offre->user->villeR }}
+                                </p>
+                                <br><br><br>
+                               
+                            </address>
+                            </address>
+                            
+                        
                         </div>
-                        <div class="post-details2  mb-50">
-                            <!-- Small Section Tittle -->
-                            <div class="small-section-tittle">
                        
-                           <strong>
-                                 Compétences Requises :</strong>
+                                <div class="col-md-6 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body font-weight-bold">
+                                    <h3 style="font-size: large; text-align:center"> Aperçu de l'Offre </h3>
+                                    <p class="font-weight-bold">
+                                    Date Limite:  </p>
+                                    <p>   {{ $offre->datfin }} </p>
+                                    <p class="font-weight-bold">
+                                      Poste Concerné: </p>
+                                    <p  class="text-primary">
+                                        {{ $offre->poste }} </p>
+                                    <p class="font-weight-bold">
+                                    Ville du Poste: </p>
+                                    <p>
+                                        {{ $offre->villeO }} </p>
+                                    <p class="font-weight-bold">
+                                    Description de l'offre: </p>
+                                    <p>
+                                        {{ $offre->description_offre }}</p>
+                                    <p class="font-weight-bold">
+                                   Compétences Requises:  </p>
+                                    <p>
+                                        {{ $offre->competence_offre1 }}  </p>
+                                    <p>
+                                        {{ $offre->competence_offre2 }}
+                                    </p>
+                                    <p>
+                                        {{ $offre->competence_offre3 }}
+                                    </p>
+                                    <p>
+                                        {{ $offre->competence_offre4 }}
+                                    </p>
+                                    <p>
+                                        {{ $offre->competence_offre5 }}
+                                    </p>
+                                    <p class="font-weight-bold">
+                                    Diplômes Requis: </p>
+                                   
+                                    <p>
+                                        {{ $offre->diplome }}
+                                    </p>
+                                </div>
                             </div>
-                            <ul>
-                                <li>{{ $offre->competence_offre1 ?? '' }}</li>
-                                <li>{{ $offre->competence_offre2  ?? ''}}</li>
-                                <li>{{ $offre->competence_offre3 ?? '' }}</li>
-                                <li>{{ $offre->competence_offre4  ?? ''}}</li>
-                                <li>{{ $offre->competence_offre5 ?? ''}}</li>
-
-                            </ul>
                         </div>
-                        <div class="post-details2  mb-50">
-                            <!-- Small Section Tittle -->
-                            <div class="small-section-tittle">
-                          
-                    
-                           <strong>
-                                 Diplome Requis : </strong>
-                                 <p>{{$offre->diplome ?? ''}}</p>
-                     <div>
-                        <ul class="job-meta" style="text-decroration:none;" >
-                <li style="text-decroration:none"><i class="fas fa-map-marker-alt"></i><strong>
-                     Ville :</strong> {{ $offre->user->villeR ?? '' }}</li>
-              
-                <li style="text-decroration:none"><i class="fas fa-calendar-check"></i><strong> 
-                    Date limite :</strong> {{ $offre->datfin ?? ''}}</li>
-            </ul>
-  </div>            
-  </div>         
-  </div>    
-     
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+          
+       
+        <div class="row">
+            <div class="col-md-6">
    
+            </div>
+          
+            <div class="col-md-6">
+
+
+
+                <a href="{{ route('admin.valideroffremodif', $offre->id)  }}" class="no-underline">
+                    <button type="submit" class="btn btn-success btn-fw"> Approuver</button>
+                
+                </a>
+          
+                <a href="" class="no-underline" style="margin-left:30px">
+                <button type="submit" class="btn btn-danger btn-fw" >Rejeter</button>
+                    
+                </a>
+
+
+
+        </div>
+
+    </div>
 
 </div>
 
-</div>
-
- </div></div></div>
- <div style="height:30px"></div>
-
-                                          
- <a href="{{ route('admin.valider', $offre->id)  }}" class="no-underline" style="margin-left:80px">
-    <div class="btn btn-success btn-fw" style="float:right;margin-right:20px"> Approuver </div>
-</a>
-<a href="" class="no-underline" style="margin-left:80px">
-    <div class="btn btn-danger btn-fw" style="float:right;margin-right:20px"> Rejeter </div>
-</a>
 
 
 
- 
- <div style="height:50px"></div>
+    @endsection
 
 
-
-
-
-
-  @endsection
 
