@@ -61,7 +61,7 @@
               <ul class="nav flex-column ">
                 <li class="nav-item"> <a class="nav-link" href="{{('/recruteur')}}">Recruteurs</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{('/postulant')}}">Postulants</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{('/freelancer')}}">Freelancers</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{('/freelancera')}}">Freelancers</a></li>
 
               </ul>
             </div>
@@ -83,7 +83,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{('transaction')}}">
+            <a class="nav-link" href="{{('/transaction')}}">
               <i class="icon-pie-graph menu-icon"></i>
               <span class="menu-title">Transactions</span>
             </a>

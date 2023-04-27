@@ -64,8 +64,6 @@
                                         <div class="job-items">
                                             <div class="company-img">
                                             <img src="{{ asset('storage/photoslogo/' . $offre->user->logo_entreprise) }}" alt="Logo Entreprise" class="avatar">
-
-
                                             </div>
                                             <div class="job-tittle">
                                                 <a href="{{('detail_offre')}}" class="soulign">

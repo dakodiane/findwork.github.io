@@ -56,7 +56,7 @@ class Admin1Controller extends Controller
     {
         //
         $freelancers = User::where('role', 'freelancer')->get();
-        return view('Admin.freelancer', ['freelancers' => $freelancers]);
+        return view('Admin.freelancera', ['freelancers' => $freelancers]);
     }
 
     public function desactiverrecruteur($id)
@@ -185,5 +185,17 @@ class Admin1Controller extends Controller
         $adminId = Auth::id();
         $admin = Admin::find($adminId);
         return $admin;
+    }
+    public function detailrecruteur(String $id)
+    {
+        $recruteurs = User::find($id);
+        return view('Admin.detailrecruteur',compact('recruteurs'));
+        //
+    }
+    public function detailfreelancer(String $id)
+    {
+        $freelancers = User::find($id);
+        return view('Admin.detailfreelancer',compact('freelancers'));
+        //
     }
 }

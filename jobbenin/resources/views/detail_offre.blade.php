@@ -21,7 +21,7 @@
         <div class="container">
             <div class="row justify-content-between">
                 <!-- Left Content -->
-                <div class="col-xl-7 col-lg-8">
+                <div class="col-xl-6 col-lg-6">
                     <!-- job single -->
                     <div class="single-job-items mb-50">
                         <div class="job-items">
@@ -80,7 +80,7 @@
 
                 </div>
                 <!-- Right Content -->
-                <div class="col-xl-4 col-lg-4">
+                <div class="col-xl-6 col-lg-6" style="width: 600px;">
                     <div class="post-details3  mb-50">
                         <!-- Small Section Tittle -->
                         <div class="small-section-tittle">
@@ -94,17 +94,13 @@
                             <li>Date limite : <span>{{ $offre->datfin ?? ''}}</span></li>
                             <li>Nombre de Visiteurs: <span class=""><i class="fa fa-eye" aria-hidden="true"></i> 150 </span></li>
                            
-                            <div class="col-md-6" style ="float:right"> 
-                            <a href="{{ route('signalement', ['id_offre' => $offre->id]) }}" >
-      <button type ="submit" class="btn btn-block btn-primary btn-md" id="submit-btn">  
-  
-
-      Signaler</button> </a>
-    </div>
+        
          
                   </ul>
     <div class="" style="height:50px"></div>
-              @auth 
+    <div class="row">
+        <div class="col-md-9">
+        @auth 
     @if ($user->role == 'postulant')
         @if ($aDejaPostule)
         <div class="apply-btn2" style="">
@@ -112,7 +108,7 @@
                 Vous avez déjà postulé!
                 </a>
             </div>
-            </div>
+           
            
         @else
             <div class="apply-btn2">
@@ -120,7 +116,7 @@
                     Postuler maintenant
                 </a>
             </div>
-            </div>
+          
         @endif
     @elseif($user->role == 'recruteur')
         <div class="apply-btn2">
@@ -128,14 +124,14 @@
                 Créez un compte postulant
             </a>
         </div>
-        </div>   
+        
     @elseif($user->role == 'freelancer')
         <div class="apply-btn2">
             <a href="{{'/inscription'}}" class="boxed-btn1" style="color: white;text-decoration:none;">
                 Créez un compte postulant
             </a>
         </div>
-        </div>
+        
     @endif
 @else
     <div class="apply-btn2">
@@ -145,8 +141,19 @@
 
     </div>
       
-    </div>
+   
 @endauth
+        </div>
+
+    <div class="col-md-3" style =""> 
+                            <a href="{{ route('signalement', ['id_offre' => $offre->id]) }}" >
+      <button type ="submit" class="btn btn-block btn-primary btn-md" id="submit-btn">  
+  
+
+      Signaler</button> </a>
+    </div>
+    </div>
+
  
 
 
