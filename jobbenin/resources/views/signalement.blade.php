@@ -9,8 +9,8 @@
     </div>
         <div style="border: 1px solid black; padding: 20px; margin: auto; width: 50%; margin-top: 10px;" >
           
-            <form action="#" method="POST" style="text-align: center;">
-             
+            <form action="{{ route('signalement', ['id_offre' => $offre->id]) }}" method="POST" style="text-align: center;">
+           @csrf
               <label for="name">Nom et Prénom:</label><br>
               <input type="text" id="name" name="name" required minlength="2" maxlength="50" style="width: 80%;"><br><br>
                 

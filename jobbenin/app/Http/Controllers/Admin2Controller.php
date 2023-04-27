@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class Admin2Controller extends Controller
 {
+    
     public function offresNonPubliees() 
     {   
         $offres = Offre::with('user')->where('publication','0')->get();
@@ -65,5 +66,12 @@ class Admin2Controller extends Controller
     
    
   
+
+    public function touteslesoffres( )
+    {
+        $offres = Offre::with('user')->get();
+        return view('Admin.touteslesoffres',compact('offres'));
+       }
+
 
 }

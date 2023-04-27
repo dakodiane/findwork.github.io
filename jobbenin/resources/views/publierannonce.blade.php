@@ -126,6 +126,8 @@
                             <div class="col-6">
                                 <button type="submit" class="btn btn-block btn-primary btn-md" id="submit-btn" data-toggle="modal" data-target="#myModal"> Publier</button>
                             </div>
+                       
+
                         </div>
                     </div>
 

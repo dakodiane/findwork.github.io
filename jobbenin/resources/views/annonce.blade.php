@@ -162,7 +162,9 @@
         <!-- partial -->
 
 
-        <!-- partial -->
+ 
+
+
         <div class="main-panel">
           <div class="container justify-content-center">
             <div class="row" class="d-sm-flex justify-content-between align-items-start">
@@ -173,7 +175,11 @@
               </div>
              
             </div>
-
+            @if(session('message'))
+    <div class="alert alert-success mt-3" style="display: flex; align-items: center; justify-content: center; height: 50px; font-size: 1.2rem;">
+        {{ session('message') }}
+    </div>
+@endif
             <div class="row ">
               @foreach($offres as $offre)
 

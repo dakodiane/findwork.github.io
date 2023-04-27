@@ -191,7 +191,11 @@ Route::get('adminj ', 'App\Http\Controllers\Admin1Controller@adminj')->name('adm
 
 
 
-
+Route::get('/touteslesoffres', 'App\Http\Controllers\Admin2Controller@touteslesoffres')
+->name('admin.touteslesoffres');
+Route::get('/detailoffres/{id}/', 'App\Http\Controllers\Admin2Controller@touteslesoffres')
+->name('admin.detailoffres');
+  
 Route::get('/signalement/{id_offre}','App\Http\Controllers\SignalementOffreController@index');
 
 Route::post('/signalement/{id_offre}', 'App\Http\Controllers\SignalementOffreController@index')->name('signalement');
