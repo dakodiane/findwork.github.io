@@ -50,16 +50,19 @@
 <p class="mb-1 mt-3 font-weight-semibold">{{ $user->name }}</p>
                 <p class="fw-light text-muted mb-0">{{ $user->email }}</p>
               </div>
-              <a class="dropdown-item" href=" {{('profilrecruteur')}}">
+              <a class="dropdown-item" href=" {{ route('profilrecruteur', 
+                ['id' => $user->id]) }}">
             Mon Profil</a>
 
-              <a href="{{ route('logout') }}" class="dropdown-item" class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+              
+            <a href="{{ route('logout') }}" class="dropdown-item"  class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 Déconnexion
               </a>
 
               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
               </form>
+
 
             </div>
           </li>

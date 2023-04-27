@@ -55,10 +55,7 @@
               <a class="dropdown-item" href=" {{('profilrecruteur')}}">
             Mon Profil</a>
 
-              <a href="{{ route('logout') }}" class="dropdown-item"  class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                Déconnexion
-              </a>
-
+             
               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
               </form>
