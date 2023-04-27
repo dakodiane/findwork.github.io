@@ -74,7 +74,8 @@
             </a>
             <div class="collapse" id="basic">
               <ul class="nav flex-column ">
-                <li class="nav-item"> <a class="nav-link" href="{{('/nouvelpub')}}">Demandes de publications</a></li>
+              <li class="nav-item"> <a class="nav-link" href="{{('/touteslesoffres')}}">Toutes les Offres</a></li>
+             <li class="nav-item"> <a class="nav-link" href="{{('/nouvelpub')}}">Demandes de publications</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{('/offremodif')}}">Offres modifiées</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{('/offresignal')}}">Offres signalées</a></li>
 

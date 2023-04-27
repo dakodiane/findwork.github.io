@@ -15,7 +15,10 @@ class WelcomeController extends Controller
         $offres = Offre::with('user')
         ->whereHas('user', function ($query) {
             $query->where('active', '=', 1);
+           
         })
+        ->where('publication', '=', 1) 
+        ->where('modification', '=', 0) 
         ->get();
 
         // Récupération des freelancers avec leur photo

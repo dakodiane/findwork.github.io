@@ -23,24 +23,24 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>Logo d'entreprise</th>
+           
                 <th>Nom de l'entreprise</th>
-                <th>Ville de l'entreprise</th>
+               
                 <th>Poste concerné</th>
+
+                <th>Date Limite</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
             @foreach($offres as $offre)
             <tr>
-                <td class="py-1">
-                    <img src="" alt="Logo entreprise">
-                </td>
+            
                 <td>{{ $offre->user ? $offre->user->name : '' }}</td>
 
-                <td>{{ $offre->user->villeR }}</td>
+               
                 <td>{{ $offre->poste }}</td>
-             
+                <td>{{ $offre->datfin }}</td>
                 <td>
                 <a href="{{ route('admin.detailoffremodif', $offre->id) }}" class="soulign">Voir l'offre</a>
                 </td>

@@ -21,7 +21,9 @@ class OffreController extends Controller
 
     ///////////////// DJEMI ///////////////////////////////////////////////////////////////////////
     public function offre() {
-        $offres = Offre::with('user')->get();
+        $offres = Offre::with('user')
+        ->where('publication', '=', 1) 
+        ->get();
         return view('offre',compact('offres'));
        }
 
@@ -97,9 +99,14 @@ class OffreController extends Controller
         $offre->competence_offre3= $request->input('competence_offre3');
         $offre->competence_offre4= $request->input('competence_offre4');
         $offre->competence_offre5= $request->input('competence_offre5');
-
+        $offre->modification = 1; 
        $offre->save();
-       return view('detail_offre', ['offre' => $offre], ['user' => $user]);
+       
+        // Envoyer un message à l'utilisateur
+        $message = "Votre Annonce a été soumise aux administrateurs pour analyse.
+        Vous serez informés à sa publication.";
+        return redirect()->route('annonce')->with('message', $message);
+  
 
     }
 

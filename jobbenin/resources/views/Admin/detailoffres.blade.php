@@ -17,9 +17,9 @@
                     <a href="#"><img src="{{asset('assets/img/icon/job-list1.png')}}" alt=""></a>
                 </div>
                 <div class="job-tittle d-flex align-items-center">
-                    <a href="#" style="text-decoration: none;" style="margin-left:420px">
+                    <a href="#" style="text-decoration: none;" style="margin-left:120px">
                         @if(isset($offre))
-                        <div class="row"><h4 style="margin-left:40px">{{ $offre->poste }}</h4></div> <br> <br> <br> <br>
+                        <div class="row"><h4 style="margin-left:20px">{{ $offre->poste }}</h4></div> <br> <br> <br> <br>
                         @endif
                     </a>
                     <ul class="job-meta d-flex align-items-center" style="margin-left:-120px">
@@ -33,7 +33,6 @@
             </div>
         </div>
     </div>
-    <div style="width:200px"></div>
     <!-- Right Content -->
     <div class="col-xl-7 col-lg-7">
         <div style="height:60px"></div>
@@ -51,10 +50,10 @@
     </div>
 </div>
 
-    <div style="height:30px"></div>
-    <div class="row justify-content-between">
+<div style="height:30px"></div>
+<div class="row justify-content-between">
 
-    <div class="col-xl-12 col-lg-12">
+<div class="col-xl-12 col-lg-12">
     <div class="job-preview">
         <div class="post-details3 mb-50">
             <div class="small-section-tittle">
@@ -120,18 +119,6 @@
  <div style="height:30px"></div>
 
                                           
- <a href="{{ route('admin.valider', $offre->id)  }}" class="no-underline" style="margin-left:80px">
-    <div class="btn btn-success btn-fw" style="float:right;margin-right:20px"> Approuver </div>
-</a>
-<a href="" class="no-underline" style="margin-left:80px">
-    <div class="btn btn-danger btn-fw" style="float:right;margin-right:20px"> Rejeter </div>
-</a>
-
-
-
- 
- <div style="height:50px"></div>
-
 
 
 
