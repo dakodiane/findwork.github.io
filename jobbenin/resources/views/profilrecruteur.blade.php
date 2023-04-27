@@ -48,7 +48,8 @@
  
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
               <div class="dropdown-header text-center">
-              <img src="{{ asset('storage/photoslogo/' . $user->logo_entreprise) }}" alt="Logo Entreprise" class="avatar">
+              <img  class="img-md rounded-circle" 
+               src="{{ asset('storage/photoslogo/' . $user->logo_entreprise) }}" alt="Logo Entreprise" >
 
 
                 <p class="mb-1 mt-3 font-weight-semibold">{{ $user->name }}</p>
@@ -100,31 +101,51 @@
         <ul class="nav">
 
           <li class="nav-item">
+<<<<<<< HEAD
             <a class="nav-link" href="/{{('annonce')}}">
+=======
+            <a class="nav-link" href="{{('/annonce')}}">
+>>>>>>> origin/branch_djemi
               <i class="mdi mdi-rename-box menu-icon"></i>
               <span class="menu-title">Vos Annonces</span>
             </a>
           </li>
           <li class="nav-item">
+<<<<<<< HEAD
             <a class="nav-link" href="/{{('attentecv')}}">
+=======
+            <a class="nav-link" href="{{('/attentecv')}}">
+>>>>>>> origin/branch_djemi
               <i class="mdi mdi-alarm menu-icon"></i>
               <span class="menu-title">CV en Attente</span>
             </a>
           </li>
           <li class="nav-item">
+<<<<<<< HEAD
             <a class="nav-link" href="/{{('selectioncv')}}">
+=======
+            <a class="nav-link" href="{{('/selectioncv')}}">
+>>>>>>> origin/branch_djemi
               <i class="mdi mdi-clipboard-check menu-icon"></i>
               <span class="menu-title">CV Sélectionnés</span>
             </a>
           </li>
           <li class="nav-item">
+<<<<<<< HEAD
             <a class="nav-link" href="/{{('entretien')}}">
+=======
+            <a class="nav-link" href="{{('/entretien')}}">
+>>>>>>> origin/branch_djemi
               <i class="mdi mdi mdi-amplifier menu-icon"></i>
               <span class="menu-title">Entretiens passés</span>
             </a>
           </li>
           <li class="nav-item">
+<<<<<<< HEAD
             <a class="nav-link" href="/{{('publicite')}}">
+=======
+            <a class="nav-link" href="{{('/brouillon')}}">
+>>>>>>> origin/branch_djemi
               <i class="mdi mdi-archive menu-icon"></i>
               <span class="menu-title">Publicité</span>
             </a>
@@ -136,7 +157,14 @@
  <div class="profile-card" >
   <h3 style="text-align: center;">A Propos De Vous</h3>
   <div style="text-align: center;">
+<<<<<<< HEAD
   <img class="rounded-circle" src="{{ asset('storage/photoslogo/' . $user->logo_entreprise) }}" alt="Logo Entreprise" style="margin: 0 auto;" class="avatar">
+=======
+  <img  class="img-md rounded-circle" 
+               src="{{ asset('storage/photoslogo/' . $user->logo_entreprise) }}" alt="Logo Entreprise" >
+
+
+>>>>>>> origin/branch_djemi
 </div>
   
   <div  class="" style="text-align: center;">

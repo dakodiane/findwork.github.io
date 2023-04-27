@@ -73,5 +73,11 @@ class Admin2Controller extends Controller
         return view('Admin.touteslesoffres',compact('offres'));
        }
 
-
+       public function show3(string $id)
+       {
+           $offre = Offre::with('user')->findOrFail($id);
+               
+           return view('Admin.detailoffres', ['offre' => $offre]);    
+       }
+   
 }

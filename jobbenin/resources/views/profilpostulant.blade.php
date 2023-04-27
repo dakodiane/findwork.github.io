@@ -53,7 +53,8 @@
                 <p class="mb-1 mt-3 font-weight-semibold">{{ $user->name }}</p>
                 <p class="fw-light text-muted mb-0">{{ $user->email }}</p>
               </div>
-              <a class="dropdown-item" href=" {{('profilpostulant')}}"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> Mon Profile </a>
+              <a class="dropdown-item" href=" {{('profilpostulant')}}">
+             </i> Mon Profil </a>
 
               <a href="{{ route('logout') }}" class="dropdown-item"  class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 Déconnexion
@@ -97,7 +98,13 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
-         
+
+        <li class="nav-item" style="margin-left:7px">
+          <a class="nav-link" href=" {{('profilpostulant')}}">
+          <i class="icon-head" style=""></i>  
+              <span class="menu-title" style="margin-left:15px;margin-top:7px"> Mon Profil</span>
+            </a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="{{('vosoffres')}}">
             <i class="mdi mdi-alarm menu-icon"></i>
@@ -133,11 +140,15 @@
   <hr>
   <h3>Autres Informations</h3>
  
-
+  <div class="grid-container" style="display: flex; align-items: center;">
+    <label for="" style="margin-right: 10px;"><u>Téléphone :</u></label>
+    <span>{{ $user->contact_postulant }}</span>
+</div>
   <div class="grid-container" style="display: flex; align-items: center;">
     <label for="" style="margin-right: 10px;"><u>Ville :</u></label>
     <span>{{ $user->villeP }}</span>
 </div>
+
 <br>
 <div style="display: flex; align-items: center;">
     <label for="" style="margin-right: 10px;"><u>Secteur D'Activité :</u></label>
@@ -177,7 +188,11 @@
           <input type="email" class="form-control" id="email" name="email" value="{{ $user->email }}" style="width: 100%; padding: 0.5em; border-radius: 3px; border: 1px solid #ccc; box-sizing: border-box;">
         </div>
         <h2 style="text-align: center; color: #242b5e; text-decoration: underline;">Compléter Le Profil</h2>
-      
+        <div class="form-group">
+          <label for="contact_postulant" style="color: #242b5e; display: block; margin-bottom: 0.5em;"> Téléphone </label>
+         <input type="tel" name="contact_postulant" id="contact_postulant">
+                                   
+        </div>
         <div class="form-group">
           <label for="" style="color: #242b5e; display: block; margin-bottom: 0.5em;"> Ville</label>
           <select class="selectpicker border rounded" name="villeP" data-style="btn-black"
