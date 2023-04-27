@@ -46,7 +46,8 @@
       
           <li class="nav-item dropdown d-none d-lg-block user-dropdown">
             <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="{{ asset('storage/photos/' . Auth::user()->photo_freelancer) }}" alt="Photo du Freelancer" class="avatar">
+            <img src="{{ asset('storage/photos/' . Auth::user()->photo_freelancer) }}"
+             alt="Photo du Freelancer" class="img-xs rounded-circle"  >
 
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
               <div class="dropdown-header text-center">
@@ -54,7 +55,7 @@
                 <p class="mb-1 mt-3 font-weight-semibold">{{ $user->name }}</p>
                 <p class="fw-light text-muted mb-0">{{ $user->email }}</p>
               </div>
-              <a class="dropdown-item" href=" {{('profilfreelancer')}}"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> Mon Profile</a>
+              <a class="dropdown-item" href=" {{('profilfreelancer')}}"> Mon Profil</a>
 
               <a href="{{ route('logout') }}" class="dropdown-item"  class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 Déconnexion
@@ -99,7 +100,13 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           
-         
+        <li class="nav-item" style="margin-left:7px">
+          <a class="nav-link" href=" {{('profilfreelancer')}}">
+          <i class="icon-head" style=""></i>  
+              <span class="menu-title" style="margin-left:15px;margin-top:7px"> Mon Profil</span>
+            </a>
+          </li>
+
           <li class="nav-item">
             <a class="nav-link" href="{{('dashboardfreelancer')}}">
             <i class="mdi mdi-clipboard-check menu-icon"></i>
@@ -130,8 +137,11 @@
   <hr>
   <h3>Autres Informations</h3>
  
-
- 
+<br>
+  <div class="grid-container" style="display: flex; align-items: center;">
+    <label for="" style="margin-right: 10px;"><u>Téléphone :</u></label>
+    <span>{{ $user->contact_freelancer }}</span>
+</div>
 <br>
 <div style="display: flex; align-items: center;">
     <label for="" style="margin-right: 10px;"><u>Services Proposés:</u></label>
@@ -181,10 +191,8 @@
         <input type="file" name="photo_freelancer" id=""value="{{ $user->photo_freelancer }}"  required="required">
        </div>
        <div class="form-group">
-          <label for="telfree" style="color: #242b5e; display: block; margin-bottom: 0.5em;"> Téléphone </label>
-          <textarea  class="wysiwyg form-textarea "  
-          required="required" name="telfree" cols="14" rows="6"
-             value="{{ $user->competence_freelancer }}"></textarea>
+          <label for="contact_freelancer" style="color: #242b5e; display: block; margin-bottom: 0.5em;"> Téléphone </label>
+         <input type="tel" name="contact_freelancer" id="contact_freeelancer">
                                    
         </div>
        <div class="form-group">

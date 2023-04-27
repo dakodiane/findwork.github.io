@@ -41,7 +41,7 @@ class ConnexionController extends Controller
 
                     $request->session()->regenerate();
                    
-                    return redirect()->intended('dashboardpostulant');
+                    return redirect()->intended('vosoffres');
                 } elseif ($user->role == 'freelancer') {
                     $request->session()->regenerate();
 

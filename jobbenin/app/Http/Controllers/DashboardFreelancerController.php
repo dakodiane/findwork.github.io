@@ -81,6 +81,7 @@ public function update(Request $request, $id)
     $user->service_freelancer = $request->input('service_freelancer');
     $user->description_free = $request->input('description_free');
     $user->competence_freelancer = $request->input('competence_freelancer');
+    $user->contact_freelancer = $request->input('contact_freelancer');
 
     // Télécharger et enregistrer la photo si elle a été envoyée
     if ($request->hasFile('photo_freelancer')) {

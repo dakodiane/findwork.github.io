@@ -17,6 +17,7 @@
   <!-- endinject -->
   <!-- plugin css for this page -->
   <link rel="stylesheet" href="{{asset('assets/admin/vendors/flag-icon-css/css/flag-icon.min.css')}}">
+  
   <link rel="stylesheet" href="{{asset('assets/admin/vendors/font-awesome/css/font-awesome.min.css')}}">
 
   <link rel="stylesheet" href="{{asset('assets/admin/vendors/jquery-bar-rating/fontawesome-stars-o.css')}}">

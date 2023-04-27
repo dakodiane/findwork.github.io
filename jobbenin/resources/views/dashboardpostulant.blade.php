@@ -53,7 +53,8 @@
                 <p class="mb-1 mt-3 font-weight-semibold">{{ $user->name }}</p>
                 <p class="fw-light text-muted mb-0">{{ $user->email }}</p>
               </div>
-              <a class="dropdown-item" href=" {{('profilpostulant')}}"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> Mon Profile</a>
+              <a class="dropdown-item" href=" {{('profilpostulant')}}">
+                 Mon Profil</a>
 
               <a href="{{ route('logout') }}" class="dropdown-item"  class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 Déconnexion
@@ -97,7 +98,12 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
-         
+        <li class="nav-item" style="margin-left:7px">
+          <a class="nav-link" href=" {{('profilpostulant')}}">
+          <i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i>
+              <span class="menu-title">      Mon Profil</span>
+            </a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="{{('vosoffres')}}">
             <i class="mdi mdi-alarm menu-icon"></i>
@@ -110,7 +116,9 @@
               <span class="menu-title">Offres Recommandées</span>
             </a>
           </li>
-      
+         
+          
+
         </ul>
       </nav>
       <!-- partial -->

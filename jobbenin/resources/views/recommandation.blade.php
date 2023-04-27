@@ -46,14 +46,18 @@
       
           <li class="nav-item dropdown d-none d-lg-block user-dropdown">
             <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-              <img class="img-xs rounded-circle" src="{{asset('assets/images/faces/face8.jpg')}}" alt="Profile image"> </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+    
+              <img class="img-xs rounded-circle"  src="{{ asset('storage/photoslogo/' . $offre->user->logo_entreprise) }}"  alt="Logo Entreprise">
+
+              </a>
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
               <div class="dropdown-header text-center">
-                <img class="img-md rounded-circle" src="{{asset('assets/images/faces/face8.jpg')}}" alt="Profile image">
+                <img class="img-md rounded-circle" src="{{ asset('storage/photoslogo/' . $offre->user->logo_entreprise) }}" alt="Profile image">
                 <p class="mb-1 mt-3 font-weight-semibold">{{ $user->name }}</p>
                 <p class="fw-light text-muted mb-0">{{ $user->email }}</p>
               </div>
-              <a class="dropdown-item" href=" {{('profilpostulant')}}"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> Mon Profile </a>
+              <a class="dropdown-item" href=" {{('profilpostulant')}}">
+          Mon Profil </a>
 
               <a href="{{ route('logout') }}" class="dropdown-item"  class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 Déconnexion
@@ -97,7 +101,12 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
-         
+        <li class="nav-item" style="margin-left:7px">
+          <a class="nav-link" href=" {{('profilpostulant')}}">
+          <i class="icon-head" style=""></i>  
+              <span class="menu-title" style="margin-left:15px;margin-top:7px"> Mon Profil</span>
+            </a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="{{('vosoffres')}}">
             <i class="mdi mdi-alarm menu-icon"></i>
@@ -137,8 +146,12 @@
                 <div class="single-job-items mb-30" style="padding: 20px;">
                     <div class="job-items">
                         <div class="company-img">
-                            <a href="{{('detail_offre')}}"><img src="{{asset('assets/img/icon/job-list1.png')}}" alt=""></a>
-                        </div>
+                            <a href="{{('detail_offre')}}">
+                            <img src="{{ asset('storage/photoslogo/' . $offre->user->logo_entreprise) }}" alt="Logo Entreprise" class="avatar">
+
+
+                      
+                          </div>
                         <div class="job-tittle">
                             <a href="{{('detail_offre')}}" class="soulign">
                                 <h4>{{($offre->poste)}}</h4>
