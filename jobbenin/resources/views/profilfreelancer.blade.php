@@ -46,8 +46,9 @@
       
           <li class="nav-item dropdown d-none d-lg-block user-dropdown">
             <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-              <img class="img-xs rounded-circle" src="{{asset('assets/images/faces/face8.jpg')}}" alt="Profile image"> </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+            <img src="{{ asset('storage/photos/' . Auth::user()->photo_freelancer) }}" alt="Photo du Freelancer" class="avatar">
+
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
               <div class="dropdown-header text-center">
                 <img class="img-md rounded-circle" src="{{asset('assets/images/faces/face8.jpg')}}" alt="Profile image">
                 <p class="mb-1 mt-3 font-weight-semibold">{{ $user->name }}</p>
@@ -158,8 +159,9 @@
   <div class="modal1-content" style="background-color: #fff; padding: 2em; text-align: justify;">
     <div class="contact-form">
       <a class="close" style="color: red;">X</a>
-      <form method="POST" action="{{ route('user.update', $user->id) }}" style="max-width: 400px; margin: 0 auto;">
-        <h2 style="text-align: center; color: #242b5e; text-decoration: underline;">Modifier les Informations</h2>
+      <form method="POST" action="{{ route('user.update', $user->id) }}" enctype="multipart/form-data" style="max-width: 400px; margin: 0 auto;">
+       
+      <h2 style="text-align: center; color: #242b5e; text-decoration: underline;">Modifier les Informations</h2>
       
         @csrf
         @method('PUT')
@@ -178,6 +180,13 @@
           <label for="photo_freelancer" style="color: #242b5e; display: block; margin-bottom: 0.5em;"> Photo Professionnelle </label>
         <input type="file" name="photo_freelancer" id=""value="{{ $user->photo_freelancer }}"  required="required">
        </div>
+       <div class="form-group">
+          <label for="telfree" style="color: #242b5e; display: block; margin-bottom: 0.5em;"> Téléphone </label>
+          <textarea  class="wysiwyg form-textarea "  
+          required="required" name="telfree" cols="14" rows="6"
+             value="{{ $user->competence_freelancer }}"></textarea>
+                                   
+        </div>
        <div class="form-group">
           <label for="email" style="color: #242b5e; display: block; margin-bottom: 0.5em;"> Services Offerts </label>
           <textarea class="wysiwyg form-textarea" required="required" name="service_freelancer" cols="14" rows="6">{{ $user->service_freelancer }}</textarea>

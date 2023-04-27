@@ -14,12 +14,10 @@ class PublierAnnonceController extends Controller
    
         // Créer une nouvelle instance de modèle Annonce
         return view('publierannonce');
-
-
     }
     // //
     public function publierAnnonce(Request $request)
-{
+   {
     // Récupérer les données de l'annonce à partir de la requête
     $secteurO = $request->input('secteurO');
     $poste = $request->input('poste');
@@ -34,9 +32,6 @@ class PublierAnnonceController extends Controller
     $competence_offre3 = $request->input('competence_offre3');
     $competence_offre4 = $request->input('competence_offre4');
     $competence_offre5 = $request->input('competence_offre5');
-
-
-
 
     // Créer une nouvelle instance de modèle Annonce
     $offre = new Offre();

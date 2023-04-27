@@ -40,7 +40,11 @@
              
         </div>
   <p></p>
-  <form id="my-form" method="POST" action="{{route('postuleroffre', ['id_offre' => $offre->id])}}" >
+
+  <form method="POST" action="{{route('postuleroffre', ['id_offre' => $offre->id])}}" 
+  enctype="multipart/form-data" style="max-width: 400px; margin: 0 auto;">
+       
+ 
   @csrf
   <div class="form-group">
     <div class="text-format-wrapper">

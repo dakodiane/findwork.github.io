@@ -50,7 +50,7 @@ Route::get('/', [WelcomeController::class,'index']);
 
   Route::post('/postuleroffre/{id_offre}','App\Http\Controllers\PostulerOffreController@postulerOffre')
   ->name('postuleroffre');
-  
+ 
   
   
   Route::get('/apropos', function () {
@@ -188,3 +188,14 @@ Route::get('connexionadmin', function () {
 });
 Route::post('connexionadmin ', 'App\Http\Controllers\Admin1Controller@connexionadmin');
 Route::get('adminj ', 'App\Http\Controllers\Admin1Controller@adminj')->name('adminj');
+
+
+
+
+Route::get('/signalement/{id_offre}','App\Http\Controllers\SignalementOffreController@index');
+
+Route::post('/signalement/{id_offre}', 'App\Http\Controllers\SignalementOffreController@index')->name('signalement');
+
+Route::post('/upload-image', 'App\Http\Controllers\DashboardFreelancerController@upload')->name('image.upload');
+Route::post('/upload-image', 'App\Http\Controllers\DashboardRecruteurController@upload')->name('image.upload');
+

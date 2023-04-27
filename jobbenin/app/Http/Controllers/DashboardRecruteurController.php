@@ -248,21 +248,61 @@ class DashboardRecruteurController extends Controller
     /**
      * Update the specified resource in storage.
      */
+    public function upload(Request $request)
+    {
+        // Vérifiez si le fichier a été soumis
+        if ($request->hasFile('logo_entreprise')) {
+            
+            $file = $request->file('logo_entreprise');
+            
+            // Validez que le fichier est une image
+            $validImage = $file->isValid() && in_array($file->getMimeType(), ['image/jpeg', 'image/png', 'image/gif']);
+            
+            if ($validImage) {
+                // Générez un nom unique pour le fichier
+                $fileName = uniqid() . '.' . $file->getClientOriginalExtension();
+                
+                // Stockez le fichier dans le dossier de destination
+                $file->storeAs('public/photoslogo', $fileName);
+                
+                // Mettez à jour l'objet utilisateur avec le nom du fichier
+                $user = Auth::user();
+                $user->logo_entreprise = $fileName;
+                $user->save();
+                
+                return redirect()->back()->with('success', 'Le fichier a été téléchargé avec succès!');
+            } else {
+                return redirect()->back()->with('error', 'Le fichier doit être une image (JPG, PNG ou GIF).');
+            }
+        } else {
+            return redirect()->back()->with('error', 'Le fichier est manquant.');
+        }
+    }
     public function update(Request $request, $id)
     {
-        $user = auth()->user();
-
+        $user = User::findOrFail($id);
+    
+        
         $user->name = $request->input('name');
-        $user->email = $request->input('email') ?? null;
-        // Pour enregistrer les informations complèter par l'utilisateur
+        $user->email = $request->input('email');
         $user->villeR = $request->input('villeR');
         $user->description_recruteur = $request->input('description_recruteur');
-
-
+       
+    
+        // Télécharger et enregistrer la photo si elle a été envoyée
+        if ($request->hasFile('logo_entreprise')) {
+            $photo = $request->file('logo_entreprise');
+            $filename = time() . '.' . $photo->getClientOriginalExtension();
+            $path = $photo->storeAs('public/photoslogo', $filename);
+            $user->logo_entreprise = $filename;
+        }
+    
         $user->save();
-
-        return redirect()->route('profilrecruteur', ['id' => $user->id])->with('success', 'Informations mises à jour avec succès');
+    
+        return redirect()->route('profilrecruteur', $user->id)
+            ->with('success', 'Profil mis à jour avec succès.');
     }
+    
 
     /**
      * Remove the specified resource from storage.

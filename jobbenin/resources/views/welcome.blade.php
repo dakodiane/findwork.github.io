@@ -63,9 +63,9 @@
                                     <div class="single-job-items mb-30">
                                         <div class="job-items">
                                             <div class="company-img">
-                                                <a href="{{('detail_offre')}}"><img 
-                                                src="{{asset('assets/img/icon/job-list1.png')}}" alt=""></a>
-                                          
+                                            <img src="{{ asset('storage/photoslogo/' . $offre->user->logo_entreprise) }}" alt="Logo Entreprise" class="avatar">
+
+
                                             </div>
                                             <div class="job-tittle">
                                                 <a href="{{('detail_offre')}}" class="soulign">
@@ -124,7 +124,8 @@
         @foreach ($freelancers as $freelancer)
   <div class="col-md-4">
     <div class="team text-center">
-      <img src="images/{{Session::get("$freelancer->photo_freelancer")}}" alt="{{ $freelancer->name }}">
+    <img src="{{ asset('storage/photosfreelancer/' . $freelancer->photo_freelancer) }}" alt="Photo du Freelancer" class="avatar">
+
       <div class="title">
         <h2>{{ $freelancer->service_freelancer }}</h2>
         <h5 class="muted regular">{{ $freelancer->name }}</h5>
