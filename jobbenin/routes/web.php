@@ -170,7 +170,7 @@ Route::get('/transaction', function () {
 Route::get('tableaudebord ', 'App\Http\Controllers\Admin1Controller@index');
 Route::get('recruteur ', 'App\Http\Controllers\Admin1Controller@recruteur')->name('recruteur');
 Route::get('postulant ', 'App\Http\Controllers\Admin1Controller@postulant')->name('postulant');
-Route::get('freelancer ', 'App\Http\Controllers\Admin1Controller@freelancer')->name('freelancer');
+Route::get('freelancera ', 'App\Http\Controllers\Admin1Controller@freelancer')->name('freelancera');
 Route::get('recruteur/{id}/desactiver', 'App\Http\Controllers\Admin1Controller@desactiverrecruteur')->name('desactiver.recruteur');
 Route::get('recruteur/{id}/activer', 'App\Http\Controllers\Admin1Controller@activerrecruteur')->name('activer.recruteur');
 
@@ -198,4 +198,8 @@ Route::post('/signalement/{id_offre}', 'App\Http\Controllers\SignalementOffreCon
 
 Route::post('/upload-image', 'App\Http\Controllers\DashboardFreelancerController@upload')->name('image.upload');
 Route::post('/upload-image', 'App\Http\Controllers\DashboardRecruteurController@upload')->name('image.upload');
+
+//s
+Route::get('/recruteur/{id}/detail', 'App\Http\Controllers\Admin1Controller@detailrecruteur')->name('detailrecruteur');
+Route::get('/freelancera/{id}/detail', 'App\Http\Controllers\Admin1Controller@detailfreelancer')->name('detailfreelancer');
 
