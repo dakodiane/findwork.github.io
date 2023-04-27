@@ -54,7 +54,7 @@
                 <p class="mb-1 mt-3 font-weight-semibold">{{ $user->name }}</p>
                 <p class="fw-light text-muted mb-0">{{ $user->email }}</p>
               </div>
-              <a class="dropdown-item" href=" {{('profilrecruteur')}}"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile <span class="badge badge-pill badge-danger">1</span></a>
+              <a class="dropdown-item" href=" {{('profilrecruteur')}}"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> Mon Profil</a>
 
               <a href="{{ route('logout') }}" class="dropdown-item"  class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 Déconnexion
@@ -100,33 +100,33 @@
         <ul class="nav">
 
           <li class="nav-item">
-            <a class="nav-link" href="{{('annonce')}}">
+            <a class="nav-link" href="/{{('annonce')}}">
               <i class="mdi mdi-rename-box menu-icon"></i>
               <span class="menu-title">Vos Annonces</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{('attentecv')}}">
+            <a class="nav-link" href="/{{('attentecv')}}">
               <i class="mdi mdi-alarm menu-icon"></i>
               <span class="menu-title">CV en Attente</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{('selectioncv')}}">
+            <a class="nav-link" href="/{{('selectioncv')}}">
               <i class="mdi mdi-clipboard-check menu-icon"></i>
               <span class="menu-title">CV Sélectionnés</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{('entretien')}}">
+            <a class="nav-link" href="/{{('entretien')}}">
               <i class="mdi mdi mdi-amplifier menu-icon"></i>
               <span class="menu-title">Entretiens passés</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{('brouillon')}}">
+            <a class="nav-link" href="/{{('publicite')}}">
               <i class="mdi mdi-archive menu-icon"></i>
-              <span class="menu-title">Brouillons</span>
+              <span class="menu-title">Publicité</span>
             </a>
           </li>
 
@@ -136,7 +136,7 @@
  <div class="profile-card" >
   <h3 style="text-align: center;">A Propos De Vous</h3>
   <div style="text-align: center;">
-  <img class="rounded-circle" src="{{ $user->logo_entreprise }}"  alt="Profile image" style="margin: 0 auto;">
+  <img class="rounded-circle" src="{{ asset('storage/photoslogo/' . $user->logo_entreprise) }}" alt="Logo Entreprise" style="margin: 0 auto;" class="avatar">
 </div>
   
   <div  class="" style="text-align: center;">
