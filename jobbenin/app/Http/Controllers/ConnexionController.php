@@ -34,19 +34,33 @@ class ConnexionController extends Controller
             if ($user) {
 
                 if ($user->role == 'recruteur') {
-                    $request->session()->regenerate();
+                    if ($user->active == 0) {
+                        // L'utilisateur n'existe pas dans la base de données
+                        return redirect()->back()->withErrors(['activation' => 'Impossible de se connecter!!Ce compte a été désactivé.'])->withInput();
+                    }
+                    elseif ($user->active == 1) {
+                        $request->session()->regenerate();
 
-                    return redirect()->intended('annonce');
+                        return redirect()->intended('annonce');                    }
+                  
                 } elseif ($user->role == 'postulant') {
 
                     $request->session()->regenerate();
                    
                     return redirect()->intended('vosoffres');
                 } elseif ($user->role == 'freelancer') {
+                    if ($user->active == 0) {
+                        // L'utilisateur n'existe pas dans la base de données
+                        return redirect()->back()->withErrors(['activation' => 'Impossible de se connecter!!Ce compte a été désactivé.'])->withInput();
+                    }
+                    elseif ($user->active == 1) {
                     $request->session()->regenerate();
 
                     return redirect()->intended('dashboardfreelancer');
+                }
+
                 } 
+              
             }
           
         }
@@ -54,6 +68,8 @@ class ConnexionController extends Controller
             // L'utilisateur n'existe pas dans la base de données
             return redirect()->back()->withErrors(['email' => 'Adresse Email ou Mot de passe incorrect'])->withInput();
         }
+      
+
 
         // Vérifier si le mot de passe est correct
         if (!Hash::check($password, $user->password)) {

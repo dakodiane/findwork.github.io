@@ -41,7 +41,8 @@
                                 <tbody>
                                     <tr>
                                         <td class="py-1">{{ $recruteur->id }}
-                                            <img src="{{asset('assets/admin/images/faces/face1.jpg')}}"  alt="image" />
+                                        <img src="{{ asset('storage/photoslogo/' . $recruteur->logo_entreprise) }}" 
+              alt="Logo Entreprise"  >
                                         </td>
                                         <td>
                                             {{ $recruteur->name }}

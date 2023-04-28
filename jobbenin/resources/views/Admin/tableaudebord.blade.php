@@ -16,7 +16,7 @@
                     <div class="col-lg-3 stretch-card">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Recruteurs</h4>
+                                <h4 class="card-title">Recruteurs Actifs</h4>
                                 <p></p>
                                 <h4 class="text-dark font-weight-bold mb-2">{{ $recruteurs }}</h4>
                             </div>
@@ -34,7 +34,7 @@
                     <div class="col-lg-3 stretch-card">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Freelancers</h4>
+                                <h4 class="card-title">Freelancers Actifs</h4>
                                 <p></p>
                                 <h4 class="text-dark font-weight-bold mb-2">{{ $freelancers }}</h4>
                             </div>

@@ -30,6 +30,11 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                                 @enderror
+                                @error('activation')
+                                <span role="alert" class="alert alert-danger">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                                 <input type="email" name="email" class="form-control form-control-user" id="email" aria-describedby="emailHelp" placeholder="Entrer Votre  Addresse Email...">
 
                             </div>

@@ -127,7 +127,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{('/brouillon')}}">
+            <a class="nav-link" href="{{('/publicite')}}">
               <i class="mdi mdi-archive menu-icon"></i>
               <span class="menu-title">Publicité</span>
             </a>

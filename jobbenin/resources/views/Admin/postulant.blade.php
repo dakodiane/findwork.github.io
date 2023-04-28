@@ -40,7 +40,7 @@
                         <tbody>
                           <tr>
                             <td class="py-1">{{ $postulant->id }}
-                                <img src="../../images/faces/face1.jpg" alt="image"/>
+                                
                             </td>
                             <td>
                             {{ $postulant->name }}

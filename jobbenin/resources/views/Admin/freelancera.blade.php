@@ -41,8 +41,8 @@
                 <tbody>
                   <tr>
                     <td class="py-1">{{ $freelancer->id }}
-                      <img src="../../images/faces/face1.jpg" alt="image" />
-                    </td>
+                    <img  src="{{ asset('storage/photosfreelancer/' . $freelancer->photo_freelancer) }}" alt="Profil image" >  
+                   </td>
                     <td>
                       {{ $freelancer->name }}
                     </td>
