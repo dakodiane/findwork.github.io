@@ -12,7 +12,7 @@
        
         <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item dropdown d-lg-flex d-none">
-              <a href="{{'addadmin'}}">
+              <a href="{{'/addadmin'}}">
               <button type="button" class="btn btn-info font-weight-bold">+ Ajouter un administrateur</button>
 
               </a>

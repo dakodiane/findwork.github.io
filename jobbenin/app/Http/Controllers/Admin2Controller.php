@@ -13,9 +13,10 @@ class Admin2Controller extends Controller
     
     public function offresNonPubliees() 
     {   
-        $offres = Offre::with('user')->where('publication','0')->get();
-    
-        return view('Admin.nouvelpub', compact('offres'));
+        $offres = Offre::with('user')->where('publication','0')
+        ->orderBy('datfin')->get();
+        $offre_proche = $offres->first();
+        return view('Admin.nouvelpub', ['offres' => $offres, 'offre_proche' => $offre_proche]);;
 
 
     }
@@ -41,9 +42,10 @@ class Admin2Controller extends Controller
 
     public function offremodif() 
     {   
-        $offres = Offre::with('user')->where('modification','1')->get();
-    
-        return view('Admin.offremodif', compact('offres'));
+        $offres = Offre::with('user')->where('modification','1')
+        ->orderBy('datfin')->get();
+        $offre_proche = $offres->first();
+        return view('Admin.offremodif',  ['offres' => $offres, 'offre_proche' => $offre_proche]);
 
 
     }
@@ -66,18 +68,19 @@ class Admin2Controller extends Controller
     
    
   
-
-    public function touteslesoffres( )
+    public function touteslesoffres()
     {
-        $offres = Offre::with('user')->get();
-        return view('Admin.touteslesoffres',compact('offres'));
-       }
+        $offres = Offre::with('user')->orderBy('datfin')->get();
+        $offre_proche = $offres->first();
+        return view('Admin.touteslesoffres', ['offres' => $offres, 'offre_proche' => $offre_proche]);
+    }
 
-       public function show3(string $id)
-       {
-           $offre = Offre::with('user')->findOrFail($id);
-               
-           return view('Admin.detailoffres', ['offre' => $offre]);    
-       }
-   
+    public function show3(string $id)
+    {
+        $offre = Offre::with('user')->findOrFail($id);
+            
+        return view('Admin.detailoffres', ['offre' => $offre]);    
+    }
+
+    
 }

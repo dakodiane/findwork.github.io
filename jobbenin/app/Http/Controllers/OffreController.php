@@ -23,6 +23,7 @@ class OffreController extends Controller
     public function offre() {
         $offres = Offre::with('user')
         ->where('publication', '=', 1) 
+        ->where('modification', '=', 0) 
         ->get();
         return view('offre',compact('offres'));
        }
@@ -120,9 +121,13 @@ class OffreController extends Controller
 
     public function modifieroffre(string $id)
     {
-        //
         $offre = Offre::with('user')->find($id);
-        return view('modifieroffre', ['offre' => $offre]);
+        if ($offre->publication == 1) {
+            return view('modifieroffre', ['offre' => $offre]);
+        } else {
+            return redirect()->route('annonce');
+        }
     }
+    
   
 }

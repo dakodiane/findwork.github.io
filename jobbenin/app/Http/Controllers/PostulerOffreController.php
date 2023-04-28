@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 class PostulerOffreController extends Controller
 {
     public function postulerOffre(Request $request, string $id_offre) {
+
         // Vérifier si l'utilisateur est connecté
         if (!Auth::check()) {
             return redirect()->route('connexion')->with('error', 'Vous devez vous connecter pour postuler à une offre');
@@ -26,14 +27,15 @@ class PostulerOffreController extends Controller
         $postuler = Postuler::where('id_offre', $offre->id)
                              ->where('id_user', $user->id)
                              ->first();
+                             
         if ($postuler) {
             return redirect()->route('vosoffres')->with('error', 'Vous avez déjà postulé à cette offre');
         }
     
+
         // Récupérer les données du formulaire
         $lettre_motivation = $request->input('lettre_motivation');
     
-        // Créer un nouveau postuler pour l'utilisateur
         $postuler = new Postuler();
         $postuler->id_offre = $offre->id;
         $postuler->id_user = $user->id;
@@ -45,6 +47,7 @@ class PostulerOffreController extends Controller
     
             // Vérifier que le fichier est un document valide
             $validDoc = $cv->isValid() && in_array($cv->getMimeType(), [
+
                 'application/pdf',
                 'application/msword',
                 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
