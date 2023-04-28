@@ -24,6 +24,10 @@ class OffreController extends Controller
         $offres = Offre::with('user')
         ->where('publication', '=', 1) 
         ->where('modification', '=', 0) 
+        ->whereHas('user', function ($query) {
+            $query->where('active', '=', 1);
+           
+        })
         ->get();
         return view('offre',compact('offres'));
        }

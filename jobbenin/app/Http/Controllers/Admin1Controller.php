@@ -22,7 +22,10 @@ class Admin1Controller extends Controller
         $recruteurs = DB::table('users')->where('role', 'recruteur')->where('active',1)->count();
         $postulants = DB::table('users')->where('role', 'postulant')->count();
         $freelancers = DB::table('users')->where('role', 'freelancer')->where('active',1)->count();
-        $offres = DB::table('offres')->count();
+        $offres = DB::table('offres')
+        ->join('users', 'offres.id_user', '=', 'users.id')
+        ->where('users.active', '=', 1)
+        ->count();
         $adminId = Auth::id();
         $admin = Admin::find($adminId);
 
