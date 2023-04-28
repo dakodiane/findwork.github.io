@@ -158,9 +158,13 @@ Route::get('/detailnouvelpub/{id}/valider', 'App\Http\Controllers\Admin2Controll
 Route::get('/offremodif', 'App\Http\Controllers\Admin2Controller@offremodif')->name('admin.offremodif');
 
     Route::get('/detailoffremodif/{id}', 'App\Http\Controllers\Admin2Controller@show2')->name('admin.detailoffremodif');
-    Route::get('/detailoffremodif/{id}/valideroffremodif', 'App\Http\Controllers\Admin2Controller@valideroffremodif')->name('admin.valideroffremodif');
+    Route::get('/detailoffremodif/{id}/valideroffremodif', 'App\Http\Controllers\Admin2Controller@valideroffremodif')
+    ->name('admin.valideroffremodif');
   
-    Route::get('/offresignal', 'App\Http\Controllers\Admin2Controller@offremodif')->name('admin.offremodif');
+   
+    Route::get('/ offresignal', function () {
+      return view('Admin/offresignal');
+    });
 
 Route::get('/transaction', function () {
   return view('Admin/transaction');

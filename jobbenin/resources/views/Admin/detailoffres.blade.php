@@ -14,12 +14,9 @@
                         <address>
                                 <p class="font-weight-bold" style="font-size: large;"> Description de l'Entreprise</p>
                                 <br><br>
-                                <p style="font-size: large;">
-                                    {{ $offre->user->description_recruteur }}
-                                </p>
-                                <br><br><br>
-                                <address>
-                            @if(isset($offre) && isset($offre->user))
+                                <p style="font-size: large;">    <img src="{{ asset('storage/photoslogo/' . $offre->user->logo_entreprise) }}" alt="Logo Entreprise" class="avatar">
+                                           </p>
+                                           @if(isset($offre) && isset($offre->user))
                                 <p class="font-weight-bold" style="font-size: large;"> {{ $offre->user->name }}</p>
                                 @endif
                                 <br><br>
@@ -27,6 +24,12 @@
                                     {{ $offre->user->villeR }}
                                 </p>
                                 <br><br><br>
+                                <address>
+                                <p style="font-size: large;">
+                                    {{ $offre->user->description_recruteur }}
+                                </p>
+                                <br><br><br>
+                          
                                
                             </address>
                             </address>
