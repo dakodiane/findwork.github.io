@@ -25,6 +25,7 @@ class WelcomeController extends Controller
         $freelancers = User::where('role', 'freelancer')
                             ->select('id', 'name','service_freelancer', 'photo_freelancer')
                             ->where('active',1)
+                            ->where('profil_complet',1)
                             ->get();
     
         //dd($freelancers);

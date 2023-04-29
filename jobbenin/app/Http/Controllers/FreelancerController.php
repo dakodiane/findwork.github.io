@@ -22,6 +22,7 @@ class FreelancerController extends Controller
 
         $users = User::where('role', '=', 'freelancer')
         ->where('active',1)
+        ->where('profil_complet',1)
             ->get();
         return view('freelancer', compact('users'));
     }

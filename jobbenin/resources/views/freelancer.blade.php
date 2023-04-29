@@ -76,7 +76,8 @@
 
                                         <div class="team text-center">
 
-                                        <img src="{{ asset('storage/photos/' . $user->photo_freelancer) }}" alt="Photo du Freelancer" class="avatar">
+                                        <img src="{{ asset('storage/photos/' . $user->photo_freelancer) }}" 
+                                        alt="Photo du Freelancer" class="avatar">
 
                                             <div class="title">
                                                 <h2>{{$user->service_freelancer}}</h2>

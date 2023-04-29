@@ -17,12 +17,16 @@ class DashboardFreelancerController extends Controller
             return redirect()->intended('connexion');
         }
     
+        if ($user->profil_complet == 0) {
+            $message = 'Vous devez d\'abord compléter votre profil pour proposer vos services !!!';
+        } else {
+            $message = null;
+        }
         
-       
-     
-        return view('dashboardfreelancer')->with(['user' => $user]);
-       
+        return view('dashboardfreelancer', ['user' => $user, 'message' => $message]);
     }
+    
+    
     
  //Page ProfilFree
  public function profilfree()
@@ -30,9 +34,16 @@ class DashboardFreelancerController extends Controller
      $user = Auth::user();
      if (!$user) {
          return redirect()->intended('connexion');
-     }
+     } if ($user->profil_complet == 0) {
+        $message = 'Vous devez d\'abord compléter votre profil pour proposer vos services !!!';
 
-     return view('/profilfreelancer')->with(['user' => $user]);
+    } 
+    else {
+        $message = null;
+    }
+
+    
+    return view('profilfreelancer', ['user' => $user, 'message' => $message]);
 
  
  }
@@ -83,12 +94,19 @@ public function update(Request $request, $id)
     $user->competence_freelancer = $request->input('competence_freelancer');
     $user->contact_freelancer = $request->input('contact_freelancer');
 
+
+
+$user->save();
     // Télécharger et enregistrer la photo si elle a été envoyée
     if ($request->hasFile('photo_freelancer')) {
         $photo = $request->file('photo_freelancer');
         $filename = time() . '.' . $photo->getClientOriginalExtension();
         $path = $photo->storeAs('public/photosfreelancer', $filename);
         $user->photo_freelancer = $filename;
+    }
+    if ($user->service_freelancer && $user->description_free && $user->competence_freelancer && $user->contact_freelancer) {
+      
+        $user->profil_complet = 1;
     }
 
     $user->save();

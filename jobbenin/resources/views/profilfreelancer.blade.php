@@ -43,18 +43,18 @@
             </div>
           </li>
           
-      
+       
+
+       
           <li class="nav-item dropdown d-none d-lg-block user-dropdown">
             <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="{{ asset('storage/photosfreelancer/' . $user->photo_freelancer) }}" alt="Photo du Freelancer" class="img-xs rounded-circle">
 
-           
 
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
               <div class="dropdown-header text-center">
-                <img class="img-md rounded-circle" src="{{ asset('storage/photosfreelancer/' . $user->photo_freelancer) }}"
-           
-                alt="Profile image">
+              <img src="{{ asset('storage/photosfreelancer/' . $user->photo_freelancer) }}" alt="Photo du Freelancer" class="img-xs rounded-circle">
+     
                 <p class="mb-1 mt-3 font-weight-semibold">{{ $user->name }}</p>
                 <p class="fw-light text-muted mb-0">{{ $user->email }}</p>
               </div>
@@ -121,10 +121,17 @@
       </nav>
       </nav>
 			<!-- partial -->
-		
-    
+	
+
+ 
   
  <div class="profile-card" >
+ @if($message)
+    <div class="alert alert-warning" style="display: flex; align-items: center; justify-content: center; height: 50px; font-size: 1.2rem;">
+        {{ $message }}
+    </div>
+@endif
+           
   <h3 style="text-align: center;">A Propos De Vous</h3>
   <div style="text-align: center;">
   <img class="img-md rounded-circle" 
@@ -192,28 +199,30 @@
         <h2 style="text-align: center; color: #242b5e; text-decoration: underline;">Compléter Le Profile</h2>
         <div class="form-group">
           <label for="photo_freelancer" style="color: #242b5e; display: block; margin-bottom: 0.5em;"> Photo Professionnelle </label>
-        <input type="file" name="photo_freelancer" id=""value="{{ $user->photo_freelancer }}"  required="required">
+        <input type="file" name="photo_freelancer" id="" required="required" value="{{ $user->photo_freelancer }}" >
        </div>
        <div class="form-group">
           <label for="contact_freelancer" style="color: #242b5e; display: block; margin-bottom: 0.5em;"> Téléphone </label>
-         <input type="tel" name="contact_freelancer" id="contact_freeelancer">
+         <input type="tel" name="contact_freelancer" id="contact_freeelancer" value="{{ $user->contact_freelancer }}">
                                    
         </div>
        <div class="form-group">
           <label for="email" style="color: #242b5e; display: block; margin-bottom: 0.5em;"> Services Offerts </label>
-          <textarea class="wysiwyg form-textarea" required="required" name="service_freelancer" cols="14" rows="6">{{ $user->service_freelancer }}</textarea>
+          <textarea class="wysiwyg form-textarea" 
+          required="required" name="service_freelancer" cols="14" rows="6">{{ $user->service_freelancer }}</textarea>
 
         </div>
       <div class="form-group">
           <label for="email" style="color: #242b5e; display: block; margin-bottom: 0.5em;"> Description</label>
-          <textarea  class="wysiwyg form-textarea " required="required" name="description_free" cols="14" rows="6" value="{{$user->description_free}}"></textarea>
+          <textarea  class="wysiwyg form-textarea " 
+          required="required" name="description_free" cols="14" rows="6" >{{$user->description_free}}</textarea>
       
         </div>
        <div class="form-group">
           <label for="email" style="color: #242b5e; display: block; margin-bottom: 0.5em;"> Compétences</label>
           <textarea  class="wysiwyg form-textarea "  
           required="required" name="competence_freelancer" cols="14" rows="6"
-             value="{{ $user->competence_freelancer }}"></textarea>
+            >{{ $user->competence_freelancer }}</textarea>
                                    
         </div>
         <div class="form-group">
@@ -257,7 +266,7 @@
 
 <footer class="footer">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright ©2023. All rights reserved.</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright ©2023. Jobbenin.</span>
           </div>
         </footer>
         <!-- partial -->
