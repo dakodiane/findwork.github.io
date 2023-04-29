@@ -214,3 +214,6 @@ Route::post('/upload-image', 'App\Http\Controllers\DashboardRecruteurController@
 Route::get('/recruteur/{id}/detail', 'App\Http\Controllers\Admin1Controller@detailrecruteur')->name('detailrecruteur');
 Route::get('/freelancera/{id}/detail', 'App\Http\Controllers\Admin1Controller@detailfreelancer')->name('detailfreelancer');
 
+Route::get('/selectioncv/{id}/programmer', 'App\Http\Controllers\EntretienController@index');
+Route::post('/selectioncv/{id}/programmer', 'App\Http\Controllers\EntretienController@store')->name('programmer');
+
