@@ -144,6 +144,11 @@
 
 
 </div>
+@if(session('message'))
+    <div class="alert alert-danger mt-3" style="display: flex; align-items: center; justify-content: center; height: 50px; font-size: 1.2rem;">
+        {{ session('message') }}
+    </div>
+@endif
   
   <div  class="" style="text-align: center;">
     <label for=""><u>Nom:</u></label>

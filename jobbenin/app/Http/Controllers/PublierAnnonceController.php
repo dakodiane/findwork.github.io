@@ -18,6 +18,11 @@ class PublierAnnonceController extends Controller
 
     public function publierAnnonce(Request $request)
     {
+        $user = Auth::user();
+        if (empty($user->name) || empty($user->email) || empty($user->villeR) || empty($user->description_recruteur) || empty($user->logo_entreprise)) {
+            $message = "Veuillez compléter votre profil avant de publier une annonce.";
+            return redirect()->route('profilrecruteur', $user->id)->with('message', $message);
+        }
         // Récupérer les données de l'annonce à partir de la requête
         $secteurO = $request->input('secteurO');
         $poste = $request->input('poste');

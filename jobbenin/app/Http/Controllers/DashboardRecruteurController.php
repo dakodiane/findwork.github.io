@@ -59,7 +59,9 @@ class DashboardRecruteurController extends Controller
         if ($user->role == 'recruteur') {
             $offres = $user->offre;
             $data = [];
-        
+            $postulantid = []; // Initialisation du tableau des IDs des postulants sélectionnés
+            $postulantoffre = []; // Initialisation du tableau des IDs des offres sélectionnés
+
             foreach ($offres as $offre) {
                 foreach ($offre->postulers as $postul) {
                     if ($postul && $postul->user && $postul->suppression == 1 && $postul->selection == 0 && $postul->postulantvisible == 1) {
@@ -71,7 +73,9 @@ class DashboardRecruteurController extends Controller
                             'cv' => $postul->cv,
                             'poste' => $offre->poste,
                         ];
-                        
+                        $postulantid[] = $postul->user->id; // Ajout de l'ID du postulant sélectionné dans le tableau
+                        $postulantoffre[] = $postul->id_offre; // Ajout de l'offre dans le tableau
+
                         // Stockage des valeurs de id_user et id_offre
                         $id_user = $postul->id_user;
                         $id_offre = $postul->id_offre;
@@ -79,7 +83,7 @@ class DashboardRecruteurController extends Controller
                 }
             }
         
-            return view('attentecv', ['data' => $data, 'user' => $user, 'id_user' => $id_user ?? null, 'id_offre' => $id_offre ?? null]);
+            return view('attentecv', ['data' => $data, 'user' => $user,'postulantoffre' => $postulantoffre, 'postulantid' => $postulantid,'id_user' => $id_user ?? null, 'id_offre' => $id_offre ?? null]);
         }
         
     }
@@ -91,7 +95,8 @@ class DashboardRecruteurController extends Controller
         if ($user->role == 'recruteur') {
             $offres = $user->offre;
             $data = [];
-
+            $postulantid = []; // Initialisation du tableau des IDs des postulants sélectionnés
+        
             foreach ($offres as $offre) {
                 foreach ($offre->postulers as $postulant) {
                     if ($postulant && $postulant->user && $postulant->suppression == 0 && $postulant->selection == 1) {
@@ -103,16 +108,17 @@ class DashboardRecruteurController extends Controller
                             'cv' => $postulant->cv,
                             'poste' => $offre->poste,
                         ];
+                        $postulantid[] = $postulant->user->id; // Ajout de l'ID du postulant sélectionné dans le tableau
                     }
                 }
             }
-            
             $success = session()->get('success');
-            $id_user = $postulant->id_user;
-            $id_offre = $postulant->id_offre;            
-
-            return view('selectioncv', ['data' => $data, 'user' => $user, 'id_user' => $id_user, 'id_offre' => $id_offre, 'success' => $success]);
+            $id_user = isset($postulant) ? $postulant->id_user : null;
+            $id_offre = isset($postulant) ? $postulant->id_offre : null;
+        
+            return view('selectioncv', ['data' => $data, 'user' => $user, 'postulantid' => $postulantid, 'id_user' => $id_user, 'id_offre' => $id_offre, 'success' => $success]);
         }
+        
     }
     
 

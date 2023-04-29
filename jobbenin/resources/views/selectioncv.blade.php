@@ -188,7 +188,7 @@
                                                 </tr>
                                               </thead>
                                               @if (count($data) > 0)
-                                              @foreach ($data as $postulant)
+                                              @foreach ($data as $key => $postulant)
 
                                               <tbody>
 
@@ -208,11 +208,9 @@
                                                     <a href="{{ asset(Storage::url($postulant['cv'])) }}" target="_blank">Consulter le CV</a>
                                                   </td>
                                                   <td>
-                                                    <form method="POST" action="">
-                                                      @csrf
-                                                      <button type="submit" name="selectionner" class="btn btn-primary btn-lg btn-block" style="background-color: green;color:white;">Programmer un entretien</button>
-                                                    </form>
-
+                                                    <a href="{{ route('programmer', ['id' => $postulantid[$key]]) }}" >
+                                                      <button type="submit" class="btn btn-primary btn-lg btn-block"  style="background-color: green;color:white;" name="selectionner">Programmer un entretien</button>
+                                                      </a>
 
 
 
