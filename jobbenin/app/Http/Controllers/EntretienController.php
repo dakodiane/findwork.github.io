@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Entretien;
 use App\Models\ZoomMeeting;
 use Illuminate\Http\Request;
 use App\Traits\ZoomMeetingTrait;
@@ -23,11 +23,14 @@ class EntretienController extends Controller
         return view('programmer', compact('meeting'));
     }
 
-    public function store(Request $request)
-    {
-        $this->create($request->all());
-        return redirect()->back();
-    }
+ public function store(Request $request)
+{
+    $data = $request->all();
+    $entretien = $this->create($data);
+    Entretien::createEntretien($data);
+    return redirect()->back();
+}
+
 
     public function update($meeting, Request $request)
     {
@@ -84,4 +87,8 @@ class EntretienController extends Controller
 
         return $this->sendSuccess('Meeting started successfully');
     }
+
+ 
+    
+
 }

@@ -101,32 +101,37 @@
         <ul class="nav">
 
           <li class="nav-item">
-            <a class="nav-link" href="{{('annonce')}}">
+            <a class="nav-link" href="{{('/annonce')}}">
               <i class="mdi mdi-rename-box menu-icon"></i>
               <span class="menu-title">Vos Annonces</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{('attentecv')}}">
+            <a class="nav-link" href="{{('/attentecv')}}">
               <i class="mdi mdi-alarm menu-icon"></i>
               <span class="menu-title">CV en Attente</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{('selectioncv')}}">
+            <a class="nav-link" href="{{('/selectioncv')}}">
               <i class="mdi mdi-clipboard-check menu-icon"></i>
               <span class="menu-title">CV Sélectionnés</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{('entretien')}}">
+            <a class="nav-link" href="{{('/entretien')}}">
+              <i class="mdi mdi mdi-amplifier menu-icon"></i>
+              <span class="menu-title">Entretiens programmés</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{('/entretiencreate')}}">
               <i class="mdi mdi mdi-amplifier menu-icon"></i>
               <span class="menu-title">Entretiens passés</span>
             </a>
           </li>
-
           <li class="nav-item">
-            <a class="nav-link" href="{{('publicite')}}">
+            <a class="nav-link" href="{{('/publicite')}}">
               <i class="mdi mdi-archive menu-icon"></i>
               <span class="menu-title">Publicité</span>
             </a>

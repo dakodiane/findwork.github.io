@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Postuler;
+use App\Models\Entretien;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -32,25 +33,7 @@ class DashboardRecruteurController extends Controller
         // Passez les informations du recruteur et ses offres à la vue du tableau de bord
         return view('dashboardrecruteur')->with(['user' => $user, 'offres' => $offres]);
     }
-    public function brouillon()
-    {
-        //
 
-        $user = Auth::user();
-
-        if (!$user) {
-            return redirect()->intended('connexion');
-        }
-        // Récupérez les informations du recruteur connecté à partir de la table users
-        $recruteur = DB::table('users')->where('id', Auth::id())->first();
-
-        // Récupérez les offres du recruteur à partir de la table offres
-        $offres = DB::table('offres')->where('id_user', Auth::id())->get();
-
-
-        // Passez les informations du recruteur et ses offres à la vue du tableau de bord
-        return view('brouillon')->with(['user' => $user, 'offres' => $offres]);
-    }
 
     public function attentecv(Request $request)
     {
@@ -153,12 +136,14 @@ class DashboardRecruteurController extends Controller
         return redirect()->route('attentecv')->with('success', 'Postulant sélectionné avec succès!');
     }
 
-     
+    public function entretiencreate()
+    {
+        //
+        $user = Auth::user();
+        $entretiens = Entretien::with('entretiens')->get();
+        return view('entretiencreate')->with(['user' => $user, 'entretiens' => $entretiens]);
 
-    
-           
-    
-  
+    }
 
     public function annonce()
     {

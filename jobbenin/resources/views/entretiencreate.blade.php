@@ -103,7 +103,7 @@
         <ul class="nav">
          
           <li class="nav-item">
-            <a class="nav-link" href="{{('annonce')}}">
+            <a class="nav-link" href="{{('/annonce')}}">
               <i class="mdi mdi-rename-box menu-icon"></i>
               <span class="menu-title">Vos Annonces</span>
             </a>
@@ -132,6 +132,7 @@
               <span class="menu-title">Entretiens passés</span>
             </a>
           </li>
+         
           <li class="nav-item">
             <a class="nav-link" href="{{('/publicite')}}">
               <i class="mdi mdi-archive menu-icon"></i>
@@ -162,36 +163,34 @@
                                 <tr>
                                   <th>Postulant</th>
                                   <th>Date d'entretien</th>
-                                  <th>Statut</th>
+                                  <th>Action</th>
                                 </tr>
                               </thead>
+                              @foreach ($entretiens as $entretien)
+
                               <tbody>
                                 <tr>
-                                  <td>Jacob</td>
-                                  <td>12 May 2017</td>
+                                  <td>  {{ $entretien->entretiens->name }}
+                                  </td>
+                                  <td>{{ $entretien->start_time }}</td>
                                   <td>
+                                    <a href="">
                                     <button type="button" class="btn btn-primary btn-lg btn-block" style="background-color: green;color:white;">
-                                        Retenir
+                                        Lancer entretien
                                       </button>
-                                      <button type="button" class="btn btn-danger btn-lg btn-block" style="background-color: red;color:white;">
+                                    </a>
+                                    <a href="">
+                                    <button type="button" class="btn btn-danger btn-lg btn-block" style="background-color: red;color:white;">
                                        Supprimer
                                       </button>
+                                    </a>
+                                     
                                   </td>
                                 </tr>
-                                <tr>
-                                  <td>Messsy</td>
-                                  <td>15 May 2017</td>
-                                  <td>
-                                    <button type="button" class="btn btn-primary btn-lg btn-block" style="background-color: green;color:white;">
-                                        Retenir
-                                      </button>
-                                      <button type="button" class="btn btn-danger btn-lg btn-block" style="background-color: red;color:white;">
-                                       Supprimer
-                                      </button>
-                                  </td>
-                                </tr>
+                              
                                 
                               </tbody>
+                              @endforeach
                             </table>
                           </div>
                         </div>
