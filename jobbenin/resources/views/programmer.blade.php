@@ -167,9 +167,8 @@
                                                                         <!-- Payment Modal -->
                                                                         <h1>Programmer un entretien</h1>
 
-                                                                        <form method="post" action="{{route('programmer',['id' => $postulantid]) }}">
+                                                                        <form method="post" action="{{route('programmer',['id' => $postulantid,'offreid' => $offreid]) }}">
                                                                             @csrf
-
                                                                             <label>Sujet :</label>
                                                                             <input type="text" name="topic" required><br><br><br>
                                                                             <label>Date et heure :</label>

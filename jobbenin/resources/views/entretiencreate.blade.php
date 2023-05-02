@@ -129,7 +129,7 @@
           <li class="nav-item">
             <a class="nav-link" href="{{('/entretiencreate')}}">
               <i class="mdi mdi mdi-amplifier menu-icon"></i>
-              <span class="menu-title">Entretiens passés</span>
+              <span class="menu-title">Entretiens programmés</span>
             </a>
           </li>
          
@@ -166,13 +166,12 @@
                                   <th>Action</th>
                                 </tr>
                               </thead>
-                              @foreach ($entretiens as $entretien)
-
+                              @foreach ($data  as $key=>$postulant)
                               <tbody>
                                 <tr>
-                                  <td>  {{ $entretien->entretiens->name }}
+                                  <td>  {{ $postulant['nom_postulant'] }}
                                   </td>
-                                  <td>{{ $entretien->start_time }}</td>
+                                  <td>{{ $postulant['start_time'] }}</td>
                                   <td>
                                     <a href="">
                                     <button type="button" class="btn btn-primary btn-lg btn-block" style="background-color: green;color:white;">

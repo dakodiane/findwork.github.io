@@ -129,7 +129,7 @@
           <li class="nav-item">
             <a class="nav-link" href="{{('/entretiencreate')}}">
               <i class="mdi mdi mdi-amplifier menu-icon"></i>
-              <span class="menu-title">Entretiens passés</span>
+              <span class="menu-title">Entretiens programmés</span>
             </a>
           </li>
           <li class="nav-item">

@@ -79,10 +79,10 @@ class DashboardRecruteurController extends Controller
             $offres = $user->offre;
             $data = [];
             $postulantid = []; // Initialisation du tableau des IDs des postulants sélectionnés
-        
+            $offreid=[];
             foreach ($offres as $offre) {
                 foreach ($offre->postulers as $postulant) {
-                    if ($postulant && $postulant->user && $postulant->suppression == 0 && $postulant->selection == 1) {
+                    if ($postulant && $postulant->user && $postulant->suppression == 0 && $postulant->selection == 1 ) {
                         $data[] = [
                             'id_user' => $postulant->id_user,
                             'id_offre' => $postulant->id_offre,
@@ -92,6 +92,8 @@ class DashboardRecruteurController extends Controller
                             'poste' => $offre->poste,
                         ];
                         $postulantid[] = $postulant->user->id; // Ajout de l'ID du postulant sélectionné dans le tableau
+                        $offreid[]=$postulant->id_offre;
+
                     }
                 }
             }
@@ -99,7 +101,7 @@ class DashboardRecruteurController extends Controller
             $id_user = isset($postulant) ? $postulant->id_user : null;
             $id_offre = isset($postulant) ? $postulant->id_offre : null;
         
-            return view('selectioncv', ['data' => $data, 'user' => $user, 'postulantid' => $postulantid, 'id_user' => $id_user, 'id_offre' => $id_offre, 'success' => $success]);
+            return view('selectioncv', ['data' => $data, 'user' => $user, 'postulantid' => $postulantid, 'offreid'=>$offreid,'id_user' => $id_user, 'id_offre' => $id_offre, 'success' => $success]);
         }
         
     }
@@ -140,10 +142,32 @@ class DashboardRecruteurController extends Controller
     {
         //
         $user = Auth::user();
-        $entretiens = Entretien::with('entretiens')->get();
-        return view('entretiencreate')->with(['user' => $user, 'entretiens' => $entretiens]);
+        if ($user->role == 'recruteur') {
+            $offres = $user->offre;
+            $data = [];
+            $postulantid = []; // Initialisation du tableau des IDs des postulants sélectionnés
+
+            foreach ($offres as $offre) {
+                foreach ($offre->postulers as $postulant) {
+                    if ($postulant && $postulant->user && $postulant->suppression == 0 && $postulant->selection == 1 && $postulant->programmed == 1) {
+                        $data[] = [
+                            'id_user' => $postulant->id_user,
+                            'id_offre' => $postulant->id_offre,
+                            'nom_recruteur' => $user->name,
+                            'nom_postulant' => $postulant->user->name,
+                            'cv' => $postulant->cv,
+                            'poste' => $offre->poste,
+                            'start_time' => $postulant->start_time,
+                        ];
+                        $postulantid = $postulant->user->name; // Ajout de l'ID du postulant sélectionné dans le tableau
+                   
+                    }
+                }
+            }
+        return view('entretiencreate')->with(['data' => $data,'user' => $user, 'postulantid' => $postulantid]);
 
     }
+}
 
     public function annonce()
     {
@@ -203,37 +227,6 @@ class DashboardRecruteurController extends Controller
 
         // Passez les informations du recruteur et ses offres à la vue du tableau de bord
         return view('publicite')->with(['user' => $user, 'offres' => $offres]);
-    }
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
     }
 
     /**

@@ -121,13 +121,13 @@
           <li class="nav-item">
             <a class="nav-link" href="{{('/entretien')}}">
               <i class="mdi mdi mdi-amplifier menu-icon"></i>
-              <span class="menu-title">Entretiens programmés</span>
+              <span class="menu-title">Entretiens passés</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{('/entretiencreate')}}">
               <i class="mdi mdi mdi-amplifier menu-icon"></i>
-              <span class="menu-title">Entretiens passés</span>
+              <span class="menu-title">Entretiens programmés</span>
             </a>
           </li>
           <li class="nav-item">
@@ -213,7 +213,7 @@
                                                     <a href="{{ asset(Storage::url($postulant['cv'])) }}" target="_blank">Consulter le CV</a>
                                                   </td>
                                                   <td>
-                                                    <a href="{{ route('programmer', ['id' => $postulantid[$key]]) }}" >
+                                                    <a href="{{ route('programmer', ['id' => $postulantid[$key],'offreid' => $offreid[$key]]) }}" >
                                                       <button type="submit" class="btn btn-primary btn-lg btn-block"  style="background-color: green;color:white;" name="selectionner">Programmer un entretien</button>
                                                       </a>
 
