@@ -39,8 +39,8 @@
           </li>
 
 
-          <li class="nav-item dropdown d-none d-lg-block user-dropdown">
-            <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+          <li class="nav-item dropdown d-none d-lg-block postulant-dropdown">
+            <a class="nav-link" id="postulantDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
              
             <img  class="img-xs rounded-circle" src="{{ asset('storage/photoslogo/' . $user->logo_entreprise) }}" alt="Logo Entreprise" class="avatar">
 
@@ -127,12 +127,7 @@
               <span class="menu-title">Entretiens passés</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{('/entretiencreate')}}">
-              <i class="mdi mdi mdi-amplifier menu-icon"></i>
-              <span class="menu-title">Entretiens programmés</span>
-            </a>
-          </li>
+
           <li class="nav-item">
             <a class="nav-link" href="{{('/publicite')}}">
               <i class="mdi mdi-archive menu-icon"></i>
@@ -143,115 +138,97 @@
 
         </ul>
       </nav>
-      <div class="main-panel">
-        <div class="content-wrapper">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="home-tab">
-
-                <div class="tab-content tab-content-basic">
-                  <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview">
-
+<div class="main-panel">
+    <div class="content-wrapper" style="font-size: 5px;color:black">
+        <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+               <u> <h4 class="card-title" style="font-size: large;">Detail :  Poste  ({{ $poste }} )</h4></u>
+                  
+                    <br><br>
                     <div class="row">
-
-                      <div class="col-lg-12 d-flex flex-column">
-
-                        <div class="row flex-grow">
-                          <div class="col-12 grid-margin stretch-card">
-                            <div class="card card-rounded">
-                              <div class="card-body">
-                                <div class="row">
-                                  <div class="col-lg-12">
-                                    <div class="d-flex justify-content-between align-items-center mb-3">
-                                      <div>
-                                        <h4 class="card-title card-title-dash">CV En Attente</h4>
-                                      </div>
-                                    </div>
-
-
-
-                                    <div class="col-lg-12 grid-margin stretch-card">
-                                      <div class="card">
-                                        <div class="card-body">
-                                          <div class="table-responsive">
-                                            <table class="table table-striped">
-                                              <thead>
-                                                <tr>
-                                                  <th>
-                                                    Nom Complet
-
-                                                  </th>
-                                                  <th>
-                                                    Poste
-                                                  </th>
-                                                  <th>
-
-                                                  </th>
-                                               
-                                                  <th>
-                                                     Détails
-                                                  </th>
-                                                 
-                                                </tr>
-                                              </thead>
-                                              @if (count($data) > 0)
-                                              @foreach ($data as $key => $postulant)
-
-                                              <tbody>
-
-                                                <tr>
-                                                  <td class="py-1">
-                                                    {{ $postulant['nom_postulant'] }}
-
-                                                  </td>
-                                                  <td>
-                                                    {{ $postulant['poste'] }}
-
-                                                  </td>
-                                                  <td>
-
-                                                  </td>
-                                               
-                                                  <td>
-                                                  <a href="{{ route('postulanto.detail' ,['id_user' => $postulantid[$key],
-                                                    'id_offre' => $postulantoffre[$key]])}}"  class="btn btn-primary btn-lg btn-block" style="background-color: green;color:white;"> Voir+
-
-        </td>
-  
-                                                </tr>
-
-                                              </tbody>
-
-                                              @endforeach
-                                              @else
-                                              <p>Aucun Postulant</p>
-                                              @endif
-                                            </table>
-
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-
-
-
-
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                        <div class="col-md-5">
+                            <address>
+                            <p style="font-size: large;">
+                                   Nom du Candidat
+                                    </p>
+                                <p class="font-weight-bold" style="font-size: large;"> {{ $postulant->name }}</p>
+                                <br><br>
+                                <p style="font-size: large;">
+                                   Téléphone
+                                    </p>
+                                <p style="font-size: large;">
+                                    {{ $postulant->contact_postulant }}
+                                </p>
+                                <br><br><br>
+                                <address class="text-primary">
+                                    <p class="font-weight-bold">
+                                        E-mail
+                                    </p>
+                                    <p class="mb-2">
+                                        {{ $postulant->email }}
+                                    </p>
+                                    <br><br>
+                                </address>
+                            </address>
                         </div>
-                      </div>
+                  
+                        <div class="col-md-6 grid-margin stretch-card" style="">
+                     
+                            <div class="card">
+                
+                                <div class="card-body font-weight-bold">
+                                <p style="font-size: large;">
+                                       Lettre de motivation
+                                    </p>
+                                    <p>
+                                    <p> {{ $lettreMotivation   }}</p>
+
+                                    <p style="font-size: large;">
+                                     Curriculum Vitae
+                                    </p>
+                                <p>   
+                                <a href="{{ asset(Storage::url('cv/' . $cv)) }}" target="_blank">Consulter le CV</a>
+
+
+                                                  </p>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
+
                 </div>
-              </div>
             </div>
-          </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+<table>     
+  <tr>
+
+
+  <td>
+ 
+    <a href="{{ route('detailpostulant.selection',['id_user' => $postulantid,'id_offre' => $postulantoffre])}}" class="btn btn-primary btn-lg btn-block" style="background-color: green;color:white;">Sélectionner</a>
+
+
+  </td>
+    <td>
+  <a href="{{ route('detailpostulant.supprimerpostulant',['id_user' => $postulantid,'id_offre' => $postulantoffre]) }}">
+    <button type="submit" name="supprimer" class="btn btn-primary btn-lg btn-block" style="background-color: red;color:white;">Désintéresser</button>
+  </a>
+
+</td> 
+
+  </tr>
+</table>
+
+            </div>
+       
         </div>
 
-        <!-- content-wrapper ends -->
+    </div>
+  <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
         <footer class="footer">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
@@ -264,4 +241,4 @@
   </div>
 </main>
 
-@endsection
+    @endsection

@@ -46,12 +46,17 @@
       
           <li class="nav-item dropdown d-none d-lg-block user-dropdown">
             <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="{{ asset('storage/photos/' . Auth::user()->photo_freelancer) }}" 
-            alt="Photo du Freelancer" class="img-xs rounded-circle">
+            <img src="{{ asset('storage/photosfreelancer/' . $user->photo_freelancer) }}" alt="Photo du Freelancer" class="img-xs rounded-circle">
+
+           
+
 
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
               <div class="dropdown-header text-center">
-                <img class="img-md rounded-circle" src="{{asset('assets/images/faces/face8.jpg')}}" alt="Profile image">
+              <img src="{{ asset('storage/photosfreelancer/' . $user->photo_freelancer) }}" alt="Photo du Freelancer" class="img-xs rounded-circle">
+
+           
+
                 <p class="mb-1 mt-3 font-weight-semibold">{{ $user->name }}</p>
                 <p class="fw-light text-muted mb-0">{{ $user->email }}</p>
               </div>
@@ -136,6 +141,9 @@
                                                                     <div class="col-lg-12">
                                                                         <!-- Button trigger modal -->
 
+                                                                        @if ($message)
+    <div class="alert alert-warning"  style="display: flex; align-items: center; justify-content: center; height: 50px; font-size: 1.2rem;">{{ $message }}</div>
+@endif
 
                                                                         <!-- Payment Modal -->
                                                                         <div class="modal fade" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentModalLabel" aria-hidden="true">
@@ -251,7 +259,7 @@
                 <!-- partial:partials/_footer.html -->
                 <footer class="footer">
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2023. All rights reserved.</span>
+                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2023. Jobbenin  .</span>
                     </div>
                 </footer>
                 <!-- partial -->

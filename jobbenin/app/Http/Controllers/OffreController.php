@@ -19,7 +19,7 @@ class OffreController extends Controller
 
     }
 
-    ///////////////// DJEMI ///////////////////////////////////////////////////////////////////////
+    ///////////////// DJEMI /////////////
     public function offre() {
         $offres = Offre::with('user')
         ->where('publication', '=', 1) 

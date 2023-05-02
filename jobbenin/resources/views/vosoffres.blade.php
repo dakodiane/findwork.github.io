@@ -159,7 +159,8 @@
         <tr>
             <td>
                 <div class="d-flex">
-                    <img src="" alt="">
+                <img src="{{ asset('storage/photoslogo/' . $offre['user']['logo_entreprise'] )}}" alt="Logo Entreprise" class="avatar">
+                                           
                     <div>
                         <a class="monlien" href="" style="text-decoration:none">
                             </a>
@@ -173,15 +174,16 @@
                     </div>
                 </td>
                 <td>
-                    <div class="badge badge-opacity-warning"><b>{{ $offre['statut'] }}</b></div>
+                    <div class="badge badge-opacity-warning"style="font-weight:40px;font-size:13px"  ><b>{{ $offre['statut'] }}</b></div>
                 </td>
                 <td>
                     <div class="template-demo mt-4">
                     <a href="{{ route('detail_offre', $offre['id']) }}">
-                      <button type="button" class="btn btn-success" style="color:white;background-color: green;">Voir+</button></a>
+                      <button type="button" class="btn btn-success" 
+                      style="color:white;background-color: green;font-weight:40px;font-size:13px" >Voir+</button></a>
                                
                   <a href="{{ route('supprimer_offre', $offre['id']) }}">
-                            <button type="button" class="btn btn-success" style="color:white;background-color: red;">Supprimer</button>
+                            <button type="button" class="btn btn-success" style="color:white;background-color: red;font-weight:40px;font-size:13px" >Supprimer</button>
                         </a>
                     </div>
                 </td>
@@ -210,7 +212,7 @@
         <!-- partial:partials/_footer.html -->
         <footer class="footer">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2023. All rights reserved.</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2023. Jobbenin.</span>
           </div>
         </footer>
         <!-- partial -->
