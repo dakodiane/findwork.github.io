@@ -98,9 +98,18 @@ Route::get('/publicite','App\Http\Controllers\DashboardRecruteurController@publi
 
 Route::post('/logout', 'App\Http\Controllers\ConnexionController@logout')->name('logout');
 
-Route::get('/attentecv/selection/{id_user}/{id_offre}', 'App\Http\Controllers\DashboardRecruteurController@selectionner')->name('attentecv.selection');
+Route::get('/detailpostulant/selection/{id_user}/{id_offre}', 'App\Http\Controllers\DashboardRecruteurController@selectionner')
+->name('detailpostulant.selection');
 
-Route::get('/attentecv/{id_user}/{id_offre}', 'App\Http\Controllers\DashboardRecruteurController@supprimerpostulant')->name('attentecv.supprimer');
+Route::get('/detailpostulant/supprimerpostulant/{id_user}/{id_offre}', 'App\Http\Controllers\DashboardRecruteurController@supprimerpostulant')->
+name('detailpostulant.supprimerpostulant');
+
+
+
+
+
+Route::get('/postulanto/{id_user}/{id_offre}', 'App\Http\Controllers\DashboardRecruteurController@showd')->name('postulanto.detail');
+
 
 Route::get('/recruteur/{id}', 'App\Http\Controllers\RecruteurController@show')->name('profilrecruteur');
 Route::post('/recruteur/{id}', 'App\Http\Controllers\RecruteurController@show')->name('profilrecruteur');
@@ -216,4 +225,3 @@ Route::get('/freelancera/{id}/detail', 'App\Http\Controllers\Admin1Controller@de
 
 Route::get('/selectioncv/{id}/programmer', 'App\Http\Controllers\EntretienController@index');
 Route::post('/selectioncv/{id}/programmer', 'App\Http\Controllers\EntretienController@store')->name('programmer');
-

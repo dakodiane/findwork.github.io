@@ -179,7 +179,8 @@
                 <td>
                     <div class="template-demo mt-4">
                     <a href="{{ route('detail_offre', $offre['id']) }}">
-                      <button type="button" class="btn btn-success" style="color:white;background-color: green;font-weight:40px;font-size:13px" >Voir+</button></a>
+                      <button type="button" class="btn btn-success" 
+                      style="color:white;background-color: green;font-weight:40px;font-size:13px" >Voir+</button></a>
                                
                   <a href="{{ route('supprimer_offre', $offre['id']) }}">
                             <button type="button" class="btn btn-success" style="color:white;background-color: red;font-weight:40px;font-size:13px" >Supprimer</button>

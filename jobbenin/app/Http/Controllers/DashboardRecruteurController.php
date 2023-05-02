@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Postuler;
+use App\Models\Postulant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -83,7 +84,9 @@ class DashboardRecruteurController extends Controller
                 }
             }
         
-            return view('attentecv', ['data' => $data, 'user' => $user,'postulantoffre' => $postulantoffre, 'postulantid' => $postulantid,'id_user' => $id_user ?? null, 'id_offre' => $id_offre ?? null]);
+            return view('attentecv',
+             ['data' => $data, 'user' => $user,'postulantoffre' =>
+              $postulantoffre, 'postulantid' => $postulantid,'id_user' => $id_user ?? null, 'id_offre' => $id_offre ?? null]);
         }
         
     }
@@ -121,21 +124,24 @@ class DashboardRecruteurController extends Controller
         
     }
     
-
     public function selectionner(Request $request, $id_user, $id_offre)
     {
+        $user = auth()->user();
+     
         $postuler = Postuler::where('id_user', $id_user)->where('id_offre', $id_offre)->first();
+    
         if ($postuler) {
             DB::table('postulers')
                 ->where('id_user', $postuler->id_user)
                 ->where('id_offre', $postuler->id_offre)
                 ->update(['suppression' => 0, 'selection' => 1]);
+    
             return redirect()->route('attentecv')->with('success', 'Postulant sélectionné avec succès!');
+    
         } else {
             return redirect()->back()->with('error', 'Postulant introuvable!');
         }
     }
-    
     
 
     
@@ -150,18 +156,88 @@ class DashboardRecruteurController extends Controller
             ])
             ->update(['postulantvisible' => 0]);
 
-        return redirect()->route('attentecv')->with('success', 'Postulant sélectionné avec succès!');
+            return redirect()->route('attentecv', ['id_user' => $id_user, 'id_offre' => $id_offre])->with('success', 'Postulant sélectionné avec succès!');
+
     }
 
      
 
-    
-           
-    
-  
 
-    public function annonce()
+    
+public function showd(Request $request, $id_user, $id_offre)
     {
+        $user = auth()->user();
+        if ($user->role == 'recruteur') {
+            $offres = $user->offre;
+            $postuler = null;
+            
+            // On récupère le postulant si les identifiants de l'utilisateur et de l'offre sont valides
+            $postuler = Postuler::with('user')
+                ->where('id_user', $id_user)
+                ->where('id_offre', $id_offre)
+                ->first();
+            
+            // On vérifie que le postulant a bien été récupéré avant d'essayer d'accéder à ses propriétés
+            if ($postuler) {
+                $poste = $postuler->offre->poste;
+                $lettreMotivation = $postuler->lettre_motivation;
+                $cv = $postuler->cv;
+                $data = [];
+            
+                $postulantid = null;
+                $postulantoffre = null;
+                
+                foreach ($offres as $offre) {
+                    foreach ($offre->postulers as $postul) {
+                        if ($postul && $postul->user && $postul->suppression == 1 && $postul->selection == 0 && $postul->postulantvisible == 1) {
+                            $data[] = [
+                                'id_user' => $postul->id_user,
+                                'id_offre' => $postul->id_offre,
+                                'nom_recruteur' => $user->name,
+                                'nom_postulant' => $postul->user->name,
+                                'poste' => $offre->poste,
+                            ];
+                
+                            // Stockage des valeurs de id_user et id_offre
+                            $postulantid = $postuler->id_user;
+                            $postulantoffre = $postuler->id_offre;
+                        }
+                    }
+                }
+                
+                return view('detailpostulant', [
+                    'postulant' => $postuler->user,
+                    'cv'=> $cv,
+                    'lettreMotivation' => $lettreMotivation,
+                    'poste' => $poste,
+                    'data' => $data,
+                    'user' => $user,
+                   
+                    'postulantoffre' => $postulantoffre,
+                    'postulantid' => $postulantid,
+                    'id_user' => $id_user ?? null,
+                    'id_offre' => $id_offre ?? null
+                ]);
+            } else {
+                return redirect()->back()->with('error', 'Postulant non trouvé.');
+            }
+        }  
+    }
+    
+    
+    
+        public function annonce()
+   
+   
+   
+   
+        {
+        
+        
+        
+        
+        
+        
         //
 
         $user = Auth::user();
@@ -178,6 +254,9 @@ class DashboardRecruteurController extends Controller
 
         // Passez les informations du recruteur et ses offres à la vue du tableau de bord
         return view('annonce')->with(['user' => $user, 'offres' => $offres]);
+    
+    
+    
     }
     public function entretien()
     {
@@ -317,4 +396,22 @@ class DashboardRecruteurController extends Controller
     {
         //
     }
-}
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+    }
+    
+    
+    
+
+
