@@ -99,7 +99,7 @@ Route::get('/entretiencreate','App\Http\Controllers\DashboardRecruteurController
 
 Route::post('/logout', 'App\Http\Controllers\ConnexionController@logout')->name('logout');
 
-Route::get('/detailpostulant/selection/{id_user}/{id_offre}', 'App\Http\Controllers\DashboardRecruteurController@selectionner')
+Route::get('/detailpostulant/retebir{id_user}/{id_offre}', 'App\Http\Controllers\DashboardRecruteurController@selectionner')
 ->name('detailpostulant.selection');
 
 Route::get('/detailpostulant/supprimerpostulant/{id_user}/{id_offre}', 'App\Http\Controllers\DashboardRecruteurController@supprimerpostulant')->
@@ -226,4 +226,10 @@ Route::get('/freelancera/{id}/detail', 'App\Http\Controllers\Admin1Controller@de
 
 Route::get('/selectioncv/{id}/{offreid}/programmer', 'App\Http\Controllers\EntretienController@index');
 Route::post('/selectioncv/{id}/{offreid}/programmer', 'App\Http\Controllers\EntretienController@store')->name('programmer');
+Route::get('/entretien/retenir/{id_user}/{id_offre}', 'App\Http\Controllers\DashboardRecruteurController@retenir')
+->name('entretien.retenir');
 
+Route::get('/entretien/supprimer/{id_user}/{id_offre}', 'App\Http\Controllers\DashboardRecruteurController@supprimer')->
+name('entretien.supprimer');
+
+Route::get('/entretienpostulant','App\Http\Controllers\DashboardPostulantController@entretienpostulant' )->name('entretienpostulant');

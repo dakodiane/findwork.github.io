@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Postuler;
 use App\Models\Entretien;
 use App\Models\Postulant;
+use App\Models\ZoomMeeting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -85,7 +86,7 @@ class DashboardRecruteurController extends Controller
             $offreid=[];
             foreach ($offres as $offre) {
                 foreach ($offre->postulers as $postulant) {
-                    if ($postulant && $postulant->user && $postulant->suppression == 0 && $postulant->selection == 1 ) {
+                    if ($postulant && $postulant->user && $postulant->suppression == 0 && $postulant->selection == 1 && $postulant->programmed == 0) {
                         $data[] = [
                             'id_user' => $postulant->id_user,
                             'id_offre' => $postulant->id_offre,
@@ -165,13 +166,18 @@ class DashboardRecruteurController extends Controller
                             'cv' => $postulant->cv,
                             'poste' => $offre->poste,
                             'start_time' => $postulant->start_time,
+                            'start_url' => $postulant->start_url,
+
                         ];
-                        $postulantid = $postulant->user->name; // Ajout de l'ID du postulant sélectionné dans le tableau
-                   
+                        $postulantid[] = $postulant->user->id;
+                        $offreid[]=$postulant->id_offre;
+                        // Ajout de l'ID du postulant sélectionné dans le tableau
+                        $meeting = Postuler::all();
+
                     }
                 }
             }
-        return view('entretiencreate')->with(['data' => $data,'user' => $user, 'postulantid' => $postulantid]);
+        return view('entretiencreate')->with(['data' => $data,'user' => $user,'meeting' => $meeting,'offreid' =>$offreid, 'postulantid' => $postulantid]);
 
     }
 }
@@ -240,16 +246,8 @@ public function showd(Request $request, $id_user, $id_offre)
     
     
         public function annonce()
-   
-   
-   
-   
-        {
-        
-        
-        
-        
-        
+  
+        {  
         
         //
 
@@ -274,22 +272,38 @@ public function showd(Request $request, $id_user, $id_offre)
     public function entretien()
     {
         //
-
         $user = Auth::user();
+        if ($user->role == 'recruteur') {
+            $offres = $user->offre;
+            $data = [];
+            $postulantid = []; // Initialisation du tableau des IDs des postulants sélectionnés
 
-        if (!$user) {
-            return redirect()->intended('connexion');
-        }
-        // Récupérez les informations du recruteur connecté à partir de la table users
-        $recruteur = DB::table('users')->where('id', Auth::id())->first();
+            foreach ($offres as $offre) {
+                foreach ($offre->postulers as $postulant) {
+                    if ($postulant && $postulant->user && $postulant->suppression == 0 && $postulant->selection == 1 && $postulant->programmed == 1 && $postulant->retenir == 0 && $postulant->suppressionf == 0) {
+                        $data[] = [
+                            'id_user' => $postulant->id_user,
+                            'id_offre' => $postulant->id_offre,
+                            'nom_recruteur' => $user->name,
+                            'nom_postulant' => $postulant->user->name,
+                            'cv' => $postulant->cv,
+                            'poste' => $offre->poste,
+                            'start_time' => $postulant->start_time,
+                            'start_url' => $postulant->start_url,
 
-        // Récupérez les offres du recruteur à partir de la table offres
-        $offres = DB::table('offres')->where('id_user', Auth::id())->get();
+                        ];
+                        $postulantid[] = $postulant->user->id;
+                        $offreid[]=$postulant->id_offre;
+                        // Ajout de l'ID du postulant sélectionné dans le tableau
+                        $meeting = Postuler::all();
 
+                    }
+                }
+            }
+        return view('entretien')->with(['data' => $data,'user' => $user,'meeting' => $meeting,'offreid' =>$offreid, 'postulantid' => $postulantid]);
 
-        // Passez les informations du recruteur et ses offres à la vue du tableau de bord
-        return view('entretien')->with(['user' => $user, 'offres' => $offres]);
     }
+}
 
 
     public function publicite()
@@ -371,24 +385,41 @@ public function showd(Request $request, $id_user, $id_offre)
     }
     
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
+    public function retenir(Request $request, $id_user, $id_offre)
     {
-        //
+        $user = auth()->user();
+     
+        $postuler = Postuler::where('id_user', $id_user)->where('id_offre', $id_offre)->first();
+    
+        if ($postuler) {
+            DB::table('postulers')
+                ->where('id_user', $postuler->id_user)
+                ->where('id_offre', $postuler->id_offre)
+                ->update(['retenir' => 1]);
+    
+            return redirect()->back()->with('success', 'Postulant sélectionné avec succès!');
+    
+        } else {
+            return redirect()->back()->with('error', 'Postulant introuvable!');
+        }
     }
     
+
     
+    public function supprimer($id_user, $id_offre)
+    {
+        $postuler = Postuler::where('id_user', $id_user)->where('id_offre', $id_offre)->first();
 
+        DB::table('postulers')
+            ->where([
+                'id_user' => $postuler->id_user,
+                'id_offre' => $postuler->id_offre,
+            ])
+            ->update(['supprimerf' => 1]);
 
+            return redirect()->route('entretien', ['id_user' => $id_user, 'id_offre' => $id_offre])->with('success', 'Postulant sélectionné avec succès!');
 
-
-
-
-
-
-
+    }
 
 
     }

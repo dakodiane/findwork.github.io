@@ -80,7 +80,6 @@ trait ZoomMeetingTrait
             'id_user' => $id,
             'id_offre' => $id_offre,
         ];
-    
         $response =  $this->client->post($url . $path, array_merge($body, ['query' => $params]));
     
         return [
@@ -88,7 +87,7 @@ trait ZoomMeetingTrait
             'data'    => json_decode($response->getBody(), true),
         ];
     }
-    
+
 
     public function update($id, $data)
     {
@@ -157,4 +156,6 @@ trait ZoomMeetingTrait
             'success' => $response->getStatusCode() === 204,
         ];
     }
+
+
 }

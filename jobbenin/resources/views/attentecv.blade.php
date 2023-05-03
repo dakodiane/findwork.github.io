@@ -121,16 +121,17 @@
               <span class="menu-title">CV Sélectionnés</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{('/entretien')}}">
-              <i class="mdi mdi mdi-amplifier menu-icon"></i>
-              <span class="menu-title">Entretiens passés</span>
-            </a>
-          </li>
+      
           <li class="nav-item">
             <a class="nav-link" href="{{('/entretiencreate')}}">
               <i class="mdi mdi mdi-amplifier menu-icon"></i>
               <span class="menu-title">Entretiens programmés</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{('/entretien')}}">
+              <i class="mdi mdi mdi-amplifier menu-icon"></i>
+              <span class="menu-title">Entretiens passés</span>
             </a>
           </li>
           <li class="nav-item">
@@ -213,8 +214,7 @@
                                                   </td>
                                                
                                                   <td>
-                                                  <a href="{{ route('postulanto.detail' ,['id_user' => $postulantid[$key],
-                                                    'id_offre' => $postulantoffre[$key]])}}"  class="btn btn-primary btn-lg btn-block" style="background-color: green;color:white;"> Voir+
+                                                  <a href="{{ route('postulanto.detail' ,['id_user' => $postulantid[$key],'id_offre' => $postulantoffre[$key]])}}"  class="btn btn-primary btn-lg btn-block" style="background-color: green;color:white;"> Voir+
 
         </td>
   

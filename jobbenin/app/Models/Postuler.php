@@ -51,6 +51,10 @@ class Postuler extends Model
         $entretien->duration = $data['duration'];
         $entretien->agenda = $data['agenda'];
         $entretien->timezone = $data['timezone'];
+        $entretien->start_url = $data['start_url'];
+        $entretien->join_url = $data['join_url'];
+
+
         if (isset($data['host_video'])) {
             $host_video = $data['host_video'];
         } else {
@@ -75,6 +79,8 @@ if ($postuler) {
     $dataToUpdate['duration'] = $data['duration'];
     $dataToUpdate['agenda'] = $data['agenda'];
     $dataToUpdate['timezone'] = $data['timezone'];
+    $dataToUpdate['start_url'] = $data['start_url'];
+    $dataToUpdate['join_url'] = $data['join_url'];
 
     if(isset($data['host_video'])) {
         $dataToUpdate['host_video'] = $data['host_video'];

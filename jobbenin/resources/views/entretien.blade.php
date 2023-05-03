@@ -121,17 +121,18 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{('/entretien')}}">
-              <i class="mdi mdi mdi-amplifier menu-icon"></i>
-              <span class="menu-title">Entretiens passés</span>
-            </a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="{{('/entretiencreate')}}">
               <i class="mdi mdi mdi-amplifier menu-icon"></i>
               <span class="menu-title">Entretiens programmés</span>
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{('/entretien')}}">
+              <i class="mdi mdi mdi-amplifier menu-icon"></i>
+              <span class="menu-title">Entretiens passés</span>
+            </a>
+          </li>
+        
           <li class="nav-item">
             <a class="nav-link" href="{{('/publicite')}}">
               <i class="mdi mdi-archive menu-icon"></i>
@@ -165,33 +166,22 @@
                                   <th>Statut</th>
                                 </tr>
                               </thead>
+                              @foreach ($data  as $key=>$postulant)
                               <tbody>
                                 <tr>
-                                  <td>Jacob</td>
-                                  <td>12 May 2017</td>
+                                  <td>{{ $postulant['nom_postulant'] }}</td>
+                                  <td>{{ $postulant['start_time'] }}</td>
                                   <td>
-                                    <button type="button" class="btn btn-primary btn-lg btn-block" style="background-color: green;color:white;">
-                                        Retenir
-                                      </button>
-                                      <button type="button" class="btn btn-danger btn-lg btn-block" style="background-color: red;color:white;">
-                                       Supprimer
-                                      </button>
+                                   
+                                      <a href="{{ route('entretien.retenir',['id_user' => $postulantid[$key],'id_offre' => $offreid[$key]])}}" class="btn btn-primary btn-lg btn-block" style="background-color: green;color:white;">Retenir</a>
+                                      <a href="{{ route('entretien.supprimer',['id_user' => $postulantid[$key],'id_offre' => $offreid[$key]])}}" class="btn btn-danger btn-lg btn-block" style="background-color: red;color:white;">Supprimer</a>
+
                                   </td>
                                 </tr>
-                                <tr>
-                                  <td>Messsy</td>
-                                  <td>15 May 2017</td>
-                                  <td>
-                                    <button type="button" class="btn btn-primary btn-lg btn-block" style="background-color: green;color:white;">
-                                        Retenir
-                                      </button>
-                                      <button type="button" class="btn btn-danger btn-lg btn-block" style="background-color: red;color:white;">
-                                       Supprimer
-                                      </button>
-                                  </td>
-                                </tr>
+                             
                                 
                               </tbody>
+                              @endforeach
                             </table>
                           </div>
                         </div>

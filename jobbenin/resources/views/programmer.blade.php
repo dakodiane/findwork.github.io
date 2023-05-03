@@ -165,36 +165,71 @@
 
 
                                                                         <!-- Payment Modal -->
-                                                                        <h1>Programmer un entretien</h1>
-
-                                                                        <form method="post" action="{{route('programmer',['id' => $postulantid,'offreid' => $offreid]) }}">
+                                                                        <h2>Programmer un entretien</h2>
+                                                                        <div class="row">
+                                                                        <div class="col-lg-8 col-md-8">
+                                                                            <form method="post" action="{{route('programmer', ['id' => $id, 'offreid' => $offreid]) }}">
                                                                             @csrf
-                                                                            <label>Sujet :</label>
-                                                                            <input type="text" name="topic" required><br><br><br>
-                                                                            <label>Date et heure :</label>
-                                                                            <input type="datetime-local" name="start_time" required><br><br><br>
-                                                                            <label>Durée (en minutes) :</label>
-                                                                            <input type="number" name="duration" value="60" min="1" max="1440" required><br><br><br>
-                                                                            <label>Zone horaire :</label>
-                                                                            <select name="timezone">
-                                                                                <option value="Europe/Paris">Europe/Paris</option>
-                                                                                <option value="Europe/London">Europe/London</option>
-                                                                                <option value="America/New_York">America/New York</option>
-                                                                            </select><br> <br><br>
-                                                                            <label>Description :</label>
-                                                                            <textarea name="agenda"></textarea><br>
-                                                                            <label>Activer la vidéo de l'hôte :</label>
-                                                                            <input type="checkbox" name="host_video" value="1"><br><br><br>
+                                                                            <div class="mt-10">
+                                                                                    <label>Sujet :</label>
 
-                                                                            <label>Activer la vidéo du participant :</label>
-                                                                            <input type="checkbox" name="participant_video" value="1"><br><br><br>
+                                                                                    <input type="text" name="topic" placeholder="ex:entretien" onfocus="this.placeholder = ''" onblur="this.placeholder = 'ex:entretien'" required class="single-input">
+                                                                                </div> <br>
+                                                                                <div class="mt-10">
+                                                                                    <label>Date et heure :</label>
+                                                                                    <input type="datetime-local" name="start_time" placeholder="Date et heure" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Date et heure'" required class="single-input">
+                                                                                </div> <br>
+                                                                                <div class="mt-10">
+                                                                                    <label>Durée (en minutes) :</label>
+                                                                                    <input type="number" name="duration" value="60" min="1" max="1440" placeholder="Durée" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Durée'" required class="single-input">
+                                                                                </div> <br>
 
-                                                                            <input type="submit" value="Programmer l'entretien">
-                                                                        </form>
-                                                                        <!-- Pricing Plan Start -->
+                                                                                <div class="input-group-icon mt-10">
+                                                                                    <div aria-hidden="true"></div>
+                                                                                    <label>Zone horaire :</label>
 
-                                                                        <!-- Pricing Plan End -->
+                                                                                    <div  id="default-select">
 
+                                                                                        <select name="timezone">
+                                                                                            <option value="Europe/Paris">Afrique</option>
+                                                                                           
+                                                                                        </select>
+                                                                                    </div> <br><br>
+                                                                                </div> 
+
+                                                                                <div class="mt-10">
+                                                                                    <label>Description :</label>
+                                                                                    <textarea class="single-textarea" name="agenda" placeholder="Description" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Description'" required></textarea>
+                                                                                </div> <br>
+                                                                                <div class="row">
+                                                                                    <div class="col-md-6">
+                                                                                    <div class="switch-wrap d-flex justify-content-between">
+                                                                                    <p>Êtes-vous sûre de programmer cet entretien?</p>
+                                                                                    <div class="primary-checkbox">
+                                                                                        <input type="checkbox" name="host_video" value="1" id="primary-checkbox" checked>
+                                                                                        <label for="primary-checkbox"></label>
+                                                                                    </div>
+                                                                                </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-6">
+                                                                                    <div class="switch-wrap d-flex justify-content-between">
+                                                                                    <p>Vous informer à l'approche de l'entretien?</p>
+                                                                                    <div class="primary-checkbox">
+                                                                                        <input type="checkbox" name="participant_video" value="1" id="primary-checkbox" checked>
+                                                                                        <label for="primary-checkbox"></label>
+                                                                                    </div>
+                                                                                </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <br>
+                                                                                <button type="submit" class="genric-btn primary e-large">Programmer</button>
+
+                                                                              
+                                                                            </form>
+                               
+                                                                        </div>
+                                                                        </div>
+                                    
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -208,17 +243,16 @@
                             </div>
                         </div>
                     </div>
+                    <!-- content-wrapper ends -->
+                    <!-- partial:partials/_footer.html -->
+                    <footer class="footer">
+                        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2023. All rights reserved.</span>
+                        </div>
+                    </footer>
+                    <!-- partial -->
                 </div>
-                <!-- content-wrapper ends -->
-                <!-- partial:partials/_footer.html -->
-                <footer class="footer">
-                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2023. All rights reserved.</span>
-                    </div>
-                </footer>
-                <!-- partial -->
+                <!-- main-panel ends -->
             </div>
-            <!-- main-panel ends -->
-        </div>
 </main>
 @endsection

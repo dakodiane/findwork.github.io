@@ -116,6 +116,12 @@
               <span class="menu-title">Offres Recommandées</span>
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{('entretienpostulant')}}">
+            <i class="mdi mdi-clipboard-check menu-icon"></i>
+              <span class="menu-title">Vos Entretiens</span>
+            </a>
+          </li>
       
         </ul>
       </nav>
