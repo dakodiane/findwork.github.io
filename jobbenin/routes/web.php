@@ -26,14 +26,14 @@ use App\Http\Controllers\ConnexionPourPostulerController;
 
 
 
-Route::get('/', [WelcomeController::class,'index']);
+Route::get('/', [WelcomeController::class,'index'])->name('welcome');
  
   
   //partiedjemi
   //  
-
-  Route::get('connexion ', 'App\Http\Controllers\ConnexionController@index')->name('connexion');
-  Route::post('/connexion ', 'App\Http\Controllers\ConnexionController@connexion');
+  Route::get('/connexion', 'App\Http\Controllers\ConnexionController@index')->name('connexion');
+  Route::post('/connexion', 'App\Http\Controllers\ConnexionController@connexion');
+  
 
   Route::get('/connexionpourpostuler/{id_offre}', 'App\Http\Controllers\ConnexionPourPostuler@index')->name('connexionpourpostuler');
 
