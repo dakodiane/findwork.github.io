@@ -14,16 +14,15 @@ class Admin2Controller extends Controller
     public function offresNonPubliees() 
     {   
         $offres = Offre::with('user')->where('publication','0')
-      
+        ->where ('id_user'->user->id )
         ->where('modification', '=', 0) 
         ->whereHas('user', function ($query) {
             $query->where('active', '=', 1);
            
-        })
-    
-        ->orderBy('datfin')->get();
+        }) ->orderBy('datfin')->get();
         $offre_proche = $offres->first();
-        return view('Admin.nouvelpub', ['offres' => $offres, 'offre_proche' => $offre_proche]);;
+      
+        return view('Admin.nouvelpub', ['offres' => $offres, 'offre_proche' => $offre_proche ]);
 
 
     }

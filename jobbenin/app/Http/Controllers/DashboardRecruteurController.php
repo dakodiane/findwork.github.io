@@ -233,12 +233,7 @@ public function showd(Request $request, $id_user, $id_offre)
    
         {
         
-        
-        
-        
-        
-        
-        //
+    //
 
         $user = Auth::user();
 

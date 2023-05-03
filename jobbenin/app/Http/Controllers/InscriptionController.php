@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\connexion;
 use App\Models\User;
+
+use App\Models\connexion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use App\Notifications\ConfirmationNotification;
+use Illuminate\Support\Str;
 
 class InscriptionController extends Controller
 {
@@ -92,13 +95,16 @@ class InscriptionController extends Controller
         $user->password = Hash::make($request->password);
         $user->role = $request->role;
         $user->save();
-    
-        return redirect()->intended('connexion');
+      
+
+    // Envoyer la notification d'inscription
+    $user->notify(new ConfirmationNotification($user));
+        return redirect()->route('welcome');
     }
     
 
 
-
+  
 
 }
 
