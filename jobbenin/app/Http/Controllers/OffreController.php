@@ -88,7 +88,6 @@ class OffreController extends Controller
         //
         $offre = Offre::with('user')->find($id);
         $user = Auth::user();
-
         $offre->poste = $request->input('poste');
         $offre->description_offre = $request->input('description_offre');  
           // Pour enregistrer les informations complèter par l'utilisateur
@@ -105,14 +104,11 @@ class OffreController extends Controller
         $offre->competence_offre4= $request->input('competence_offre4');
         $offre->competence_offre5= $request->input('competence_offre5');
         $offre->modification = 1; 
-       $offre->save();
-       
+       $offre->save();     
         // Envoyer un message à l'utilisateur
         $message = "Votre Annonce a été soumise aux administrateurs pour analyse.
         Vous serez informés à sa publication.";
         return redirect()->route('annonce')->with('message', $message);
-  
-
     }
 
     /**

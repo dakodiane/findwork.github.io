@@ -25,7 +25,7 @@
                             <!-- Main-menu -->
                             <div class="main-menu">
                                 <nav class="d-none d-lg-block">
-                                    <ul id="navigation" class="menu-container" style="display: flex; justify-content: space-between;">
+                                    <ul id="navigation" class="menu-container">
                                         <li><a href="/" class="menu-link">Accueil</a></li>
                                         <li><a href="{{('/offre')}}" class="menu-link">Trouver&nbsp;Une&nbsp;Offre </a></li>
                                         <li><a href="{{('/freelancer')}}" class="menu-link">Espace&nbsp;Freelancer</a></li>
@@ -59,4 +59,6 @@
         </div>
     </div>
     <!-- Header End -->
+
+
 </header>

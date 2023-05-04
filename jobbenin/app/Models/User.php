@@ -6,6 +6,8 @@ namespace App\Models;
 
 use App\Models\Offre;
 use App\Models\Postuler;
+use App\Models\Entretien;
+use App\Models\ZoomMeeting;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -52,6 +54,14 @@ class User extends Authenticatable
 public function offre()
 {
     return $this->hasMany(Offre::class, 'id_user');
+}
+public function entretiens()
+{
+    return $this->hasMany(Entretien::class,'id_user');
+}
+public function meetings()
+{
+    return $this->hasMany(ZoomMeeting::class,'id_user');
 }
 
 }

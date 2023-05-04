@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\User;
+use App\Models\Offre;
+use App\Models\Postuler;
+use App\Models\Entretien;
 use App\Models\ZoomMeeting;
 use Illuminate\Http\Request;
 use App\Traits\ZoomMeetingTrait;
@@ -23,11 +26,21 @@ class EntretienController extends Controller
         return view('programmer', compact('meeting'));
     }
 
-    public function store(Request $request)
+
+    public function store(Request $request,$id_user,$id_offre)
     {
-        $this->create($request->all());
+        $data = $request->all();
+        $postulantoffre = Offre::find($id_offre);
+        $postulantid = User::find($id_user);
+        $entretien = $this->create($data,$id_user, $id_offre);
+        
+        Postuler::createEntretien($entretien['data'], $id_user, $id_offre);
+
         return redirect()->back();
     }
+
+
+
 
     public function update($meeting, Request $request)
     {
@@ -42,46 +55,58 @@ class EntretienController extends Controller
 
         return $this->sendSuccess('Meeting deleted successfully.');
     }
-    public function index($id)
+    public function index($id,$offreid)
     {
-        $user = auth()->user();
-        if ($user->role == 'recruteur') {
-            $offres = $user->offre;
-            $data = [];
-            $postulantid = []; // Initialisation du tableau des IDs des postulants sélectionnés
-
-            foreach ($offres as $offre) {
-                foreach ($offre->postulers as $postulant) {
-                    if ($postulant && $postulant->user && $postulant->suppression == 0 && $postulant->selection == 1) {
-                        $data[] = [
-                            'id_user' => $postulant->id_user,
-                            'id_offre' => $postulant->id_offre,
-                            'nom_recruteur' => $user->name,
-                            'nom_postulant' => $postulant->user->name,
-                            'cv' => $postulant->cv,
-                            'poste' => $offre->poste,
-                        ];
-                        $postulantid = $postulant->user->id; // Ajout de l'ID du postulant sélectionné dans le tableau
+        
+        {
+            $user = auth()->user();
+            if ($user->role == 'recruteur') {
+                $offres = $user->offre;
+                $postuler = null;
+                
+                // On récupère le postulant si les identifiants de l'utilisateur et de l'offre sont valides
+                $postuler = Postuler::with('user')
+                    ->where('id_user', $id)
+                    ->where('id_offre', $offreid)
+                    ->first();
+                
+                // On vérifie que le postulant a bien été récupéré avant d'essayer d'accéder à ses propriétés
+                if ($postuler) {
+                    $poste = $postuler->offre->poste;
+                    $lettreMotivation = $postuler->lettre_motivation;
+                    $cv = $postuler->cv;
+                    $data = [];
+                
+                    $postulantid = null;
+                    $postulantoffre = null;
+                    
+                    foreach ($offres as $offre) {
+                        foreach ($offre->postulers as $postul) {
+                            if ($postul && $postul->user && $postul->suppression == 1 && $postul->selection == 0 && $postul->postulantvisible == 1) {
+                                $data[] = [
+                                    'id_user' => $postul->id_user,
+                                    'id_offre' => $postul->id_offre,
+                                    'nom_recruteur' => $user->name,
+                                    'nom_postulant' => $postul->user->name,
+                                    'poste' => $offre->poste,
+                                ];
+                    
+                                // Stockage des valeurs de id_user et id_offre
+                                $id = $postuler->id_user;
+                                $offreid = $postuler->id_offre;
+                                dd($id);
+                            }
+                        }
                     }
-                }
-            }
-            $success = session()->get('success');
-            $id_user = isset($postulant) ? $postulant->id_user : null;
-            $id_offre = isset($postulant) ? $postulant->id_offre : null;
-            return view('programmer', ['user' => $user, 'postulantid' => $postulantid]);
+                    return view('programmer', ['user' => $user,  'offreid' => $offreid, 'id' => $id,'offreid'=>$offreid]);
+
+            } 
+         }
         }
-    }
-
-    public function startMeeting($id)
-    {
-        $meeting = ZoomMeeting::findOrFail($id);
-
-        if ($meeting->type != self::MEETING_TYPE_SCHEDULE) {
-            return $this->sendError('Meeting type should be schedule to start the meeting');
         }
 
-        $this->start($meeting->id);
+        
+  
 
-        return $this->sendSuccess('Meeting started successfully');
-    }
+
 }

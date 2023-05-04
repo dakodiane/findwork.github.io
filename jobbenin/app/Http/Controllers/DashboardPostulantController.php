@@ -128,6 +128,42 @@ class DashboardPostulantController extends Controller
 
 
 
+public function entretienpostulant()
+{
+    //
+    $user = Auth::user();
+    if (!$user) {
+        return redirect()->intended('connexion');
+    }
+
+    $postulant = User::with(['postulers' => function ($query) {
+        $query->where('programmed','=',1);
+    }, 'postulers.offre'])
+        ->where('id', Auth::id())
+        ->firstOrFail();
+    
+    $offres = $postulant->postulers->map(function ($postuler) {
+        $offre = $postuler->offre;
+        $start_time = $postuler->start_time;
+        $join_url = $postuler->join_url;
+        $poste=$postuler->offre->poste;
+        if (!$offre) {
+            return null;
+        }
+    
+        return [
+            'user' => $offre->user ?? null,
+            'start_time' => $start_time,
+            'poste'=>$poste,
+            'join_url' => $join_url,
+            'id' => $offre->id ?? null,
+        ];
+    })->filter();
+    
+ 
+    return view('entretienpostulant')->with(['user' => $user, 'offres' => $offres]);
+
+}
        
 }
     

@@ -3676,3 +3676,10 @@ input[type="radio"]{
     background-color: #ff406e;
     cursor: pointer;
   }
+
+  @media (max-width: 767px) {
+    .menu-container {
+        display: block;
+    }
+}
+

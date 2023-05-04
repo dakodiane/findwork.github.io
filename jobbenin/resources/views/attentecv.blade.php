@@ -24,7 +24,6 @@
       <div class="navbar-menu-wrapper d-flex align-items-top">
         <ul class="navbar-nav">
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-            <h1 class="welcome-text">Salut, <span class="text-black fw-bold">{{ $user->name }}</span></h1>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
@@ -102,43 +101,62 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link" href=" {{ route('profilrecruteur', 
+                ['id' => $user->id]) }}">
+                <span class="menu-title">    Mon Profil</span>
 
+          </a>
+          </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{('annonce')}}">
+            <a class="nav-link" href="{{('/annonce')}}">
               <i class="mdi mdi-rename-box menu-icon"></i>
               <span class="menu-title">Vos Annonces</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{('attentecv')}}">
+            <a class="nav-link" href="{{('/attentecv')}}">
               <i class="mdi mdi-alarm menu-icon"></i>
               <span class="menu-title">CV en Attente</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{('selectioncv')}}">
+            <a class="nav-link" href="{{('/selectioncv')}}">
               <i class="mdi mdi-clipboard-check menu-icon"></i>
               <span class="menu-title">CV Sélectionnés</span>
             </a>
           </li>
+      
           <li class="nav-item">
-            <a class="nav-link" href="{{('entretien')}}">
+            <a class="nav-link" href="{{('/entretiencreate')}}">
+              <i class="mdi mdi mdi-amplifier menu-icon"></i>
+              <span class="menu-title">Entretiens programmés</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{('/entretien')}}">
               <i class="mdi mdi mdi-amplifier menu-icon"></i>
               <span class="menu-title">Entretiens passés</span>
             </a>
           </li>
-
           <li class="nav-item">
-            <a class="nav-link" href="{{('publicite')}}">
+            <a class="nav-link" href="{{('/publicite')}}">
               <i class="mdi mdi-archive menu-icon"></i>
               <span class="menu-title">Publicité</span>
             </a>
           </li>
 
-
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('logout') }}" class="dropdown-item" class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            <span class="menu-title">Déconnexion</span>
+            </a>
+          </li>
         </ul>
       </nav>
       <div class="main-panel">
+
+      <h2 class="welcome-text">Salut, <span class="text-black fw-bold">{{ $user->name }}</span></h2>
+
         <div class="content-wrapper">
           <div class="row">
             <div class="col-sm-12">
@@ -208,8 +226,7 @@
                                                   </td>
                                                
                                                   <td>
-                                                  <a href="{{ route('postulanto.detail' ,['id_user' => $postulantid[$key],
-                                                    'id_offre' => $postulantoffre[$key]])}}"  class="btn btn-primary btn-lg btn-block" style="background-color: green;color:white;"> Voir+
+                                                  <a href="{{ route('postulanto.detail' ,['id_user' => $postulantid[$key],'id_offre' => $postulantoffre[$key]])}}"  class="btn btn-primary btn-lg btn-block" style="background-color: green;color:white;"> Voir+
 
         </td>
   

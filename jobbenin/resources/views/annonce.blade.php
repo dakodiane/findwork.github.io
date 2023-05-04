@@ -24,7 +24,6 @@
       <div class="navbar-menu-wrapper d-flex align-items-top">
         <ul class="navbar-nav">
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-            <h1 class="welcome-text">Salut, <span class="text-black fw-bold">{{ $user->name }}</span></h1>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
@@ -41,30 +40,29 @@
 
           <li class="nav-item dropdown d-none d-lg-block user-dropdown">
             <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-            <img  class="img-xs rounded-circle" src="{{ asset('storage/photoslogo/' . $user->logo_entreprise) }}" alt="Logo Entreprise" class="avatar">
-<div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
-              <div class="dropdown-header text-center">
-              <img src="{{ asset('storage/photoslogo/' . $user->logo_entreprise) }}" 
-              alt="Logo Entreprise" class="img-md rounded-circle" >
+              <img class="img-xs rounded-circle" src="{{ asset('storage/photoslogo/' . $user->logo_entreprise) }}" alt="Logo Entreprise" class="avatar">
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+                <div class="dropdown-header text-center">
+                  <img src="{{ asset('storage/photoslogo/' . $user->logo_entreprise) }}" alt="Logo Entreprise" class="img-md rounded-circle">
 
-<p class="mb-1 mt-3 font-weight-semibold">{{ $user->name }}</p>
-                <p class="fw-light text-muted mb-0">{{ $user->email }}</p>
-              </div>
-              <a class="dropdown-item" href=" {{ route('profilrecruteur', 
+                  <p class="mb-1 mt-3 font-weight-semibold">{{ $user->name }}</p>
+                  <p class="fw-light text-muted mb-0">{{ $user->email }}</p>
+                </div>
+                <a class="dropdown-item" href=" {{ route('profilrecruteur', 
                 ['id' => $user->id]) }}">
-            Mon Profil</a>
-
-              
-            <a href="{{ route('logout') }}" class="dropdown-item"  class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                Déconnexion
-              </a>
-
-              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf
-              </form>
+                  Mon Profil</a>
 
 
-            </div>
+                <a href="{{ route('logout') }}" class="dropdown-item" class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                  Déconnexion
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+                </form>
+
+
+              </div>
           </li>
         </ul>
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-bs-toggle="offcanvas">
@@ -102,7 +100,13 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link" href=" {{ route('profilrecruteur', 
+                ['id' => $user->id]) }}">
+                <span class="menu-title">    Mon Profil</span>
 
+          </a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="{{('annonce')}}">
               <i class="mdi mdi-rename-box menu-icon"></i>
@@ -110,30 +114,42 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{('attentecv')}}">
+            <a class="nav-link" href="{{('/attentecv')}}">
               <i class="mdi mdi-alarm menu-icon"></i>
               <span class="menu-title">CV en Attente</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{('selectioncv')}}">
+            <a class="nav-link" href="{{('/selectioncv')}}">
               <i class="mdi mdi-clipboard-check menu-icon"></i>
               <span class="menu-title">CV Sélectionnés</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{('entretien')}}">
+            <a class="nav-link" href="{{('/entretien')}}">
               <i class="mdi mdi mdi-amplifier menu-icon"></i>
               <span class="menu-title">Entretiens passés</span>
             </a>
           </li>
-
           <li class="nav-item">
-            <a class="nav-link" href="{{('publicite')}}">
+            <a class="nav-link" href="{{('/entretiencreate')}}">
+              <i class="mdi mdi mdi-amplifier menu-icon"></i>
+              <span class="menu-title">Entretiens programmés</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{('/publicite')}}">
               <i class="mdi mdi-archive menu-icon"></i>
               <span class="menu-title">Publicité</span>
             </a>
           </li>
+        
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('logout') }}" class="dropdown-item" class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            <span class="menu-title">Déconnexion</span>
+            </a>
+          </li>
+
 
 
         </ul>
@@ -167,24 +183,27 @@
         <!-- partial -->
 
 
- 
+
 
 
         <div class="main-panel">
+
+        <h2 class="welcome-text">Salut, <span class="text-black fw-bold">{{ $user->name }}</span></h2>
+
           <div class="container justify-content-center">
             <div class="row" class="d-sm-flex justify-content-between align-items-start">
               <div class="col-12">
-              <a href="{{('publierannonce')}}">
-                <button class="btn btn-primary btn-lg text-white mb-0 me-0" type="button"><i class="mdi mdi-account-plus"></i>Publier une nouvelle annonce</button>
-              </a>
+                <a href="{{('publierannonce')}}">
+                  <button class="btn btn-primary btn-lg text-white mb-0 me-0" type="button"><i class="mdi mdi-account-plus"></i>Publier une nouvelle annonce</button>
+                </a>
               </div>
-             
+
             </div>
             @if(session('message'))
-    <div class="alert alert-success mt-3" style="display: flex; align-items: center; justify-content: center; height: 50px; font-size: 1.2rem;">
-        {{ session('message') }}
-    </div>
-@endif
+            <div class="alert alert-success mt-3" style="display: flex; align-items: center; justify-content: center; height: 50px; font-size: 1.2rem;">
+              {{ session('message') }}
+            </div>
+            @endif
             <div class="row ">
               @foreach($offres as $offre)
 

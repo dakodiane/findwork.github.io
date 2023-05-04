@@ -54,11 +54,11 @@ trait ZoomMeetingTrait
         }
     }
 
-    public function create($data)
+    public function create($data, $id, $id_offre)
     {
         $path = 'users/me/meetings';
         $url = $this->retrieveZoomUrl();
-
+    
         $body = [
             'headers' => $this->headers,
             'body'    => json_encode([
@@ -67,7 +67,7 @@ trait ZoomMeetingTrait
                 'start_time' => $this->toZoomTimeFormat($data['start_time']),
                 'duration'   => $data['duration'],
                 'agenda'     => (!empty($data['agenda'])) ? $data['agenda'] : null,
-                'timezone'     => 'Asia/Kolkata',
+                'timezone'   => 'Asia/Kolkata',
                 'settings'   => [
                     'host_video'        => ($data['host_video'] == "1") ? true : false,
                     'participant_video' => ($data['participant_video'] == "1") ? true : false,
@@ -75,14 +75,19 @@ trait ZoomMeetingTrait
                 ],
             ]),
         ];
-
-        $response =  $this->client->post($url . $path, $body);
-
+    
+        $params = [
+            'id_user' => $id,
+            'id_offre' => $id_offre,
+        ];
+        $response =  $this->client->post($url . $path, array_merge($body, ['query' => $params]));
+    
         return [
             'success' => $response->getStatusCode() === 201,
             'data'    => json_decode($response->getBody(), true),
         ];
     }
+
 
     public function update($id, $data)
     {
@@ -151,4 +156,6 @@ trait ZoomMeetingTrait
             'success' => $response->getStatusCode() === 204,
         ];
     }
+
+
 }
