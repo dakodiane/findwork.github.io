@@ -8,11 +8,10 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-
-class PublicationOffreNotification extends Notification
+class ModificationOffreNotification extends Notification
 {
     use Queueable;
-   
+
     protected $offre;
 
 
@@ -24,8 +23,7 @@ class PublicationOffreNotification extends Notification
         $this->offre = $offre;
        
     }
-
-    /**£
+    /**
      * Get the notification's delivery channels.
      *
      * @return array<int, string>
@@ -43,8 +41,8 @@ class PublicationOffreNotification extends Notification
         $url = route('detail_offre', $this->offre->id);
   
         return (new MailMessage)
-        ->subject('Offre publiée sur JobBénin')
-        ->line('Votre Offre a été publiée avec succès sur la plateforme JobBénin. Visualisez la publication en cliquant sur le bouton ci-dessous.')
+        ->subject('Modification d\'Offre publiée sur JobBénin')
+        ->line('Votre Offre modifiée a été publiée avec succès sur la plateforme JobBénin. Visualisez la publication en cliquant sur le bouton ci-dessous.')
         ->action('Voir l\'Offre', $url)
         ->line('Merci de votre confiance.JobBénin');
     }

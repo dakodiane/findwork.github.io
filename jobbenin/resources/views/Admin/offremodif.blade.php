@@ -42,7 +42,7 @@
                 <td>{{ $offre->poste }}</td>
                 <td>{{ $offre->datfin }}</td>
                 <td>
-                <a href="{{ route('admin.detailoffremodif', $offre->id) }}" class="soulign">Voir l'offre</a>
+                <a href="{{ route('admin.detailoffremodif', ['id_user' => $offre->user->id , 'id_offre' => $offre->id]) }}" class="soulign">Voir l'offre</a>
                 </td>
             </tr>
             @endforeach

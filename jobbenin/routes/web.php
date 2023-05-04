@@ -159,16 +159,17 @@ Route::get('admin/', function () {
 });
 Route::get('/nouvelpub', 'App\Http\Controllers\Admin2Controller@offresNonPubliees')->name('admin.nouvelpub');
 
-Route::get('/detailnouvelpub/{id}', 'App\Http\Controllers\Admin2Controller@show')->name('admin.detailnouvelpub');
+Route::get('/detailnouvelpub/{id_user}/{id_offre}', 'App\Http\Controllers\Admin2Controller@show')->name('admin.detailnouvelpub');
 
-
-Route::get('/detailnouvelpub/{id}/valider', 'App\Http\Controllers\Admin2Controller@validerpub')->name('admin.valider');
+Route::get('/detailnouvelpub/{id_user}/{id_offre}/rejeter', 'App\Http\Controllers\Admin2Controller@rejeterpub')->name('admin.rejeter');
     
+Route::get('/detailnouvelpub/{id_user}/{id_offre}/valider', 'App\Http\Controllers\Admin2Controller@validerpub')->name('admin.valider');
+    
+   
 Route::get('/offremodif', 'App\Http\Controllers\Admin2Controller@offremodif')->name('admin.offremodif');
-
-    Route::get('/detailoffremodif/{id}', 'App\Http\Controllers\Admin2Controller@show2')->name('admin.detailoffremodif');
-    Route::get('/detailoffremodif/{id}/valideroffremodif', 'App\Http\Controllers\Admin2Controller@valideroffremodif')
-    ->name('admin.valideroffremodif');
+ Route::get('/detailoffremodif/{id_user}/{id_offre}', 'App\Http\Controllers\Admin2Controller@show2')->name('admin.detailoffremodif');
+    Route::get('/detailoffremodif/{id_user}/{id_offre}/valideroffremodif', 'App\Http\Controllers\Admin2Controller@valideroffremodif')->name('admin.valideroffremodif');
+    Route::get('/detailoffremodif/{id_user}/{id_offre}/rejeter', 'App\Http\Controllers\Admin2Controller@rejetermodifpub')->name('admin.rejetermodif');
   
    
     Route::get('/ offresignal', function () {

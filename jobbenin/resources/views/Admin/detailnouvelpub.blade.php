@@ -98,12 +98,12 @@
 
 
 
-                <a href="{{ route('admin.valider', $offre->id)  }}" class="no-underline">
+                <a href="{{ route('admin.valider',  ['id_user' => $offre->user->id , 'id_offre' => $offre->id])  }}" class="no-underline">
                     <button type="submit" class="btn btn-success btn-fw"> Approuver</button>
                 
                 </a>
           
-                <a href="" class="no-underline" style="margin-left:30px">
+                <a href="{{ route('admin.rejeter',  ['id_user' => $offre->user->id , 'id_offre' => $offre->id])  }}" class="no-underline" style="margin-left:30px">
                 <button type="submit" class="btn btn-danger btn-fw" >Rejeter</button>
                     
                 </a>

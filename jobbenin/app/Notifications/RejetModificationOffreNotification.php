@@ -8,11 +8,10 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-
-class PublicationOffreNotification extends Notification
+class RejetModificationOffreNotification extends Notification
 {
     use Queueable;
-   
+
     protected $offre;
 
 
@@ -24,8 +23,7 @@ class PublicationOffreNotification extends Notification
         $this->offre = $offre;
        
     }
-
-    /**£
+    /**
      * Get the notification's delivery channels.
      *
      * @return array<int, string>
@@ -40,16 +38,17 @@ class PublicationOffreNotification extends Notification
      */
     public function toMail(object $notifiable): MailMessage
     {
-        $url = route('detail_offre', $this->offre->id);
-  
+         
+
         return (new MailMessage)
-        ->subject('Offre publiée sur JobBénin')
-        ->line('Votre Offre a été publiée avec succès sur la plateforme JobBénin. Visualisez la publication en cliquant sur le bouton ci-dessous.')
-        ->action('Voir l\'Offre', $url)
-        ->line('Merci de votre confiance.JobBénin');
+                ->subject(' Rejet de  Modification d\'Offre sur JobBénin')
+                    ->line('Cher recruteur, nous avons examiné votre Modification de publication d\'offre d\'emploi sur JobBénin et regrettons de vous informer que nous ne pouvons pas la publier pour le moment.')
+                    ->line ('Nous vous prions de mieux remplir les informations requises et de soumettre à nouveau.')
+                   
+                    ->line('Merci de votre confiance.JobBénin');
     }
 
-    /**
+   /**
      * Get the array representation of the notification.
      *
      * @return array<string, mixed>
