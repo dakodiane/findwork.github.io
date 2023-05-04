@@ -271,7 +271,7 @@ public function showd(Request $request, $id_user, $id_offre)
     
     
     }
-    public function entretien()
+                public function entretien()
     {
         //
         $user = Auth::user();
