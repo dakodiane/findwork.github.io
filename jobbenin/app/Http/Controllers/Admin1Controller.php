@@ -25,6 +25,9 @@ class Admin1Controller extends Controller
         $offres = DB::table('offres')
         ->join('users', 'offres.id_user', '=', 'users.id')
         ->where('users.active', '=', 1)
+        ->where('publication','=','1')
+        ->where('modification','=','0')
+
         ->count();
         $adminId = Auth::id();
         $admin = Admin::find($adminId);
