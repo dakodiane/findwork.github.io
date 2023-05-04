@@ -10,6 +10,7 @@ use App\Models\ZoomMeeting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use App\Notifications\PostulantRetenuNotification;
 
 class DashboardRecruteurController extends Controller
 {
@@ -390,7 +391,7 @@ public function showd(Request $request, $id_user, $id_offre)
     public function retenir(Request $request, $id_user, $id_offre)
     {
         $user = auth()->user();
-     
+    
         $postuler = Postuler::where('id_user', $id_user)->where('id_offre', $id_offre)->first();
     
         if ($postuler) {
@@ -399,11 +400,15 @@ public function showd(Request $request, $id_user, $id_offre)
                 ->where('id_offre', $postuler->id_offre)
                 ->update(['retenir' => 1]);
     
-            return redirect()->back()->with('success', 'Postulant sélectionné avec succès!');
+           
+            $postulant = $postuler->user;
+            
+                $postulant->notify(new PostulantRetenuNotification($postuler));
+          
     
-        } else {
-            return redirect()->back()->with('error', 'Postulant introuvable!');
-        }
+            return redirect()->back()->with('success', '');
+    
+        } 
     }
     
 
