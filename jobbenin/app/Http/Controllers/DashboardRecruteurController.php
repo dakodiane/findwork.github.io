@@ -260,7 +260,9 @@ public function showd(Request $request, $id_user, $id_offre)
         $recruteur = DB::table('users')->where('id', Auth::id())->first();
 
         // Récupérez les offres du recruteur à partir de la table offres
-        $offres = DB::table('offres')->where('id_user', Auth::id())->get();
+        $offres = DB::table('offres')->where('id_user', Auth::id())->get()
+                                     ->where('publication','=','1')
+                                     ->where('modification','=','0');
 
 
         // Passez les informations du recruteur et ses offres à la vue du tableau de bord

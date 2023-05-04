@@ -8,8 +8,11 @@ use App\Models\User;
 use App\Models\Offre;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Notifications\ConfirmationNotification;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Notifications\ProgrammationEntretienNotification;
 
 class Postuler extends Model
 {
@@ -18,6 +21,7 @@ class Postuler extends Model
     public $incrementing = false;
     protected $keyType = 'integer';
 
+    use Notifiable;
 
     protected $fillable = [
         'id_user',
@@ -65,43 +69,41 @@ class Postuler extends Model
         } else {
             $participant_video = null; // ou une valeur par défaut
         }        // Trouver la ligne correspondante dans la table postuler
- $postuler = Postuler::where('id_user', $id_user)
-    ->where('id_offre', $id_offre)
-    ->first();
+        $postuler = Postuler::where('id_user', $id_user)
+            ->where('id_offre', $id_offre)
+            ->first();
 
-if ($postuler) {
-    // Si la ligne existe, récupérer toutes les valeurs existantes
-    $dataToUpdate = $postuler->toArray();
+        if ($postuler) {
+            // Si la ligne existe, récupérer toutes les valeurs existantes
+            $dataToUpdate = $postuler->toArray();
 
-    // Mettre à jour les champs nécessaires
-    $dataToUpdate['topic'] = $data['topic'];
-    $dataToUpdate['start_time'] = $data['start_time'];
-    $dataToUpdate['duration'] = $data['duration'];
-    $dataToUpdate['agenda'] = $data['agenda'];
-    $dataToUpdate['timezone'] = $data['timezone'];
-    $dataToUpdate['start_url'] = $data['start_url'];
-    $dataToUpdate['join_url'] = $data['join_url'];
+            // Mettre à jour les champs nécessaires
+            $dataToUpdate['topic'] = $data['topic'];
+            $dataToUpdate['start_time'] = $data['start_time'];
+            $dataToUpdate['duration'] = $data['duration'];
+            $dataToUpdate['agenda'] = $data['agenda'];
+            $dataToUpdate['timezone'] = $data['timezone'];
+            $dataToUpdate['start_url'] = $data['start_url'];
+            $dataToUpdate['join_url'] = $data['join_url'];
 
-    if(isset($data['host_video'])) {
-        $dataToUpdate['host_video'] = $data['host_video'];
-    }
-    if(isset($data['participant_video'])) {
-        $dataToUpdate['participant_video'] = $data['participant_video'];
-    }
-    $dataToUpdate['programmed'] = 1;
+            if (isset($data['host_video'])) {
+                $dataToUpdate['host_video'] = $data['host_video'];
+            }
+            if (isset($data['participant_video'])) {
+                $dataToUpdate['participant_video'] = $data['participant_video'];
+            }
+            $dataToUpdate['programmed'] = 1;
+       
+            // Mettre à jour la ligne dans la table
+            Postuler::where('id_user', $id_user)
+                ->where('id_offre', $id_offre)
+                ->update($dataToUpdate);
 
-    // Mettre à jour la ligne dans la table
-    Postuler::where('id_user', $id_user)
-        ->where('id_offre', $id_offre)
-        ->update($dataToUpdate);
-
-    // Récupérer la ligne mise à jour
-    $postuler = Postuler::where('id_user', $id_user)
-        ->where('id_offre', $id_offre)
-        ->first();
-
-    return $postuler;
-           
+            // Récupérer la ligne mise à jour
+            $postuler = Postuler::where('id_user', $id_user)
+                ->where('id_offre', $id_offre)
+                ->first();
+            return $postuler;
         } else {
             // Sinon, créer une nouvelle ligne
             $entretien->id_user = $id_user;
@@ -109,6 +111,7 @@ if ($postuler) {
             $entretien->host_video = $host_video;
             $entretien->participant_video = $participant_video;
             $entretien->save();
+
         }
         return $entretien;
     }

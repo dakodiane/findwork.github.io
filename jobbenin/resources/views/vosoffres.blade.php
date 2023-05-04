@@ -125,7 +125,11 @@
               <span class="menu-title">Vos Entretiens</span>
             </a>
           </li>
-      
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('logout') }}" class="dropdown-item" class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            <span class="menu-title">Déconnexion</span>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- partial -->

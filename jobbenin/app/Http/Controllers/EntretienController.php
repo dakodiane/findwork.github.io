@@ -33,6 +33,7 @@ class EntretienController extends Controller
         $postulantoffre = Offre::find($id_offre);
         $postulantid = User::find($id_user);
         $entretien = $this->create($data,$id_user, $id_offre);
+        
         Postuler::createEntretien($entretien['data'], $id_user, $id_offre);
 
         return redirect()->back();
@@ -103,6 +104,8 @@ class EntretienController extends Controller
          }
         }
         }
+
+        
   
 
 

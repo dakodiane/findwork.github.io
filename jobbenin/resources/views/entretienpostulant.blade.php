@@ -26,7 +26,6 @@
       <div class="navbar-menu-wrapper d-flex align-items-top">
         <ul class="navbar-nav">
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-            <h1 class="welcome-text">Salut, <span class="text-black fw-bold">{{ $user->name }}</span></h1>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
@@ -99,6 +98,13 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link" href=" {{ route('profilrecruteur', 
+                ['id' => $user->id]) }}">
+                <span class="menu-title">    Mon Profil</span>
+
+          </a>
+          </li>
         <li class="nav-item" style="margin-left:7px">
           <a class="nav-link" href=" {{('profilpostulant')}}">
           <i class="icon-head" style=""></i>  
@@ -123,7 +129,11 @@
               <span class="menu-title">Vos Entretiens</span>
             </a>
           </li>
-      
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('logout') }}" class="dropdown-item" class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            <span class="menu-title">Déconnexion</span>
+            </a>
+          </li>
         </ul>
       </nav>
 			
@@ -131,6 +141,8 @@
      
       <!-- main-panel ends -->
       <div class="main-panel">
+      <h2 class="welcome-text">Salut, <span class="text-black fw-bold">{{ $user->name }}</span></h2>
+
         <div class="content-wrapper">
           <div class="row">
             <div class="col-sm-12">
