@@ -95,36 +95,60 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
-      
-        <li class="nav-item" style="margin-left:7px">
-          <a class="nav-link" href=" {{('profilpostulant')}}">
-          <i class="icon-head" style=""></i>  
-              <span class="menu-title" style="margin-left:15px;margin-top:7px"> Mon Profil</span>
+          <li class="nav-item">
+            <a class="nav-link" href=" {{ route('profilrecruteur', 
+                ['id' => $user->id]) }}">
+                <i class="mdi mdi-account"></i>
+                     <span class="menu-title"> Mon Profil</span>
+
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{('vosoffres')}}">
-            <i class="mdi mdi-alarm menu-icon"></i>
-              <span class="menu-title">Vos Offres</span>
+            <a class="nav-link" href="{{('/annonce')}}">
+              <i class="mdi mdi-rename-box menu-icon"></i>
+              <span class="menu-title">Vos Annonces</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{('recommandation')}}">
-            <i class="mdi mdi-clipboard-check menu-icon"></i>
-              <span class="menu-title">Offres Recommandées</span>
+            <a class="nav-link" href="{{('/attentecv')}}">
+              <i class="mdi mdi-alarm menu-icon"></i>
+              <span class="menu-title">CV en Attente</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{('entretienpostulant')}}">
-            <i class="mdi mdi-clipboard-check menu-icon"></i>
-              <span class="menu-title">Vos Entretiens</span>
+            <a class="nav-link" href="{{('/selectioncv')}}">
+              <i class="mdi mdi-clipboard-check menu-icon"></i>
+              <span class="menu-title">CV Sélectionnés</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('logout') }}" class="dropdown-item" class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            <a class="nav-link" href="{{('/entretien')}}">
+              <i class="mdi mdi mdi-amplifier menu-icon"></i>
+              <span class="menu-title">Entretiens passés</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{('/entretiencreate')}}">
+              <i class="mdi mdi mdi-amplifier menu-icon"></i>
+              <span class="menu-title">Entretiens programmés</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{('/publicite')}}">
+              <i class="mdi mdi-archive menu-icon"></i>
+              <span class="menu-title">Publicité</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('logout') }}" class="dropdown-item"onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            <i  class="dropdown-item-icon mdi mdi-power text-primary me-2" ></i>
             <span class="menu-title">Déconnexion</span>
             </a>
           </li>
+
+
+
         </ul>
       </nav>
 			

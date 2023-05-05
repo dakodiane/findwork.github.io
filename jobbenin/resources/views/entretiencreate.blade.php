@@ -100,12 +100,13 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
-        <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link" href=" {{ route('profilrecruteur', 
                 ['id' => $user->id]) }}">
-                <span class="menu-title">    Mon Profil</span>
+                <i class="mdi mdi-account"></i>
+                     <span class="menu-title"> Mon Profil</span>
 
-          </a>
+            </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{('/annonce')}}">
@@ -137,18 +138,21 @@
               <span class="menu-title">Entretiens programmés</span>
             </a>
           </li>
-         
           <li class="nav-item">
             <a class="nav-link" href="{{('/publicite')}}">
               <i class="mdi mdi-archive menu-icon"></i>
               <span class="menu-title">Publicité</span>
             </a>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('logout') }}" class="dropdown-item" class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            <a class="nav-link" href="{{ route('logout') }}" class="dropdown-item"onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            <i  class="dropdown-item-icon mdi mdi-power text-primary me-2" ></i>
             <span class="menu-title">Déconnexion</span>
             </a>
           </li>
+
+
 
         </ul>
       </nav>
