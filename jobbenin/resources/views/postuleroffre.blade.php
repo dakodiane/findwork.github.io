@@ -84,7 +84,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <p>Votre Candidature a été enregistrée avec succès.</p>
+        <p>Votre Candidature a été enregistrée avec succès!</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
