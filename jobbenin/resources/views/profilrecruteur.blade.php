@@ -2,12 +2,10 @@
 
 @section('document')
 
-<main>
 
+<main>
   <div class="container-scroller">
 
-
-    <!-- partial:partials/_navbar.html -->
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
         <div class="me-3">
@@ -19,8 +17,8 @@
           <a class="navbar-brand brand-logo" href="/">
             <img src="{{asset('assets/img/logo/logojob.png')}}" alt="logo" />
           </a>
-          <a class="navbar-brand brand-logo-mini" href="index.html">
-            <img src="{{asset('assets/images/logo-mini.svg')}}" alt="logo" />
+          <a class="navbar-brand brand-logo-mini" href="/">
+            <img src="{{asset('assets/img/logo/logojob.png')}}" alt="logo" />
           </a>
         </div>
       </div>
@@ -42,32 +40,35 @@
 
 
           <li class="nav-item dropdown d-none d-lg-block user-dropdown">
-            <a class="nav-link" id="UserDropdown"  data-bs-toggle="dropdown" aria-expanded="false">
-            <img  class="img-xs rounded-circle" src="{{ asset('storage/photoslogo/' . $user->logo_entreprise) }}" alt="Logo Entreprise" class="avatar">
- 
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
-              <div class="dropdown-header text-center">
-              <img  class="img-md rounded-circle" 
-               src="{{ asset('storage/photoslogo/' . $user->logo_entreprise) }}" alt="Logo Entreprise" >
+            <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+              <img class="img-xs rounded-circle" src="{{ asset('storage/photoslogo/' . $user->logo_entreprise) }}" alt="Logo Entreprise" class="avatar">
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+                <div class="dropdown-header text-center">
+                  <img src="{{ asset('storage/photoslogo/' . $user->logo_entreprise) }}" alt="Logo Entreprise" class="img-md rounded-circle">
 
-
-                <p class="mb-1 mt-3 font-weight-semibold">{{ $user->name }}</p>
-                <p class="fw-light text-muted mb-0">{{ $user->email }}</p>
-              </div>
-              <a class="dropdown-item" href=" {{ route('profilrecruteur', 
+                  <p class="mb-1 mt-3 font-weight-semibold">{{ $user->name }}</p>
+                  <p class="fw-light text-muted mb-0">{{ $user->email }}</p>
+                </div>
+                <a class="dropdown-item" href=" {{ route('profilrecruteur', 
                 ['id' => $user->id]) }}">
-            Mon Profil</a>
+                  Mon Profil</a>
 
-              <a href="{{ route('logout') }}" class="dropdown-item"  class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                Déconnexion
-              </a>
-              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf
-              </form>
-            </div>
+
+                <a href="{{ route('logout') }}" class="dropdown-item" class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                  Déconnexion
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+                </form>
+
+
+              </div>
           </li>
         </ul>
-        
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-bs-toggle="offcanvas">
+          <span class="mdi mdi-menu"></span>
+        </button>
       </div>
     </nav>
     <!-- partial -->
@@ -100,12 +101,12 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
-        <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link" href=" {{ route('profilrecruteur', 
                 ['id' => $user->id]) }}">
-                <span class="menu-title">    Mon Profil</span>
+              <span class="menu-title"> Mon Profil</span>
 
-          </a>
+            </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{('/annonce')}}">
@@ -132,63 +133,175 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="{{('/entretiencreate')}}">
+              <i class="mdi mdi mdi-amplifier menu-icon"></i>
+              <span class="menu-title">Entretiens programmés</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="{{('/publicite')}}">
               <i class="mdi mdi-archive menu-icon"></i>
               <span class="menu-title">Publicité</span>
             </a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" href="{{ route('logout') }}" class="dropdown-item" class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-            <span class="menu-title">Déconnexion</span>
+              <span class="menu-title">Déconnexion</span>
             </a>
           </li>
+
+
+
         </ul>
       </nav>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_settings-panel.html -->
+        <div class="theme-setting-wrapper">
+          <div id="settings-trigger"><i class="ti-settings"></i></div>
+          <div id="theme-settings" class="settings-panel">
+            <i class="settings-close ti-close"></i>
+            <p class="settings-heading">SIDEBAR SKINS</p>
+            <div class="sidebar-bg-options selected" id="sidebar-light-theme">
+              <div class="img-ss rounded-circle bg-light border me-3"></div>Light
+            </div>
+            <div class="sidebar-bg-options" id="sidebar-dark-theme">
+              <div class="img-ss rounded-circle bg-dark border me-3"></div>Dark
+            </div>
+            <p class="settings-heading mt-2">HEADER SKINS</p>
+            <div class="color-tiles mx-0 px-4">
+              <div class="tiles success"></div>
+              <div class="tiles warning"></div>
+              <div class="tiles danger"></div>
+              <div class="tiles info"></div>
+              <div class="tiles dark"></div>
+              <div class="tiles default"></div>
+            </div>
+          </div>
+        </div>
       
- <div class="profile-card" >
-  <h3 style="text-align: center;">A Propos De Vous</h3>
-  <div style="text-align: center;">
-  <img  class="img-md rounded-circle" 
-               src="{{ asset('storage/photoslogo/' . $user->logo_entreprise) }}" alt="Logo Entreprise" >
-
-
-</div>
-@if(session('message'))
-    <div class="alert alert-danger mt-3" style="display: flex; align-items: center; justify-content: center; height: 50px; font-size: 1.2rem;">
-        {{ session('message') }}
-    </div>
-@endif
-  
-  <div  class="" style="text-align: center;">
+      <div class="profile-card">
+  <h3 class="text-center">A Propos De Vous</h3>
+  <div class="d-flex justify-content-center mb-3">
+    <img class="img-md rounded-circle" src="{{ asset('storage/photoslogo/' . $user->logo_entreprise) }}" alt="Logo Entreprise">
+  </div>
+  @if(session('message'))
+    <div class="alert alert-danger text-center">{{ session('message') }}</div>
+  @endif
+  <div class="text-center">
     <label for=""><u>Nom:</u></label>
     <span>{{ $user->name }}</span>
     <label for=""><u>Adresse Email:</u></label>
-    <span> {{ $user->email }}</span>
+    <span>{{ $user->email }}</span>
   </div>
-  <br>
   <hr>
-  <h3>Autres Informations</h3>
- 
-
- 
-<br>
-<div style="display: flex; align-items: center;">
-    <label for="" style="margin-right: 10px;"><u>Ville :</u></label>
+  <h3 class="mb-3">Autres Informations</h3>
+  <div class="mb-3">
+    <label for=""><u>Ville :</u></label>
     <span>{{ $user->villeR }}</span>
-</div>
-<br>
-<div style="display: flex; align-items: center;">
-    <label for="" style="margin-right: 10px;"><u>Description:</u></label>
+  </div>
+  <div class="mb-3">
+    <label for=""><u>Description:</u></label>
     <span>{{ $user->description_recruteur }}</span>
+  </div>
+  <button class="button1 mx-auto d-block" data-modal="modal-mod">Modifier Vos Informations</button> 
 </div>
 
-  <br>
-  
-  <button class="button1" data-modal="modal-mod" style="margin-left :400px;">Modifier Vos Informations</button> 
-</div>
 
 </div>              
+<style>
+.modal1 {
+    padding-top: 3em;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    overflow-y: auto;
+}
 
+.modal1-content {
+    background-color: #fff;
+    padding: 2em;
+    text-align: justify;
+    margin: 10% auto;
+    max-width: 90%;
+}
+
+@media only screen and (min-width: 768px) {
+    .modal1-content {
+        max-width: 600px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .modal1-content {
+        max-width: 800px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .modal1-content {
+        max-width: 1000px;
+    }
+}
+
+.contact-form {
+    position: relative;
+    z-index: 100000;
+}
+
+.contact-form .close {
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    color: red;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.contact-form label {
+    color: #242b5e;
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    width: 100%;
+    padding: 0.5em;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button[type="submit"] {
+    background-color: #242b5e;
+    border-color: #242b5e;
+    padding: 0.5em 1em;
+    border-radius: 3px;
+    color: #fff;
+    width: 120px;
+    margin: 0 auto;
+    display: block;
+}
+
+@media only screen and (min-width: 768px) {
+    .contact-form button[type="submit"] {
+        width: 100%;
+    }
+}
+</style>
 
 <div id="modal-mod" class="modal1" style="padding-top: 3em;width: 1400px;">
   <div class="modal1-content" style="background-color: #fff; padding: 2em; text-align: justify;">

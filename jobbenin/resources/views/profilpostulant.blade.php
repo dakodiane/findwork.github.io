@@ -124,48 +124,136 @@
 		
     
   
- <div class="profile-card" >
-  <h3 style="text-align: center;">A Propos De Vous</h3>
-  <div style="text-align: center;">
-  <img class="rounded-circle" src="{{ asset('assets/images/faces/face8.jpg') }}"  alt="Profile image" style="margin: 0 auto;">
-</div>
-  
-  <div  class="" style="text-align: center;">
-    <label for=""><u>Nom:</u></label>
-    <span>{{ $user->name }}</span>
-    <label for=""><u>Adresse Email:</u></label>
-    <span> {{ $user->email }}</span>
+      <div class="profile-card">
+  <h3 class="text-center">A Propos De Vous</h3>
+  <div class="text-center">
+    <img class="rounded-circle" src="{{ asset('assets/images/faces/face8.jpg') }}"  alt="Profile image">
   </div>
-  <br>
-  <hr>
-  <h3>Autres Informations</h3>
- 
-  <div class="grid-container" style="display: flex; align-items: center;">
-    <label for="" style="margin-right: 10px;"><u>Téléphone :</u></label>
-    <span>{{ $user->contact_postulant }}</span>
-</div>
-  <div class="grid-container" style="display: flex; align-items: center;">
-    <label for="" style="margin-right: 10px;"><u>Ville :</u></label>
-    <span>{{ $user->villeP }}</span>
+  
+  <div class="profile-info">
+    <div class="info-item">
+      <label for=""><u>Nom:</u></label>
+      <span>{{ $user->name }}</span>
+    </div>
+    <div class="info-item">
+      <label for=""><u>Adresse Email:</u></label>
+      <span> {{ $user->email }}</span>
+    </div>
+    <div class="info-item">
+      <label for=""><u>Téléphone :</u></label>
+      <span>{{ $user->contact_postulant }}</span>
+    </div>
+    <div class="info-item">
+      <label for=""><u>Ville :</u></label>
+      <span>{{ $user->villeP }}</span>
+    </div>
+    <div class="info-item">
+      <label for=""><u>Secteur D'Activité :</u></label>
+      <span>{{ $user->secteurP }}</span>
+    </div>
+    <div class="info-item">
+      <label for=""><u>Diplôme :</u></label>
+      <span>{{ $user->diplomeP }}</span>
+    </div>
+  </div>
+
+  <button class="button1 mx-auto mt-3" data-modal="modal-mod">Modifier Vos Informations</button> 
 </div>
 
-<br>
-<div style="display: flex; align-items: center;">
-    <label for="" style="margin-right: 10px;"><u>Secteur D'Activité :</u></label>
-    <span>{{ $user->secteurP }}</span>
-</div>
-<br>
-<div style="display: flex; align-items: center;">
-    <label for="" style="margin-right: 10px;"><u>Diplôme :</u></label>
-    <span>{{ $user->diplomeP }}</span>
-</div>
-
-  <br>
-  <button class="button1" data-modal="modal-mod" style="margin-left :400px;">Modifier Vos Informations</button> 
-</div>
 
 </div>              
+<style>
+.modal1 {
+    padding-top: 3em;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    overflow-y: auto;
+}
 
+.modal1-content {
+    background-color: #fff;
+    padding: 2em;
+    text-align: justify;
+    margin: 10% auto;
+    max-width: 90%;
+}
+
+@media only screen and (min-width: 768px) {
+    .modal1-content {
+        max-width: 600px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .modal1-content {
+        max-width: 800px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .modal1-content {
+        max-width: 1000px;
+    }
+}
+
+.contact-form {
+    position: relative;
+    z-index: 100000;
+}
+
+.contact-form .close {
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    color: red;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.contact-form label {
+    color: #242b5e;
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    width: 100%;
+    padding: 0.5em;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button[type="submit"] {
+    background-color: #242b5e;
+    border-color: #242b5e;
+    padding: 0.5em 1em;
+    border-radius: 3px;
+    color: #fff;
+    width: 120px;
+    margin: 0 auto;
+    display: block;
+}
+
+@media only screen and (min-width: 768px) {
+    .contact-form button[type="submit"] {
+        width: 100%;
+    }
+}
+</style>
 
 <div id="modal-mod" class="modal1" style="padding-top: 3em;width: 1400px;">
   <div class="modal1-content" style="background-color: #fff; padding: 2em; text-align: justify;">

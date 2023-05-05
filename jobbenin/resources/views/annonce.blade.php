@@ -100,15 +100,15 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
-        <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link" href=" {{ route('profilrecruteur', 
                 ['id' => $user->id]) }}">
-                <span class="menu-title">    Mon Profil</span>
+              <span class="menu-title"> Mon Profil</span>
 
-          </a>
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{('annonce')}}">
+            <a class="nav-link" href="{{('/annonce')}}">
               <i class="mdi mdi-rename-box menu-icon"></i>
               <span class="menu-title">Vos Annonces</span>
             </a>
@@ -143,10 +143,10 @@
               <span class="menu-title">Publicité</span>
             </a>
           </li>
-        
+
           <li class="nav-item">
             <a class="nav-link" href="{{ route('logout') }}" class="dropdown-item" class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-            <span class="menu-title">Déconnexion</span>
+              <span class="menu-title">Déconnexion</span>
             </a>
           </li>
 
@@ -186,15 +186,18 @@
 
 
 
-        <div class="main-panel">
+        <div class="main-panel" style="margin-bottom: 40px;">
 
-        <h2 class="welcome-text">Salut, <span class="text-black fw-bold">{{ $user->name }}</span></h2>
+          <h2 class="welcome-text">Salut, <span class="text-black fw-bold">{{ $user->name }}</span></h2>
 
           <div class="container justify-content-center">
-            <div class="row" class="d-sm-flex justify-content-between align-items-start">
+            <div class="row" class="d-sm-flex justify-content-between align-items-start" style="margin-bottom:29px">
               <div class="col-12">
                 <a href="{{('publierannonce')}}">
-                  <button class="btn btn-primary btn-lg text-white mb-0 me-0" type="button"><i class="mdi mdi-account-plus"></i>Publier une nouvelle annonce</button>
+                  <button class="btn btn-primary btn-lg text-white d-flex align-items-center justify-content-center text-center mb-0 me-0" style="height: 40px;">
+                    <i class="mdi mdi-account-plus me-2"></i>
+                    Publier une nouvelle annonce
+                  </button>
                 </a>
               </div>
 
@@ -205,28 +208,28 @@
             </div>
             @endif
             <div class="row ">
-              @foreach($offres as $offre)
-
-              <div class="col-md-4 title">
-
-                <div>
-                  <h4>Poste recherché: {{ $offre->poste }}</h4>
+              <div class="row row-cols-1 row-cols-md-3 g-4">
+                @foreach($offres as $offre)
+                <div class="col mb-4">
+                  <div class="card h-100 card-equal-height">
+                    <div class="card-body d-flex flex-column">
+                      <h4 class="card-title">Poste recherché: {{ $offre->poste }}</h4>
+                      <p class="card-text">{{ $offre->description_offre }}</p>
+                      <p class="card-text muted regular">Posté le: {{ $offre->created_at }}</p>
+                      <div class="mt-auto d-flex align-items-center">
+                        <a href="{{route('modifieroffre',$offre->id)}}" class="btn btn-success">Modifier l'offre</a>
+                        <a href="{{route('supprimeroffre',$offre->id)}}" class="btn btn-danger ms-2">Supprimer</a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <p>{{ $offre->description_offre }}</p>
-                <div>
-                  <p class="muted regular "> <b>Posté le:</b> {{ $offre->created_at }}</p>
-
-                  <a href="{{route('modifieroffre',$offre->id)}}">
-                    <button type="submit" class="btn btn-success" style="color:white;background-color: green;border:none">Modifier l'offre</button>
-                  </a>
-                  <a href="">
-                    <button type="submit" class="btn btn-success" style="color:white;background-color: red;border:none;left:40px">Supprimer</button>
-                  </a>
-                </div>
-
-
+                @if($loop->iteration % 3 == 0)
               </div>
-              @endforeach
+              <div class="row row-cols-1 row-cols-md-3 g-4">
+                @endif
+                @endforeach
+              </div>
+
 
 
             </div>

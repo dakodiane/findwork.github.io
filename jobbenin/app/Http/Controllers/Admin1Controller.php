@@ -48,20 +48,20 @@ class Admin1Controller extends Controller
     public function recruteur()
     {
         //
-        $recruteurs = User::where('role', 'recruteur')->get();
+        $recruteurs = User::where('role', 'recruteur')->orderBy('created_at', 'desc')->get();
         return view('Admin.recruteur', ['recruteurs' => $recruteurs]);
     }
 
     public function postulant()
     {
         //
-        $postulants = User::where('role', 'postulant')->get();
+        $postulants = User::where('role', 'postulant')->orderBy('created_at', 'desc')->get();
         return view('Admin.postulant', ['postulants' => $postulants]);
     }
     public function freelancer()
     {
         //
-        $freelancers = User::where('role', 'freelancer')->get();
+        $freelancers = User::where('role', 'freelancer')->orderBy('created_at', 'desc')->get();
         return view('Admin.freelancera', ['freelancers' => $freelancers]);
     }
 
