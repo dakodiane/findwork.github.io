@@ -75,14 +75,10 @@
         <div id="settings-trigger"><i class="ti-settings"></i></div>
         <div id="theme-settings" class="settings-panel">
           <i class="settings-close ti-close"></i>
-          <p class="settings-heading">SIDEBAR SKINS</p>
-          <div class="sidebar-bg-options selected" id="sidebar-light-theme">
-            <div class="img-ss rounded-circle bg-light border me-3"></div>Light
-          </div>
-          <div class="sidebar-bg-options" id="sidebar-dark-theme">
-            <div class="img-ss rounded-circle bg-dark border me-3"></div>Dark
-          </div>
-          <p class="settings-heading mt-2">HEADER SKINS</p>
+          <p class="settings-heading">TONS DE LA BARRE LATTERALE</p>
+          <div class="sidebar-bg-options selected" id="sidebar-light-theme"><div class="img-ss rounded-circle bg-light border me-3"></div>Light</div>
+          <div class="sidebar-bg-options" id="sidebar-dark-theme"><div class="img-ss rounded-circle bg-dark border me-3"></div>Dark</div>
+          <p class="settings-heading mt-2">TONS DE L'ENTETE</p>
           <div class="color-tiles mx-0 px-4">
             <div class="tiles success"></div>
             <div class="tiles warning"></div>
@@ -93,18 +89,13 @@
           </div>
         </div>
       </div>
+    
 
       <!-- partial -->
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
-        <li class="nav-item">
-            <a class="nav-link" href=" {{ route('profilrecruteur', 
-                ['id' => $user->id]) }}">
-                <span class="menu-title">    Mon Profil</span>
-
-          </a>
-          </li>
+      
         <li class="nav-item" style="margin-left:7px">
           <a class="nav-link" href=" {{('profilpostulant')}}">
           <i class="icon-head" style=""></i>  

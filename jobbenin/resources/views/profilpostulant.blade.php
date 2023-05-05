@@ -3,11 +3,8 @@
 @section('document')
 
 <main>
+  <div class="container-scroller">
 
-<div class="container-scroller">
-
- 
-    <!-- partial:partials/_navbar.html -->
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
         <div class="me-3">
@@ -17,23 +14,20 @@
         </div>
         <div>
           <a class="navbar-brand brand-logo" href="/">
-          <img src="{{asset('assets/img/logo/logojob.png')}}" alt="">
+            <img src="{{asset('assets/img/logo/logojob.png')}}" alt="logo" />
           </a>
           <a class="navbar-brand brand-logo-mini" href="/">
-            <img src="" alt="">
+            <img src="{{asset('assets/img/logo/logojob.png')}}" alt="logo" />
           </a>
         </div>
       </div>
-      <div class="navbar-menu-wrapper d-flex align-items-top"> 
+      <div class="navbar-menu-wrapper d-flex align-items-top">
         <ul class="navbar-nav">
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-    
-       
-            <h1 class="welcome-text">  Salut, <span class="text-black fw-bold">{{ $user->name }}.</span> </h1>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
-        
+
           <li class="nav-item d-none d-lg-block">
             <div id="datepicker-popup" class="input-group date datepicker navbar-date-picker">
               <span class="input-group-addon input-group-prepend border-right">
@@ -42,8 +36,7 @@
               <input type="text" class="form-control">
             </div>
           </li>
-          
-      
+
           <li class="nav-item dropdown d-none d-lg-block user-dropdown">
             <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
               <img class="img-xs rounded-circle" src="{{asset('assets/images/faces/face8.jpg')}}" alt="Profile image"> </a>
@@ -98,13 +91,15 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
+      
 
-        <li class="nav-item" style="margin-left:7px">
-          <a class="nav-link" href=" {{('profilpostulant')}}">
-          <i class="icon-head" style=""></i>  
+        <li class="nav-item" >
+          <a class="nav-link" href="{{('profilpostulant')}}">  
+            <i class="icon-head" style="margin-left:6px;"></i>  
               <span class="menu-title" style="margin-left:15px;margin-top:7px"> Mon Profil</span>
             </a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" href="{{('vosoffres')}}">
             <i class="mdi mdi-alarm menu-icon"></i>
@@ -117,7 +112,17 @@
               <span class="menu-title">Offres Recommandées</span>
             </a>
           </li>
-      
+          <li class="nav-item">
+            <a class="nav-link" href="{{('entretienpostulant')}}">
+            <i class="mdi mdi-clipboard-check menu-icon"></i>
+              <span class="menu-title">Vos Entretiens</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('logout') }}" class="dropdown-item" class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            <span class="menu-title">Déconnexion</span>
+            </a>
+          </li>
         </ul>
       </nav>
 			<!-- partial -->

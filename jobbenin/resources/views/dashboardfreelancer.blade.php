@@ -3,11 +3,8 @@
 @section('document')
 
 <main>
+  <div class="container-scroller">
 
-<div class="container-scroller">
-
- 
-    <!-- partial:partials/_navbar.html -->
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
         <div class="me-3">
@@ -17,23 +14,20 @@
         </div>
         <div>
           <a class="navbar-brand brand-logo" href="/">
-          <img src="{{asset('assets/img/logo/logojob.png')}}" alt="">
+            <img src="{{asset('assets/img/logo/logojob.png')}}" alt="logo" />
           </a>
-          <a class="navbar-brand brand-logo-mini"href="/">
-            <img src="" alt="">
+          <a class="navbar-brand brand-logo-mini" href="/">
+            <img src="{{asset('assets/img/logo/logojob.png')}}" alt="logo" />
           </a>
         </div>
       </div>
-      <div class="navbar-menu-wrapper d-flex align-items-top"> 
+      <div class="navbar-menu-wrapper d-flex align-items-top">
         <ul class="navbar-nav">
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-    
-       
-            <h1 class="welcome-text">  Bienvenue, <span class="text-black fw-bold">{{ $user->name }}.</span> </h1>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
-        
+
           <li class="nav-item d-none d-lg-block">
             <div id="datepicker-popup" class="input-group date datepicker navbar-date-picker">
               <span class="input-group-addon input-group-prepend border-right">
@@ -42,7 +36,7 @@
               <input type="text" class="form-control">
             </div>
           </li>
-          
+
       
           <li class="nav-item dropdown d-none d-lg-block user-dropdown">
             <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
@@ -102,6 +96,9 @@
       </div>
     
       <!-- partial -->
+        <div class="main-panel">
+      <h2 class="welcome-text">Salut, <span class="text-black fw-bold">{{ $user->name }}</span></h2>
+
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
@@ -116,6 +113,11 @@
             <a class="nav-link" href="{{('dashboardfreelancer')}}">
             <i class="mdi mdi-clipboard-check menu-icon"></i>
               <span class="menu-title"> Publicité</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('logout') }}" class="dropdown-item" class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            <span class="menu-title">Déconnexion</span>
             </a>
           </li>
        </ul>
