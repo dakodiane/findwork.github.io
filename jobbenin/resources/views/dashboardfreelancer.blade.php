@@ -114,7 +114,8 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ route('logout') }}" class="dropdown-item" class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-            <span class="menu-title">Déconnexion</span>
+            <i class="icon-inbox"></i>  <span style="width:15px"></span> <span class="menu-title">Déconnexion</span>
+         
             </a>
           </li>
        </ul>
