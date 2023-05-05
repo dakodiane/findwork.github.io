@@ -130,17 +130,18 @@
       <div class="main-panel">
       <h2 class="welcome-text">Salut, <span class="text-black fw-bold">{{ $user->name }}</span></h2>
         <div class="content-wrapper">
-      <section class="featured-job-area feature">
+        <section class="featured-job-area feature">
   <div class="container">
-    <div class="row mt-3">
+    <div class="row">
       <div class="col-12">
-        <div class="section-tittle section-tittle2 text-center">
+        <div class="section-tittle section-tittle2 text-center mb-3">
           <h3><u><b>Recommandations</b></u></h3>
           <p>Trouvez l'emploi de vos rêves</p>
         </div>
       </div>
     </div>
-    <div class="row justify-content-center mt-3">
+
+    <div class="row justify-content-center">
       <div class="col-12">
         @foreach($offres as $offre)
         <div class="single-job-items mb-3">
@@ -169,6 +170,7 @@
     </div>
   </div>
 </section>
+
 
 
 
