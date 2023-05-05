@@ -18,27 +18,26 @@
                                     </h1>
                                 </div>
 
-                                <div class="col-sm-11 mx-auto">
-                    <div class="container">
- <div class="col-md-12" 
-        style="background-color:#1f3bb3;float:left; width: 477px;">
-            
-            <div class="alert -primary alert-dismissible fade show"
-              style="background-color:#1f3bb3"role="alert">
-                        <strong class="text" style="background-color:#1f3bb3;color:white"> 
-                     Hello !   {{ $user->name }}</strong>
-
+                                <div class="container">
+    <div class="row">
+        <div class="col-md-12 col-lg-8 mx-auto">
+            <div class="alert -primary alert-dismissible fade show" style="background-color:#1f3bb3" role="alert">
+                <strong class="text" style="background-color:#1f3bb3;color:white">Hello! {{ $user->name }}</strong>
                 <p class="text-light my-0">
                     Besoin d'un CV Professionnel pour votre Candidature ?
                 </p>
-                <p class="mt-3 mb-0"> <a href="https://wa.me/0022990733200"target="_blank" >
-            <button  style="background-color:white;border:none; color:#1f3bb3;border-radius:40px"  >
-            Commander Maintenant</button>    
-  </a> </p>
-        
-                </div>
-             
+                <p class="mt-3 mb-0">
+                    <a href="https://wa.me/0022990733200" target="_blank">
+                        <button style="background-color:white;border:none;color:#1f3bb3;border-radius:40px;">
+                            Commander Maintenant
+                        </button>
+                    </a>
+                </p>
+            </div>
         </div>
+    </div>
+</div>
+
   <p></p>
 
   <form method="POST" action="{{route('postuleroffre', ['id_offre' => $offre->id])}}" enctype="multipart/form-data" style="max-width: 400px; margin: 0 auto;">
@@ -55,69 +54,44 @@
          </div>
        </div>
        <div class="form-group">
-         <label for="secteur">Curriculum Vitae (CV) </label>
-         <input type="file" id="cv" name="cv" required="required" class="form-control" placeholder="" style="width:34em">
-       </div>
-       <div class="row form-group">
-         <div class="col-md-8 col-sm-12">
-           <button type="submit" class="btn btn-block btn-primary btn-md" id="submit-btn"> Postuler</button>
-         </div>
-         <div class="col-md-4 col-sm-0 text-end">
-           <!-- Utilisez cette colonne pour espacer le bouton sur les grands écrans -->
-         </div>
+  <label for="secteur">Curriculum Vitae (CV) </label>
+  <input type="file" id="cv" name="cv" required="required" class="form-control" placeholder="" style="width:100%">
+</div>
+<div class="form-group">
+  <button type="submit" class="btn btn-block btn-primary btn-md" data-toggle="modal" data-target="#postulerModal">Postuler</button>
+</div>
+
+
+
        </div>
      </form>
      
 
+
+
+
+
+     <script src="{{ asset('js/jquery.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" 
-aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">JobBénin</h4>
-            </div>
-            <div class="modal-body">
-                 <p> <b> Succès!</b></p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-            </div>
-        </div>
+<div class="modal fade" id="postulerModal" tabindex="-1" role="dialog" aria-labelledby="postulerModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="postulerModalLabel">JobBénin</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Votre Candidature a été enregistrée avec succès.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+      </div>
     </div>
+  </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-  $(document).ready(function() {
-    $('#my-form').on('submit', function(e) {
-      var isFormValid = true;
-      var form = $(this);
-
-      // Check if all required fields are filled
-      form.find('[required]').each(function() {
-        if (!$(this).val()) {
-          isFormValid = false;
-          $(this).addClass('is-invalid');
-        }
-      });
-
-    
-      if (!isFormValid) {
-        e.preventDefault();
-        return false;
-      }
-
-
-      form.unbind('submit').submit();
-
-      $('#myModal').modal('show');
-
-    
-      e.preventDefault();
-      return false;
-    });
-  });
-</script>
 
     </div>
 </div>
