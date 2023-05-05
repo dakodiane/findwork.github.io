@@ -2,8 +2,22 @@
 
 @section('document')
 <main>
+    <style>
+        @media (max-width: 768px) {
+  .card {
+    width: 100%;
+  }
+}
 
-    <section class="site-section">
+@media (max-width: 576px) {
+  .card {
+    width: 90%;
+  }
+}
+
+    </style>
+
+<div class="row justify-content-center">
         <div class="container">
             <div class="row justify-content-center align-items-center">
             <div class="card o-hidden border-0 shadow-lg my-5 col-lg-8 col-md-10 col-sm-12 mx-auto">
@@ -129,7 +143,7 @@
         </div>
         </div>
         </div>
-    </section>
+</div>
 
 </main>
 @endsection
