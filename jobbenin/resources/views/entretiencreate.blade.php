@@ -52,14 +52,17 @@
                   <p class="mb-1 mt-3 font-weight-semibold">{{ $user->name }}</p>
                   <p class="fw-light text-muted mb-0">{{ $user->email }}</p>
                 </div>
-                <a class="dropdown-item" href="{{ route('profilrecruteur', ['id' => $user->id]) }} "><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> Mon profil</a>
+                <a class="dropdown-item" href="{{ route('profilrecruteur', ['id' => $user->id]) }}">
+            <i class="mdi mdi-account menu-icon"></i>
+            Mon Profil
+          </a>
 
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                  @csrf
-                </form>
-                <a class="dropdown-item" class="dropdown-item-icon mdi mdi-power text-primary me-2"  onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                  Déconnexion
-                </a>
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+  @csrf
+</form>
+
+<a class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="mdi mdi-logout menu-icon"></i> Déconnexion</a>
+
 
 
               </div>
@@ -103,9 +106,8 @@
           <li class="nav-item">
             <a class="nav-link" href=" {{ route('profilrecruteur', 
                 ['id' => $user->id]) }}">
-              <i class="mdi mdi-account"></i>
-              <span class="menu-title"> Mon Profil</span>
-
+                <i class="icon-head" style="margin-left:6px;"></i>  
+              <span class="menu-title" style="margin-left:15px;margin-top:7px"> Mon Profil</span>
             </a>
           </li>
           <li class="nav-item">
@@ -218,10 +220,10 @@
           <!-- content-wrapper ends -->
           <!-- partial:partials/_footer.html -->
           <footer class="footer">
-            <div class="d-sm-flex justify-content-center justify-content-sm-between">
-              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2023. All rights reserved.</span>
-            </div>
-          </footer>
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2023. Jobbenin.</span>
+          </div>
+        </footer>
           <!-- partial -->
         </div>
         <!-- main-panel ends -->

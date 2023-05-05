@@ -99,9 +99,9 @@
                 <li class="nav-item">
             <a class="nav-link" href=" {{ route('profilrecruteur', 
                 ['id' => $user->id]) }}">
-                <span class="menu-title">    Mon Profil</span>
-
-          </a>
+                <i class="icon-head" style="margin-left:6px;"></i>  
+              <span class="menu-title" style="margin-left:15px;margin-top:7px"> Mon Profil</span>
+            </a>
           </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{('/annonce')}}">
@@ -256,10 +256,10 @@
                     <!-- content-wrapper ends -->
                     <!-- partial:partials/_footer.html -->
                     <footer class="footer">
-                        <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2023. All rights reserved.</span>
-                        </div>
-                    </footer>
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2023. Jobbenin.</span>
+          </div>
+        </footer>
                     <!-- partial -->
                 </div>
                 <!-- main-panel ends -->

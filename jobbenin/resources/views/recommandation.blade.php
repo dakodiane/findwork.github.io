@@ -48,11 +48,10 @@
                 <p class="fw-light text-muted mb-0">{{ $user->email }}</p>
               </div>
               <a class="dropdown-item" href=" {{('profilpostulant')}}">
-               </i> Mon Profil</a>
+               <i class="mdi mdi-account menu-icon"></i> Mon Profil</a>
 
-              <a href="{{ route('logout') }}" class="dropdown-item"  class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                Déconnexion
-              </a>
+               <a class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="mdi mdi-logout menu-icon"></i> Déconnexion</a>
+
 
               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
@@ -127,7 +126,7 @@
 </li>
         </ul>
       </nav>
-			<!-- partial -->
+      <!-- partial -->
       <div class="main-panel">
       <h2 class="welcome-text">Salut, <span class="text-black fw-bold">{{ $user->name }}</span></h2>
         <div class="content-wrapper">
@@ -173,14 +172,10 @@
 </section>
 
 
-
+</div>
 
 </div>
               </div>
-		                          
-                </div>
-              </div>
-		          
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
         <footer class="footer">

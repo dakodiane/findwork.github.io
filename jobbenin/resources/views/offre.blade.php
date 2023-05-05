@@ -91,40 +91,40 @@
             <div class="col-xl-9 col-lg-9 col-md-8">
                 <!-- Featured_job_start -->
                 <section class="featured-job-area ">
-    <div class="container ">
-    @foreach($offres as $offre)
-        <div class="row justify-content-center ">
-            <div class="col-xl-10 mt-120">
-                <!-- single-job-content -->
-                <div class="single-job-items mb-30">
-                    <div class="job-items">
-                        <div class="company-img">
-                            <a href="{{('detail_offre')}}">
-                            <img src="{{ asset('storage/photoslogo/' . $offre->user->logo_entreprise) }}" alt="Logo Entreprise" class="avatar">
+                <div class="container ">
+                @foreach($offres as $offre)
+                    <div class="row justify-content-center ">
+                        <div class="col-xl-10 mt-120">
+                            <!-- single-job-content -->
+                            <div class="single-job-items mb-30">
+                                <div class="job-items">
+                                    <div class="company-img">
+                                        <a href="{{('detail_offre')}}">
+                                        <img src="{{ asset('storage/photoslogo/' . $offre->user->logo_entreprise) }}" alt="Logo Entreprise" class="avatar">
 
-                       
-                        </div>
-                        <div class="job-tittle">
-                            <a href="{{ route('detail_offre', $offre->id) }}" class="soulign"><h4 >{{($offre->poste)}}</h4></a>
-                            <ul>
-                                <li>{{optional($offre->user)->name}}</li>
-                                <li><i class="fas fa-map-marker-alt"></i>{{optional($offre->user)->villeR}}</li>
                                 
-                            </ul>
+                                    </div>
+                                    <div class="job-tittle">
+                                        <a href="{{ route('detail_offre', $offre->id) }}" class="soulign"><h4 >{{($offre->poste)}}</h4></a>
+                                        <ul>
+                                            <li>{{optional($offre->user)->name}}</li>
+                                            <li><i class="fas fa-map-marker-alt"></i>{{optional($offre->user)->villeR}}</li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="items-link f-right">
+                                    <a href="{{ route('detail_offre', $offre->id) }}" class="soulign">Voir l'offre</a>
+                                
+                                </div>
+                            </div>
+                            <!-- single-job-content -->
+                        
                         </div>
                     </div>
-                    <div class="items-link f-right">
-                        <a href="{{ route('detail_offre', $offre->id) }}" class="soulign">Voir l'offre</a>
-                      
-                    </div>
+                    @endforeach
                 </div>
-                <!-- single-job-content -->
-             
-            </div>
-        </div>
-        @endforeach
-    </div>
-</section>                
+                </section>                
  
             </div>
         </div>

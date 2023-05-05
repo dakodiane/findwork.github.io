@@ -3,7 +3,10 @@
 @section('document')
 
 <main>
+
   <div class="container-scroller">
+
+
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
         <div class="me-3">
@@ -20,7 +23,6 @@
           </a>
         </div>
       </div>
-
       <div class="navbar-menu-wrapper d-flex align-items-top">
         <ul class="navbar-nav">
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
@@ -39,28 +41,29 @@
 
 
           <li class="nav-item dropdown d-none d-lg-block user-dropdown">
-            <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-
+            <a class="nav-link" id="UserDropdown" data-bs-toggle="dropdown" aria-expanded="false">
               <img class="img-xs rounded-circle" src="{{ asset('storage/photoslogo/' . $user->logo_entreprise) }}" alt="Logo Entreprise" class="avatar">
 
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                 <div class="dropdown-header text-center">
-                  <img src="{{ asset('storage/photoslogo/' . $user->logo_entreprise) }}" alt="Logo Entreprise" class="img-md rounded-circle">
+                  <img src="{{ asset('storage/photoslogo/' . $user->logo_entreprise) }}" alt="Logo Entreprise" class="avatar">
 
-                  <p class="mb-1 mt-3 font-weight-semibold">{{$user->name }}</p>
+
+                  <p class="mb-1 mt-3 font-weight-semibold">{{ $user->name }}</p>
                   <p class="fw-light text-muted mb-0">{{ $user->email }}</p>
                 </div>
-                <a class="dropdown-item" href="{{ route('profilrecruteur', 
-                ['id' => $user->id]) }}">
-                  Mon Profil</a>
+                <a class="dropdown-item" href="{{ route('profilrecruteur', ['id' => $user->id]) }}">
+            <i class="mdi mdi-account menu-icon"></i>
+            Mon Profil
+          </a>
 
-                <a href="{{ route('logout') }}" class="dropdown-item" class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                  Déconnexion
-                </a>
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+  @csrf
+</form>
 
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                  @csrf
-                </form>
+<a class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="mdi mdi-logout menu-icon"></i> Déconnexion</a>
+
+
 
               </div>
           </li>
@@ -103,9 +106,8 @@
           <li class="nav-item">
             <a class="nav-link" href=" {{ route('profilrecruteur', 
                 ['id' => $user->id]) }}">
-              <i class="mdi mdi-account"></i>
-              <span class="menu-title"> Mon Profil</span>
-
+                <i class="icon-head" style="margin-left:6px;"></i>  
+              <span class="menu-title" style="margin-left:15px;margin-top:7px"> Mon Profil</span>
             </a>
           </li>
           <li class="nav-item">
@@ -271,7 +273,7 @@
         <!-- partial:partials/_footer.html -->
         <footer class="footer">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2023. All rights reserved.</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2023. Jobbenin.</span>
           </div>
         </footer>
         <!-- partial -->
