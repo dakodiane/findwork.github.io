@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Offre;
 use App\Models\Postuler;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 class OffreController extends Controller
@@ -111,13 +112,7 @@ class OffreController extends Controller
         return redirect()->route('annonce')->with('message', $message);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
+
 
     public function modifieroffre(string $id)
     {
@@ -128,6 +123,18 @@ class OffreController extends Controller
             return redirect()->route('annonce');
         }
     }
-    
-  
+    public function supprimeroffre(string $id)
+    {
+        //
+        $offre = Offre::with('user')->find($id);
+        if ($offre) {
+
+        DB::table('offres')
+            ->where('id_user', $offre->user->id)
+            ->where('id', $offre->id)
+            ->update(['supprimeroffre' => 1]); 
+
+            return redirect()->back()->with('success', 'Le fichier a été téléchargé avec succès!');
+    }
+}
 }

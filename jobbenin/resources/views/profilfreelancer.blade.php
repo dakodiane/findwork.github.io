@@ -125,59 +125,153 @@
 
  
   
- <div class="profile-card" >
- @if($message)
-    <div class="alert alert-warning" style="display: flex; align-items: center; justify-content: center; height: 50px; font-size: 1.2rem;">
-        {{ $message }}
-    </div>
-@endif
-           
-  <h3 style="text-align: center;">A Propos De Vous</h3>
-  <div style="text-align: center;">
-  <img class="img-md rounded-circle" 
-                src="{{ asset('storage/photosfreelancer/' . $user->photo_freelancer) }}" alt="Profile image">
-</div>
-  
-  <div  class="" style="text-align: center;">
-    <label for=""><u>Nom:</u></label>
-    <span>{{ $user->name }}</span>
-    <label for=""><u>Adresse Email:</u></label>
-    <span> {{ $user->email }}</span>
-  </div>
-  <br>
-  <hr>
-  <h3>Autres Informations</h3>
+
+      <div class="profile-card">
+        @if($message)
+        <div class="alert alert-warning">{{ $message }}</div>
+        @endif
+        <h3 style="text-align: center;">A Propos De Vous</h3>
+        <div style="text-align: center;">
+          <img class="img-md rounded-circle" src="{{ asset('storage/photosfreelancer/' . $user->photo_freelancer) }}" alt="Profile image">
+        </div>
+        <div style="text-align: center;">
+          <label for=""><u>Nom:</u></label>
+          <span>{{ $user->name }}</span>
+          <br>
+          <label for=""><u>Adresse Email:</u></label>
+          <span>{{ $user->email }}</span>
+        </div>
+        <br>
+        <hr>
+        <h3>Autres Informations</h3>
+        <br>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="grid-container">
+              <label for=""><u>Téléphone :</u></label>
+              <span>{{ $user->contact_freelancer }}</span>
+            </div>
+            <br>
+            <div class="grid-container">
+              <label for=""><u>Services Proposés:</u></label>
+              <span>{{ $user->service_freelancer }}</span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="grid-container">
+              <label for=""><u>Competences :</u></label>
+              <span>{{ $user->competence_freelancer }}</span>
+            </div>
+            <br>
+            <div class="grid-container">
+              <label for=""><u>Description:</u></label>
+              <span>{{ $user->description_free }}</span>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div style="text-align: center;">
+          <button class="btn btn-primary button1" data-modal="modal-mod">Modifier Vos Informations</button> 
+        </div>
+      </div>
  
-<br>
-  <div class="grid-container" style="display: flex; align-items: center;">
-    <label for="" style="margin-right: 10px;"><u>Téléphone :</u></label>
-    <span>{{ $user->contact_freelancer }}</span>
-</div>
-<br>
-<div style="display: flex; align-items: center;">
-    <label for="" style="margin-right: 10px;"><u>Services Proposés:</u></label>
-    <span>{{ $user->service_freelancer }}</span>
-</div>
-<br>
-<div style="display: flex; align-items: center;">
-    <label for="" style="margin-right: 10px;"><u>Competences :</u></label>
-    <span>{{ $user->competence_freelancer }}</span>
-</div>
-
-  <br>
-  <div class="grid-container" style="display: flex; align-items: center;">
-    <label for="" style="margin-right: 10px;"><u>Description:</u></label>
-    <span>{{ $user->description_free }}</span>
-</div>
-<br>
-  <button class="button1" data-modal="modal-mod" style="margin-left :400px;">Modifier Vos Informations</button> 
-</div>
-
-</div>              
 
 
-<div id="modal-mod" class="modal1" style="padding-top: 3em;width: 1400px;">
-  <div class="modal1-content" style="background-color: #fff; padding: 2em; text-align: justify;">
+ <style>
+.modal1 {
+    padding-top: 3em;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    overflow-y: auto;
+}
+
+.modal1-content {
+    background-color: #fff;
+    padding: 2em;
+    text-align: justify;
+    margin: 10% auto;
+    max-width: 90%;
+}
+
+@media only screen and (min-width: 768px) {
+    .modal1-content {
+        max-width: 600px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .modal1-content {
+        max-width: 800px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .modal1-content {
+        max-width: 1000px;
+    }
+}
+
+.contact-form {
+    position: relative;
+    z-index: 100000;
+}
+
+.contact-form .close {
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    color: red;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.contact-form label {
+    color: #242b5e;
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    width: 100%;
+    padding: 0.5em;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button[type="submit"] {
+    background-color: #242b5e;
+    border-color: #242b5e;
+    padding: 0.5em 1em;
+    border-radius: 3px;
+    color: #fff;
+    width: 120px;
+    margin: 0 auto;
+    display: block;
+}
+
+@media only screen and (min-width: 768px) {
+    .contact-form button[type="submit"] {
+        width: 100%;
+    }
+}
+</style>
+
+<div id="modal-mod" class="modal1">
+  <div class="modal1-content">
     <div class="contact-form">
       <a class="close" style="color: red;">X</a>
       <form method="POST" action="{{ route('user.update', $user->id) }}" enctype="multipart/form-data" style="max-width: 400px; margin: 0 auto;">

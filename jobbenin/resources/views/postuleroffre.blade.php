@@ -41,31 +41,33 @@
         </div>
   <p></p>
 
-  <form method="POST" action="{{route('postuleroffre', ['id_offre' => $offre->id])}}" 
-  enctype="multipart/form-data" style="max-width: 400px; margin: 0 auto;">
+  <form method="POST" action="{{route('postuleroffre', ['id_offre' => $offre->id])}}" enctype="multipart/form-data" style="max-width: 400px; margin: 0 auto;">
        
- 
-  @csrf
-  <div class="form-group">
-    <div class="text-format-wrapper">
-      <div class="form-item form-lettre_motivation wysiwyg-wrapper form-type-textarea form-item-lettre_motivation-value" id="edit-lettre_motivation-value-wrapper">
-        <label for="edit-lettre_motivation" style="padding-top:2em">Lettre  de Motivation </label>
-        <div class="form-textarea-wrapper resizable">
-          <textarea class="" name="lettre_motivation" id="lettre_motivation" cols="16" rows="10" required="required" placeholder=""></textarea>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="secteur">Curriculum Vitae (CV) </label>
-    <input type="file" id="cv" name="cv" required="required" class="form-control" placeholder="" style="width:34em">
-  </div>
-  <div class="row form-group" style="margin-left:400px">
-    <div class="col-md-10">
-      <button type ="submit" class="btn btn-block btn-primary btn-md" id="submit-btn"> Postuler</button>
-    </div>
-  </div>
-</form>
+       @csrf
+       <div class="form-group">
+         <div class="text-format-wrapper">
+           <div class="form-item form-lettre_motivation wysiwyg-wrapper form-type-textarea form-item-lettre_motivation-value" id="edit-lettre_motivation-value-wrapper">
+             <label for="edit-lettre_motivation" style="padding-top:2em">Lettre  de Motivation </label>
+             <div class="form-textarea-wrapper resizable">
+               <textarea class="" name="lettre_motivation" id="lettre_motivation" cols="16" rows="10" required="required" placeholder=""></textarea>
+             </div>
+           </div>
+         </div>
+       </div>
+       <div class="form-group">
+         <label for="secteur">Curriculum Vitae (CV) </label>
+         <input type="file" id="cv" name="cv" required="required" class="form-control" placeholder="" style="width:34em">
+       </div>
+       <div class="row form-group">
+         <div class="col-md-8 col-sm-12">
+           <button type="submit" class="btn btn-block btn-primary btn-md" id="submit-btn"> Postuler</button>
+         </div>
+         <div class="col-md-4 col-sm-0 text-end">
+           <!-- Utilisez cette colonne pour espacer le bouton sur les grands écrans -->
+         </div>
+       </div>
+     </form>
+     
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" 

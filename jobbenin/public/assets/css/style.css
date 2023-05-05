@@ -3682,4 +3682,8 @@ input[type="radio"]{
         display: block;
     }
 }
-
+.logo {
+	width: 50px; /* ou toute autre largeur souhaitée */
+	height: 50px; /* ou toute autre hauteur souhaitée */
+  }
+  
