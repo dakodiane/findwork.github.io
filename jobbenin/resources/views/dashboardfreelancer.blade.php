@@ -96,9 +96,6 @@
       </div>
     
       <!-- partial -->
-        <div class="main-panel">
-      <h2 class="welcome-text">Salut, <span class="text-black fw-bold">{{ $user->name }}</span></h2>
-
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
