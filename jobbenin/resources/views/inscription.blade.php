@@ -3,37 +3,53 @@
 @section('document')
 <main>
     <style>
-        @media (max-width: 768px) {
-  .card {
-    width: 100%;
-  }
-}
 
-@media (max-width: 576px) {
-  .card {
-    width: 90%;
-  }
-}
+@media only screen and (min-width: 400px) {
+      .form {
+        max-width: 350px;
+      }
+    } 
+@media only screen and (min-width: 576px) {
+      .form {
+        max-width: 540px;
+      }
+    }
 
-    </style>
+    @media only screen and (min-width: 768px) {
+      .form {
+        max-width: 720px;
+      }
+    }
 
-<div class="row justify-content-center">
-        <div class="container">
+    @media only screen and (min-width: 992px) {
+      .form {
+        max-width: 960px;
+      }
+    }
+
+    @media only screen and (min-width: 1200px) {
+      .form {
+        max-width: 1140px;
+      }
+    }
+  </style>
+
+    <section class="site-section">
+        <div class="container" style="width:35em;">
+
             <div class="row justify-content-center align-items-center">
-            <div class="card o-hidden border-0 shadow-lg my-5 col-lg-8 col-md-10 col-sm-12 mx-auto">
-                    <div class="" style="justify-content: center;">
-                        <div class="text-center">
-                            <h1 class="h4 text-gray-900 mb-4">
-                                <p></p>
-                                <p></p>
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-1" style="">
+                        <div class="" style="justify-content: center;">
+                            <p></p>
+                            <p></p>
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">
+                                    <b> <u>Inscrivez-vous à JobBénin!</u> </b>
+                                </h1>
+                            </div>
 
-                                <b> <u>Inscrivez-vous à JobBénin!</u> </b>
-                            </h1>
-                        </div>
-                        <div class="col-lg-6 col-md-10 col-sm-12 mx-auto">
-         
-
-                            <form action="{{'inscription'}}" method="POST" class="p-4 border rounded" id="forminsc">
+                            <form action="{{'inscription'}}" method="POST" class="p-4 border rounded" style="max-width: 310px; margin: 0 auto;" id="forminsc">
                                 @csrf
                                 <div>
 
@@ -132,18 +148,16 @@
                                         </p>
                                     </div>
                                 </div>
-
                             </form>
 
                         </div>
 
                     </div>
+
                 </div>
             </div>
-        </div>
-        </div>
-        </div>
-</div>
+
+    </section>
 
 </main>
 @endsection

@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
          <title>Job_Benin </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="manifest" href="site.webmanifest">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+          <link rel="manifest" href="site.webmanifest">
         <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/img/favicon.ico')}}">
         <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
