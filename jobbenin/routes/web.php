@@ -99,7 +99,7 @@ Route::get('/entretiencreate','App\Http\Controllers\DashboardRecruteurController
 
 Route::post('/logout', 'App\Http\Controllers\ConnexionController@logout')->name('logout');
 
-Route::get('/detailpostulant/retebir{id_user}/{id_offre}', 'App\Http\Controllers\DashboardRecruteurController@selectionner')
+Route::get('/detailpostulant/retenir/{id_user}/{id_offre}', 'App\Http\Controllers\DashboardRecruteurController@selectionner')
 ->name('detailpostulant.selection');
 
 Route::get('/detailpostulant/supprimerpostulant/{id_user}/{id_offre}', 'App\Http\Controllers\DashboardRecruteurController@supprimerpostulant')->
