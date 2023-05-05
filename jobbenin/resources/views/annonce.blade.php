@@ -77,14 +77,10 @@
         <div id="settings-trigger"><i class="ti-settings"></i></div>
         <div id="theme-settings" class="settings-panel">
           <i class="settings-close ti-close"></i>
-          <p class="settings-heading">SIDEBAR SKINS</p>
-          <div class="sidebar-bg-options selected" id="sidebar-light-theme">
-            <div class="img-ss rounded-circle bg-light border me-3"></div>Light
-          </div>
-          <div class="sidebar-bg-options" id="sidebar-dark-theme">
-            <div class="img-ss rounded-circle bg-dark border me-3"></div>Dark
-          </div>
-          <p class="settings-heading mt-2">HEADER SKINS</p>
+          <p class="settings-heading">TONS DE LA BARRE LATTERALE</p>
+          <div class="sidebar-bg-options selected" id="sidebar-light-theme"><div class="img-ss rounded-circle bg-light border me-3"></div>Light</div>
+          <div class="sidebar-bg-options" id="sidebar-dark-theme"><div class="img-ss rounded-circle bg-dark border me-3"></div>Dark</div>
+          <p class="settings-heading mt-2">TONS DE L'ENTETE</p>
           <div class="color-tiles mx-0 px-4">
             <div class="tiles success"></div>
             <div class="tiles warning"></div>
@@ -127,17 +123,18 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{('/entretien')}}">
-              <i class="mdi mdi mdi-amplifier menu-icon"></i>
-              <span class="menu-title">Entretiens passés</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{('/entretiencreate')}}">
-              <i class="mdi mdi mdi-amplifier menu-icon"></i>
-              <span class="menu-title">Entretiens programmés</span>
-            </a>
-          </li>
+  <a class="nav-link" href="{{('/entretiencreate')}}">
+    <i class="mdi mdi-calendar-plus menu-icon"></i>
+    <span class="menu-title">Entretiens programmés</span>
+  </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{{('/entretien')}}">
+    <i class="mdi mdi-calendar-check menu-icon"></i>
+    <span class="menu-title">Entretiens passés</span>
+  </a>
+</li>
+
           <li class="nav-item">
             <a class="nav-link" href="{{('/publicite')}}">
               <i class="mdi mdi-archive menu-icon"></i>
@@ -146,11 +143,11 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('logout') }}" class="dropdown-item"onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-            <i  class="dropdown-item-icon mdi mdi-power text-primary me-2" ></i>
-            <span class="menu-title">Déconnexion</span>
-            </a>
-          </li>
+  <a class="nav-link" href="{{ route('logout') }}" class="dropdown-item" class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+    <i class="mdi mdi-logout menu-icon"></i>
+    <span class="menu-title">Déconnexion</span>
+  </a>
+</li>
 
 
 

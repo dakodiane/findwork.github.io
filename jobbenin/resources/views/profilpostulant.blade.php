@@ -112,19 +112,19 @@
               <span class="menu-title">Offres Recommandées</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{('entretienpostulant')}}">
-            <i class="mdi mdi-clipboard-check menu-icon"></i>
-              <span class="menu-title">Vos Entretiens</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('logout') }}" class="dropdown-item" class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-            <i  class="dropdown-item-icon mdi mdi-power text-primary me-2" ></i>
-
-            <span class="menu-title">Déconnexion</span>
-            </a>
-          </li>
+<li class="nav-item">
+  <a class="nav-link" href="{{('entretienpostulant')}}">
+    <i class="mdi mdi-calendar-multiple-check menu-icon"></i>
+    <span class="menu-title">Vos Entretiens</span>
+  </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{{ route('logout') }}" class="dropdown-item" 
+  class="dropdown-item-icon mdi mdi-power text-primary me-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+    <i class="mdi mdi-logout menu-icon"></i>
+    <span class="menu-title">Déconnexion</span>
+  </a>
+</li>
         </ul>
       </nav>
 			<!-- partial -->
