@@ -83,8 +83,32 @@
                                 <div class="row form-group">
                                     <div class="col-md-12">
                                         <a href="">
-                                            <button type="submit" class="btn px-4 btn-primary text-white">S'inscrire</button>
-                                        </a>
+                                        <button type="submit"  class="btn px-4 btn-primary text-white" data-toggle="modal" data-target="#inscriptionModal">S'inscrire</button>
+
+                                             </a>
+                                             <script src="{{ asset('js/jquery.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<!-- Modal -->
+<div class="modal fade" id="inscriptionModal" tabindex="-1" role="dialog" aria-labelledby="inscriptionModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="inscriptionModalLabel">Inscription</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Veuillez vérifier votre boîte mail pour confirmer votre inscription.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
                                     </div>
                                     <div class="text-center">

@@ -130,56 +130,47 @@
         </ul>
       </nav>
 			<!-- partial -->
-		
       <section class="featured-job-area feature">
-    <div class="container">
-        <div class="row" style="margin-top: 10px;">
-            <div class="col-lg-12 mb-40">
-            <div class="section-tittle section-tittle2 text-center esp"style="">
-            <h3><u><b style=>Recommandations</b></u> </h3>
-                      <p> Trouvez l'emploi de vos rêves</p>
-                  </div>
-           
-                <div class="section-tittle section-tittle2 text-center esp"style="margin-left:64em">
-                  
-                </div>
-            </div>
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col-12">
+        <div class="section-tittle section-tittle2 text-center">
+          <h3><u><b>Recommandations</b></u></h3>
+          <p>Trouvez l'emploi de vos rêves</p>
         </div>
-
-        <div class="row justify-content-center" style="padding-top: 20px;">
-            <div class="col-xl-10">
-                <!-- single-job-content -->
-                @foreach($offres as $offre)
-                <div class="single-job-items mb-30" style="padding: 20px;">
-                    <div class="job-items">
-                        <div class="company-img">
-                            <a href="{{('detail_offre')}}">
-                            <img src="{{ asset('storage/photoslogo/' . $offre->user->logo_entreprise) }}" alt="Logo Entreprise" class="avatar">
-
-
-                      
-                          </div>
-                        <div class="job-tittle">
-                            <a href="{{('detail_offre')}}" class="soulign">
-                                <h4>{{($offre->poste)}}</h4>
-                            </a>
-                            <ul>
-                                <li>{{optional($offre->user)->name}}</li>
-                                <li><i class="fas fa-map-marker-alt"></i>{{optional($offre->user)->villeR}}</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="items-link f-right">
-                    <a href="{{ route('detail_offre', $offre->id) }}" class="soulign">Voir l'offre</a>
-                      
-                    </div>
-                </div>
-                <!-- single-job-content -->
-                @endforeach    
-            </div>
-        </div>
+      </div>
     </div>
+    <div class="row justify-content-center mt-3">
+      <div class="col-12">
+        @foreach($offres as $offre)
+        <div class="single-job-items mb-3">
+          <div class="job-items">
+            <div class="company-img">
+              <a href="{{('detail_offre')}}">
+                <img src="{{ asset('storage/photoslogo/' . $offre->user->logo_entreprise) }}" alt="Logo Entreprise" class="avatar">
+              </a>
+            </div>
+            <div class="job-tittle">
+              <a href="{{('detail_offre')}}" class="soulign">
+                <h4>{{($offre->poste)}}</h4>
+              </a>
+              <ul>
+                <li>{{optional($offre->user)->name}}</li>
+                <li><i class="fas fa-map-marker-alt"></i>{{optional($offre->user)->villeR}}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="items-link f-right">
+            <a href="{{ route('detail_offre', $offre->id) }}" class="soulign">Voir l'offre</a>
+          </div>
+        </div>
+        @endforeach
+      </div>
+    </div>
+  </div>
 </section>
+
+
 
                              
                 </div>
