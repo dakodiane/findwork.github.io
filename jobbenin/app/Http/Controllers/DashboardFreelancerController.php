@@ -85,7 +85,13 @@ public function upload(Request $request)
 public function update(Request $request, $id)
 {
     $user = User::findOrFail($id);
-
+    $request->validate([
+        'name' => 'required|string|regex:/^[A-Za-z\s]+$/',
+        'contact_freelancer' => 'required|numeric|regex:/^[0-9]+$/',
+    ], [
+        'name.required' => 'Le nom ne doit comporter que des lettres',
+        'contact_freelancer.required' => 'Veuillez saisir un numéro valide.',
+    ]);
     // Mettre à jour les informations de l'utilisateur
     $user->name = $request->input('name');
     $user->email = $request->input('email');

@@ -6,7 +6,7 @@
 
 @media only screen and (min-width: 400px) {
       .form {
-        max-width: 350px;
+        max-width: 375px;
       }
     } 
 @media only screen and (min-width: 576px) {
@@ -35,7 +35,7 @@
   </style>
 
     <section class="site-section">
-        <div class="container" style="width:35em;">
+        <div class="container" style="width:45em;">
 
             <div class="row justify-content-center align-items-center">
                 <div class="card o-hidden border-0 shadow-lg my-5">
@@ -49,12 +49,12 @@
                                 </h1>
                             </div>
 
-                            <form action="{{'inscription'}}" method="POST" class="p-4 border rounded" style="max-width: 310px; margin: 0 auto;" id="forminsc">
+                            <form action="{{'inscription'}}" method="POST" class="p-4 border rounded" style="min-width: 375px; margin: 0 auto;" id="forminsc">
                                 @csrf
                                 <div>
 
                                     <select class="form-select form-select-lg mb-3 @error('role') is-invalid @enderror" name="role" aria-label=".form-select-lg example">
-                                        <option selected>Choisissez votre type de compte</option>
+                                        <option>Choisissez votre type de compte</option>
                                         <option value="recruteur">Recruteur</option>
                                         <option value="postulant">Postulant</option>
                                         <option value="freelancer">Freelancer</option>
