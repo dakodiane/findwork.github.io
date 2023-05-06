@@ -150,7 +150,7 @@
         <div class="row">
           <div class="col-md-6">
             <div class="grid-container">
-              <label for=""><u>Téléphone :</u></label>
+              <label for=""><u> Numéro de Téléphone(Whatsapp) :</u></label>
               <span>{{ $user->contact_freelancer }}</span>
             </div>
             <br>

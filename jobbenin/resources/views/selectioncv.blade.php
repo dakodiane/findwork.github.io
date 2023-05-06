@@ -179,7 +179,7 @@
                                   <div class="col-lg-12">
                                     <div class="d-flex justify-content-between align-items-center mb-3">
                                       <div>
-                                        <h4 class="card-title card-title-dash">CV En Attente</h4>
+                                        <h4 class="card-title card-title-dash">CV Sélectionnés</h4>
                                       </div>
                                     </div>
 
@@ -228,8 +228,8 @@
 
                                                   </td>
                                                   <td>
-                                                    <a href="{{ asset(Storage::url($postulant['cv'])) }}" target="_blank">Consulter le CV</a>
-                                                  </td>
+                                                  <a href="{{ asset('storage/cv/' . $cv) }}" target="_blank" style="color: blue; text-decoration: underline;">Consulter le CV</a>
+                                                   </td>
                                                   <td>
                                                     <a href="{{ route('programmer', ['id' => $postulantid[$key],'offreid' => $offreid[$key]]) }}" >
                                                       <button type="submit" class="btn btn-primary btn-lg btn-block"  style="background-color: green;color:white;" name="selectionner">Programmer un entretien</button>
