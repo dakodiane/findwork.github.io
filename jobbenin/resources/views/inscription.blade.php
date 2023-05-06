@@ -22,79 +22,88 @@
                             </h1>
                         </div>
                         <div class="col-lg-6">
-
- <form action="{{'inscription'}}" method="POST" class="p-4 border rounded" id="forminsc">
+                        <form action="{{'inscription'}}" method="POST" class="p-4 border rounded" id="forminsc">
 
 @csrf
-<div>
-
-<select class="form-select form-select-lg mb-3 @error('role') is-invalid @enderror" name="role" aria-label=".form-select-lg example">
-    <option selected>Choisissez votre type de compte</option>
-    <option value="recruteur">Recruteur</option>
-    <option value="postulant">Postulant</option>
-    <option value="freelancer">Freelancer</option>
-</select>
-
-@error('role')
-        <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-        </span>
-    @enderror
-
-
-</div>
 <div class="row form-group">
-    <div class="col-md-12 mb-3 mb-md-0">
+    <div class="col-12 mb-3 mb-md-0">
+        <select class="form-select form-select-sm mb-3 @error('role') is-invalid @enderror" name="role" aria-label=".form-select-sm example">
+            <option selected>Choisissez votre type de compte</option>
+            <option value="recruteur">Recruteur</option>
+            <option value="postulant">Postulant</option>
+            <option value="freelancer">Freelancer</option>
+        </select>
+
+        @error('role')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+        @enderror
+    </div>
+    <div class="col-12 mb-3 mb-md-0">
         <label class="text-black" for="fname">Nom Complet</label>
-        <input type="text" id="name" name="name" require="required" class="form-control @error('name') is-invalid @enderror" placeholder="Nom Complet ">
-        @error('name')
-        <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-        </span>
-    @enderror
-    </div>
-</div>
-
-<div class="row form-group">
-    <div class="col-md-12 mb-3 mb-md-0">
-        <label class="text-black" for="fname">Email</label>
-        <input type="text" id="email" name="email"  require="required" class="form-control @error('email') is-invalid @enderror" placeholder="Addresse Email">
-        @error('email')
-        <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-        </span>
-    @enderror
-    </div>
-</div>
-<div class="row form-group">
-    <div class="col-md-12 mb-3 mb-md-0">
-        <label class="text-black" for="fname">Mot de Passe</label>
-        <input type="password" id="password" name="password"  require="required" class="form-control @error('password') is-invalid @enderror" placeholder="Mot De Passe">
-        @error('password')
-        <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-        </span>
-    @enderror
-    </div>
-</div>
-<div class="row form-group mb-4">
-    <div class="col-md-12 mb-3 mb-md-0">
-        <label class="text-black" for="fname">Confirmer le Mot de Passe</label>
-        <input type="password" id="password_confirmation" name="password_confirmation" require="required" class="form-control" placeholder="Confirmez votre mot de Passe ">
+        <input type="text" id="name" name="name" require="required" class="form-control form-control-sm @error('name') is-invalid @enderror" placeholder="Nom Complet ">
         
+        @error('name')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+        @enderror
+    </div>
+    <div class="col-12 mb-3 mb-md-0">
+        <label class="text-black" for="fname">Email</label>
+        <input type="text" id="email" name="email"  require="required" class="form-control form-control-sm @error('email') is-invalid @enderror" placeholder="Addresse Email">
+        
+        @error('email')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+        @enderror
+    </div>
+    <div class="col-12 mb-3 mb-md-0">
+        <label class="text-black" for="fname">Mot de Passe</label>
+        <input type="password" id="password" name="password"  require="required" class="form-control form-control-sm @error('password') is-invalid @enderror" placeholder="Mot De Passe">
+        
+        @error('password')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+        @enderror
+    </div>
+    <div class="col-12 mb-4">
+        <label class="text-black" for="fname">Confirmer le Mot de Passe</label>
+        <input type="password" id="password_confirmation" name="password_confirmation" require="required" class="form-control form-control-sm" placeholder="Confirmez votre mot de Passe ">
     </div>
 </div>
 
-
 <div class="row form-group">
-    <div class="col-md-12">
-        <a href="">
+    <div class="col-12">
         <button type="submit"  class="btn px-4 btn-primary text-white" data-toggle="" data-target="#inscriptionModal">S'inscrire</button>
+    </div>
+</div>
+
+ <div class="text-center">
+        <p style="color:#242b5e">
+            <hr>Vous avez déjà un compte JobBénin ?<a class="" href="{{('connexion')}}" style="color:#242b5e"><b> <u>Connectez-vous!</u></b> </a>
+        </p>
+    </div>
+</div>
 
              </a>
              <script src="{{ asset('js/jquery.min.js') }}"></script>
 
-<!-- Modal -->
+
+
+
+
+
+
+
+
+
+
+
+             <!-- Modal -->
 <div class="modal fade" id="inscriptionModal" tabindex="-1" role="dialog" aria-labelledby="inscriptionModalLabel" aria-hidden="true">
 <div class="modal-dialog" role="document">
 <div class="modal-content">
@@ -117,13 +126,7 @@
 
 
     </div>
-    <div class="text-center">
-        <p style="color:#242b5e">
-            <hr>Vous avez déjà un compte JobBénin ?<a class="" href="{{('connexion')}}" style="color:#242b5e"><b> <u>Connectez-vous!</u></b> </a>
-        </p>
-    </div>
-</div>
-
+   
 </form>
 
 
