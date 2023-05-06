@@ -203,9 +203,9 @@ l;
                                      Curriculum Vitae
                                     </p>
                                 <p>   
-                                <a href="{{ asset(Storage::url('cv/' . $cv)) }}" target="_blank">Consulter le CV</a>
-
-
+                             
+                                <a href="{{ asset('storage/cv/' . $cv) }}" target="_blank" style="color: blue; text-decoration: underline;">Consulter le CV</a>
+                                                 
                                                   </p>
                                     </p>
                                 </div>

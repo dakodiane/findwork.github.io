@@ -185,7 +185,7 @@
     <div class="alert alert-danger text-center">{{ session('message') }}</div>
   @endif
   <div class="text-center">
-    <label for=""><u>Nom:</u></label>
+    <label for=""><u>Nom Complet :</u></label>
     <span>{{ $user->name }}</span>
     <label for=""><u>Adresse Email:</u></label>
     <span>{{ $user->email }}</span>
@@ -311,7 +311,7 @@
         @method('PUT')
 
         <div class="form-group">
-          <label for="name" style="color: #242b5e; display: block; margin-bottom: 0.5em;">Nom</label>
+          <label for="name" style="color: #242b5e; display: block; margin-bottom: 0.5em;">Nom Complet</label>
           <input type="text" class="form-control" id="name" name="name" value="{{ $user->name }}" style="width: 100%; padding: 0.5em; border-radius: 3px; border: 1px solid #ccc; box-sizing: border-box;">
        
         </div>

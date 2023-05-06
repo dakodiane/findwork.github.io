@@ -88,6 +88,8 @@ class DashboardRecruteurController extends Controller
             $data = [];
             $postulantid = []; // Initialisation du tableau des IDs des postulants sélectionnés
             $offreid = [];
+       
+             
             foreach ($offres as $offre) {
                 foreach ($offre->postulers as $postulant) {
                     if ($postulant && $postulant->user && $postulant->suppression == 0 && $postulant->selection == 1 && $postulant->programmed == 0) {
@@ -101,6 +103,7 @@ class DashboardRecruteurController extends Controller
                         ];
                         $postulantid[] = $postulant->user->id; // Ajout de l'ID du postulant sélectionné dans le tableau
                         $offreid[] = $postulant->id_offre;
+                        $cv = $postulant->cv;
                     }
                 }
             }
@@ -108,7 +111,7 @@ class DashboardRecruteurController extends Controller
             $id_user = isset($postulant) ? $postulant->id_user : null;
             $id_offre = isset($postulant) ? $postulant->id_offre : null;
 
-            return view('selectioncv', ['data' => $data, 'user' => $user, 'postulantid' => $postulantid, 'offreid' => $offreid, 'id_user' => $id_user, 'id_offre' => $id_offre, 'success' => $success]);
+            return view('selectioncv', ['data' => $data, 'user' => $user, 'postulantid' => $postulantid, 'cv'=>$cv,'offreid' => $offreid, 'id_user' => $id_user, 'id_offre' => $id_offre, 'success' => $success]);
         }
     }
 
@@ -197,8 +200,10 @@ class DashboardRecruteurController extends Controller
             // On vérifie que le postulant a bien été récupéré avant d'essayer d'accéder à ses propriétés
             if ($postuler) {
                 $poste = $postuler->offre->poste;
+             
                 $lettreMotivation = $postuler->lettre_motivation;
                 $cv = $postuler->cv;
+             
                 $data = [];
 
                 $postulantid = null;
@@ -213,8 +218,9 @@ class DashboardRecruteurController extends Controller
                                 'nom_recruteur' => $user->name,
                                 'nom_postulant' => $postul->user->name,
                                 'poste' => $offre->poste,
+                               'cv'=>$postul->cv,
                             ];
-
+                          
                             // Stockage des valeurs de id_user et id_offre
                             $postulantid = $postuler->id_user;
                             $postulantoffre = $postuler->id_offre;
@@ -224,12 +230,12 @@ class DashboardRecruteurController extends Controller
 
                 return view('detailpostulant', [
                     'postulant' => $postuler->user,
-                    'cv' => $cv,
+                    
                     'lettreMotivation' => $lettreMotivation,
                     'poste' => $poste,
                     'data' => $data,
                     'user' => $user,
-
+                    'cv'=>$cv,
                     'postulantoffre' => $postulantoffre,
                     'postulantid' => $postulantid,
                     'id_user' => $id_user ?? null,
@@ -290,7 +296,7 @@ class DashboardRecruteurController extends Controller
                             'start_time' => $postulant->start_time,
                             'start_url' => $postulant->start_url,
 
-                        ];
+                        ];  
                         $postulantid[] = $postulant->user->id;
                         $offreid[] = $postulant->id_offre;
                         // Ajout de l'ID du postulant sélectionné dans le tableau

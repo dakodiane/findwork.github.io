@@ -172,7 +172,7 @@
                   <div class="col-lg-12 grid-margin stretch-card">
                     <div class="card">
                       <div class="card-body">
-                        <h4 class="card-title">Entretiens </h4>
+                        <h4 class="card-title">Entretiens programmés</h4>
 
                         <div class="table-responsive">
                           <table class="table">

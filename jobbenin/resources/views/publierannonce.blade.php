@@ -35,7 +35,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="job-type">Poste</label>
+                        <label for="job-type">Intitulé du Poste</label>
                         <input type="text" name="poste" required="required" class="form-control" placeholder="">
                     </div>
 
@@ -43,10 +43,7 @@
                         <label for="job-title">Date Limite du recrutement</label>
                         <input type="date" name="datfin" required="required" class="form-control" placeholder="AAAA-MM-jj">
                     </div>
-                    <div class="form-group">
-                        <label for="job-title">Salaire</label>
-                        <input type="text" name="salaireO" required="required" class="form-control">
-                    </div>
+                 
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">
@@ -79,7 +76,7 @@
                     <div class="form-group">
                         <div class="text-format-wrapper">
                             <div class="form-item form-description wysiwyg-wrapper form-type-textarea form-item-description-value" id="edit-description-value-wrapper">
-                                <label for="edit-description-value">Description de L'Offre </label>
+                                <label for="edit-description-value">Description du Poste </label>
                                 <div class="form-textarea-wrapper resizable">
                                     <textarea required="required" class="wysiwyg form-textarea required" name="description_offre" cols="100" rows="10" placeholder=""></textarea>
                                 </div>

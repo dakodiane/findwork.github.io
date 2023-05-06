@@ -37,12 +37,14 @@
             </div>
           </li>
 
+        
           <li class="nav-item dropdown d-none d-lg-block user-dropdown">
             <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-              <img class="img-xs rounded-circle" src="{{asset('assets/images/faces/face8.jpg')}}" alt="Profile image"> </a>
+            <i class="mdi mdi-account-circle menu-icon icon-md"></i></a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
               <div class="dropdown-header text-center">
-                <img class="img-md rounded-circle" src="{{asset('assets/images/faces/face8.jpg')}}" alt="Profile image">
+              <i class="mdi mdi-account-circle menu-icon icon-md"></i>
+
                 <p class="mb-1 mt-3 font-weight-semibold">{{ $user->name }}</p>
                 <p class="fw-light text-muted mb-0">{{ $user->email }}</p>
               </div>
@@ -132,12 +134,13 @@
       <div class="profile-card">
   <h3 class="text-center">A Propos De Vous</h3>
   <div class="text-center">
-    <img class="rounded-circle" src="{{ asset('assets/images/faces/face8.jpg') }}"  alt="Profile image">
+  <i class="mdi mdi-account-circle menu-icon icon-lg"></i>
+
   </div>
   
   <div class="profile-info">
     <div class="info-item">
-      <label for=""><u>Nom:</u></label>
+      <label for=""><u>Nom Complet:</u></label>
       <span>{{ $user->name }}</span>
     </div>
     <div class="info-item">
@@ -145,7 +148,7 @@
       <span> {{ $user->email }}</span>
     </div>
     <div class="info-item">
-      <label for=""><u>Téléphone :</u></label>
+      <label for=""><u>Numéro de Téléphone :</u></label>
       <span>{{ $user->contact_postulant }}</span>
     </div>
     <div class="info-item">
@@ -159,6 +162,10 @@
     <div class="info-item">
       <label for=""><u>Diplôme :</u></label>
       <span>{{ $user->diplomeP }}</span>
+    </div>
+    <div class="info-item">
+      <label for=""><u>Compétences :</u></label>
+      <span>{{ $user->competencesP }}</span>
     </div>
   </div>
 
@@ -272,7 +279,7 @@
         @method('PUT')
 
         <div class="form-group">
-          <label for="name" style="color: #242b5e; display: block; margin-bottom: 0.5em;">Nom</label>
+          <label for="name" style="color: #242b5e; display: block; margin-bottom: 0.5em;">Nom Complet</label>
           <input type="text" class="form-control" id="name" name="name" value="{{ $user->name }}" style="width: 100%; padding: 0.5em; border-radius: 3px; border: 1px solid #ccc; box-sizing: border-box;">
         </div>
 
@@ -282,8 +289,8 @@
         </div>
         <h2 style="text-align: center; color: #242b5e; text-decoration: underline;">Compléter Le Profil</h2>
         <div class="form-group">
-          <label for="contact_postulant" style="color: #242b5e; display: block; margin-bottom: 0.5em;"> Téléphone </label>
-         <input type="tel" name="contact_postulant" id="contact_postulant">
+          <label for="contact_postulant" style="color: #242b5e; display: block; margin-bottom: 0.5em;"> Numéro de Téléphone </label>
+         <input type="tel" name="contact_postulant" id="contact_postulant" value="{{ $user->contact_postulant }}">
                                    
         </div>
         <div class="form-group">
@@ -304,7 +311,7 @@
         </div>
 
         <div class="form-group">
-          <label for="" style="color: #242b5e; display: block; margin-bottom: 0.5em;"> Diplomes</label>
+          <label for="" style="color: #242b5e; display: block; margin-bottom: 0.5em;"> Diplômes</label>
       
                             <select class="selectpicker border rounded" name="diplomeP" data-style="btn-black"
                                 data-width="100%" data-live-search="true" title="Select Diplomes" value="{{ $user->diplomeP }}">
@@ -318,7 +325,11 @@
                             </select>
         </div>
 
-   
+        <div class="form-group">
+                <label for="competencesP" style="color: #242b5e; display: block; margin-bottom: 0.5em;"> Compétences</label>
+                <textarea class="wysiwyg form-textarea " required="required" name="competencesP" cols="14" rows="6">{{ $user->competencesP }}</textarea>
+
+              </div>
         <div class="form-group">
            <div style="text-align: center;">
           <button type="submit" class="btn btn-primary"
