@@ -23,12 +23,19 @@
             <div class="row justify-content-between">
                 <!-- Left Content -->
                 <div class="col-xl-12 col-lg-12">
-
+                    <style>
+                          .avatar {
+                    width: 200px;
+                    height: 200px;
+                    object-fit: cover;
+                }
+                    </style>
+               
                     <!-- job single -->
                     <div class="single-job-items mb-50">
                         <div class="job-items">
                             <div class="company-img company-img-details text-center">
-                                <a href="#"><img src="{{asset('assets/img/free/team1.jpg')}}" alt=""></a>
+                            <img src="{{ asset('storage/photosfreelancer/' . $users->photo_freelancer) }}" alt="Photo du Freelancer" class="avatar">
                             </div>
                             <div class="job-tittle soulign">
                                 <a href="">
@@ -50,7 +57,7 @@
                                 <h4>Description </h4>
                             </div>
                             <p>
-                                {{$users->description_recruteur}}
+                                {{$users->description_free}}
                             </p>
                         </div>
                         <div class="post-details2  mb-50">
@@ -59,14 +66,11 @@
                                 <h4>Compétences</h4>
                             </div>
                             <ul>
-                                <li>{{$users->competence1}}</li>
-                                <li>{{$users->competence2}}</li>
-                                <li>{{$users->competence3}}</li>
-                                <li>{{$users->competence4}}</li>
-                                <li>{{$users->competence5}}</li>
+                                <li>{{$users->competence_freelancer}}</li>
+                              
                             </ul>
                         </div>
-                        <a href="https://wa.me/+22960189511" target="_blank">
+                        <a href="https://wa.me/{{ (str_starts_with($users->contact_freelancer,'+229') ? '' : '+229') . $users->contact_freelancer }}" target="_blank">
                             <button type="button" class="btn btn-primary btn-sm">Contacter</button>
 
                         </a>

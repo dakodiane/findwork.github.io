@@ -235,3 +235,7 @@ name('entretien.supprimer');
 
 Route::get('/entretienpostulant','App\Http\Controllers\DashboardPostulantController@entretienpostulant' )->name('entretienpostulant');
 Route::get('/offredelete/{id}', 'App\Http\Controllers\OffreController@supprimeroffre')->name('supprimeroffre');
+
+Route::get('/offre',  'App\Http\Controllers\OffreController@search')->name('offres.search');
+Route::get('/freelancer',  'App\Http\Controllers\FreelancerController@searchfreelancer')->name('freelancer.search');
+

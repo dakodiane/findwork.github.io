@@ -3214,7 +3214,7 @@ form.search-box .select-form .nice-select::after{border-bottom:1px solid #a9b6cd
 form.search-box .search-form{width:21%}
 @media (max-width: 767px){form.search-box .search-form{width:100%}
 }
-form.search-box .search-form a{width:110%;height:70px;background:#fb246a;font-size:20px;line-height:1;text-align:center;color:#fff;display:block;padding:15px;border-radius:0px;text-transform:capitalize;font-family:"Muli",sans-serif;letter-spacing:0.1em;line-height:1.2;line-height:38px;font-size:14px;text-decoration: none;}
+form.search-box .search-form button{width:110%;height:70px;background:#fb246a;font-size:20px;line-height:1;text-align:center;color:#fff;display:block;padding:15px;border-radius:0px;text-transform:capitalize;font-family:"Muli",sans-serif;letter-spacing:0.1em;line-height:1.2;line-height:38px;font-size:14px;text-decoration: none;border-color: #fb246a;}
 .team-profile{background:#f6f9fe}
 .team-profile .single-profile .single-profile-front{position:relative;top:0;backface-visibility:hidden;transition:transform 0.5s linear;transform:perspective(600px) rotateY(0deg)}
 .team-profile .single-profile .single-profile-front .profile-img{overflow:hidden}

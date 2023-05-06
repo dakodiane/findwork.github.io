@@ -94,7 +94,6 @@ class EntretienController extends Controller
                                 // Stockage des valeurs de id_user et id_offre
                                 $id = $postuler->id_user;
                                 $offreid = $postuler->id_offre;
-                                dd($id);
                             }
                         }
                     }

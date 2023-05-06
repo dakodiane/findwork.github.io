@@ -15,27 +15,28 @@
                     <div class="row" style="margin-top: 80px;">
                         <div class="col-xl-8 ">
                             <!-- form -->
-                            <form action="#" class="search-box mb-360">
+                            <form action="{{ route('offres.search') }}" class="search-box mb-360">
                                 <div class="input-form">
-                                    <input type="text" placeholder="Categories ou Mots clés">
+                                    <input type="text" name="secteurO" placeholder="Secteur">
                                 </div>
                                 <div class="select-form">
                                     <div class="select-itms">
-                                        <select name="select" id="select1">
+                                        <select name="villeO">
                                             <option value="">Ville</option>
-                                            <option value="">Cotonou</option>
-                                            <option value="">Abomey-Calavi</option>
-                                            <option value="">Porto-Novo</option>
-                                            <option value="">Bohicon</option>
-                                            <option value="">Abomey</option>
-                                            <option value="">Parakou</option>
+                                            <option value="Cotonou">Cotonou</option>
+                                            <option value="Abomey-Calavi">Abomey-Calavi</option>
+                                            <option value="Porto-Novo">Porto-Novo</option>
+                                            <option value="Bohicon">Bohicon</option>
+                                            <option value="Abomey">Abomey</option>
+                                            <option value="Parakou">Parakou</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="search-form">
-                                    <a href="{{('detail_offre')}}">Trouver une offre</a>
+                                    <button type="submit">Trouver une offre</button>
                                 </div>
                             </form>
+
                         </div>
                     </div>
                 </div>
@@ -60,12 +61,12 @@
                     <!-- single-job-content -->
                     @foreach($offres as $offre)
                     <style>
-                .company {
-                    width: 75px;
-                    height: 75px;
-                    object-fit: cover;
-                }
-            </style>
+                        .company {
+                            width: 75px;
+                            height: 75px;
+                            object-fit: cover;
+                        }
+                    </style>
                     <div class="single-job-items mb-30">
                         <div class="job-items">
                             <div class="company-img">

@@ -24,6 +24,7 @@ class FreelancerController extends Controller
         ->where('active',1)
         ->where('profil_complet',1)
             ->get();
+            
         return view('freelancer', compact('users'));
     }
 
@@ -80,17 +81,20 @@ class FreelancerController extends Controller
         //
     }
 
-    public function contact(Request $request,string $id)
-{
-    $user = User::find($id);
-
-    // Récupère le numéro de téléphone du freelancer
-    $contact_freelancer = $user->contact_freelancer;
-    $lien_whatsapp = "https://wa.me/{$contact_freelancer}";
-
-    return view('detail_free', ['user' => $user, 'lien_whatsapp' => $lien_whatsapp]);
-
-}
+    public function searchfreelancer(Request $request)
+    {
+        $query = User::query();
+    
+        if ($request->has('service_freelancer')) {
+            $query->where('service_freelancer', $request->input('service_freelancer'));
+        }
+    
+        $users = $query->get();
+    
+        $count = $users->count();
+    
+        return redirect()->back()->with(['users' => $users, 'count' => $count]);
+    }
 
     
 }

@@ -38,26 +38,32 @@
                     </div>
                     <!-- Job Category Listing start -->
                     <div class="job-category-listing mb-50">
-                        <!-- single one -->
-                        <div class="single-listing">
-                            <div class="small-section-tittle2">
-                                <h4>Categories</h4>
-                            </div>
-                            <!-- Select job category start -->
-                            <div class="select-job-items2">
-                                <select name="select">
-                                    <option value="">Toutes les categories</option>
-                                    <option value="">Informatique</option>
-                                    <option value="">Coaching Personnel</option>
-                                    <option value="">Comptabilité</option>
-                                    <option value="">Gestion</option>
-                                </select>
-                            </div>
-                            <!--  Select job category End-->
 
-                        </div>
-                   
-        
+                    <form method="GET" action="{{ route('freelancer.search') }}">
+                            @csrf
+                            <div class="single-listing">
+                                <div class="small-section-tittle2">
+                                    <h4>Services</h4>
+                                </div>
+                                <div class="select-job-items2">
+                                    <select name="secteurO">
+                                        <option value="">Services disponibles</option>
+                                        <option value="Informatique">Developpeur</option>
+                                        <option value="Mecanique">Mécanique</option>
+                                        <option value="Comptabilité">Comptabilité</option>
+                                        <option value="Gestion">Gestion</option>
+                                    </select>
+                                </div>
+                            </div>
+                          
+                            <div class="submit-btn-area">
+                                <button type="submit" class="btn btn-primary">Rechercher</button>
+                            </div>
+                        </form>
+
+                    
+
+
                     </div>
                     <!-- Job Category Listing End -->
                 </div>
@@ -68,16 +74,23 @@
                         <div class="container">
 
                             <div class=" justify-content-center">
+                        
                                 <div class="row">
-                                @foreach($users as $user)
+
+                                    @foreach($users as $user)
 
                                     <div class="col-md-4">
-                                   
 
+                                        <style>
+                                            .avatar {
+                                                width: 200px;
+                                                height: 200px;
+                                                object-fit: cover;
+                                            }
+                                        </style>
                                         <div class="team text-center">
 
-                                        <img src="{{ asset('storage/photos/' . $user->photo_freelancer) }}" 
-                                        alt="Photo du Freelancer" class="avatar">
+                                            <img src="{{ asset('storage/photosfreelancer/' . $user->photo_freelancer) }}" alt="Photo du Freelancer" class="avatar">
 
                                             <div class="title">
                                                 <h2>{{$user->service_freelancer}}</h2>
@@ -87,14 +100,36 @@
                                                 <button data-toggle="modal" data-target="#modal1" class=" btn-blue-fill">Details</button>
                                             </a>
                                         </div>
-                                      
+
 
                                     </div>
-                                    
-                                    @endforeach
 
+                                    @endforeach
+                                    <div class="pagination-area pb-115 text-center">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl-12">
+                                                    <div class="single-wrap d-flex justify-content-center">
+                                                        <nav aria-label="Page navigation example">
+                                                            <ul class="pagination justify-content-start">
+                                                                <li class="page-item active"><a class="page-link" href="#">01</a></li>
+                                                                <li class="page-item"><a class="page-link" href="#">02</a></li>
+                                                                <li class="page-item"><a class="page-link" href="#">03</a></li>
+                                                                <li class="page-item"><a class="page-link" href="#"><span class="ti-angle-right"></span></a></li>
+                                                            </ul>
+                                                        </nav>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <!-- Section Button -->
+
+
+                                        </div>
+                                    </div>
+                                   
                                 </div>
-                                
+
                             </div>
 
                         </div>
@@ -108,29 +143,8 @@
     </div>
     <!-- Job List Area End -->
     <!--Pagination Start  -->
-    <div class="pagination-area pb-115 text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="single-wrap d-flex justify-content-center">
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-start">
-                                <li class="page-item active"><a class="page-link" href="#">01</a></li>
-                                <li class="page-item"><a class="page-link" href="#">02</a></li>
-                                <li class="page-item"><a class="page-link" href="#">03</a></li>
-                                <li class="page-item"><a class="page-link" href="#"><span class="ti-angle-right"></span></a></li>
-                            </ul>
-                        </nav>
-                    </div>
 
-            </div>
- </div>
-     <!-- Section Button -->
-    
-
-                </div>
-            </div>
-        </div>
+    </div>
     </div>
     <!--Pagination End  -->
 

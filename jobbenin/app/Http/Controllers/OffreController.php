@@ -137,4 +137,24 @@ class OffreController extends Controller
             return redirect()->back()->with('success', 'Le fichier a été téléchargé avec succès!');
     }
 }
+
+public function search(Request $request)
+{
+    $query = Offre::query();
+
+    if ($request->has('secteurO')) {
+        $query->where('secteurO', $request->input('secteurO'));
+    }
+
+    if ($request->has('villeO')) {
+        $query->where('villeO', $request->input('villeO'));
+    }
+
+    $offres = $query->get();
+
+    $count = $offres->count();
+
+    return view('offre', compact('offres', 'count'));
+}
+
 }

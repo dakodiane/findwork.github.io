@@ -25,8 +25,15 @@
                     <!-- job single -->
                     <div class="single-job-items mb-50">
                         <div class="job-items">
+                        <style>
+                          .company {
+                    width: 100px;
+                    height: 100px;
+                    object-fit: cover;
+                }
+                    </style>
                             <div class="company-img company-img-details">
-                                <a href="#"><img src="{{asset('assets/img/icon/job-list1.png')}}" alt=""></a>
+                            <img src="{{ asset('storage/photoslogo/' . $offre->user->logo_entreprise) }}" alt="Logo Entreprise" class="company">
                             </div>
                             <div class="job-tittle">
                                 <a href="#">
@@ -90,7 +97,6 @@
                             <li>{{ $offre->user->type_contrat ?? '' }}</li>
                             <li>{{ $offre->user->duree_contrat  ?? '' }}</li>
                             <li>Ville : <span>{{ $offre->user->villeR ?? '' }}</span></li>
-                            <li>Salaire mensuel : <span>{{ $offre->salaireO  ?? ''}}</span></li>
                             <li>Date limite : <span>{{ $offre->datfin ?? ''}}</span></li>
                             <li>Nombre de Visiteurs: <span class=""><i class="fa fa-eye" aria-hidden="true"></i> 150 </span></li>
                            
