@@ -3,6 +3,16 @@
 @section('document')
 <main>
 
+@media only screen and (min-width: 400px) {
+      .form {
+        max-width: 375px;
+      }
+    } 
+@media only screen and (min-width: 576px) {
+      .form {
+        max-width: 540px;
+      }
+    }
 
 <!-- Inclure la bibliothèque jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

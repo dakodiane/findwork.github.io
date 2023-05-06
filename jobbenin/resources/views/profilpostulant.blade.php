@@ -150,6 +150,7 @@
     <div class="info-item">
       <label for=""><u>Numéro de Téléphone :</u></label>
       <span>{{ $user->contact_postulant }}</span>
+      
     </div>
     <div class="info-item">
       <label for=""><u>Ville :</u></label>
@@ -280,7 +281,12 @@
 
         <div class="form-group">
           <label for="name" style="color: #242b5e; display: block; margin-bottom: 0.5em;">Nom Complet</label>
-          <input type="text" class="form-control" id="name" name="name" value="{{ $user->name }}" style="width: 100%; padding: 0.5em; border-radius: 3px; border: 1px solid #ccc; box-sizing: border-box;">
+          <input type="text" class="form-control" id="name" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ $user->name }}" style="width: 100%; padding: 0.5em; border-radius: 3px; border: 1px solid #ccc; box-sizing: border-box;">
+          @error('name')
+            <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+            </span>
+            @enderror   
         </div>
 
         <div class="form-group">
@@ -290,8 +296,12 @@
         <h2 style="text-align: center; color: #242b5e; text-decoration: underline;">Compléter Le Profil</h2>
         <div class="form-group">
           <label for="contact_postulant" style="color: #242b5e; display: block; margin-bottom: 0.5em;"> Numéro de Téléphone </label>
-         <input type="tel" name="contact_postulant" id="contact_postulant" value="{{ $user->contact_postulant }}">
-                                   
+         <input type="tel" name="contact_postulant" id="contact_postulant" class="form-control @error('contact_postulant') is-invalid @enderror" value="{{ $user->contact_postulant }}">
+         @error('contact_postulant')
+            <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+            </span>
+            @enderror              
         </div>
         <div class="form-group">
           <label for="" style="color: #242b5e; display: block; margin-bottom: 0.5em;"> Ville</label>

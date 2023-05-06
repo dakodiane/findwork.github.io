@@ -78,7 +78,15 @@ class DashboardPostulantController extends Controller
     public function update(Request $request, $id)
     { 
          $user = auth()->user();
-   
+
+         $request->validate([
+            'name' => 'required|string|regex:/^[A-Za-z\s]+$/',
+            'contact_postulant' => 'required|numeric|regex:/^[0-9]+$/',
+        ], [
+            'name.required' => 'Le nom ne doit comporter que des lettres',
+            'contact_postulant.required' => 'Veuillez saisir un numéro valide.',
+        ]);
+        
         $user->name = $request->input('name');
         $user->email = $request->input('email');
           // Pour enregistrer les informations complèter par l'utilisateur
