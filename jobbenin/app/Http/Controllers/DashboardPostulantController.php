@@ -86,6 +86,7 @@ class DashboardPostulantController extends Controller
         $user->secteurP= $request->input('secteurP');
         $user->diplomeP = $request->input('diplomeP');
         $user->contact_postulant = $request->input('contact_postulant');
+        $user->competencesP = $request->input('competencesP');
    
         $user->save();
     

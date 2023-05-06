@@ -163,6 +163,10 @@
       <label for=""><u>Diplôme :</u></label>
       <span>{{ $user->diplomeP }}</span>
     </div>
+    <div class="info-item">
+      <label for=""><u>Compétences :</u></label>
+      <span>{{ $user->competencesP }}</span>
+    </div>
   </div>
 
   <button class="button1 mx-auto mt-3" data-modal="modal-mod">Modifier Vos Informations</button> 
@@ -286,7 +290,7 @@
         <h2 style="text-align: center; color: #242b5e; text-decoration: underline;">Compléter Le Profil</h2>
         <div class="form-group">
           <label for="contact_postulant" style="color: #242b5e; display: block; margin-bottom: 0.5em;"> Numéro de Téléphone </label>
-         <input type="tel" name="contact_postulant" id="contact_postulant">
+         <input type="tel" name="contact_postulant" id="contact_postulant" value="{{ $user->contact_postulant }}">
                                    
         </div>
         <div class="form-group">
@@ -307,7 +311,7 @@
         </div>
 
         <div class="form-group">
-          <label for="" style="color: #242b5e; display: block; margin-bottom: 0.5em;"> Diplomes</label>
+          <label for="" style="color: #242b5e; display: block; margin-bottom: 0.5em;"> Diplômes</label>
       
                             <select class="selectpicker border rounded" name="diplomeP" data-style="btn-black"
                                 data-width="100%" data-live-search="true" title="Select Diplomes" value="{{ $user->diplomeP }}">
@@ -321,7 +325,11 @@
                             </select>
         </div>
 
-   
+        <div class="form-group">
+                <label for="competencesP" style="color: #242b5e; display: block; margin-bottom: 0.5em;"> Compétences</label>
+                <textarea class="wysiwyg form-textarea " required="required" name="competencesP" cols="14" rows="6">{{ $user->competencesP }}</textarea>
+
+              </div>
         <div class="form-group">
            <div style="text-align: center;">
           <button type="submit" class="btn btn-primary"
