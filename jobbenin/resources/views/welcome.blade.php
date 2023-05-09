@@ -15,7 +15,7 @@
                     <div class="row" style="margin-top: 80px;">
                         <div class="col-xl-8 ">
                             <!-- form -->
-                            <form action="{{ route('offres.search') }}" class="search-box mb-360">
+                            <form action="" class="search-box mb-360">
                                 <div class="input-form">
                                     <input type="text" name="secteurO" placeholder="Secteur">
                                 </div>

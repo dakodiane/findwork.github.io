@@ -39,7 +39,7 @@
                     <!-- Job Category Listing start -->
                     <div class="job-category-listing mb-50">
                         <!-- single one -->
-                        <form method="GET" action="{{ route('offres.search') }}">
+                        <form >
                             @csrf
                             <div class="single-listing">
                                 <div class="small-section-tittle2">
@@ -87,32 +87,32 @@
                     <!-- Featured_job_start -->
                     <section class="featured-job-area ">
                         <div class="container ">
-                            @if ($count > 0)
+                            <style>
+                                .alert {
+                                    padding: 15px;
+                                    margin-bottom: 20px;
+                                    border: 1px solid transparent;
+                                    border-radius: 4px;
+                                }
+
+                                .alert-danger {
+                                    color: #721c24;
+                                    background-color: #f8d7da;
+                                    border-color: #f5c6cb;
+                                }
+
+                                .avatar {
+                                    width: 55px;
+                                    height: 55px;
+                                    object-fit: cover;
+                                }
+                            </style>
 
                             @foreach($offres as $offre)
                             <div class="row justify-content-center ">
                                 <div class="col-xl-10 mt-120">
                                     <!-- single-job-content -->
-                                    <style>
-                                        .alert {
-                                            padding: 15px;
-                                            margin-bottom: 20px;
-                                            border: 1px solid transparent;
-                                            border-radius: 4px;
-                                        }
 
-                                        .alert-danger {
-                                            color: #721c24;
-                                            background-color: #f8d7da;
-                                            border-color: #f5c6cb;
-                                        }
-
-                                        .avatar {
-                                            width: 55px;
-                                            height: 55px;
-                                            object-fit: cover;
-                                        }
-                                    </style>
 
 
                                     <div class="single-job-items mb-30">
@@ -164,9 +164,7 @@
                                     </div>
                                 </div>
                             </div>
-                            @else
-                            <div class="alert alert-danger">Aucune offre trouvée.</div>
-                            @endif
+                           
                         </div>
                     </section>
 

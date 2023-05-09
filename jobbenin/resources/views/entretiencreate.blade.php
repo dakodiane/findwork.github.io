@@ -196,16 +196,12 @@
                                 </td>
                                 <td>{{ $postulant['start_time'] }}</td>
                                 <td>
-                                  <a href="{{$postulant['start_url']}}" ">
+                                  <a href="{{$postulant['start_url']}}" >
                                     <button type=" button" class="btn btn-primary btn-lg btn-block" style="background-color: green;color:white;">
                                     Lancer entretien
                                     </button>
                                   </a>
-                                  <a href="">
-                                    <button type="button" class="btn btn-danger btn-lg btn-block" style="background-color: red;color:white;">
-                                      Supprimer
-                                    </button>
-                                  </a>
+                                 
 
                                 </td>
                               </tr>

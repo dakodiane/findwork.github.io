@@ -119,7 +119,6 @@ Route::post('/recruteur/{id}', 'App\Http\Controllers\RecruteurController@show')-
 
 
 ///TEST DJEMI 
-Route::get('/offre','App\Http\Controllers\OffreController@offre')->name('offfre');
 
 Route::get('/offre', function () {
   return view('offre');
@@ -240,7 +239,7 @@ name('entretien.supprimer');
 Route::get('/entretienpostulant','App\Http\Controllers\DashboardPostulantController@entretienpostulant' )->name('entretienpostulant');
 Route::get('/offredelete/{id}', 'App\Http\Controllers\OffreController@supprimeroffre')->name('supprimeroffre');
 
-Route::get('/offre',  'App\Http\Controllers\OffreController@search')->name('offres.search');
+Route::get('/offre',  'App\Http\Controllers\OffreController@offre');
 Route::get('/freelancer',  'App\Http\Controllers\FreelancerController@searchfreelancer')->name('freelancer.search');
 Route::get('/recruteur',  'App\Http\Controllers\Admin1Controller@searchrecruteur')->name('recruteurs.search');
 

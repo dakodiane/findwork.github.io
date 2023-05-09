@@ -23,15 +23,16 @@ class OffreController extends Controller
     ///////////////// DJEMI /////////////
     public function offre() {
         $offres = Offre::with('user')
-        ->where('publication', '=', 1) 
-        ->where('modification', '=', 0) 
-        ->whereHas('user', function ($query) {
-            $query->where('active', '=', 1);
-           
-        })
-        ->get();
-        return view('offre',compact('offres'));
-       }
+            ->whereHas('user', function ($query) {
+                $query->where('active', '=', 1)
+                    ->whereNotNull('logo_entreprise');
+            })
+            ->where('publication', '=', 1) 
+            ->where('modification', '=', 0)
+            ->get();
+        return view('offre', ['offres'=>$offres]);
+    }
+    
 
     /**
      * Show the form for creating a new resource.

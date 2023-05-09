@@ -14,7 +14,9 @@ class WelcomeController extends Controller
         // Récupération des offres
         $offres = Offre::with('user')
         ->whereHas('user', function ($query) {
-            $query->where('active', '=', 1);
+            $query->where('active', '=', 1)
+            ->where('logo_entreprise','!=',null)
+            ;
            
         })
         ->where('publication', '=', 1) 
