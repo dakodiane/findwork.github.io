@@ -41,12 +41,12 @@
 
 
           <style>
-                        .avatar {
-                            width: 55px;
-                            height: 55px;
-                            object-fit: cover;
-                        }
-                    </style>
+            .avatar {
+              width: 55px;
+              height: 55px;
+              object-fit: cover;
+            }
+          </style>
           <li class="nav-item dropdown d-none d-lg-block user-dropdown">
             <a class="nav-link" id="UserDropdown" data-bs-toggle="dropdown" aria-expanded="false">
               <img class="img-xs rounded-circle" src="{{ asset('storage/photoslogo/' . $user->logo_entreprise) }}" alt="Logo Entreprise" class="avatar">
@@ -60,15 +60,15 @@
                   <p class="fw-light text-muted mb-0">{{ $user->email }}</p>
                 </div>
                 <a class="dropdown-item" href="{{ route('profilrecruteur', ['id' => $user->id]) }}">
-            <i class="mdi mdi-account menu-icon"></i>
-            Mon Profil
-          </a>
+                  <i class="mdi mdi-account menu-icon"></i>
+                  Mon Profil
+                </a>
 
-<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-  @csrf
-</form>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+                </form>
 
-<a class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="mdi mdi-logout menu-icon"></i> Déconnexion</a>
+                <a class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="mdi mdi-logout menu-icon"></i> Déconnexion</a>
 
 
 
@@ -113,7 +113,7 @@
           <li class="nav-item">
             <a class="nav-link" href=" {{ route('profilrecruteur', 
                 ['id' => $user->id]) }}">
-                <i class="icon-head" style="margin-left:6px;"></i>  
+              <i class="icon-head" style="margin-left:6px;"></i>
               <span class="menu-title" style="margin-left:15px;margin-top:7px"> Mon Profil</span>
             </a>
           </li>
@@ -199,7 +199,7 @@
                                 <td>
 
                                   <a href="{{ route('entretien.retenir',['id_user' => $postulantid[$key],'id_offre' => $offreid[$key]])}}" class="btn btn-primary btn-lg btn-block" style="background-color: green;color:white;">Retenir</a>
-                                  <a href="{{ route('entretien.supprimer',['id_user' => $postulantid[$key],'id_offre' => $offreid[$key]])}}" class="btn btn-danger btn-lg btn-block" style="background-color: red;color:white;">Supprimer</a>
+                                  <a href="{{ route('entretien.supprimer',['id_user' => $postulantid[$key],'id_offre' => $offreid[$key]] ?? null )}}" class="btn btn-danger btn-lg btn-block" style="background-color: red;color:white;">Supprimer</a>
 
                                 </td>
                               </tr>
@@ -220,10 +220,10 @@
           <!-- content-wrapper ends -->
           <!-- partial:partials/_footer.html -->
           <footer class="footer">
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2023. Jobbenin.</span>
-          </div>
-        </footer>
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2023. Jobbenin.</span>
+            </div>
+          </footer>
           <!-- partial -->
         </div>
         <!-- main-panel ends -->

@@ -37,12 +37,11 @@ class PostulantSupprimerNotification extends Notification
      */
     public function toMail(object $notifiable): MailMessage
     {
-        $url = route('offfre');
-
+        $url = url('/offre');
         return (new MailMessage)
         ->subject('Réponse à votre candidature sur JobBenin!')
             ->greeting('Bonjour '.$this->postuler->user->name.',')
-            ->line('Malheureusement votre candidature n\'a pas été retenu pour le poste "'.$this->postuler->offre->poste.'" sur JobBénin.')
+            ->line('Malheureusement votre candidature n\'a pas été retenu pour le poste "'.$this->postuler->offre->poste.'" de l\'entreprise "'.$this->postuler->user->name.'"  sur JobBénin.')
              ->line('Nous tenons cependant à vous encourager à continuer votre recherche d\'emploi, et nous vous invitons à consulter régulièrement nos offres. Votre profil pourrait correspondre à d\'autres postes.')
              ->action('Voir les offres', $url)
              ->line('JobBénin');
