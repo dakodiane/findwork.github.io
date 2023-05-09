@@ -214,7 +214,7 @@
                                                                                 <div class="row">
                                                                                     <div class="col-md-6">
                                                                                     <div class="switch-wrap d-flex justify-content-between">
-                                                                                    <p>Êtes-vous sûre de programmer cet entretien?</p>
+                                                                                    <p>Êtes-vous sûr de programmer cet entretien?</p>
                                                                                     <div class="primary-checkbox">
                                                                                         <input type="checkbox" name="host_video" value="1" id="primary-checkbox" checked>
                                                                                         <label for="primary-checkbox"></label>

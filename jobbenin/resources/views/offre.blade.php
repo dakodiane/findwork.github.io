@@ -106,6 +106,12 @@
                                             background-color: #f8d7da;
                                             border-color: #f5c6cb;
                                         }
+
+                                        .avatar {
+                                            width: 55px;
+                                            height: 55px;
+                                            object-fit: cover;
+                                        }
                                     </style>
 
 
@@ -114,7 +120,7 @@
                                         <div class="job-items">
                                             <div class="company-img">
                                                 <a href="{{('detail_offre')}}">
-                                                    <img src="{{ asset('storage/photoslogo/' . $offre->user->logo_entreprise) }}" alt="Logo Entreprise" class="avatar">
+                                                    <img src="{{ asset('storage/photoslogo/' . $offre->user->logo_entreprise) }}" alt="Logo Entreprise" class="rounded-circle avatar">
 
 
                                             </div>

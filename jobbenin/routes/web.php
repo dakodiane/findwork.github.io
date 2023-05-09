@@ -238,4 +238,6 @@ Route::get('/offredelete/{id}', 'App\Http\Controllers\OffreController@supprimero
 
 Route::get('/offre',  'App\Http\Controllers\OffreController@search')->name('offres.search');
 Route::get('/freelancer',  'App\Http\Controllers\FreelancerController@searchfreelancer')->name('freelancer.search');
+Route::get('/recruteur',  'App\Http\Controllers\Admin1Controller@searchrecruteur')->name('recruteurs.search');
+
 

@@ -168,13 +168,7 @@ l;
                                    Nom du Candidat
                                     </p>
                                 <p class="font-weight-bold" style="font-size: large;"> {{ $postulant->name }}</p>
-                                <br><br>
-                                <p style="font-size: large;">
-                                   Téléphone
-                                    </p>
-                                <p style="font-size: large;">
-                                    {{ $postulant->contact_postulant }}
-                                </p>
+                              
                                 <br><br><br>
                                 <address class="text-primary">
                                     <p class="font-weight-bold">

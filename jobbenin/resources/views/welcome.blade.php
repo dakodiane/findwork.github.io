@@ -70,7 +70,7 @@
                     <div class="single-job-items mb-30">
                         <div class="job-items">
                             <div class="company-img">
-                                <img src="{{ asset('storage/photoslogo/' . $offre->user->logo_entreprise) }}" alt="Logo Entreprise" class="company">
+                                <img src="{{ asset('storage/photoslogo/' . $offre->user->logo_entreprise) }}" alt="Logo Entreprise" class="rounded-circle company">
                             </div>
                             <div class="job-tittle">
                                 <a href="{{('detail_offre')}}" class="soulign">

@@ -4,7 +4,13 @@
 <main>
     <style>
 
-@media only screen and (min-width: 400px) {
+@media only screen and (min-width: 300px) {
+      .form {
+        max-width: 275px;
+      }
+    }
+
+@media only screen and (max-width: 400px) {
       .form {
         max-width: 375px;
       }
@@ -49,7 +55,7 @@
                                 </h1>
                             </div>
 
-                            <form action="{{'inscription'}}" method="POST" class="p-4 border rounded" style="min-width: 375px; margin: 0 auto;" id="forminsc">
+                            <form action="{{'inscription'}}" method="POST" class="p-4 border rounded ab" style="max-width: 400px; margin: 0 auto;" id="forminsc">
                                 @csrf
                                 <div>
 

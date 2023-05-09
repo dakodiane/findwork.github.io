@@ -204,4 +204,23 @@ class Admin1Controller extends Controller
         return view('Admin.detailfreelancer',compact('freelancers'));
         //
     }
+
+    public function searchrecruteur(Request $request)
+{
+    $query = User::where('role','=','recruteur')->query();
+
+    // Vérifier si une recherche a été effectuée
+    if ($request->has('search')) {
+        $search = $request->input('search');
+        $query->where(function($query) use ($search) {
+            $query->where('name', 'like', "%$search%")
+                  ->orWhere('email', 'like', "%$search%");
+        });
+    }
+
+    $recruteurs = $query->get();
+    $count = $recruteurs->count();
+    return view('Admin.tableaudebord', compact('recruteurs','count'));
+}
+
 }

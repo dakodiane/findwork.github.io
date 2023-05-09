@@ -41,10 +41,17 @@
 
           <li class="nav-item dropdown d-none d-lg-block user-dropdown">
             <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-              <img class="img-xs rounded-circle" src="{{ asset('storage/photoslogo/' . $user->logo_entreprise) }}" alt="Logo Entreprise" class="avatar">
+            <style>
+                        .avatar {
+                            width: 55px;
+                            height: 55px;
+                            object-fit: cover;
+                        }
+                    </style>
+              <img class="img-xs rounded-circle" src="{{ asset('storage/photoslogo/' . $user->logo_entreprise) }}" alt="Logo Entreprise" class="">
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                 <div class="dropdown-header text-center">
-                  <img src="{{ asset('storage/photoslogo/' . $user->logo_entreprise) }}" alt="Logo Entreprise" class="img-md rounded-circle">
+                  <img src="{{ asset('storage/photoslogo/' . $user->logo_entreprise) }}" alt="Logo Entreprise" class="avatar rounded-circle">
 
                   <p class="mb-1 mt-3 font-weight-semibold">{{ $user->name }}</p>
                   <p class="fw-light text-muted mb-0">{{ $user->email }}</p>

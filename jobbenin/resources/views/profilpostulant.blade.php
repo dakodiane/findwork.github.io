@@ -295,7 +295,7 @@
         </div>
         <h2 style="text-align: center; color: #242b5e; text-decoration: underline;">Compléter Le Profil</h2>
         <div class="form-group">
-          <label for="contact_postulant" style="color: #242b5e; display: block; margin-bottom: 0.5em;"> Numéro de Téléphone </label>
+          <label for="contact_postulant" required="required" style="color: #242b5e; display: block; margin-bottom: 0.5em;"> Numéro de Téléphone </label>
          <input type="tel" name="contact_postulant" id="contact_postulant" class="form-control @error('contact_postulant') is-invalid @enderror" value="{{ $user->contact_postulant }}">
          @error('contact_postulant')
             <span class="invalid-feedback" role="alert">

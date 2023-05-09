@@ -9,6 +9,7 @@
                 <h4 class="font-weight-bold text-dark">Hi,DAKO Diane</h4>
             </div>
         </div>
+    
 
         <div class="row">
             <div class="col-xl-12 grid-margin-lg-0 grid-margin stretch-card">
@@ -36,13 +37,13 @@
                                         </th>
                                     </tr>
                                 </thead>
+                                
                                 @foreach ($recruteurs as $recruteur)
 
                                 <tbody>
                                     <tr>
                                         <td class="py-1">{{ $recruteur->id }}
-                                        <img src="{{ asset('storage/photoslogo/' . $recruteur->logo_entreprise) }}" 
-              alt="Logo Entreprise"  >
+                                            <img src="{{ asset('storage/photoslogo/' . $recruteur->logo_entreprise) }}" alt="Logo Entreprise">
                                         </td>
                                         <td>
                                             {{ $recruteur->name }}
@@ -56,13 +57,13 @@
 
                                         </td>
                                         <td>
-                                      
-                                        <a href="{{ route('detailrecruteur', $recruteur->id) }}">
-                                            <button type="button" class="btn btn-success btn-rounded btn-fw">Voir detail</button>
 
-                                      </a>
-                                        
-                                       
+                                            <a href="{{ route('detailrecruteur', $recruteur->id) }}">
+                                                <button type="button" class="btn btn-success btn-rounded btn-fw">Voir detail</button>
+
+                                            </a>
+
+
                                         </td>
 
                                     </tr>
