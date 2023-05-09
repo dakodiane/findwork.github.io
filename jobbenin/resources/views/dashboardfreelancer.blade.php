@@ -2,6 +2,8 @@
 
 @section('document')
 
+<script src="https://cdn.kkiapay.me/js/kkiapay.min.js"></script>
+<script src="https://cdn.kkiapay.me/k.js"></script>
 <main>
   <div class="container-scroller">
 
@@ -127,6 +129,8 @@
         </ul>
       </nav>
       <div class="main-panel">
+        <h2 class="welcome-text">Salut, <span class="text-black fw-bold">{{ $user->name }}</span></h2>
+
         <div class="content-wrapper">
           <div class="row">
             <div class="col-sm-12">
@@ -145,46 +149,9 @@
                               <div class="card-body">
                                 <div class="row">
                                   <div class="col-lg-12">
-                                    <!-- Button trigger modal -->
 
-                                    @if ($message)
-                                    <div class="alert alert-warning" style="display: flex; align-items: center; justify-content: center; height: 50px; font-size: 1.2rem;">{{ $message }}</div>
-                                    @endif
 
-                                    <!-- Payment Modal -->
-                                    <div class="modal fade" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentModalLabel" aria-hidden="true">
-                                      <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                          <div class="modal-header">
-                                            <h5 class="modal-title" id="paymentModalLabel">Paiement pour la publicité</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                              <span aria-hidden="true">&times;</span>
-                                            </button>
-                                          </div>
-                                          <div class="modal-body">
-                                            <!-- Payment Form Here -->
-                                            <form>
-                                              <div class="form-group">
-                                                <label for="cardNumber">Mode de paiement</label>
-                                                <select name="" id="">
-                                                  <option value="" style="background-color: yellow;">MTN MOMO</option>
-                                                  <option value="" style="background-color: green;">MOOV MONEY</option>
-                                                </select>
-                                              </div>
-                                              <div class="form-group">
-                                                <label for="expiryDate">Numero de paiement</label>
-                                                <input type="text" class="form-control" id="" placeholder="XXXXXXXX">
-                                              </div>
 
-                                            </form>
-                                          </div>
-                                          <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                                            <button type="button" class="btn btn-primary">Payer</button>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
 
                                     <!-- Pricing Plan Start -->
                                     <div class=" py-5 wow fadeInUp" data-wow-delay="0.1s">
@@ -203,9 +170,15 @@
                                                   <small class="align-top" style="font-size: 22px; line-height: 45px;">6.000</small>F CFA
                                                 </h1>
                                                 <div class="d-flex justify-content-between mb-3"><span>30 jours de validité</span><i class="fa fa-check text-primary pt-1"></i></div>
-                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#paymentModal">
-                                                  Payer
-                                                </button>
+                                            
+                                                <kkiapay-widget amount="6000" 
+                                            key="ba3d5c90ed7a11edb9eb477e07ce2b3a"
+                                            url="{{asset('assets/img/logo/logojob.png')}}"
+                                            position="center"
+                                            sandbox="true"
+                                            data=""
+                                            callback="{{('dashboardfreelancer')}}">
+                                           </kkiapay-widget>
                                               </div>
                                             </div>
                                           </div>
@@ -220,9 +193,15 @@
                                                 </h1>
                                                 <div class="d-flex justify-content-between mb-3"><span>3 mois de validité</span><i class="fa fa-check text-primary pt-1"></i></div>
 
-                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#paymentModal">
-                                                  Payer
-                                                </button>
+                                              
+                                                <kkiapay-widget amount="15000" 
+                                            key="ba3d5c90ed7a11edb9eb477e07ce2b3a"
+                                            url="{{asset('assets/img/logo/logojob.png')}}"
+                                            position="center"
+                                            sandbox="true"
+                                            data=""
+                                            callback="{{('dashboardfreelancer')}}">
+                                           </kkiapay-widget>
                                               </div>
                                             </div>
                                           </div>
@@ -236,9 +215,15 @@
                                                   <small class="align-top" style="font-size: 22px; line-height: 45px;">50.000</small>F CFA
                                                 </h1>
                                                 <div class="d-flex justify-content-between mb-3"><span>1an de validité</span><i class="fa fa-check text-primary pt-1"></i></div>
-                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#paymentModal">
-                                                  Payer
-                                                </button>
+                                            
+                                                <kkiapay-widget amount="50000" 
+                                                  key="ba3d5c90ed7a11edb9eb477e07ce2b3a"
+                                                  url="{{asset('assets/img/logo/logojob.png')}}"
+                                                  position="center"
+                                                  sandbox="true"
+                                                  data=""
+                                                  callback="{{('dashboardfreelancer')}}">
+                                                </kkiapay-widget>
                                               </div>
                                             </div>
                                           </div>
@@ -247,7 +232,7 @@
                                     </div>
                                     <!-- Pricing Plan End -->
 
-                                  </div>
+                            </div>
                                 </div>
                               </div>
                             </div>

@@ -73,12 +73,13 @@ class InscriptionController extends Controller
     public function inscription(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
+            'name' => 'required|string|regex:/^[a-zA-Z\s]+$/|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
             'role' => 'required|in:recruteur,postulant,freelancer',
         ], [
             'name.required' => 'Veuillez saisir votre nom.',
+            'name.regex' => 'Le nom ne doit contenir que des lettres et des espaces.',
             'email.required' => 'Veuillez saisir votre adresse e-mail.',
             'email.email' => 'Veuillez saisir une adresse e-mail valide.',
             'email.unique' => 'Cette adresse e-mail est déjà utilisée.',
@@ -88,7 +89,7 @@ class InscriptionController extends Controller
             'role.required' => 'Veuillez sélectionner votre rôle.',
             'role.in' => 'Rôle invalide.',
         ]);
-    
+      
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
@@ -96,9 +97,8 @@ class InscriptionController extends Controller
         $user->role = $request->role;
         $user->save();
       
-
-    // Envoyer la notification d'inscription
-    $user->notify(new ConfirmationNotification($user));
+        // Envoyer la notification d'inscription
+        $user->notify(new ConfirmationNotification($user));
         return redirect()->route('welcome');
     }
     
