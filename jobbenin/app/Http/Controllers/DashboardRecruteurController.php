@@ -219,6 +219,7 @@ class DashboardRecruteurController extends Controller
                                 'nom_postulant' => $postul->user->name,
                                 'poste' => $offre->poste,
                                'cv'=>$postul->cv,
+                               'lettre_motivation'=>$postul->lettre_motivation
                             ];
                           
                             // Stockage des valeurs de id_user et id_offre

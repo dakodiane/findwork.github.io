@@ -33,13 +33,10 @@ class PostulerOffreController extends Controller
         }
     
 
-        // Récupérer les données du formulaire
-        $lettre_motivation = $request->input('lettre_motivation');
-    
         $postuler = new Postuler();
         $postuler->id_offre = $offre->id;
         $postuler->id_user = $user->id;
-        $postuler->lettre_motivation = $lettre_motivation;
+     
     
         // Gérer le fichier CV s'il est présent
         if ($request->hasFile('cv')) {
@@ -65,6 +62,27 @@ class PostulerOffreController extends Controller
     
             // Enregistrer le nom du fichier dans l'objet Postuler
             $postuler->cv = $filename;
+      
+            if ($request->hasFile('lettre_motivation')) {
+                $lettre_motivation = $request->file('lettre_motivation');
+            
+                // Vérifier que le fichier est un document valide
+                $validDoc = $lettre_motivation->isValid() && in_array($lettre_motivation->getMimeType(), [        'application/pdf',        'application/msword',        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',        'application/vnd.ms-excel',        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'    ]);
+            
+                if (!$validDoc) {
+                    return redirect()->back()->with('error', 'Le fichier doit être un document (PDF, Word, Excel, etc.).');
+                }
+            
+                // Générer un nom unique pour le fichier et le stocker dans le dossier de destination
+                $filename = uniqid() . '.' . $lettre_motivation->getClientOriginalExtension();
+                $lettre_motivation->storeAs('public/lettre_motivation', $filename);
+            
+                // Enregistrer le nom du fichier dans l'objet Postuler
+                $postuler->lettre_motivation = $filename;
+            }
+            
+      
+      
         }
     
         $postuler->save();
