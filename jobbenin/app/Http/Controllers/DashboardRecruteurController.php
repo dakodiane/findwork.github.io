@@ -111,7 +111,7 @@ class DashboardRecruteurController extends Controller
             $id_user = isset($postulant) ? $postulant->id_user : null;
             $id_offre = isset($postulant) ? $postulant->id_offre : null;
 
-            return view('selectioncv', ['data' => $data, 'user' => $user, 'postulantid' => $postulantid,'offreid' => $offreid, 'id_user' => $id_user, 'id_offre' => $id_offre, 'success' => $success]);
+            return view('selectioncv', ['data' => $data, 'user' => $user, 'cv'=>$cv, 'postulantid' => $postulantid,'offreid' => $offreid, 'id_user' => $id_user, 'id_offre' => $id_offre, 'success' => $success]);
         }
     }
 
