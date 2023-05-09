@@ -16,7 +16,7 @@
         <script src="{{ asset('js/jquery.min.js') }}"></script>
         <script src="{{ asset('js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('js/custom.js') }}"></script>
-
+        
         
         <link rel="stylesheet" href="{{asset('assets/css/styleinscription.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
@@ -135,6 +135,7 @@
   <script src="{{asset('assets/js/jquery.cookie.js')}}" type="text/javascript"></script>
   <script src="{{asset('assets/js/dashboard.js')}}"></script>
   <script src="{{asset('assets/js/Chart.roundedBarCharts.js')}}"></script>
-  
+  <script src="https://cdn.kkiapay.me/k.js"></script>
+
 </body>
 </html>

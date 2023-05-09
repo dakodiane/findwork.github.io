@@ -23,7 +23,8 @@
   <!-- endinject -->
   <!-- plugin css for this page -->
   <link rel="stylesheet" href="{{asset('assets/admin/vendors/flag-icon-css/css/flag-icon.min.css')}}">
-  
+
+
   <link rel="stylesheet" href="{{asset('assets/admin/vendors/font-awesome/css/font-awesome.min.css')}}">
 
   <!-- Plugin css for this page -->
@@ -74,6 +75,6 @@
   <script src="{{asset('assets/js/Chart.roundedBarCharts.js')}}"></script>
 
 
-
+  <script src="https://cdn.kkiapay.me/k.js"></script>
 </body>
 </html>
