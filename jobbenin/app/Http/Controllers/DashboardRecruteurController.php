@@ -111,7 +111,7 @@ class DashboardRecruteurController extends Controller
             $id_user = isset($postulant) ? $postulant->id_user : null;
             $id_offre = isset($postulant) ? $postulant->id_offre : null;
 
-            return view('selectioncv', ['data' => $data, 'user' => $user, 'postulantid' => $postulantid, 'cv'=>$cv,'offreid' => $offreid, 'id_user' => $id_user, 'id_offre' => $id_offre, 'success' => $success]);
+            return view('selectioncv', ['data' => $data, 'user' => $user, 'postulantid' => $postulantid,'offreid' => $offreid, 'id_user' => $id_user, 'id_offre' => $id_offre, 'success' => $success]);
         }
     }
 
@@ -282,13 +282,14 @@ class DashboardRecruteurController extends Controller
             $offres = $user->offre;
             $data = [];
             $postulantid = []; // Initialisation du tableau des IDs des postulants sélectionnés
-
+            $offreid = [];
             foreach ($offres as $offre) {
                 foreach ($offre->postulers as $postulant) {
                     if ($postulant && $postulant->user && $postulant->suppression == 0 && $postulant->selection == 1 && $postulant->programmed == 1 && $postulant->retenir == 0 && $postulant->supprimerf == 0) {
                         $data[] = [
                             'id_user' => $postulant->id_user,
                             'id_offre' => $postulant->id_offre,
+                            'offreid' => $postulant->id_offre,
                             'nom_recruteur' => $user->name,
                             'nom_postulant' => $postulant->user->name,
                             'cv' => $postulant->cv,
