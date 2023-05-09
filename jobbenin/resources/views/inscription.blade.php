@@ -40,7 +40,7 @@
                             </div>
 
                             <form action="{{'inscription'}}" method="POST" class="p-4 border rounded ab" style="max-width: 400px; margin: 0 auto;" id="forminsc">
-                                @csrf
+                            
 
                                 @csrf
                                 <div class="row form-group">
@@ -152,10 +152,7 @@
 
             </div>
         </div>
-        </div>
-        </div>
-        </div>
-        </div>
+        
     </section>
 
 </main>
