@@ -9,6 +9,7 @@ use App\Models\ZoomMeeting;
 use Illuminate\Http\Request;
 use App\Traits\ZoomMeetingTrait;
 use Illuminate\Support\Facades\Auth;
+use App\Notifications\EntretienProgrammeNotification;
 
 class EntretienController extends Controller
 {
@@ -34,9 +35,11 @@ class EntretienController extends Controller
         $postulantid = User::find($id_user);
         $entretien = $this->create($data,$id_user, $id_offre);
         
-        Postuler::createEntretien($entretien['data'], $id_user, $id_offre);
 
-        return redirect()->back();
+         Postuler::createEntretien($entretien['data'], $id_user, $id_offre);
+         return redirect('/selectioncv')->with('success', 'Entretien créé avec succès.');
+
+
     }
 
 

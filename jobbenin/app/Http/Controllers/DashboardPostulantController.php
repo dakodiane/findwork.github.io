@@ -155,7 +155,7 @@ public function entretienpostulant()
         $offre = $postuler->offre;
         $start_time = $postuler->start_time;
         $join_url = $postuler->join_url;
-        $poste=$postuler->offre->poste;
+        $poste=$postuler->offre->poste ?? '';
         if (!$offre) {
             return null;
         }

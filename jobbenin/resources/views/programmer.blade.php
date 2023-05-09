@@ -175,6 +175,7 @@
                                                                         <u><h2 style="color:#242b5e;text-align:center">Programmer un entretien</h2></u>
                                                                         <div class="row">
                                                                         <div class="col-lg-8 col-md-8">
+                                                                    
                                                                             <form method="post" action="{{route('programmer', ['id' => $id, 'offreid' => $offreid]) }}">
                                                                             @csrf
                                                                             <div class="mt-10">
@@ -198,7 +199,7 @@
                                                                                     <div  id="default-select">
 
                                                                                         <select name="timezone">
-                                                                                            <option value="Europe/Paris">Afrique</option>
+                                                                                            <option value="Europe/Paris">UTC+1</option>
                                                                                            
                                                                                         </select>
                                                                                     </div> <br><br>
