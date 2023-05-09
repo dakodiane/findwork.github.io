@@ -171,13 +171,11 @@
                                                             <div class="card-body">
                                                                 <div class="row">
                                                                     <div class="col-lg-12">
-                                                                        <!-- Button trigger modal -->
-
-
-                                                                        <!-- Payment Modal -->
-                                                                        <h2>Programmer un entretien</h2>
+                                                                     
+                                                                        <u><h2 style="color:#242b5e;text-align:center">Programmer un entretien</h2></u>
                                                                         <div class="row">
                                                                         <div class="col-lg-8 col-md-8">
+                                                                    
                                                                             <form method="post" action="{{route('programmer', ['id' => $id, 'offreid' => $offreid]) }}">
                                                                             @csrf
                                                                             <div class="mt-10">
@@ -201,7 +199,7 @@
                                                                                     <div  id="default-select">
 
                                                                                         <select name="timezone">
-                                                                                            <option value="Europe/Paris">Afrique</option>
+                                                                                            <option value="Europe/Paris">UTC+1</option>
                                                                                            
                                                                                         </select>
                                                                                     </div> <br><br>
@@ -215,7 +213,7 @@
                                                                                     <div class="col-md-6">
                                                                                     <div class="switch-wrap d-flex justify-content-between">
                                                                                     <p>Êtes-vous sûr de programmer cet entretien?</p>
-                                                                                    <div class="primary-checkbox">
+                                                                                    <div class="primary-checkbox" style=" margin-top: 8px; margin-left:20px">
                                                                                         <input type="checkbox" name="host_video" value="1" id="primary-checkbox" checked>
                                                                                         <label for="primary-checkbox"></label>
                                                                                     </div>
@@ -223,8 +221,8 @@
                                                                                     </div>
                                                                                     <div class="col-md-6">
                                                                                     <div class="switch-wrap d-flex justify-content-between">
-                                                                                    <p>Vous informer à l'approche de l'entretien?</p>
-                                                                                    <div class="primary-checkbox">
+                                                                                    <p>Vous informer à l'approche de l'entretien?</p> 
+                                                                                    <div class="primary-checkbox"  style=" margin-top: 8px;margin-left:20px">
                                                                                         <input type="checkbox" name="participant_video" value="1" id="primary-checkbox" checked>
                                                                                         <label for="primary-checkbox"></label>
                                                                                     </div>

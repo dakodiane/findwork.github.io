@@ -158,7 +158,7 @@
         </ul>
       </nav>
       <!-- partial -->
-      <div class="container-fluid page-body-wrapper">
+   
         <!-- partial:partials/_settings-panel.html -->
         <div class="theme-setting-wrapper">
           <div id="settings-trigger"><i class="ti-settings"></i></div>

@@ -187,7 +187,11 @@
                                         <h4 class="card-title card-title-dash">CV Sélectionnés</h4>
                                       </div>
                                     </div>
-
+                                                          @if (session('success'))
+                          <div class="alert alert-success">
+                              {{ session('success') }}
+                          </div>
+                                                          @endif
 
 
                                     <div class="col-lg-12 grid-margin stretch-card">
@@ -234,7 +238,8 @@
                                                   </td>
                                                   <td>
                                                   <a href="{{ asset('storage/cv/' . $cv) }}" target="_blank" style="color: blue; text-decoration: underline;">Consulter le CV</a>
-                                                   </td>
+                                                 
+                                                </td>
                                                   <td>
                                                     <a href="{{ route('programmer', ['id' => $postulantid[$key],'offreid' => $offreid[$key]]) }}" >
                                                       <button type="submit" class="btn btn-primary btn-lg btn-block"  style="background-color: green;color:white;" name="selectionner">Programmer un entretien</button>

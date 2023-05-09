@@ -42,25 +42,27 @@
               <p></p>
 
               <form method="POST" action="{{route('postuleroffre', ['id_offre' => $offre->id])}}" enctype="multipart/form-data" style="max-width: 400px; margin: 0 auto; " id="formpostuler">
-    @csrf
-    <div class="form-group">
-        <div class="text-format-wrapper">
-            <div class="form-item form-lettre_motivation wysiwyg-wrapper form-type-textarea form-item-lettre_motivation-value" id="edit-lettre_motivation-value-wrapper">
-                <label for="edit-lettre_motivation" style="padding-top:2em">Lettre de Motivation </label>
-                <div class="form-textarea-wrapper resizable">
-                    <textarea class="" name="lettre_motivation" id="lettre_motivation" cols="16" rows="10" required="required" placeholder=""></textarea>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="secteur">Curriculum Vitae (CV) </label>
-        <input type="file" id="cv" name="cv" required="required" class="form-control" placeholder="" style="width:100%">
-    </div>
-    <div class="form-group">
-        <button type="submit" class="btn btn-block btn-primary btn-md" data-toggle="" data-target="#postulerModal">Postuler</button>
-    </div>
-</form>
+       
+       
+              @csrf
+
+              
+                 <div class="form-group">
+                <label for="lettre_motivation">Lettre de motivation</label>
+                <input type="file" id="lettre_motivation" name="lettre_motivation" required="required" class="form-control">
+               </div>
+
+              <div class="form-group">
+                          <label for="secteur">Curriculum Vitae (CV) </label>
+                          <input type="file" id="cv" name="cv" required="required" class="form-control" placeholder="" style="width:100%">
+                      </div>
+                      <div class="form-group">
+                          <button type="submit" class="btn btn-block btn-primary btn-md" data-toggle="" data-target="#postulerModal">Postuler</button>
+                      </div>
+          
+    
+   
+                </form>
 
 
 
@@ -93,32 +95,7 @@
     </div>
   </section>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-$(document).ready(function() {
-  var form = $('#formpostuler');
-  form.submit(function(event) {
- 
-    var lettreMotivationField = $('#lettre_motivation');
-    var cvField = $('#cv');
-    
-
-    // Vérifier si le champ de nom ne contient que des lettres et des espaces
-    var nameRegex = /^[a-zA-Z\s]*$/;
-    if (!nameRegex.test(lettreMotivationField.val())) {
-      alert('Le champ de lettre de motivation ne doit contenir que des lettres et des espaces.');
-      return false;
-    }
-
-    if ( cvField[0].files && cvField[0].files.length > 0) {
-      // Si tous les champs sont remplis, afficher le popup
-      $('#postulerModal').modal('show');
-      return true;
-    } 
-  });
-});
-
-</script>
+  
 
 
 

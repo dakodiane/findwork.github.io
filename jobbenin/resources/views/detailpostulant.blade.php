@@ -191,7 +191,9 @@ l;
                                        Lettre de motivation
                                     </p>
                                     <p>
-                                    <p> {{ $lettreMotivation   }}</p>
+                                    <p> <a href="{{ asset('storage/lettre_motivation/' . $lettreMotivation) }}" 
+                                    target="_blank" style="color: blue; text-decoration: underline;">Consulter la Lettre de Motivation</a>
+                                  </p>
 
                                     <p style="font-size: large;">
                                      Curriculum Vitae

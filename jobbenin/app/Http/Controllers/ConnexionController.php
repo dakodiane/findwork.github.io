@@ -41,13 +41,14 @@ class ConnexionController extends Controller
                     elseif ($user->active == 1) {
                         $request->session()->regenerate();
 
-                        return redirect()->intended('annonce');                    }
+                        return redirect()->intended(route('profilrecruteur', ['id' => $user->id]));
+                    }
                   
                 } elseif ($user->role == 'postulant') {
 
                     $request->session()->regenerate();
                    
-                    return redirect()->intended('vosoffres');
+                    return redirect()->intended('profilpostulant');
                 } elseif ($user->role == 'freelancer') {
                     if ($user->active == 0) {
                         // L'utilisateur n'existe pas dans la base de données
@@ -56,7 +57,7 @@ class ConnexionController extends Controller
                     elseif ($user->active == 1) {
                     $request->session()->regenerate();
 
-                    return redirect()->intended('dashboardfreelancer');
+                    return redirect()->intended('profilfreelancer');
                 }
 
                 } 

@@ -1,16 +1,17 @@
 <?php
 
-// Modèle Postuler
 
 namespace App\Models;
 
 use App\Models\User;
 use App\Models\Offre;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Notifications\ConfirmationNotification;
+use App\Notifications\EntretienProgrammeNotification;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use App\Notifications\ProgrammationEntretienNotification;
 
@@ -47,7 +48,7 @@ class Postuler extends Model
         return $this->belongsTo(User::class, 'id_user');
     }
 
-    public static function createEntretien($data, $id_user, $id_offre)
+    public static function createEntretien( $data, $id_user, $id_offre)
     {
         $entretien = new Postuler();
         $entretien->topic = $data['topic'];
@@ -94,16 +95,21 @@ class Postuler extends Model
             }
             $dataToUpdate['programmed'] = 1;
        
-            // Mettre à jour la ligne dans la table
-            Postuler::where('id_user', $id_user)
-                ->where('id_offre', $id_offre)
-                ->update($dataToUpdate);
+                // Mettre à jour la ligne dans la table
+        Postuler::where('id_user', $id_user)
+        ->where('id_offre', $id_offre)
+        ->update($dataToUpdate);
 
-            // Récupérer la ligne mise à jour
-            $postuler = Postuler::where('id_user', $id_user)
-                ->where('id_offre', $id_offre)
-                ->first();
-            return $postuler;
+        // Récupérer la ligne mise à jour
+        $postuler = Postuler::where('id_user', $id_user)
+        ->where('id_offre', $id_offre)
+        ->first();
+
+        // Envoyer une notification au postulant
+        $postuler->notifyPostulant($postuler);
+    
+                return $postuler;
+
         } else {
             // Sinon, créer une nouvelle ligne
             $entretien->id_user = $id_user;
@@ -115,5 +121,15 @@ class Postuler extends Model
         }
         return $entretien;
     }
+
+
+
+    public function notifyPostulant($entretien)
+{
+    
+    $user = $this->user;
+    $user->notify(new EntretienProgrammeNotification($entretien));
+}
+
     use SoftDeletes;
 }

@@ -8,10 +8,9 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class ProgrammationEntretienNotification extends Notification
+class EntretienProgrammeNotification extends Notification
 {
     use Queueable;
-    protected $postuler;
 
     /**
      * Create a new notification instance.
@@ -20,6 +19,7 @@ class ProgrammationEntretienNotification extends Notification
     {
         $this->postuler = $postuler;
     }
+
     /**
      * Get the notification's delivery channels.
      *
@@ -36,11 +36,14 @@ class ProgrammationEntretienNotification extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-                    ->subject('Création de nouvel entretien sur JobBenin')
-                    ->greeting('Bonjour ' . $notifiable->name . ',')
-                    ->line('Votre entretien a été créé avec succès!.')
-                    ->line('JobBenin');
-    }
+        ->subject('Nouvelle Programmation d\'Entretien sur JobBénin ')
+     
+        ->line('Un entretien a été programmé par  '.$this->postuler->user->name.' pour le poste '.$this->postuler->offre->poste.' auquel vous avez postulé.')
+        ->line('Le sujet de l\'entretien est "'.$this->postuler->topic.'" et il aura lieu le '.$this->postuler->start_time.'.')
+        ->action('Voir les détails', url('/entretienpostulant'));
+    
+}
+    
 
     /**
      * Get the array representation of the notification.

@@ -88,9 +88,10 @@ class DashboardRecruteurController extends Controller
             $data = [];
             $postulantid = []; // Initialisation du tableau des IDs des postulants sélectionnés
             $offreid = [];
-       
-             
-            foreach ($offres as $offre) {
+            $cv = null; // Initialisation de la variable $cv avec une valeur par défaut de null
+            
+            foreach ($offres as $offre) 
+            {
                 foreach ($offre->postulers as $postulant) {
                     if ($postulant && $postulant->user && $postulant->suppression == 0 && $postulant->selection == 1 && $postulant->programmed == 0) {
                         $data[] = [
@@ -104,17 +105,19 @@ class DashboardRecruteurController extends Controller
                         $postulantid[] = $postulant->user->id; // Ajout de l'ID du postulant sélectionné dans le tableau
                         $offreid[] = $postulant->id_offre;
                         $cv = $postulant->cv;
+                     
                     }
                 }
             }
+     
             $success = session()->get('success');
             $id_user = isset($postulant) ? $postulant->id_user : null;
             $id_offre = isset($postulant) ? $postulant->id_offre : null;
-
-            return view('selectioncv', ['data' => $data, 'user' => $user, 'postulantid' => $postulantid,'cv' => $cv,'offreid' => $offreid, 'id_user' => $id_user, 'id_offre' => $id_offre, 'success' => $success]);
+    
+            return view('selectioncv', ['data' => $data, 'user' => $user, 'cv'=>$cv, 'postulantid' => $postulantid,'offreid' => $offreid, 'id_user' => $id_user, 'id_offre' => $id_offre, 'success' => $success]);
         }
     }
-
+    
     public function selectionner(Request $request, $id_user, $id_offre)
     {
         $user = auth()->user();
@@ -219,6 +222,7 @@ class DashboardRecruteurController extends Controller
                                 'nom_postulant' => $postul->user->name,
                                 'poste' => $offre->poste,
                                'cv'=>$postul->cv,
+                               'lettre_motivation'=>$postul->lettre_motivation
                             ];
                           
                             // Stockage des valeurs de id_user et id_offre
