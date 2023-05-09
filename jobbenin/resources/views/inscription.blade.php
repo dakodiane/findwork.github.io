@@ -185,7 +185,9 @@
                 alert('Veuillez remplir tous les champs obligatoires.');
                 return false;
             }
-        });
+        });  $('.modal-footer button').click(function() {
+        $('#inscriptionModal').modal('hide');
+    });
     });
 </script>
 
