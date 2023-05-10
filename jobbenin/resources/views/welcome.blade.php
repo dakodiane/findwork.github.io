@@ -14,8 +14,8 @@
                     <!-- Search Box -->
                     <div class="row" style="margin-top: 80px;">
                         <div class="col-xl-8 ">
-                            <!-- form -->
-                            <form action="" class="search-box mb-360">
+                            <!-- form -->*
+                            <form action="{{ route('offres.search') }}" class="search-box mb-360" method="GET">
                                 <div class="input-form">
                                     <input type="text" name="secteurO" placeholder="Secteur">
                                 </div>
@@ -81,14 +81,15 @@
                                     <li>{{optional($offre->user)->name}}</li>
                                     <li><i class="fas fa-map-marker-alt">
 
-                                        </i>{{optional($offre->user)->villeR}}</li>
+                                    </i>{{optional($offre->user)->villeR}}</li>
+
 
                                 </ul>
                             </div>
                         </div>
                         <div class="items-link f-right">
                             <a href="{{ route('detail_offre', $offre->id) }}" class="soulign">Voir l'offre</a>
-
+                                <span>Expire le:{{($offre->datfin)}}</span>
                         </div>
                     </div>
                     <!-- single-job-content -->
@@ -139,7 +140,7 @@
                         <img src="{{ asset('storage/photosfreelancer/' . $freelancer->photo_freelancer) }}" alt="Photo du Freelancer" class="avatar">
 
                         <div class="title">
-                            <h2>{{ $freelancer->service_freelancer }}</h2>
+                        <h2 style="color: black;">{{ implode(' ', array_slice(explode(' ', Illuminate\Support\Str::limit(strip_tags($freelancer->description_free), 50)), 0, 6)) }}...</h2>
                             <h5 class="muted regular">{{ $freelancer->name }}</h5>
                         </div>
                         <a href="{{ route('detail_free', $freelancer->id) }}">

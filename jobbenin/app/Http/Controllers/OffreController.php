@@ -151,11 +151,14 @@ public function search(Request $request)
         $query->where('villeO', $request->input('villeO'));
     }
 
-    $offres = $query->get();
+    $offres = $query->where('publication', '=', 1) 
+                    ->where('modification', '=', 0) 
+                    ->get();
 
     $count = $offres->count();
 
     return view('offre', compact('offres', 'count'));
 }
+
 
 }

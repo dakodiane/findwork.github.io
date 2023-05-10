@@ -27,7 +27,6 @@ class PublierAnnonceController extends Controller
         $secteurO = $request->input('secteurO');
         $poste = $request->input('poste');
         $datfin = $request->input('datfin');
-        $salaireO = $request->input('salaireO');
         $typeO = $request->input('typeO');
         $villeO = $request->input('villeO');
         $description_offre = $request->input('description_offre');
@@ -43,7 +42,6 @@ class PublierAnnonceController extends Controller
         $offre->secteurO = $secteurO;
         $offre->poste = $poste;
         $offre->datfin = $datfin;
-        $offre->salaireO = $salaireO;
         $offre->typeO = $typeO;
         $offre->villeO = $villeO;
         $offre->description_offre = $description_offre;

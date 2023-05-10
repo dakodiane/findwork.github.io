@@ -160,7 +160,7 @@ class DashboardRecruteurController extends Controller
             $offres = $user->offre;
             $data = [];
             $postulantid = []; // Initialisation du tableau des IDs des postulants sélectionnés
-
+            $offreid=[] ;
             foreach ($offres as $offre) {
                 foreach ($offre->postulers as $postulant) {
                     if ($postulant && $postulant->user && $postulant->suppression == 0 && $postulant->selection == 1 && $postulant->programmed == 1) {
@@ -178,11 +178,10 @@ class DashboardRecruteurController extends Controller
                         $postulantid[] = $postulant->user->id;
                         $offreid[] = $postulant->id_offre;
                         // Ajout de l'ID du postulant sélectionné dans le tableau
-                        $meeting = Postuler::all();
                     }
                 }
             }
-            return view('entretiencreate')->with(['data' => $data, 'user' => $user, 'meeting' => $meeting, 'offreid' => $offreid, 'postulantid' => $postulantid]);
+            return view('entretiencreate')->with(['data' => $data, 'user' => $user, 'offreid' => $offreid, 'postulantid' => $postulantid]);
         }
     }
 

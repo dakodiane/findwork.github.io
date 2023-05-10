@@ -14,7 +14,14 @@
                         <address>
                                 <p class="font-weight-bold" style="font-size: large;"> Description de l'Entreprise</p>
                                 <br><br>
-                                <p style="font-size: large;">    <img src="{{ asset('storage/photoslogo/' . $offre->user->logo_entreprise) }}" alt="Logo Entreprise" class="avatar">
+                                <style>
+                        .avatar {
+                            width: 75px;
+                            height: 75px;
+                            object-fit: cover;
+                        }
+                    </style>
+                                <p style="font-size: large;">    <img src="{{ asset('storage/photoslogo/' . $offre->user->logo_entreprise) }}" alt="Logo Entreprise" class="avatar rounded-circle">
                                            </p>
                                            @if(isset($offre) && isset($offre->user))
                                 <p class="font-weight-bold" style="font-size: large;"> {{ $offre->user->name }}</p>

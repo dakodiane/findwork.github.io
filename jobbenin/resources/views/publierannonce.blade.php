@@ -60,12 +60,12 @@
 
                                 <label for="job-Ville">Ville </label> <br>
                                 <select class="selectpicker border rounded" name="villeO" required="required" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Ville">
-                                    <option value="cotonou">Cotonou</option>
-                                    <option value="abomey-calavi">Abomey-Calavi</option>
-                                    <option value="porto-novo">Porto-Novo</option>
-                                    <option value="bohicon">Bohicon</option>
-                                    <option value="abomey">Abomey</option>
-                                    <option value="parakou">Parakou</option>
+                                    <option value="Cotonou">Cotonou</option>
+                                    <option value="Abomey-calavi">Abomey-Calavi</option>
+                                    <option value="Porto-Novo">Porto-Novo</option>
+                                    <option value="Bohicon">Bohicon</option>
+                                    <option value="Abomey">Abomey</option>
+                                    <option value="Parakou">Parakou</option>
                                 </select>
                             </div>
                         </div>

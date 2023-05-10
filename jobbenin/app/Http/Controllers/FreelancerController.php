@@ -83,17 +83,33 @@ class FreelancerController extends Controller
 
     public function searchfreelancer(Request $request)
     {
-        $query = User::query();
-    
-        if ($request->has('service_freelancer')) {
-            $query->where('service_freelancer', $request->input('service_freelancer'));
+        $query = User::where('role', '=', 'freelancer')
+        ->where('active',1)
+        ->where('profil_complet',1);
+
+        if ($request->has('service_freelancer1')) {
+            $service = $request->input('service_freelancer1');
+            $query->where(function ($query) use ($service) {
+                $query->where('service_freelancer1', 'like', '%'.$service.'%')
+                      ->orWhere('service_freelancer2', 'like', '%'.$service.'%')
+                      ->orWhere('service_freelancer3', 'like', '%'.$service.'%')
+                      ->orWhere('service_freelancer4', 'like', '%'.$service.'%')
+                      ->orWhere('service_freelancer5', 'like', '%'.$service.'%')
+                      ->orWhere('competence_freelancer1', 'like', '%'.$service.'%')
+                      ->orWhere('competence_freelancer2', 'like', '%'.$service.'%')
+                      ->orWhere('competence_freelancer3', 'like', '%'.$service.'%')
+                      ->orWhere('competence_freelancer4', 'like', '%'.$service.'%')
+                      ->orWhere('competence_freelancer5', 'like', '%'.$service.'%');
+
+
+            });
         }
-    
+        
         $users = $query->get();
     
         $count = $users->count();
     
-        return redirect()->back()->with(['users' => $users, 'count' => $count]);
+        return view('freelancer', compact('users', 'count'));
     }
 
     

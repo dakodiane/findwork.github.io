@@ -156,13 +156,25 @@
             <br>
             <div class="grid-container">
               <label for=""><u>Services Proposés:</u></label>
-              <span>{{ $user->service_freelancer }}</span>
+              <ul style="color: black;font-size:1.1em">
+              <li>{{ $user->service_freelancer1 }}</li>
+              <li>{{ $user->service_freelancer2}}</li>
+              <li>{{ $user->service_freelancer3 }}</li>
+              <li>{{ $user->service_freelancer4 }}</li>
+              <li>{{ $user->service_freelancer5 }}</li>
+              </ul>
             </div>
           </div>
           <div class="col-md-6">
             <div class="grid-container">
               <label for=""><u>Competences :</u></label>
-              <span>{{ $user->competence_freelancer }}</span>
+              <ul style="color: black;font-size:1.1em">
+              <li>{{ $user->competence_freelancer1 }}</li>
+              <li>{{ $user->competence_freelancer2 }}</li>
+              <li>{{ $user->competence_freelancer3 }}</li>
+              <li>{{ $user->competence_freelancer4 }}</li>
+              <li>{{ $user->competence_freelancer5 }}</li>
+              </ul>
             </div>
             <br>
             <div class="grid-container">
@@ -303,8 +315,12 @@
 
               </div>
               <div class="form-group">
-                <label for="email" style="color: #242b5e; display: block; margin-bottom: 0.5em;"> Services Offerts </label>
-                <textarea class="wysiwyg form-textarea" required="required" name="service_freelancer" cols="14" rows="6">{{ $user->service_freelancer }}</textarea>
+                <label for="service_freelancer" style="color: #242b5e; display: block; margin-bottom: 0.5em;">Services offerts</label>
+                <input type="text" class="form-control" id="service_freelancer1" name="service_freelancer1" value="{{ $user->service_freelancer1 }}" style="width: 100%; padding: 0.5em; border-radius: 3px; border: 1px solid #ccc; box-sizing: border-box;"> <br>
+                <input type="text" class="form-control" id="service_freelancer2" name="service_freelancer2" value="{{ $user->service_freelancer2 }}" style="width: 100%; padding: 0.5em; border-radius: 3px; border: 1px solid #ccc; box-sizing: border-box;"> <br>
+                <input type="text" class="form-control" id="service_freelancer3" name="service_freelancer3" value="{{ $user->service_freelancer3 }}" style="width: 100%; padding: 0.5em; border-radius: 3px; border: 1px solid #ccc; box-sizing: border-box;"> <br>
+                <input type="text" class="form-control" id="service_freelancer4" name="service_freelancer4" value="{{ $user->service_freelancer4 }}" style="width: 100%; padding: 0.5em; border-radius: 3px; border: 1px solid #ccc; box-sizing: border-box;"> <br>
+                <input type="text" class="form-control" id="service_freelancer5" name="service_freelancer5" value="{{ $user->service_freelancer5 }}" style="width: 100%; padding: 0.5em; border-radius: 3px; border: 1px solid #ccc; box-sizing: border-box;"> <br>
 
               </div>
               <div class="form-group">
@@ -313,8 +329,12 @@
 
               </div>
               <div class="form-group">
-                <label for="email" style="color: #242b5e; display: block; margin-bottom: 0.5em;"> Compétences</label>
-                <textarea class="wysiwyg form-textarea " required="required" name="competence_freelancer" cols="14" rows="6">{{ $user->competence_freelancer }}</textarea>
+                <label for="competence" style="color: #242b5e; display: block; margin-bottom: 0.5em;"> Compétences</label>
+                <input type="text" class="form-control" id="competence_freelancer1" name="competence_freelancer1" value="{{ $user->competence_freelancer1 }}" style="width: 100%; padding: 0.5em; border-radius: 3px; border: 1px solid #ccc; box-sizing: border-box;"> <br>
+                <input type="text" class="form-control" id="competence_freelancer2" name="competence_freelancer2" value="{{ $user->competence_freelancer2 }}" style="width: 100%; padding: 0.5em; border-radius: 3px; border: 1px solid #ccc; box-sizing: border-box;"> <br>
+                <input type="text" class="form-control" id="competence_freelancer3" name="competence_freelancer3" value="{{ $user->competence_freelancer3 }}" style="width: 100%; padding: 0.5em; border-radius: 3px; border: 1px solid #ccc; box-sizing: border-box;"> <br>
+                <input type="text" class="form-control" id="competence_freelancer4" name="competence_freelancer4" value="{{ $user->competence_freelancer4 }}" style="width: 100%; padding: 0.5em; border-radius: 3px; border: 1px solid #ccc; box-sizing: border-box;"> <br>
+                <input type="text" class="form-control" id="competence_freelancer5" name="competence_freelancer5" value="{{ $user->competence_freelancer5 }}" style="width: 100%; padding: 0.5em; border-radius: 3px; border: 1px solid #ccc; box-sizing: border-box;"> <br>
 
               </div>
               <div class="form-group">

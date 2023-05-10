@@ -46,12 +46,17 @@
                                     <h4>Services</h4>
                                 </div>
                                 <div class="select-job-items2">
-                                    <select name="secteurO">
+                                    <select name="service_freelancer1">
                                         <option value="">Services disponibles</option>
-                                        <option value="Informatique">Developpeur</option>
-                                        <option value="Mecanique">Mécanique</option>
-                                        <option value="Comptabilité">Comptabilité</option>
+                                        <option value="Dével">Développeur</option>
+                                        <option value="Redaction">Redaction</option>
+                                        <option value="Comptable">Comptabilité</option>
                                         <option value="Gestion">Gestion</option>
+                                        <option value="Coaching">Coaching</option>
+                                        <option value="Traduction">Services de traduction</option>
+                                        <option value="Marketing">Marketing</option>
+                                        <option value="Graphiste">Graphiste</option>
+
                                     </select>
                                 </div>
                             </div>
@@ -93,7 +98,7 @@
                                             <img src="{{ asset('storage/photosfreelancer/' . $user->photo_freelancer) }}" alt="Photo du Freelancer" class="avatar">
 
                                             <div class="title">
-                                                <h2>{{$user->service_freelancer}}</h2>
+                                            <h2 style="color: black;">{{ implode(' ', array_slice(explode(' ', Illuminate\Support\Str::limit(strip_tags($user->description_free), 50)), 0, 6)) }}...</h2>
                                                 <h5 class="muted regular">{{$user->name}}</h5>
                                             </div>
                                             <a href="{{ route('detail_free', $user->id) }}">
@@ -105,7 +110,8 @@
                                     </div>
 
                                     @endforeach
-                                    <div class="pagination-area pb-115 text-center">
+                                    @if($users->count() > 15)
+                            <div class="pagination-area pb-115 text-center">
                                         <div class="container">
                                             <div class="row">
                                                 <div class="col-xl-12">
@@ -127,6 +133,12 @@
 
                                         </div>
                                     </div>
+                            @endif
+                            @if(isset($count))
+                            @if($count==0)
+                            <div class="alert alert-warning">Aucune offre trouvée</div>
+                            @endif
+                            @endif
                                    
                                 </div>
 

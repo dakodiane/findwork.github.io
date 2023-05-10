@@ -35,14 +35,14 @@
                     <div class="single-job-items mb-50">
                         <div class="job-items">
                             <div class="company-img company-img-details text-center">
-                            <img src="{{ asset('storage/photosfreelancer/' . $users->photo_freelancer) }}" alt="Photo du Freelancer" class="avatar">
+                            <img src="{{ asset('storage/photosfreelancer/' . $users->photo_freelancer) }}" alt="Photo du Freelancer" class="avatar "> 
                             </div>
-                            <div class="job-tittle soulign">
+                            <div class="job-tittle soulign mt-50">
                                 <a href="">
                                     <h4 class="soulign">{{$users->name}}</h4>
                                 </a>
                                 <ul>
-                                    <li>{{$users->service_freelancer}}</li>
+                                    <li> {{$users->description_free}} </li>
 
                                 </ul>
                             </div>
@@ -54,11 +54,17 @@
                         <div class="post-details1 mb-50">
                             <!-- Small Section Tittle -->
                             <div class="small-section-tittle">
-                                <h4>Description </h4>
+                                <h4>Services </h4>
                             </div>
-                            <p>
-                                {{$users->description_free}}
-                            </p>
+                            <ul>
+                                <li>{{$users->service_freelancer1}}</li>
+                                <li>{{$users->service_freelancer2}}</li>
+                                <li>{{$users->service_freelancer3}}</li>
+                                <li>{{$users->service_freelancer4}}</li>
+                                <li>{{$users->service_freelancer5}}</li>
+
+                              
+                            </ul>
                         </div>
                         <div class="post-details2  mb-50">
                             <!-- Small Section Tittle -->
@@ -66,7 +72,12 @@
                                 <h4>Compétences</h4>
                             </div>
                             <ul>
-                                <li>{{$users->competence_freelancer}}</li>
+                                <li>{{$users->competence_freelancer1}}</li>
+                                <li>{{$users->competence_freelancer2}}</li>
+                                <li>{{$users->competence_freelancer3}}</li>
+                                <li>{{$users->competence_freelancer4}}</li>
+                                <li>{{$users->competence_freelancer5}}</li>
+
                               
                             </ul>
                         </div>

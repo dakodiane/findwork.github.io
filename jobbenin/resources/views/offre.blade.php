@@ -39,7 +39,7 @@
                     <!-- Job Category Listing start -->
                     <div class="job-category-listing mb-50">
                         <!-- single one -->
-                        <form >
+                        <form action="{{ route('offres.search') }}" method="GET">
                             @csrf
                             <div class="single-listing">
                                 <div class="small-section-tittle2">
@@ -107,7 +107,6 @@
                                     object-fit: cover;
                                 }
                             </style>
-
                             @foreach($offres as $offre)
                             <div class="row justify-content-center ">
                                 <div class="col-xl-10 mt-120">
@@ -146,25 +145,36 @@
                             </div>
 
                             @endforeach
+
+                            @if($offres->count() > 15)
                             <div class="pagination-area pb-115 text-center">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-xl-12">
-                                            <div class="single-wrap d-flex justify-content-center">
-                                                <nav aria-label="Page navigation example">
-                                                    <ul class="pagination justify-content-start">
-                                                        <li class="page-item active"><a class="page-link" href="#">01</a></li>
-                                                        <li class="page-item"><a class="page-link" href="#">02</a></li>
-                                                        <li class="page-item"><a class="page-link" href="#">03</a></li>
-                                                        <li class="page-item"><a class="page-link" href="#"><span class="ti-angle-right"></span></a></li>
-                                                    </ul>
-                                                </nav>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl-12">
+                                                    <div class="single-wrap d-flex justify-content-center">
+                                                        <nav aria-label="Page navigation example">
+                                                            <ul class="pagination justify-content-start">
+                                                                <li class="page-item active"><a class="page-link" href="#">01</a></li>
+                                                                <li class="page-item"><a class="page-link" href="#">02</a></li>
+                                                                <li class="page-item"><a class="page-link" href="#">03</a></li>
+                                                                <li class="page-item"><a class="page-link" href="#"><span class="ti-angle-right"></span></a></li>
+                                                            </ul>
+                                                        </nav>
+                                                    </div>
+
+                                                </div>
                                             </div>
+                                            <!-- Section Button -->
+
+
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                           
+                            @endif
+                            @if(isset($count))
+                            @if($count==0)
+                            <div class="alert alert-warning">Aucune offre trouvée</div>
+                            @endif
+                            @endif
                         </div>
                     </section>
 

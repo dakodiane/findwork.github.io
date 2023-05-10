@@ -244,3 +244,6 @@ Route::get('/freelancer',  'App\Http\Controllers\FreelancerController@searchfree
 Route::get('/recruteur',  'App\Http\Controllers\Admin1Controller@searchrecruteur')->name('recruteurs.search');
 
 
+Route::get('/offres/search', [OffreController::class, 'search'])->name('offres.search');
+Route::get('/freelancers/search', [FreelancerController::class, 'searchfreelancer'])->name('freelancer.search');
+

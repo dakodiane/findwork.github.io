@@ -95,11 +95,22 @@ public function update(Request $request, $id)
     // Mettre à jour les informations de l'utilisateur
     $user->name = $request->input('name');
     $user->email = $request->input('email');
-    $user->service_freelancer = $request->input('service_freelancer');
+    $user->service_freelancer1 = $request->input('service_freelancer1');
+    $user->service_freelancer2= $request->input('service_freelancer2');
+    $user->service_freelancer3= $request->input('service_freelancer3');
+    $user->service_freelancer4= $request->input('service_freelancer4');
+    $user->service_freelancer5= $request->input('service_freelancer5');
+
     $user->description_free = $request->input('description_free');
-    $user->competence_freelancer = $request->input('competence_freelancer');
+    $user->competence_freelancer1 = $request->input('competence_freelancer1');
+    $user->competence_freelancer2= $request->input('competence_freelancer2');
+    $user->competence_freelancer3= $request->input('competence_freelancer3');
+    $user->competence_freelancer4= $request->input('competence_freelancer4');
+    $user->competence_freelancer5= $request->input('competence_freelancer5');
+
     $user->contact_freelancer = $request->input('contact_freelancer');
 
+    $user->profil_complet = 1;
 
 
 $user->save();
@@ -110,7 +121,7 @@ $user->save();
         $path = $photo->storeAs('public/photosfreelancer', $filename);
         $user->photo_freelancer = $filename;
     }
-    if ($user->service_freelancer && $user->description_free && $user->competence_freelancer && $user->contact_freelancer) {
+    if ($user->service_freelancer1 && $user->service_freelancer2 && $user->service_freelancer3 && $user->service_freelancer4 && $user->competence_freelancer1 && $user->competence_freelancer2 && $user->competence_freelancer3 && $user->competence_freelancer4 && $user->descrption_free && $user->contact_freelancer) {
       
         $user->profil_complet = 1;
     }
