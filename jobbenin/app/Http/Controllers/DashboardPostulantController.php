@@ -50,6 +50,7 @@ class DashboardPostulantController extends Controller
         
             return [
                 'user' => $offre->user ?? null,
+                'poste' => $offre->poste ?? null,
                 'statut' => $statut,
                 'id' => $offre->id ?? null,
             ];

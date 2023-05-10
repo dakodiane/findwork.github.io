@@ -156,6 +156,7 @@
   <thead>
     <tr>
       <th>Entreprise</th>
+      <th>Poste</th>
       <th>Statut</th>
       <th>Actions</th>
     </tr>
@@ -178,6 +179,10 @@
                             </a>
                         </div>
                     </div>
+                </td>
+                <td>
+                <p style="color: black;">{{ $offre['poste'] }}</p>
+
                 </td>
                 <td>
                     <div class="badge badge-opacity-warning"style="font-weight:40px;font-size:13px"  ><b>{{ $offre['statut'] }}</b></div>

@@ -142,6 +142,13 @@
         </div>
       </div>
     </div>
+    <style>
+                          .avatar {
+                    width: 100px;
+                    height: 100px;
+                    object-fit: cover;
+                }
+                    </style>
 
     <div class="row justify-content-center">
       <div class="col-12">
@@ -160,6 +167,7 @@
               <ul>
                 <li>{{optional($offre->user)->name}}</li>
                 <li><i class="fas fa-map-marker-alt"></i>{{optional($offre->user)->villeR}}</li>
+                
               </ul>
             </div>
           </div>

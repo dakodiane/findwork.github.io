@@ -58,7 +58,7 @@
                             <div class="small-section-tittle">
                                 <h4>Description de l'offre</h4>
                             </div>
-                            <p>{{ $offre->description_offre ?? '' }}</p>
+                            <p style="color: black;">{{ $offre->description_offre ?? '' }}</p>
                         </div>
                         <div class="post-details2  mb-50">
                             <!-- Small Section Tittle -->
@@ -168,8 +168,8 @@
                     <div class="small-section-tittle">
                         <h4>Description de l'entreprise</h4>
                     </div>
-                    <span>{{ $offre->user->name ?? '' }}</span>
-                    <p>{{ $offre->user->description_recruteur ?? '' }}</p>
+                    <span style="color: black;">{{ $offre->user->name ?? '' }}</span>
+                    <p style="color: black;">{{ $offre->user->description_recruteur ?? '' }}</p>
                 </div>
             </div>
         </div>

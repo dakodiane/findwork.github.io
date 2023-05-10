@@ -7,19 +7,19 @@
     <!-- slider Area Start-->
     <div class="slider-area ">
         <!-- Mobile Menu -->
-        <div class="slider-active img" data-background="{{asset('assets/img/team/work.jpeg')}}" style="height: 700px;">
+        <div class="slider-active " style="height: 700px;">
             <div class="single-slider slider-height d-flex align-items-center">
                 <div class="container">
-
-                    <!-- Search Box -->
-                    <div class="row" style="margin-top: 80px;">
-                        <div class="col-xl-8 ">
-                            <!-- form -->*
-                            <form action="{{ route('offres.search') }}" class="search-box mb-360" method="GET">
-                                <div class="input-form">
-                                    <input type="text" name="secteurO" placeholder="Secteur">
+                    <div class="row">
+                        <div class="col-md-6 order-last order-md-first">
+                            <div class="hero__caption">
+                                <h3>Trouvez votre prochaine opportunité de carrière ou freelance dès maintenant !</h3>
+                            </div>
+                            <form action="{{ route('offres.search') }}" class="search-box mt-5" style="height:600px;" method="GET">
+                                <div class="input-form" >
+                                    <input style="color: black;" type="text" name="secteurO" placeholder="Secteur">
                                 </div>
-                                <div class="select-form">
+                                <div class="select-form" style="color: black;">
                                     <div class="select-itms">
                                         <select name="villeO">
                                             <option value="">Ville</option>
@@ -32,19 +32,27 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="search-form">
+                                <div class="search-form mt-0">
                                     <button type="submit">Trouver une offre</button>
                                 </div>
                             </form>
-
+                        </div>
+                        <div class="col-md-6 order-first order-md-last">
+                            <div class="col-12" style="height: 100px;">
+                                <img src="{{asset('assets/img/team/hero.jpg')}}" class="img-fluid" style="object-fit: cover;" alt="">
+                            </div>
                         </div>
                     </div>
+
+                    <!-- Search Box -->
+
                 </div>
             </div>
         </div>
     </div>
 
-    <div style=" height:150px "> </div>
+  
+    <div style=" height:110px "> </div>
  <section class="how-it-works">
   <h2 style="font-weight:bold;font-size: 45px;">Comment ça marche ?</h2>
   <div class="steps">
@@ -104,7 +112,7 @@
                                     <li>{{optional($offre->user)->name}}</li>
                                     <li><i class="fas fa-map-marker-alt">
 
-                                    </i>{{optional($offre->user)->villeR}}</li>
+                                        </i>{{optional($offre->user)->villeR}}</li>
 
 
                                 </ul>
@@ -112,7 +120,7 @@
                         </div>
                         <div class="items-link f-right">
                             <a href="{{ route('detail_offre', $offre->id) }}" class="soulign">Voir l'offre</a>
-                                <span>Expire le:{{($offre->datfin)}}</span>
+                            <span>Expire le:{{($offre->datfin)}}</span>
                         </div>
                     </div>
                     <!-- single-job-content -->
@@ -163,7 +171,7 @@
                         <img src="{{ asset('storage/photosfreelancer/' . $freelancer->photo_freelancer) }}" alt="Photo du Freelancer" class="avatar">
 
                         <div class="title">
-                        <h2 style="color: black;">{{ implode(' ', array_slice(explode(' ', Illuminate\Support\Str::limit(strip_tags($freelancer->description_free), 50)), 0, 6)) }}...</h2>
+                            <h2 style="color: black;">{{ implode(' ', array_slice(explode(' ', Illuminate\Support\Str::limit(strip_tags($freelancer->description_free), 50)), 0, 6)) }}...</h2>
                             <h5 class="muted regular">{{ $freelancer->name }}</h5>
                         </div>
                         <a href="{{ route('detail_free', $freelancer->id) }}">
