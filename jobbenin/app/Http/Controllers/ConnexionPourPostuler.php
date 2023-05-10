@@ -24,20 +24,37 @@ class ConnexionPourPostuler extends Controller
         return view('/connexionpourpostuler', ['offre' => $offre,'user' => $user]);
        
     }
-    public function connexionpourpostuler(Request $request,string $id)
-
+    public function connexionpourpostuler(Request $request, string $id)
     {
-    
         $email = $request->email;
         $password = $request->password;
         $id_offre = $request->input('id_offre'); // récupérer l'id de l'offre via la requête GET
     
-        $user = User::where('email', "=", $email)->first();
+        $user = User::where('email', '=', $email)->first();
         $offre = Offre::with('user')->find($id);
+    
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
             if ($user) {
-                if ($user->role == 'postulant') {
+                if ($user->role == 'recruteur') {
+                    if ($user->active == 0) {
+                        // L'utilisateur n'existe pas dans la base de données
+                        return redirect()->back()->withErrors(['activation' => 'Impossible de se connecter!! Ce compte a été désactivé.'])->withInput();
+                    } elseif ($user->active == 1) {
+                        $request->session()->regenerate();
+                        return redirect()->intended(route('profilrecruteur', ['id' => $user->id]));
+                    }
+                } elseif ($user->role == 'postulant') {
+                    $request->session()->regenerate();
                     return redirect()->route('postuleroffre', ['id_offre' => $offre->id]);
+                } elseif ($user->role == 'freelancer') {
+                    if ($user->active == 0) {
+                        // L'utilisateur n'existe pas dans la base de données
+                        return redirect()->back()->withErrors(['activation' => 'Impossible de se connecter!! Ce compte a été désactivé.'])->withInput();
+                    } elseif ($user->active == 1) {
+                        $request->session()->regenerate();
+                        return redirect()->intended('profilfreelancer');
+                    }
+                }
             }
         } elseif (!$user) {
             // L'utilisateur n'existe pas dans la base de données
@@ -51,5 +68,4 @@ class ConnexionPourPostuler extends Controller
         }
     }
     
-}
 }

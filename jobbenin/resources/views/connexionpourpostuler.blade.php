@@ -20,12 +20,17 @@
                         <form class="user" method="POST" action="{{ route('connexionpourpostuler', ['id_offre' => $offre->id]) }}">
                             @csrf
                             <div class="form-group">
-                                @error('email')
+                            @error('email')
                                 <span role="alert" class="alert alert-danger">
                                     <strong>{{ $message }}</strong>
                                 </span>
                                 @enderror
                                 @error('password')
+                                <span role="alert" class="alert alert-danger">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                                @error('activation')
                                 <span role="alert" class="alert alert-danger">
                                     <strong>{{ $message }}</strong>
                                 </span>

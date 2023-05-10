@@ -192,77 +192,116 @@
                                     <!-- Pricing Plan Start -->
                                     <div class=" py-5 wow fadeInUp" data-wow-delay="0.1s">
                                       <div class="py-5">
-                                        <div class="section-titlep text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
-                                          <h3 class="mb-0">Souscrivez notre abonnement pour offrir plus de visibilité à votre entreprise!!</h3>
-                                        </div>
-                                        <div class="row g-0">
-                                          <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
-                                            <div class="bg-light rounded">
-                                              <div class="border-bottom py-4 px-5 mb-4">
-                                                <h4 class="text-primary mb-1">Standard</h4>
+                                      <div class="section-titlep text-center position-relative pb-3 mb-5 mx-auto" 
+                                  style="max-width: 600px; top:-60px;">
+                                            <h3 class="mb-0">Souscrivez notre abonnement pour offrir plus de visibilité à votre entreprise!!</h3>
+                                          </div>
+
+                                        <div class="row g-0" style="top:-60px;">
+                                        <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s"  style="top:-60px;">
+                                            <div class="bg-light rounded"  style="top:-60px;">
+                                              <div class="border-bottom py-4 px-5 mb-4"  style="top:-60px;">
+                                                <h4 class="text-primary mb-1"  style="top:-60px;">Standard</h4>
                                               </div>
                                               <div class="p-5 pt-0">
                                                 <h1 class="display-5 mb-3">
                                                   <small class="align-top" style="font-size: 22px; line-height: 45px;">6.000</small>F CFA
                                                 </h1>
-                                                <div class="d-flex justify-content-between mb-3"><span>30 jours de validité</span><i class="fa fa-check text-primary pt-1"></i></div>
-                                            
-                                                <kkiapay-widget amount="6000" 
-                                            key="ba3d5c90ed7a11edb9eb477e07ce2b3a"
-                                            url="{{asset('assets/img/logo/logojob.png')}}"
-                                            position="center"
-                                            sandbox="true"
-                                            data=""
-                                            callback="{{('/publicite')}}">
-                                           </kkiapay-widget>
-                                              </div>
-                                            </div>
-                                          </div>
-                                          <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
-                                            <div class="bg-white rounded shadow position-relative" style="z-index: 1;">
-                                              <div class="border-bottom py-4 px-5 mb-4">
-                                                <h4 class="text-primary mb-1">Premium</h4>
-                                              </div>
-                                              <div class="p-5 pt-0">
-                                                <h1 class="display-5 mb-3">
-                                                  <small class="align-top" style="font-size: 22px; line-height: 45px;">15.000</small>F CFA
-                                                </h1>
-                                                <div class="d-flex justify-content-between mb-3"><span>3 mois de validité</span><i class="fa fa-check text-primary pt-1"></i></div>
+                                                <div class="d-flex justify-content-between mb-2">
+                                                  <span>30 jours de validité</span>
+                                                  <i class="fa fa-check text-primary pt-1"></i>
+                                                </div>
+                                                <p>
+                                                  Le forfait "Standard" offre de nombreux avantages pour vous aider à maximiser votre expérience :
+                                                </p>
+                                                <ul>
+                                                  <li>Accès complet à toutes les fonctionnalités de notre plateforme.</li>
 
+                                                  <li>Mise en avant de votre entreprise avec votre logo sur les offres publiées.</li>
+                                          
                                               
-                                                <kkiapay-widget amount="15000" 
-                                            key="ba3d5c90ed7a11edb9eb477e07ce2b3a"
-                                            url="{{asset('assets/img/logo/logojob.png')}}"
-                                            position="center"
-                                            sandbox="true"
-                                            data=""
-                                            callback="{{('/publicite')}}">
-                                           </kkiapay-widget>
-                                              </div>
+                                                </ul>
+                                    <kkiapay-widget amount="6000" 
+                                        key="ba3d5c90ed7a11edb9eb477e07ce2b3a"
+                                        url="{{asset('assets/img/logo/logojob.png')}}"
+                                        position="center"
+                                        sandbox="true"
+                                        data=""
+                                        callback="{{('/publicite')}}">
+                                    </kkiapay-widget>
+    </div>
+  </div>
+</div>
+
+                                        <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
+                                          <div class="bg-white rounded shadow position-relative" style="z-index: 1;">
+                                            <div class="border-bottom py-4 px-5 mb-4">
+                                              <h4 class="text-primary mb-1">Premium</h4>
                                             </div>
-                                          </div>
-                                          <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
-                                            <div class="bg-light rounded">
-                                              <div class="border-bottom py-4 px-5 mb-4">
-                                                <h4 class="text-primary mb-1">Premium+</h4>
+                                            <div class="p-5 pt-0">
+                                              <h1 class="display-5 mb-3">
+                                                <small class="align-top" style="font-size: 22px; line-height: 45px;">15.000</small>F CFA
+                                              </h1>
+                                              <div class="d-flex justify-content-between mb-3">
+                                                <span>3 mois de validité</span>
+                                                <i class="fa fa-check text-primary pt-1"></i>
                                               </div>
-                                              <div class="p-5 pt-0">
-                                                <h1 class="display-5 mb-3">
-                                                  <small class="align-top" style="font-size: 22px; line-height: 45px;">50.000</small>F CFA
-                                                </h1>
-                                                <div class="d-flex justify-content-between mb-3"><span>1an de validité</span><i class="fa fa-check text-primary pt-1"></i></div>
-                                            
-                                                <kkiapay-widget amount="50000" 
-                                                  key=""
+                                              <p>
+                                                Le forfait "Premium" vous offre des avantages exclusifs pour une expérience encore plus enrichissante :
+                                              </p>
+                                              <ul>
+                                              
+                                                <li>Possibilité de publier un nombre illimité d'offres d'emploi simultanément.</li>
+                                                <li>Visibilité accrue de vos offres grâce à une meilleure position dans les résultats de recherche.</li>
+                                        
+                                              </ul>
+                                              <kkiapay-widget amount="15000" 
+                                                  key="ba3d5c90ed7a11edb9eb477e07ce2b3a"
                                                   url="{{asset('assets/img/logo/logojob.png')}}"
                                                   position="center"
                                                   sandbox="true"
                                                   data=""
                                                   callback="{{('/publicite')}}">
-                                                </kkiapay-widget>
-                                              </div>
+                                              </kkiapay-widget>
                                             </div>
                                           </div>
+                                        </div>
+
+<div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
+  <div class="bg-light rounded">
+    <div class="border-bottom py-4 px-5 mb-4">
+      <h4 class="text-primary mb-1">Premium+</h4>
+    </div>
+    <div class="p-5 pt-0">
+      <h1 class="display-5 mb-3">
+        <small class="align-top" style="font-size: 22px; line-height: 45px;">50.000</small>F CFA
+      </h1>
+      <div class="d-flex justify-content-between mb-3">
+        <span>1 an de validité</span>
+        <i class="fa fa-check text-primary pt-1"></i>
+      </div>
+      <p>
+        Le forfait "Premium+" est la formule ultime pour maximiser vos opportunités professionnelles. Profitez des avantages exclusifs suivants :
+      </p>
+      <ul>
+        <li>Tous les avantages du forfait "Premium" inclus.</li>
+        <li>Visibilité maximale avec une mise en avant prioritaire de votre entreprise et de vos offres.</li>
+        <li>Promotion spéciale de votre entreprise sur nos réseaux sociaux et newsletters.</li>
+       
+   
+      </ul>
+      <kkiapay-widget amount="50000" 
+          key=""
+          url="{{asset('assets/img/logo/logojob.png')}}"
+          position="center"
+          sandbox="true"
+          data=""
+          callback="{{('/publicite')}}">
+      </kkiapay-widget>
+    </div>
+  </div>
+</div>
+
                                         </div>
                                       </div>
                                     </div>

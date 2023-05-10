@@ -44,6 +44,29 @@
         </div>
     </div>
 
+    <div style=" height:150px "> </div>
+ <section class="how-it-works">
+  <h2 style="font-weight:bold;font-size: 45px;">Comment ça marche ?</h2>
+  <div class="steps">
+  <div class="step">
+      <div class="icon"><i class="fas fa-search"></i></div>
+      <h3 style="font-weight:bold">1. Recherchez des offres ou des services</h3>
+      <p style=" font-family:sans-serif;">Utilisez notre barre de recherche pour trouver des offres d'emploi ou des services freelance qui correspondent à vos besoins.JobBénin est une solution complète pour les recruteurs, les postulants et les freelancers à la recherche de nouvelles opportunités professionnelles.</p> 
+   
+    </div>
+    <div class="step">
+      <div class="icon"><i class="fas fa-user-plus"></i></div>
+      <h3 style="font-weight:bold">2. Inscrivez-vous gratuitement</h3>
+      <p>Créez un compte gratuit pour accéder à toutes les fonctionnalités de notre plateforme. Que vous soyez un recruteur cherchant du personnel qualifié, un postulant à la recherche d'un emploi ou un freelancer cherchant des clients, notre plateforme est là pour vous aider.</p>
+    </div>
+    <div class="step">
+      <div class="icon"><i class="fas fa-briefcase"></i></div>
+      <h3 style="font-weight:bold">3. Postulez ou proposez vos services</h3>
+      <p>Une fois que vous avez trouvé une offre ou un service qui vous convient, postulez directement pour les offres d'emploi ou proposez vos services pour les services freelance. Notre plateforme vous permet de vous connecter facilement avec les personnes correspondant à vos besoins.</p>
+    </div>
+  </div>
+</section>
+
     <section class="featured-job-area feature-padding">
         <div class="container ">
             <div class="row">
