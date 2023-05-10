@@ -3685,3 +3685,79 @@ input[type="radio"]{
 	height: 50px; /* ou toute autre hauteur souhaitée */
   }
   
+
+  .how-it-works {
+	background-color: #260e69;
+	padding: 50px;
+	text-align: center;
+  }
+  
+  .how-it-works h2 {
+	margin-bottom: 50px;
+	color: #fff; /* ajouter une couleur blanche pour le titre */
+  }
+  
+  .steps {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+  }
+  
+  .step {
+	width: 300px;
+	margin: 0 20px 40px;
+	text-align: left;
+  }
+  
+  .icon {
+	font-size: 40px;
+	margin-bottom: 20px;
+  }
+  
+  .icon i {
+	color: #fff; /* changer la couleur de l'icône en blanc */
+  }
+  
+  .step h3 {
+	font-size: 20px;
+	margin-bottom: 20px;
+	color: #fff; /* ajouter une couleur blanche pour le sous-titre */
+  }
+  
+  .step p {
+	font-size: 16px;
+	line-height: 1.5;
+	color: #fff; /* changer la couleur du texte en blanc */
+	opacity: 0;
+	transform: translateY(20px);
+	animation: fade-in 1s ease-out forwards, slide-up 0.5s ease-out forwards;
+  }
+  
+  @keyframes fade-in {
+	0% {
+	  opacity: 0;
+	}
+	100% {
+	  opacity: 1;
+	}
+  }
+  
+  @keyframes slide-up {
+	0% {
+	  opacity: 0;
+	  transform: translateY(20px);
+	}
+	100% {
+	  opacity: 1;
+	  transform: translateY(0);
+	}
+  }
+  .step .icon i {
+  transition: transform 0.5s ease-out; /* Ajoutez cette ligne pour la transition */
+}
+
+.step:hover .icon i {
+  transform: scale(1.5); /* Ajoutez cette ligne pour agrandir l'icône au survol */
+}
+
+
