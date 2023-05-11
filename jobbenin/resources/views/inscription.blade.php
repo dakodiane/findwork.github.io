@@ -28,7 +28,7 @@
     <section class="site-section">
         <div class="container">
             <div class="row justify-content-center align-items-center">
-                <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card o-hidden border-0 shadow-lg my-2">
                     <div class="card-body p-1" style="">
                         <div class="" style="justify-content: center;">
                             <p></p>

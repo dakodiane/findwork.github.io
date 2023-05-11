@@ -7,14 +7,14 @@
     <!-- slider Area Start-->
     <div class="slider-area ">
         <!-- Mobile Menu -->
-        <div class="slider-active img" data-background="{{asset('assets/img/team/work.jpeg')}}" style="height: 700px;">
+        <div class="slider-active img" style="height: 700px;">
             <div class="single-slider slider-height d-flex align-items-center">
                 <div class="container">
 
                     <!-- Search Box -->
                     <div class="row" style="margin-top: 80px;">
-                        <div class="col-xl-8 ">
-                            <!-- form -->*
+                       
+                            <!-- form -->
                             <form action="{{ route('offres.search') }}" class="search-box mb-360" method="GET">
                                 <div class="input-form">
                                     <input type="text" name="secteurO" placeholder="Secteur">
@@ -44,7 +44,7 @@
         </div>
     </div>
 
-    <div style=" height:150px "> </div>
+ 
  <section class="how-it-works">
   <h2 style="font-weight:bold;font-size: 45px;">Comment ça marche ?</h2>
   <div class="steps">

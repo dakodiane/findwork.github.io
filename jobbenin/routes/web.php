@@ -216,6 +216,11 @@ Route::get('/touteslesoffres', 'App\Http\Controllers\Admin2Controller@toutesleso
 
 Route::get('/detailoffres/{id}/', 'App\Http\Controllers\Admin2Controller@show3')
 ->name('admin.detailoffres');
+Route::get('/recruteur/{id}/detail', 'App\Http\Controllers\Admin1Controller@detailrecruteur')->name('detailrecruteur');
+Route::get('/freelancera/{id}/detail', 'App\Http\Controllers\Admin1Controller@detailfreelancer')->name('detailfreelancer');
+Route::get('/recruteur',  'App\Http\Controllers\Admin1Controller@searchrecruteur')->name('recruteurs.search');
+
+// AdminFin
   
 Route::get('/signalement/{id_offre}','App\Http\Controllers\SignalementOffreController@index');
 
@@ -225,8 +230,6 @@ Route::post('/upload-image', 'App\Http\Controllers\DashboardFreelancerController
 Route::post('/upload-image', 'App\Http\Controllers\DashboardRecruteurController@upload')->name('image.upload');
 
 //s
-Route::get('/recruteur/{id}/detail', 'App\Http\Controllers\Admin1Controller@detailrecruteur')->name('detailrecruteur');
-Route::get('/freelancera/{id}/detail', 'App\Http\Controllers\Admin1Controller@detailfreelancer')->name('detailfreelancer');
 
 Route::get('/selectioncv/{id}/{offreid}/programmer', 'App\Http\Controllers\EntretienController@index');
 Route::post('/selectioncv/{id}/{offreid}/programmer', 'App\Http\Controllers\EntretienController@store')->name('programmer');
@@ -241,7 +244,6 @@ Route::get('/offredelete/{id}', 'App\Http\Controllers\OffreController@supprimero
 
 Route::get('/offre',  'App\Http\Controllers\OffreController@offre');
 Route::get('/freelancer',  'App\Http\Controllers\FreelancerController@searchfreelancer')->name('freelancer.search');
-Route::get('/recruteur',  'App\Http\Controllers\Admin1Controller@searchrecruteur')->name('recruteurs.search');
 
 
 Route::get('/offres/search', [OffreController::class, 'search'])->name('offres.search');

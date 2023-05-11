@@ -46,16 +46,18 @@
        
               @csrf
 
-              
-                 <div class="form-group">
+              <div class="form-group">
                 <label for="lettre_motivation">Lettre de motivation</label>
                 <input type="file" id="lettre_motivation" name="lettre_motivation" required="required" class="form-control">
-               </div>
+                <p class="text-muted">✱ Extensions autorisées : .pdf, .docx ✱</p>
+              </div>
+
 
               <div class="form-group">
                           <label for="secteur">Curriculum Vitae (CV) </label>
                           <input type="file" id="cv" name="cv" required="required" class="form-control" placeholder="" style="width:100%">
-                      </div>
+                          <p class="text-muted"> ✱ Extensions autorisées : .pdf, .docx ✱</p>
+                        </div>
                       <div class="form-group">
                           <button type="submit" class="btn btn-block btn-primary btn-md" data-toggle="" data-target="#postulerModal">Postuler</button>
                       </div>
