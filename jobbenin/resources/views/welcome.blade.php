@@ -51,12 +51,8 @@
         </div>
     </div>
 
-<<<<<<< HEAD
- 
-=======
   
     <div style=" height:110px "> </div>
->>>>>>> origin/diane_branch
  <section class="how-it-works">
   <h2 style="font-weight:bold;font-size: 45px;">Comment ça marche ?</h2>
   <div class="steps">
