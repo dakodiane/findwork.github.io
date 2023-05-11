@@ -164,10 +164,7 @@
       <label for=""><u>Diplôme :</u></label>
       <span>{{ $user->diplomeP }}</span>
     </div>
-    <div class="info-item">
-      <label for=""><u>Compétences :</u></label>
-      <span>{{ $user->competencesP }}</span>
-    </div>
+   
   </div>
 
   <button class="button1 mx-auto mt-3" data-modal="modal-mod">Modifier Vos Informations</button> 
@@ -335,11 +332,7 @@
                             </select>
         </div>
 
-        <div class="form-group">
-                <label for="competencesP" style="color: #242b5e; display: block; margin-bottom: 0.5em;"> Compétences</label>
-                <textarea class="wysiwyg form-textarea " required="required" name="competencesP" cols="14" rows="6">{{ $user->competencesP }}</textarea>
-
-              </div>
+     
         <div class="form-group">
            <div style="text-align: center;">
           <button type="submit" class="btn btn-primary"
