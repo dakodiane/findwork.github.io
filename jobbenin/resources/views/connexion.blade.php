@@ -2,7 +2,7 @@
 
 @section('document')
 
-<main>
+<main style="overflow: hidden;">
 
     <div class="row justify-content-center">
 

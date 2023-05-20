@@ -192,7 +192,8 @@ class DashboardRecruteurController extends Controller
         if ($user->role == 'recruteur') {
             $offres = $user->offre;
             $postuler = null;
-
+            $cv = null; // Initialisation de la variable $cv avec une valeur par défaut de null
+            
             // On récupère le postulant si les identifiants de l'utilisateur et de l'offre sont valides
             $postuler = Postuler::with('user')
                 ->where('id_user', $id_user)
